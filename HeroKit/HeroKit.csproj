@@ -15,10 +15,11 @@
         <PackageId>HeroKit</PackageId>
         <Title>HeroKit</Title>
         <Authors>Emre Akdemir</Authors>
+        <Company>Lyconiq</Company>
         <Description>Extension methods for everyday .NET types: validation, conversion and manipulation helpers for arrays, booleans, strings, dates, enums, GUIDs, objects, types and more.</Description>
         <PackageTags>csharp;dotnet;extensions;extension-methods;utilities;helpers;turkish;turkiye;tckn;vkn;iban;validation;dataannotations;plate;troy</PackageTags>
         <PackageProjectUrl>https://herokit.emreakdemir.dev</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/emreakdemir/HeroKit</RepositoryUrl>
+        <RepositoryUrl>https://github.com/Lyconiq/HeroKit</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageIcon>herokit.png</PackageIcon>

@@ -18,7 +18,7 @@ _disableToc: true
   <div class="hk-badges">
     <img alt="NuGet" src="https://img.shields.io/nuget/v/HeroKit.svg?color=f2a541&label=NuGet">
     <img alt="Downloads" src="https://img.shields.io/nuget/dt/HeroKit.svg?color=0a8bb0">
-    <img alt="Coverage" src="https://raw.githubusercontent.com/emreakdemir/HeroKit/badges/coverage.svg">
+    <img alt="Coverage" src="https://raw.githubusercontent.com/Lyconiq/HeroKit/badges/coverage.svg">
     <img alt="License" src="https://img.shields.io/badge/license-MIT-0a8bb0.svg">
   </div>
 </div>
@@ -103,6 +103,6 @@ using HeroKit.Globalization.Turkey;
 </div>
 
 <p style="text-align:center;margin:2.5rem 0 1rem">
-  Questions or ideas? Join <a href="https://github.com/emreakdemir/HeroKit/discussions">GitHub Discussions</a>.
-  Like HeroKit? <a href="https://github.com/emreakdemir/HeroKit">Give it a star ⭐</a>
+  Questions or ideas? Join <a href="https://github.com/Lyconiq/HeroKit/discussions">GitHub Discussions</a>.
+  Like HeroKit? <a href="https://github.com/Lyconiq/HeroKit">Give it a star ⭐</a>
 </p>
