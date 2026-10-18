@@ -1,0 +1,33 @@
+name: OpenSSF Scorecard
+
+# Scores the repository's supply-chain practices and publishes the result
+# for the badge in the README (https://scorecard.dev).
+on:
+  push:
+    branches: [ master ]
+  schedule:
+    - cron: '23 4 * * 1'
+  workflow_dispatch:
+
+permissions: read-all
+
+jobs:
+  analysis:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write   # upload the results to code scanning
+      id-token: write          # publish the results to the Scorecard API
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - uses: ossf/scorecard-action@v2.5.0
+        with:
+          results_file: results.sarif
+          results_format: sarif
+          publish_results: true
+
+      - uses: github/codeql-action/upload-sarif@v4
+        with:
+          sarif_file: results.sarif

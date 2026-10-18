@@ -4,6 +4,7 @@
 [![NuGet downloads](https://img.shields.io/nuget/dt/HeroKit.svg)](https://www.nuget.org/packages/HeroKit)
 [![Build & Test](https://github.com/Lyconiq/HeroKit/actions/workflows/build-tests.yml/badge.svg)](https://github.com/Lyconiq/HeroKit/actions/workflows/build-tests.yml)
 [![Coverage](https://raw.githubusercontent.com/Lyconiq/HeroKit/badges/coverage.svg)](https://github.com/Lyconiq/HeroKit/actions/workflows/build-tests.yml)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Lyconiq/HeroKit/badge)](https://scorecard.dev/viewer/?uri=github.com/Lyconiq/HeroKit)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 English: [README.md](README.md) · **Dokümantasyon: [herokit.emreakdemir.dev](https://herokit.emreakdemir.dev)**

@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Each GitHub release carries an SPDX software bill of materials per package and a signed build provenance attestation for every `.nupkg`. Verify a package with `gh attestation verify <file>.nupkg --repo Lyconiq/HeroKit`.
+- `SECURITY.md` with supported versions and private vulnerability reporting, a release and support policy in `CONTRIBUTING.md`, and an OpenSSF Scorecard check with a README badge.
+
+### Changed
+- The repository moved to the Lyconiq organization (github.com/Lyconiq/HeroKit). Old links redirect. Packages now set `Company` to Lyconiq.
+
 ## [3.5.0] - 2026-10-16
 
 ### Added

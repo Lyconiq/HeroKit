@@ -23,6 +23,10 @@ jobs:
   pack:
     if: github.event_name == 'release' || (inputs.unlist == '' && inputs.relist == '')
     runs-on: ubuntu-latest
+    permissions:
+      contents: write       # attach the SBOM to the release
+      id-token: write       # sign the build provenance attestation
+      attestations: write
     steps:
       - uses: actions/checkout@v7
         with:
@@ -43,6 +47,35 @@ jobs:
           dotnet pack HeroKit/HeroKit.csproj -c Release --output ${{ env.NuGetDirectory }}
           dotnet pack HeroKit.FluentValidation/HeroKit.FluentValidation.csproj -c Release --output ${{ env.NuGetDirectory }}
           dotnet pack HeroKit.FileTypes/HeroKit.FileTypes.csproj -c Release --output ${{ env.NuGetDirectory }}
+
+      # Software bill of materials (SPDX) for each package, from its project's resolved dependencies.
+      - name: SBOM
+        env:
+          VERSION: ${{ github.event.release.tag_name || 'dev' }}
+        run: |
+          dotnet tool install -g Microsoft.Sbom.DotNetTool
+          mkdir -p sbom
+          for p in HeroKit HeroKit.FluentValidation HeroKit.FileTypes; do
+            mkdir -p "$RUNNER_TEMP/$p"
+            cp ${{ env.NuGetDirectory }}/$p.[0-9]*.nupkg "$RUNNER_TEMP/$p/"
+            sbom-tool generate -b "$RUNNER_TEMP/$p" -bc "$p" -pn "$p" -pv "$VERSION" -ps Lyconiq \
+              -nsb https://github.com/Lyconiq/HeroKit -m "$RUNNER_TEMP/$p" -V Warning
+            cp "$RUNNER_TEMP/$p/_manifest/spdx_2.2/manifest.spdx.json" "sbom/$p.spdx.json"
+          done
+
+      # Signed statement that these packages were built by this workflow from this commit.
+      # Verify with: gh attestation verify <file>.nupkg --repo Lyconiq/HeroKit
+      - name: Build provenance
+        if: github.event_name == 'release'
+        uses: actions/attest-build-provenance@v4
+        with:
+          subject-path: ${{ env.NuGetDirectory }}/*.nupkg
+
+      - name: Attach SBOM to the release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "${{ github.event.release.tag_name }}" sbom/*.spdx.json --clobber
 
       - uses: actions/upload-artifact@v7
         with:

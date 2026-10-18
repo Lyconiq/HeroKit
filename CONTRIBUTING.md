@@ -54,10 +54,12 @@ Ramazan and Kurban Bayramı dates come from the Diyanet religious days calendar 
 
 ## Releases
 
-1. Bump `<Version>` in `Directory.Build.props`. HeroKit and HeroKit.FluentValidation share it.
-2. Update `CHANGELOG.md`. Move the Unreleased entries under the new version.
-3. Move the `PublicAPI.Unshipped.txt` entries to `PublicAPI.Shipped.txt` in both `HeroKit/` and `HeroKit.FluentValidation/`.
-4. Merge the PR.
-5. Publish a GitHub release. Name it and tag it with the version, for example `1.0.3`.
+HeroKit ships at most one minor release a month. Changes collect on `master` and go out together, so users are not asked to upgrade for every small change. Security fixes ship as patch releases when they are ready. Version numbers follow [Semantic Versioning](https://semver.org): breaking changes only in a major version, after an `[Obsolete]` release. A major version line stays supported for at least 12 months after the next major version ships (see [SECURITY.md](SECURITY.md)).
 
-The `nuget-publish.yml` workflow then pushes the package to NuGet with Trusted Publishing.
+1. Bump `<Version>` in `Directory.Build.props`. All packages share it.
+2. Update `CHANGELOG.md`. Move the Unreleased entries under the new version.
+3. Move the `PublicAPI.Unshipped.txt` entries to `PublicAPI.Shipped.txt` in every package project.
+4. Merge the PR.
+5. Publish a GitHub release. Name it and tag it with the version, for example `3.6.0`.
+
+The `nuget-publish.yml` workflow then packs and tests the packages, attaches an SBOM and a build provenance attestation to the release, and pushes the packages to NuGet with Trusted Publishing.
