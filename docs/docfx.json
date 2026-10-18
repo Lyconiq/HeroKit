@@ -57,10 +57,10 @@
     "globalMetadata": {
       "_appName": "HeroKit",
       "_appTitle": "HeroKit",
-      "_appFooter": "<span>HeroKit · MIT License · Built with care for .NET developers · <a href=\"https://github.com/emreakdemir/HeroKit\">GitHub</a> · <a href=\"https://www.nuget.org/packages/HeroKit\">NuGet</a></span>",
+      "_appFooter": "<span>HeroKit · MIT License · Built with care for .NET developers · <a href=\"https://github.com/Lyconiq/HeroKit\">GitHub</a> · <a href=\"https://www.nuget.org/packages/HeroKit\">NuGet</a></span>",
       "_enableSearch": true,
       "_gitContribute": {
-        "repo": "https://github.com/emreakdemir/HeroKit",
+        "repo": "https://github.com/Lyconiq/HeroKit",
         "branch": "master"
       },
       "_appLogoPath": "images/logo.png",

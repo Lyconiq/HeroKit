@@ -87,7 +87,7 @@ if (!result.IsSafe)
 
 Stream overload'u SVG'nin tamamını `MaxSvgScanLength` (1 MB) sınırına kadar okur; böylece sondaki bir betik de bulunur. `.docx` kılığındaki makrolu bir belge, makro kaydı büyük bir dosyanın sonunda olsa bile `ExtensionMismatch` ile reddedilir. Eski Office dosyaları (DOC, XLS) da makro taşıyabilir; HeroKit bunların içine bakmaz.
 
-`UploadValidator` ve `Tckn` kullanan eksiksiz bir ASP.NET Core minimal API örneği [samples/HeroKit.Samples.WebApi](https://github.com/emreakdemir/HeroKit/tree/master/samples/HeroKit.Samples.WebApi) klasöründedir.
+`UploadValidator` ve `Tckn` kullanan eksiksiz bir ASP.NET Core minimal API örneği [samples/HeroKit.Samples.WebApi](https://github.com/Lyconiq/HeroKit/tree/master/samples/HeroKit.Samples.WebApi) klasöründedir.
 
 Bu kontrol ilk savunma hattıdır. Yükleme boyutunu da sınırlayın, dosyaları web kökünün dışında üretilmiş adlarla saklayın, mümkünse `Content-Disposition: attachment` ile sunun; gerektiğinde resimleri yeniden kodlayın ya da dosyaları tarayın.
 

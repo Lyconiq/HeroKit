@@ -17,10 +17,11 @@
         <PackageId>HeroKit.FluentValidation</PackageId>
         <Title>HeroKit.FluentValidation</Title>
         <Authors>Emre Akdemir</Authors>
+        <Company>Lyconiq</Company>
         <Description>FluentValidation rules for HeroKit: Turkish identity and tax numbers, IBAN, Turkish phone numbers, postal codes, vehicle plates and card numbers.</Description>
         <PackageTags>fluentvalidation;validation;turkish;turkiye;tckn;vkn;iban;herokit</PackageTags>
         <PackageProjectUrl>https://herokit.emreakdemir.dev</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/emreakdemir/HeroKit</RepositoryUrl>
+        <RepositoryUrl>https://github.com/Lyconiq/HeroKit</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageIcon>herokit.png</PackageIcon>

@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Ask a question
-    url: https://github.com/emreakdemir/HeroKit/discussions/categories/q-a
+    url: https://github.com/Lyconiq/HeroKit/discussions/categories/q-a
     about: Usage questions and help. Please use Discussions instead of issues.
   - name: Share an idea
-    url: https://github.com/emreakdemir/HeroKit/discussions/categories/ideas
+    url: https://github.com/Lyconiq/HeroKit/discussions/categories/ideas
     about: Early ideas that are not ready for a feature request.
