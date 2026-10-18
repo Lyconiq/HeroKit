@@ -2,8 +2,8 @@
 
 [![NuGet](https://img.shields.io/nuget/v/HeroKit.svg)](https://www.nuget.org/packages/HeroKit)
 [![NuGet downloads](https://img.shields.io/nuget/dt/HeroKit.svg)](https://www.nuget.org/packages/HeroKit)
-[![Build & Test](https://github.com/emreakdemir/HeroKit/actions/workflows/build-tests.yml/badge.svg)](https://github.com/emreakdemir/HeroKit/actions/workflows/build-tests.yml)
-[![Coverage](https://raw.githubusercontent.com/emreakdemir/HeroKit/badges/coverage.svg)](https://github.com/emreakdemir/HeroKit/actions/workflows/build-tests.yml)
+[![Build & Test](https://github.com/Lyconiq/HeroKit/actions/workflows/build-tests.yml/badge.svg)](https://github.com/Lyconiq/HeroKit/actions/workflows/build-tests.yml)
+[![Coverage](https://raw.githubusercontent.com/Lyconiq/HeroKit/badges/coverage.svg)](https://github.com/Lyconiq/HeroKit/actions/workflows/build-tests.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 English: [README.md](README.md) · **Dokümantasyon: [herokit.emreakdemir.dev](https://herokit.emreakdemir.dev)**
@@ -106,8 +106,8 @@ Bütün metotlar [rehberlerde ve API referansında](https://herokit.emreakdemir.
 
 ## Sorular ve katkı
 
-- Sorular ve fikirler: [GitHub Discussions](https://github.com/emreakdemir/HeroKit/discussions)
-- Hata ve özellik talepleri: [Issues](https://github.com/emreakdemir/HeroKit/issues)
+- Sorular ve fikirler: [GitHub Discussions](https://github.com/Lyconiq/HeroKit/discussions)
+- Hata ve özellik talepleri: [Issues](https://github.com/Lyconiq/HeroKit/issues)
 - Katkı rehberi: [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Lisans

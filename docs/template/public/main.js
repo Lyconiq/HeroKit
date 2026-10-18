@@ -9,7 +9,7 @@ if (isTurkish) {
 export default {
   defaultTheme: 'auto',
   iconLinks: [
-    { icon: 'github', href: 'https://github.com/emreakdemir/HeroKit', title: 'GitHub' },
+    { icon: 'github', href: 'https://github.com/Lyconiq/HeroKit', title: 'GitHub' },
     { icon: 'box-seam', href: 'https://www.nuget.org/packages/HeroKit', title: 'NuGet' },
   ],
   start: () => {

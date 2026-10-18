@@ -120,10 +120,10 @@ Superseded by 3.0.0. Highlights:
 
 1.0.0-alpha to 1.0.0-alpha.6: the first array, boolean, string, type and conversion helpers (contributors: @emreakdemir, @jepozdemir).
 
-[Unreleased]: https://github.com/emreakdemir/HeroKit/compare/3.5.0...HEAD
-[3.5.0]: https://github.com/emreakdemir/HeroKit/compare/3.4.0...3.5.0
-[3.4.0]: https://github.com/emreakdemir/HeroKit/compare/3.3.0...3.4.0
-[3.3.0]: https://github.com/emreakdemir/HeroKit/compare/3.2.0...3.3.0
-[3.2.0]: https://github.com/emreakdemir/HeroKit/compare/3.1.0...3.2.0
-[3.1.0]: https://github.com/emreakdemir/HeroKit/compare/3.0.0...3.1.0
-[3.0.0]: https://github.com/emreakdemir/HeroKit/compare/2.2.0...3.0.0
+[Unreleased]: https://github.com/Lyconiq/HeroKit/compare/3.5.0...HEAD
+[3.5.0]: https://github.com/Lyconiq/HeroKit/compare/3.4.0...3.5.0
+[3.4.0]: https://github.com/Lyconiq/HeroKit/compare/3.3.0...3.4.0
+[3.3.0]: https://github.com/Lyconiq/HeroKit/compare/3.2.0...3.3.0
+[3.2.0]: https://github.com/Lyconiq/HeroKit/compare/3.1.0...3.2.0
+[3.1.0]: https://github.com/Lyconiq/HeroKit/compare/3.0.0...3.1.0
+[3.0.0]: https://github.com/Lyconiq/HeroKit/compare/2.2.0...3.0.0
