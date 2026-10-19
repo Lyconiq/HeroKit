@@ -1,0 +1,32 @@
+name: Refresh Context7
+
+# Asks Context7 (https://context7.com/lyconiq/herokit) to re-index the docs, so AI coding assistants
+# get the current API. Needs the CONTEXT7_API_KEY secret; without it the job only logs a notice.
+on:
+  push:
+    branches: [ master ]
+    paths: [ 'docs/articles/**', 'README.md', '*/README.md', 'samples/**', 'context7.json' ]
+  release:
+    types: [ published ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Context7 refresh
+        env:
+          CONTEXT7_API_KEY: ${{ secrets.CONTEXT7_API_KEY }}
+        run: |
+          if [ -z "$CONTEXT7_API_KEY" ]; then
+            echo "::notice::CONTEXT7_API_KEY is not set; skipping the Context7 refresh."
+            exit 0
+          fi
+          library="/${GITHUB_REPOSITORY,,}"
+          curl --fail-with-body -sS -X POST https://context7.com/api/v1/refresh \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $CONTEXT7_API_KEY" \
+            -d "{\"libraryName\": \"$library\"}"
