@@ -1,6 +1,6 @@
 # File types and safe uploads
 
-`HeroKit.FileTypes` is a separate package. It has no dependencies and works with Native AOT.
+`HeroKit.FileTypes` is a separate package. It has no dependencies and works with [Native AOT](nullable-and-aot.md).
 
 ```bash
 dotnet add package HeroKit.FileTypes

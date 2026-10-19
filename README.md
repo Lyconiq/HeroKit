@@ -27,7 +27,7 @@ The core package also has everyday extension methods for strings, conversions, d
 dotnet add package HeroKit
 ```
 
-Targets .NET 8 and .NET 10. No dependencies. Nullable-annotated and Native AOT ready.
+Targets .NET 8 and .NET 10. No dependencies. Nullable-annotated and [Native AOT](https://herokit.lyconiq.com/articles/nullable-and-aot.html) ready (compiled ahead of time to a fast-starting native app).
 
 ## Countries and languages
 

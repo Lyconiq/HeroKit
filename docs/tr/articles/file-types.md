@@ -1,6 +1,6 @@
 # Dosya türleri ve güvenli yükleme
 
-`HeroKit.FileTypes` ayrı bir pakettir. Bağımlılığı yoktur ve Native AOT ile çalışır.
+`HeroKit.FileTypes` ayrı bir pakettir. Bağımlılığı yoktur ve [Native AOT](nullable-and-aot.md) ile çalışır.
 
 ```bash
 dotnet add package HeroKit.FileTypes
