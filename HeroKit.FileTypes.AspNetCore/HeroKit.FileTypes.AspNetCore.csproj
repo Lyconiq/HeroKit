@@ -8,7 +8,8 @@
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <EnablePackageValidation>true</EnablePackageValidation>
-        <!-- New in 3.7.0: add PackageValidationBaselineVersion 3.7.0 after the first release. -->
+        <!-- Fails the pack when the public API breaks compatibility with the last release. Update after each release. -->
+        <PackageValidationBaselineVersion>3.7.0</PackageValidationBaselineVersion>
         <IsAotCompatible>true</IsAotCompatible>
     </PropertyGroup>
 
