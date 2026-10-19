@@ -54,7 +54,7 @@ Ramazan and Kurban Bayramı dates come from the Diyanet religious days calendar 
 
 ## Releases
 
-HeroKit ships at most one minor release a month. Changes collect on `master` and go out together, so users are not asked to upgrade for every small change. Security fixes ship as patch releases when they are ready. Version numbers follow [Semantic Versioning](https://semver.org): breaking changes only in a major version, after an `[Obsolete]` release. A major version line stays supported for at least 12 months after the next major version ships (see [SECURITY.md](SECURITY.md)).
+Changes collect on `master` and ship when a release is ready; there is no fixed schedule. Security fixes ship as patch releases when they are ready. Version numbers follow [Semantic Versioning](https://semver.org): breaking changes only in a major version, after an `[Obsolete]` release. A major version line stays supported for at least 12 months after the next major version ships (see [SECURITY.md](SECURITY.md)).
 
 1. Bump `<Version>` in `Directory.Build.props`. All packages share it.
 2. Update `CHANGELOG.md`. Move the Unreleased entries under the new version.
