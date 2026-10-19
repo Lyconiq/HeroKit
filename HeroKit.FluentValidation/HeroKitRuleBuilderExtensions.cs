@@ -1,6 +1,7 @@
 using FluentValidation;
 using HeroKit.Banking;
 using HeroKit.Barcodes;
+using HeroKit.FileTypes;
 using HeroKit.Globalization;
 using HeroKit.Globalization.Turkey;
 
@@ -210,5 +211,49 @@ public static class HeroKitRuleBuilderExtensions
         ArgumentNullException.ThrowIfNull(country);
         return ruleBuilder.Must(value => string.IsNullOrEmpty(value) || (mobileOnly ? value.IsValidMobilePhone(country) : value.IsValidPhone(country)))
                           .WithMessage(mobileOnly ? "'{PropertyName}' must be a valid mobile phone number." : "'{PropertyName}' must be a valid phone number.");
+    }
+
+    /// <summary>
+    /// Validates an uploaded file with <see cref="UploadValidator"/>: file name, program or script content, content that does not fit
+    /// the extension, macros, active SVG content, size and allowed types, as set in <paramref name="policy"/>.
+    /// </summary>
+    /// <remarks>
+    /// Works with any file type: give a function that opens the content and one that returns the file name, for example for
+    /// ASP.NET Core's <c>IFormFile</c> or Blazor's <c>IBrowserFile</c>. The rule opens the stream, reads what the check needs and disposes it.
+    /// A null file passes; add <c>NotNull()</c> to require one. The message is <c>'{PropertyName}' is not accepted: {UploadMessage}</c>,
+    /// where <c>{UploadMessage}</c> is <see cref="UploadCheckResult.Message"/>; replace it with <c>WithMessage</c>.
+    /// </remarks>
+    /// <typeparam name="T">The validated object type.</typeparam>
+    /// <typeparam name="TFile">The file type.</typeparam>
+    /// <param name="ruleBuilder">The rule builder.</param>
+    /// <param name="openRead">Opens the file content for reading.</param>
+    /// <param name="fileName">Returns the file name as uploaded.</param>
+    /// <param name="policy">The upload policy; null uses <see cref="UploadPolicy.Default"/>.</param>
+    /// <returns>The rule builder options, for chaining.</returns>
+    /// <example>
+    /// <code>
+    /// var imagesOnly = new UploadPolicy { AllowedTypes = [FileTypes.Jpeg, FileTypes.Png], MaxLength = 5 * 1024 * 1024 };
+    /// RuleFor(x => x.Photo).NotNull().SafeUpload(f => f.OpenReadStream(), f => f.FileName, imagesOnly);
+    /// </code>
+    /// </example>
+    public static IRuleBuilderOptions<T, TFile?> SafeUpload<T, TFile>(
+        this IRuleBuilder<T, TFile?> ruleBuilder, Func<TFile, Stream> openRead, Func<TFile, string> fileName, UploadPolicy? policy = null)
+        where TFile : class
+    {
+        ArgumentNullException.ThrowIfNull(openRead);
+        ArgumentNullException.ThrowIfNull(fileName);
+        var validator = new UploadValidator(policy ?? UploadPolicy.Default);
+
+        return ruleBuilder.Must((_, file, context) =>
+                          {
+                              if (file is null)
+                                  return true;
+
+                              using Stream stream = openRead(file);
+                              UploadCheckResult result = validator.Validate(stream, fileName(file));
+                              context.MessageFormatter.AppendArgument("UploadMessage", result.Message);
+                              return result.IsSafe;
+                          })
+                          .WithMessage("'{PropertyName}' is not accepted: {UploadMessage}");
     }
 }

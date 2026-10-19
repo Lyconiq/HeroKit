@@ -18,7 +18,7 @@
         <Title>HeroKit.FluentValidation</Title>
         <Authors>Emre Akdemir</Authors>
         <Company>Lyconiq</Company>
-        <Description>FluentValidation rules for HeroKit: Turkish identity and tax numbers, IBAN, Turkish phone numbers, postal codes, vehicle plates and card numbers.</Description>
+        <Description>FluentValidation rules for HeroKit: Turkish identity and tax numbers, IBAN, Turkish phone numbers, postal codes, vehicle plates, card numbers and safe file uploads.</Description>
         <PackageTags>fluentvalidation;validation;turkish;turkiye;tckn;vkn;iban;herokit</PackageTags>
         <PackageProjectUrl>https://herokit.lyconiq.com</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Lyconiq/HeroKit</RepositoryUrl>
@@ -57,6 +57,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\HeroKit\HeroKit.csproj" />
+        <ProjectReference Include="..\HeroKit.FileTypes\HeroKit.FileTypes.csproj" />
     </ItemGroup>
 
 </Project>
