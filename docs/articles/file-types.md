@@ -58,14 +58,23 @@ Every built-in type is a static property of `FileTypes` that returns a `FileType
 ```csharp
 using HeroKit.FileTypes;
 
-FileType msi = FileTypes.Msi;
+FileType msi = FileTypes.Msi;                     // the same instance on every call
 msi.Name;                                         // "Windows installer"
+msi.Category;                                     // FileTypeCategory.Executable
 msi.MimeType;                                     // "application/x-msi"
+msi.OtherMimeTypes;                               // ["application/x-ms-installer"]
 msi.Extensions;                                   // ["msi", "msp"]
 msi.IsExecutable;                                 // true: uploads of it are rejected
 msi.IsA(FileTypes.CompoundFile);                  // true: an MSI is an OLE compound file
-FileTypes.FromExtension("setup.msi") == FileTypes.Msi; // true
+
+FileTypes.FromExtension("setup.msi") == FileTypes.Msi;                   // true
+FileTypes.FromMimeType("application/x-ms-installer") == FileTypes.Msi;   // true
+FileTypes.Detect(msiBytes) == FileTypes.CompoundFile;                    // true: the content has no MSI-only signature
+FileTypes.ContentMatchesExtension(msiBytes, "setup.msi");                // true
+FileTypes.CheckUpload(msiBytes, "setup.msi").Rejection;                  // UploadRejection.DangerousExtension
 ```
+
+The getter is a static property: `FileTypes.Msi` always returns the same `FileType`, so compare with `==`. `msiBytes` stands for the first bytes of an `.msi` file.
 
 Some formats share one container. Legacy Office files, Outlook messages and MSI installers are all OLE compound files, so their content detects as `CompoundFile` and the extension tells which one it is. The notes below say when this applies.
 

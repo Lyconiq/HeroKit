@@ -58,14 +58,23 @@ Her hazır tür, `FileTypes` sınıfının `FileType` döndüren statik bir öze
 ```csharp
 using HeroKit.FileTypes;
 
-FileType msi = FileTypes.Msi;
+FileType msi = FileTypes.Msi;                     // her çağrıda aynı nesne
 msi.Name;                                         // "Windows installer"
+msi.Category;                                     // FileTypeCategory.Executable
 msi.MimeType;                                     // "application/x-msi"
+msi.OtherMimeTypes;                               // ["application/x-ms-installer"]
 msi.Extensions;                                   // ["msi", "msp"]
 msi.IsExecutable;                                 // true: yüklemesi reddedilir
 msi.IsA(FileTypes.CompoundFile);                  // true: MSI bir OLE compound dosyasıdır
-FileTypes.FromExtension("setup.msi") == FileTypes.Msi; // true
+
+FileTypes.FromExtension("setup.msi") == FileTypes.Msi;                   // true
+FileTypes.FromMimeType("application/x-ms-installer") == FileTypes.Msi;   // true
+FileTypes.Detect(msiBytes) == FileTypes.CompoundFile;                    // true: içerikte MSI'ya özgü bir imza yok
+FileTypes.ContentMatchesExtension(msiBytes, "setup.msi");                // true
+FileTypes.CheckUpload(msiBytes, "setup.msi").Rejection;                  // UploadRejection.DangerousExtension
 ```
+
+Getter statik bir özelliktir: `FileTypes.Msi` her zaman aynı `FileType` nesnesini döndürür, bu yüzden `==` ile karşılaştırılabilir. `msiBytes`, bir `.msi` dosyasının ilk baytlarını temsil eder.
 
 Bazı biçimler aynı kabı paylaşır. Eski Office dosyaları, Outlook iletileri ve MSI kurulum dosyaları OLE compound dosyasıdır; içerikleri `CompoundFile` olarak tespit edilir, hangisi olduğunu uzantı söyler. Aşağıdaki notlar bunun nerede geçerli olduğunu gösterir.
 
