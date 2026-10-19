@@ -4,6 +4,12 @@
   href: countries-and-languages.md
 - name: Form doğrulama
   href: validation.md
+- name: TCKN doğrulama
+  href: tckn-validation.md
+- name: VKN doğrulama
+  href: vkn-validation.md
+- name: IBAN doğrulama
+  href: iban-validation.md
 - name: Metinler
   href: strings.md
 - name: Dönüşümler

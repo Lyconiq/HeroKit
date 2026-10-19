@@ -4,6 +4,12 @@
   href: countries-and-languages.md
 - name: Form validation
   href: validation.md
+- name: TCKN validation
+  href: tckn-validation.md
+- name: VKN validation
+  href: vkn-validation.md
+- name: IBAN validation
+  href: iban-validation.md
 - name: Strings
   href: strings.md
 - name: Conversions

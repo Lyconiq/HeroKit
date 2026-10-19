@@ -43,11 +43,16 @@
     "resource": [
       {
         "files": [
-          "images/**"
+          "images/**",
+          "robots.txt"
         ]
       }
     ],
     "output": "_site",
+    "sitemap": {
+      "baseUrl": "https://herokit.lyconiq.com/",
+      "changefreq": "weekly"
+    },
     "template": [
       "default",
       "modern",

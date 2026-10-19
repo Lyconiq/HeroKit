@@ -105,7 +105,7 @@ using HeroKit.Globalization.Turkey;
 "A12B34567".IsValidIdCardSerial();                  // true: serial of the chip identity card
 ```
 
-These are checksum checks; `IsValidMersis` checks the VKN inside the MERSİS number. They confirm that a number is well formed, not that it is issued. Input must contain digits only.
+These are checksum checks; `IsValidMersis` checks the VKN inside the MERSİS number. They confirm that a number is well formed, not that it is issued. Input must contain digits only. Step-by-step guides with the algorithms: [TCKN](tckn-validation.md), [VKN](vkn-validation.md).
 
 
 #### A validated TCKN value
@@ -138,7 +138,7 @@ iban.FormatIban();    // "TR33 0006 1005 1978 6457 8413 26"
 Countries.Turkey.Banks!.All;                        // 30 banks with their 5-digit EFT codes
 ```
 
-IBAN validation works for every country with the ISO 13616 mod-97 check. When a registered country has `IbanRules`, its length and fixed positions are checked too: Türkiye IBANs must have 26 characters.
+IBAN validation works for every country with the ISO 13616 mod-97 check. When a registered country has `IbanRules`, its length and fixed positions are checked too: Türkiye IBANs must have 26 characters. See the [IBAN validation guide](iban-validation.md) for the algorithm.
 
 `GetBank` reads the bank code of a valid IBAN (positions 5–9 for Türkiye) and looks it up in the bank directory of the country (`Country.Banks`). It returns null for an unknown code. The list follows the EFT codes of the Banks Association of Türkiye; open an issue when a bank is missing.
 
