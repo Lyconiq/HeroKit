@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{5D20
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroKit.Samples.WebApi", "samples\HeroKit.Samples.WebApi\HeroKit.Samples.WebApi.csproj", "{7C6FA567-1C11-4EBD-8BAB-91A2C67DC09E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroKit.FileTypes.AspNetCore", "HeroKit.FileTypes.AspNetCore\HeroKit.FileTypes.AspNetCore.csproj", "{26CE029A-6262-4BCE-9EF2-C084539F1250}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +102,18 @@ Global
 		{7C6FA567-1C11-4EBD-8BAB-91A2C67DC09E}.Release|x64.Build.0 = Release|Any CPU
 		{7C6FA567-1C11-4EBD-8BAB-91A2C67DC09E}.Release|x86.ActiveCfg = Release|Any CPU
 		{7C6FA567-1C11-4EBD-8BAB-91A2C67DC09E}.Release|x86.Build.0 = Release|Any CPU
+		{26CE029A-6262-4BCE-9EF2-C084539F1250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26CE029A-6262-4BCE-9EF2-C084539F1250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26CE029A-6262-4BCE-9EF2-C084539F1250}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{26CE029A-6262-4BCE-9EF2-C084539F1250}.Debug|x64.Build.0 = Debug|Any CPU
+		{26CE029A-6262-4BCE-9EF2-C084539F1250}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{26CE029A-6262-4BCE-9EF2-C084539F1250}.Debug|x86.Build.0 = Debug|Any CPU
+		{26CE029A-6262-4BCE-9EF2-C084539F1250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26CE029A-6262-4BCE-9EF2-C084539F1250}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26CE029A-6262-4BCE-9EF2-C084539F1250}.Release|x64.ActiveCfg = Release|Any CPU
+		{26CE029A-6262-4BCE-9EF2-C084539F1250}.Release|x64.Build.0 = Release|Any CPU
+		{26CE029A-6262-4BCE-9EF2-C084539F1250}.Release|x86.ActiveCfg = Release|Any CPU
+		{26CE029A-6262-4BCE-9EF2-C084539F1250}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,5 +122,6 @@ Global
 		{AA1BEDAB-2BB7-4088-A4D6-1BA868FE0D53} = {F4B87CAF-6824-496F-9C8B-7543B6608F7E}
 		{9AE80F0E-9164-477D-AF33-D153D9FEAC76} = {4A0F7C4A-1A75-4894-ABCA-03F1ACFDDD06}
 		{7C6FA567-1C11-4EBD-8BAB-91A2C67DC09E} = {5D20AA90-6969-D8BD-9DCD-8634F4692FDA}
+		{26CE029A-6262-4BCE-9EF2-C084539F1250} = {F4B87CAF-6824-496F-9C8B-7543B6608F7E}
 	EndGlobalSection
 EndGlobal
