@@ -21,6 +21,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # push the built site to the site branch
     steps:
       - uses: actions/checkout@v7
 
@@ -33,6 +35,19 @@ jobs:
         run: |
           dotnet tool install -g docfx
           docfx docs/docfx.json
+
+      # Vercel serves herokit.lyconiq.com from the site branch, which holds only the built site.
+      # The branch is rewritten on every run; its history is not kept.
+      - name: Publish to the site branch
+        working-directory: docs/_site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git init -q -b site
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Site for ${GITHUB_SHA}"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" site
 
       - uses: actions/upload-pages-artifact@v5
         with:

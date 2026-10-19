@@ -6,6 +6,15 @@ if (isTurkish) {
   document.querySelector('meta[name="docfx:navrel"]')?.setAttribute('content', `${rel}tr/toc.html`);
 }
 
+// Vercel Web Analytics: cookie-free page view counts, only on the production site served by Vercel.
+if (location.hostname === 'herokit.lyconiq.com') {
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  const analytics = document.createElement('script');
+  analytics.defer = true;
+  analytics.src = '/_vercel/insights/script.js';
+  document.head.appendChild(analytics);
+}
+
 export default {
   defaultTheme: 'auto',
   iconLinks: [
