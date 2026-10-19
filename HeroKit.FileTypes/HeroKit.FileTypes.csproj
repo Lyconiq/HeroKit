@@ -27,7 +27,7 @@
         <PackageIcon>herokit.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageReleaseNotes>Legacy DOC and XLS uploads with a VBA project are rejected unless UploadPolicy.AllowMacros is true; UploadPolicy.MaxLength (UploadRejection.TooLarge); FileTypes.ToSafeFileName for stored and download names. Releases now carry an SBOM and a build provenance attestation.</PackageReleaseNotes>
-        <Copyright>Copyright © 2023-2026 Emre Akdemir</Copyright>
+        <Copyright>Copyright © 2023-2026 Emre Akdemir, Lyconiq</Copyright>
         <NeutralLanguage>en</NeutralLanguage>
     </PropertyGroup>
 
