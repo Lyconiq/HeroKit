@@ -95,6 +95,7 @@ Stream overload'u SVG'nin tamamını `MaxSvgScanLength` (1 MB) sınırına kadar
 `dotnet add package HeroKit.FileTypes.AspNetCore`, `IFormFile` için denetimler ekler:
 
 ```csharp
+using HeroKit.FileTypes;
 using HeroKit.FileTypes.AspNetCore;
 
 // Minimal API'ler: reddedilen dosya, handler çalışmadan 400 (validation problem) döner.
@@ -109,7 +110,8 @@ public sealed class ProfileForm
 }
 
 // Her yerde
-UploadCheckResult result = file.CheckUpload(policy); // ya da validator.Validate(file)
+var pdfOnly = new UploadPolicy { AllowedTypes = [FileTypes.Pdf] };
+UploadCheckResult result = file.CheckUpload(pdfOnly); // ya da singleton bir UploadValidator ile validator.Validate(file)
 ```
 
 `ValidateUploads` route group'larda da çalışır ve `IFormFileCollection` parametrelerini de denetler. FluentValidation kullanıyorsanız HeroKit.FluentValidation'daki `RuleFor(x => x.Photo).SafeUpload(f => f.OpenReadStream(), f => f.FileName, policy)` kuralını kullanın.
@@ -117,14 +119,22 @@ UploadCheckResult result = file.CheckUpload(policy); // ya da validator.Validate
 ### Boyut sınırı ve güvenli adlar
 
 ```csharp
-var policy = new UploadPolicy { MaxLength = 10 * 1024 * 1024 }; // 10 MB
+using HeroKit.FileTypes;
+
+// file, yüklenen IFormFile'dır.
+var policy = new UploadPolicy { AllowedTypes = [FileTypes.Pdf], MaxLength = 10 * 1024 * 1024 }; // en çok 10 MB PDF
+
+using Stream upload = file.OpenReadStream();
+UploadCheckResult result = FileTypes.CheckUpload(upload, file.FileName, policy);
+if (!result.IsSafe)
+    return Results.BadRequest(result.Message); // örneğin "The file is larger than 10485760 bytes."
 
 // Dosyayı üretilmiş bir adla saklayın; temizlenmiş özgün adı gösterim ve indirme için tutun.
-string displayName = FileTypes.ToSafeFileName(file.FileName);
+string displayName = FileTypes.ToSafeFileName(file.FileName); // "C:\temp\rapor?.pdf" için "rapor_.pdf"
 string storedName = Guid.NewGuid().ToString("N") + Path.GetExtension(displayName);
 
-// Sonra, dosya indirilirken:
-return Results.File(stream, FileTypes.GetMimeType(displayName), fileDownloadName: displayName);
+// Sonra, dosya indirilirken (storedFile, saklanan dosyanın stream'idir):
+return Results.File(storedFile, FileTypes.GetMimeType(displayName), fileDownloadName: displayName);
 ```
 
 `MaxLength`, span'in ya da konumlanabilir bir stream'in uzunluğunu denetler. Web sunucusunun istek boyutu sınırını da ayarlayın (örneğin `[RequestSizeLimit]` ya da Kestrel'in `MaxRequestBodySize` ayarı); böylece büyük bir yükleme okunmadan reddedilir.

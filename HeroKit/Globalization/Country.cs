@@ -113,8 +113,8 @@ public sealed class Country(string code, string name, Language language)
     /// <exception cref="ArgumentOutOfRangeException">A date is outside the supported years of the calendar.</exception>
     /// <example>
     /// <code>
-    /// Country turkey = Countries.Turkey.WithAdditionalHolidays([new(new DateOnly(2026, 5, 18), "İdari izin", false)]);
-    /// new DateOnly(2026, 5, 18).IsBusinessDay(turkey); // false
+    /// Country turkeyWithLeave = Countries.Turkey.WithAdditionalHolidays([new(new DateOnly(2026, 5, 18), "İdari izin", false)]);
+    /// new DateOnly(2026, 5, 18).IsBusinessDay(turkeyWithLeave); // false: 18 May is added as administrative leave
     /// </code>
     /// </example>
     public Country WithAdditionalHolidays(IEnumerable<PublicHoliday> holidays)
