@@ -27,7 +27,7 @@ HeroKit, iki iş için .NET kütüphaneleridir:
 dotnet add package HeroKit
 ```
 
-.NET 8 ve .NET 10'u hedefler. Bağımlılığı yoktur. Null işaretleri tamdır ve Native AOT ile uyumludur.
+.NET 8 ve .NET 10'u hedefler. Bağımlılığı yoktur. Null işaretleri tamdır ve [Native AOT](https://herokit.lyconiq.com/tr/articles/nullable-and-aot.html) ile uyumludur (önceden derlenen, hızlı açılan yerel uygulama).
 
 ## Ülkeler ve diller
 

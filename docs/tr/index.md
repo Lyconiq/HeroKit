@@ -82,7 +82,7 @@ using HeroKit.Globalization.Turkey;
 <div class="hk-stats">
   <div><strong>0</strong><span>bağımlılık</span></div>
   <div><strong>.NET 8 · 10</strong><span>hedef çerçeveler</span></div>
-  <div><strong>AOT</strong><span>Native AOT'ye hazır</span></div>
+  <div><strong>AOT</strong><span><a href="articles/nullable-and-aot.md">Native AOT'ye hazır</a></span></div>
   <div><strong>MIT</strong><span>açık kaynak</span></div>
 </div>
 

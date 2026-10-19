@@ -82,7 +82,7 @@ using HeroKit.Globalization.Turkey;
 <div class="hk-stats">
   <div><strong>0</strong><span>dependencies</span></div>
   <div><strong>.NET 8 · 10</strong><span>target frameworks</span></div>
-  <div><strong>AOT</strong><span>Native AOT ready</span></div>
+  <div><strong>AOT</strong><span><a href="articles/nullable-and-aot.md">Native AOT ready</a></span></div>
   <div><strong>MIT</strong><span>open source</span></div>
 </div>
 
