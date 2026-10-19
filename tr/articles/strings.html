@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Metinler | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Metinler | HeroKit ">
+      
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/blob/master/docs/tr/articles/strings.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="metinler">Metinler</h1>
+
+<pre><code class="lang-csharp">using System.Globalization;
+using HeroKit.Globalization;
+using HeroKit.Strings;
+
+// Kontroller
+string? name = null;
+name.IsNullOrEmpty();                 // true; false döndüğünde derleyici name'in null olmadığını bilir
+&quot;,,,&quot;.IsNullOrEmpty(',');             // true: yalnızca ayırıcılar var
+
+// Slug ve harf büyüklüğü
+&quot;Çağdaş Şehir İstanbul&quot;.ToSlug();     // &quot;cagdas-sehir-istanbul&quot;
+&quot;HeroKitExtensions&quot;.ToDashCase();     // &quot;hero-kit-extensions&quot;
+&quot;HELLO WORLD&quot;.ToTitleCase(CultureInfo.InvariantCulture); // &quot;Hello World&quot;
+&quot;istanbul ılıca&quot;.ToTitleCase(Languages.Turkish);         // &quot;İstanbul Ilıca&quot;
+&quot;ığüşöç&quot;.RemoveDiacritics();          // &quot;igusoc&quot;
+
+// Kısaltma ve maskeleme
+&quot;HeroKit extensions&quot;.Truncate(10);    // &quot;HeroKit e…&quot;
+&quot;5321234567&quot;.Mask();                  // &quot;******4567&quot;
+&quot;0532 123 45 67&quot;.Mask(2);             // &quot;**** *** ** 67&quot;
+&quot;10000000146&quot;.MaskMiddle(2, 2);       // &quot;10*******46&quot;
+&quot;TR33 0006 1005 1978 6457 8413 26&quot;.MaskMiddle(4, 4); // &quot;TR33 **** **** **** **** **13 26&quot;
+&quot;emre.akdemir@example.com&quot;.MaskEmail(); // &quot;e***********@example.com&quot;
+&quot;Ayşe Nur Yılmaz&quot;.MaskName();         // &quot;A*** N** Y*****&quot;
+&quot;HeroKit&quot;.Left(4);                    // &quot;Hero&quot;
+&quot;HeroKit&quot;.Right(4);                   // &quot;oKit&quot;
+&quot;TR33 0006\t1005&quot;.RemoveWhitespace(); // &quot;TR3300061005&quot;
+</code></pre>
+<p><code>RemoveDiacritics</code> Unicode normalleştirmesi yerine sabit bir karakter tablosu kullanır; bu yüzden sonuç her sistemde aynıdır, değişmez globalleştirmede de. Türkçe, Latin-1 ve yaygın Orta Avrupa harflerini kapsar (<code>&quot;Łódź&quot;</code> → <code>&quot;Lodz&quot;</code>), diğer karakterleri korur.</p>
+<p>Bir dilin kurallarıyla harf büyüklüğü ve karşılaştırma (<code>Languages.Turkish</code> ile <code>ToUpper</code>, <code>ToLower</code>, <code>ToTitleCase</code>, <code>EqualsIgnoreCase</code>) <a href="countries-and-languages.html">Ülkeler ve diller</a> sayfasında anlatılır.</p>
+<p><code>Truncate</code> vekil çiftini (surrogate pair) asla bölmez. <code>Mask</code> ve <code>MaskMiddle</code> boşlukları korur, böylece biçimlendirilmiş değerlerin düzeni bozulmaz. Kişisel verileri (KVKK) loglarda ve ekranlarda gizlemek için maskeleme metotlarını kullanın: <code>MaskMiddle</code>, iki ucu göstermeye yetmeyecek kadar kısa bir değeri tamamen gizler.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/docs/tr/articles/strings.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

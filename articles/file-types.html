@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>File types and safe uploads | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="File types and safe uploads | HeroKit ">
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/blob/master/docs/articles/file-types.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="file-types-and-safe-uploads">File types and safe uploads</h1>
+
+<p><code>HeroKit.FileTypes</code> is a separate package. It has no dependencies and works with <a href="nullable-and-aot.html">Native AOT</a>.</p>
+<pre><code class="lang-bash">dotnet add package HeroKit.FileTypes
+</code></pre>
+<h2 id="detect-the-type-of-a-file">Detect the type of a file</h2>
+<pre><code class="lang-csharp">using HeroKit.FileTypes;
+
+using FileStream stream = File.OpenRead(path);
+FileType? type = FileTypes.Detect(stream); // reads at most 16 KB and restores the position
+type?.MimeType;  // &quot;image/png&quot;
+type?.Extension; // &quot;png&quot;
+type?.Category;  // FileTypeCategory.Image
+</code></pre>
+<p>Detection reads the magic bytes at the start of the file. About 70 types are built in:</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Images</td>
+<td>PNG, JPEG, GIF, WebP, BMP, TIFF, ICO, PSD, AVIF, HEIC, HEIF, JPEG XL, SVG</td>
+</tr>
+<tr>
+<td>Documents</td>
+<td>PDF, RTF, DOCX, XLSX, PPTX, DOCM, XLSM, PPTM, ODT, ODS, ODP, EPUB, legacy Office (OLE)</td>
+</tr>
+<tr>
+<td>Archives</td>
+<td>ZIP, 7z, RAR, gzip, bzip2, xz, Zstandard, tar</td>
+</tr>
+<tr>
+<td>Audio and video</td>
+<td>MP3, AAC, FLAC, Ogg, WAV, M4A, MIDI, MP4, M4V, MOV, 3GP, WebM, Matroska, AVI, MPEG, FLV</td>
+</tr>
+<tr>
+<td>Fonts</td>
+<td>WOFF, WOFF2, TTF, OTF</td>
+</tr>
+<tr>
+<td>Programs</td>
+<td>Windows executables, ELF, Mach-O, Java class and JAR, Android APK and DEX, WebAssembly, Windows shortcuts</td>
+</tr>
+<tr>
+<td>Other</td>
+<td>SQLite, Parquet, glTF binary</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>JSON, XML, HTML, shell scripts with a <code>#!</code> line, plain text</td>
+</tr>
+</tbody>
+</table>
+<p>Some types need more than fixed bytes, and HeroKit handles them:</p>
+<ul>
+<li><strong>Office and OpenDocument files are ZIP files.</strong> HeroKit reads the entry names (<code>word/</code>, <code>xl/</code>, <code>ppt/</code>) and the <code>mimetype</code> entry of OpenDocument and EPUB files, without decompressing anything. From a seekable stream it also reads the ZIP central directory at the end of the file (at most 1 MB), so large files are recognized too. From a span with only the first bytes, or from a stream that cannot seek, entries beyond the header are not seen and the result can be <code>FileTypes.Zip</code>.</li>
+<li><strong>Macro-enabled Office files</strong> (DOCM, XLSM, PPTM) are recognized by their VBA project entry and have <code>HasMacros</code> set.</li>
+<li><strong>MP4, MOV, M4A, 3GP, HEIC and AVIF share one container.</strong> HeroKit reads the brands of the <code>ftyp</code> box and never fails on several matches.</li>
+<li><strong>WebM and Matroska, Java class files and Mach-O universal binaries</strong> share their first bytes. HeroKit reads the bytes that tell them apart.</li>
+<li><strong>Text types</strong> are recognized by their start: <code>{</code> or <code>[</code> for JSON, <code>&lt;?xml</code>, <code>&lt;svg</code>, <code>&lt;html</code>. CSV, YAML and Markdown look like plain text, so they are detected as <code>FileTypes.PlainText</code>.</li>
+</ul>
+<p><code>DetectAll</code> returns every match, for example DOCX and ZIP. <code>Detect(ReadOnlySpan&lt;byte&gt;)</code> works on bytes you already have; a longer span lets the ZIP detector see more entries.</p>
+<h2 id="extensions-and-mime-types">Extensions and MIME types</h2>
+<pre><code class="lang-csharp">FileTypes.GetMimeType(&quot;report.docx&quot;);              // &quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document&quot;
+FileTypes.GetMimeType(&quot;unknown.xyz&quot;);              // &quot;application/octet-stream&quot;
+FileTypes.FromExtension(&quot;.JPEG&quot;)?.MimeType;        // &quot;image/jpeg&quot;
+FileTypes.FromMimeType(&quot;image/x-icon&quot;)?.Extension; // &quot;ico&quot; (aliases are accepted)
+FileTypes.FromMimeType(&quot;application/json; charset=utf-8&quot;); // FileTypes.Json
+</code></pre>
+<h2 id="built-in-file-types">Built-in file types</h2>
+<p>Every built-in type is a static property of <code>FileTypes</code> that returns a <code>FileType</code>. <code>FileTypes.BuiltIn</code> lists all 89 of them in detection order.</p>
+<pre><code class="lang-csharp">using HeroKit.FileTypes;
+
+FileType msi = FileTypes.Msi;                     // the same instance on every call
+msi.Name;                                         // &quot;Windows installer&quot;
+msi.Category;                                     // FileTypeCategory.Executable
+msi.MimeType;                                     // &quot;application/x-msi&quot;
+msi.OtherMimeTypes;                               // [&quot;application/x-ms-installer&quot;]
+msi.Extensions;                                   // [&quot;msi&quot;, &quot;msp&quot;]
+msi.IsExecutable;                                 // true: uploads of it are rejected
+msi.IsA(FileTypes.CompoundFile);                  // true: an MSI is an OLE compound file
+
+FileTypes.FromExtension(&quot;setup.msi&quot;) == FileTypes.Msi;                   // true
+FileTypes.FromMimeType(&quot;application/x-ms-installer&quot;) == FileTypes.Msi;   // true
+FileTypes.Detect(msiBytes) == FileTypes.CompoundFile;                    // true: the content has no MSI-only signature
+FileTypes.ContentMatchesExtension(msiBytes, &quot;setup.msi&quot;);                // true
+FileTypes.CheckUpload(msiBytes, &quot;setup.msi&quot;).Rejection;                  // UploadRejection.DangerousExtension
+</code></pre>
+<p>The getter is a static property: <code>FileTypes.Msi</code> always returns the same <code>FileType</code>, so compare with <code>==</code>. <code>msiBytes</code> stands for the first bytes of an <code>.msi</code> file.</p>
+<p>Some formats share one container. Legacy Office files, Outlook messages and MSI installers are all OLE compound files, so their content detects as <code>CompoundFile</code> and the extension tells which one it is. The notes below say when this applies.</p>
+<h4 id="archive">Archive</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Name</th>
+<th>Extensions</th>
+<th>MIME type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Bzip2</code></td>
+<td>Bzip2 archive</td>
+<td>.bz2, .tbz2</td>
+<td><code>application/x-bzip2</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Gzip</code></td>
+<td>Gzip archive</td>
+<td>.gz, .tgz</td>
+<td><code>application/gzip</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Rar</code></td>
+<td>RAR archive</td>
+<td>.rar</td>
+<td><code>application/vnd.rar</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>SevenZip</code></td>
+<td>7-Zip archive</td>
+<td>.7z</td>
+<td><code>application/x-7z-compressed</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Tar</code></td>
+<td>Tar archive</td>
+<td>.tar</td>
+<td><code>application/x-tar</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Xz</code></td>
+<td>XZ archive</td>
+<td>.xz, .txz</td>
+<td><code>application/x-xz</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Zip</code></td>
+<td>ZIP archive</td>
+<td>.zip</td>
+<td><code>application/zip</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Zstandard</code></td>
+<td>Zstandard archive</td>
+<td>.zst</td>
+<td><code>application/zstd</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="audio">Audio</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Name</th>
+<th>Extensions</th>
+<th>MIME type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Aac</code></td>
+<td>AAC audio</td>
+<td>.aac</td>
+<td><code>audio/aac</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Flac</code></td>
+<td>FLAC audio</td>
+<td>.flac</td>
+<td><code>audio/flac</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>M4a</code></td>
+<td>MPEG-4 audio</td>
+<td>.m4a, .m4b</td>
+<td><code>audio/mp4</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Midi</code></td>
+<td>MIDI audio</td>
+<td>.mid, .midi</td>
+<td><code>audio/midi</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Mp3</code></td>
+<td>MP3 audio</td>
+<td>.mp3</td>
+<td><code>audio/mpeg</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Ogg</code></td>
+<td>Ogg audio</td>
+<td>.ogg, .oga, .opus</td>
+<td><code>audio/ogg</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Wav</code></td>
+<td>WAV audio</td>
+<td>.wav</td>
+<td><code>audio/wav</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="document">Document</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Name</th>
+<th>Extensions</th>
+<th>MIME type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CompoundFile</code></td>
+<td>OLE compound file</td>
+<td>—</td>
+<td><code>application/x-ole-storage</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Doc</code></td>
+<td>Word 97-2003 document</td>
+<td>.doc, .dot</td>
+<td><code>application/msword</code></td>
+<td>content detects as <code>CompoundFile</code>; the extension tells which</td>
+</tr>
+<tr>
+<td><code>Docm</code></td>
+<td>Macro-enabled Word document</td>
+<td>.docm, .dotm</td>
+<td><code>application/vnd.ms-word.document.macroenabled.12</code></td>
+<td>has macros, rejected unless <code>AllowMacros</code>; built on <code>Zip</code></td>
+</tr>
+<tr>
+<td><code>Docx</code></td>
+<td>Word document</td>
+<td>.docx, .dotx</td>
+<td><code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code></td>
+<td>built on <code>Zip</code></td>
+</tr>
+<tr>
+<td><code>Epub</code></td>
+<td>EPUB e-book</td>
+<td>.epub</td>
+<td><code>application/epub+zip</code></td>
+<td>built on <code>Zip</code></td>
+</tr>
+<tr>
+<td><code>Msg</code></td>
+<td>Outlook message</td>
+<td>.msg</td>
+<td><code>application/vnd.ms-outlook</code></td>
+<td>content detects as <code>CompoundFile</code>; the extension tells which</td>
+</tr>
+<tr>
+<td><code>Odp</code></td>
+<td>OpenDocument presentation</td>
+<td>.odp</td>
+<td><code>application/vnd.oasis.opendocument.presentation</code></td>
+<td>built on <code>Zip</code></td>
+</tr>
+<tr>
+<td><code>Ods</code></td>
+<td>OpenDocument spreadsheet</td>
+<td>.ods</td>
+<td><code>application/vnd.oasis.opendocument.spreadsheet</code></td>
+<td>built on <code>Zip</code></td>
+</tr>
+<tr>
+<td><code>Odt</code></td>
+<td>OpenDocument text</td>
+<td>.odt</td>
+<td><code>application/vnd.oasis.opendocument.text</code></td>
+<td>built on <code>Zip</code></td>
+</tr>
+<tr>
+<td><code>Pdf</code></td>
+<td>PDF document</td>
+<td>.pdf</td>
+<td><code>application/pdf</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Ppt</code></td>
+<td>PowerPoint 97-2003 presentation</td>
+<td>.ppt, .pps, .pot</td>
+<td><code>application/vnd.ms-powerpoint</code></td>
+<td>content detects as <code>CompoundFile</code>; the extension tells which</td>
+</tr>
+<tr>
+<td><code>Pptm</code></td>
+<td>Macro-enabled PowerPoint presentation</td>
+<td>.pptm, .potm, .ppsm, .ppam</td>
+<td><code>application/vnd.ms-powerpoint.presentation.macroenabled.12</code></td>
+<td>has macros, rejected unless <code>AllowMacros</code>; built on <code>Zip</code></td>
+</tr>
+<tr>
+<td><code>Pptx</code></td>
+<td>PowerPoint presentation</td>
+<td>.pptx, .ppsx</td>
+<td><code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code></td>
+<td>built on <code>Zip</code></td>
+</tr>
+<tr>
+<td><code>Rtf</code></td>
+<td>Rich Text Format document</td>
+<td>.rtf</td>
+<td><code>application/rtf</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Xls</code></td>
+<td>Excel 97-2003 workbook</td>
+<td>.xls, .xlt</td>
+<td><code>application/vnd.ms-excel</code></td>
+<td>content detects as <code>CompoundFile</code>; the extension tells which</td>
+</tr>
+<tr>
+<td><code>Xlsm</code></td>
+<td>Macro-enabled Excel workbook</td>
+<td>.xlsm, .xltm, .xlam</td>
+<td><code>application/vnd.ms-excel.sheet.macroenabled.12</code></td>
+<td>has macros, rejected unless <code>AllowMacros</code>; built on <code>Zip</code></td>
+</tr>
+<tr>
+<td><code>Xlsx</code></td>
+<td>Excel workbook</td>
+<td>.xlsx, .xltx</td>
+<td><code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code></td>
+<td>built on <code>Zip</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="executable">Executable</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Name</th>
+<th>Extensions</th>
+<th>MIME type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Apk</code></td>
+<td>Android package</td>
+<td>.apk, .aab</td>
+<td><code>application/vnd.android.package-archive</code></td>
+<td>program or script, rejected in uploads; built on <code>Zip</code></td>
+</tr>
+<tr>
+<td><code>Dex</code></td>
+<td>Android Dalvik executable</td>
+<td>.dex</td>
+<td><code>application/vnd.android.dex</code></td>
+<td>program or script, rejected in uploads</td>
+</tr>
+<tr>
+<td><code>Elf</code></td>
+<td>ELF executable</td>
+<td>.elf, .so</td>
+<td><code>application/x-executable</code></td>
+<td>program or script, rejected in uploads</td>
+</tr>
+<tr>
+<td><code>Jar</code></td>
+<td>Java archive</td>
+<td>.jar, .war, .ear</td>
+<td><code>application/java-archive</code></td>
+<td>program or script, rejected in uploads; built on <code>Zip</code></td>
+</tr>
+<tr>
+<td><code>JavaClass</code></td>
+<td>Java class file</td>
+<td>.class</td>
+<td><code>application/java-vm</code></td>
+<td>program or script, rejected in uploads</td>
+</tr>
+<tr>
+<td><code>MachO</code></td>
+<td>Mach-O executable</td>
+<td>.dylib</td>
+<td><code>application/x-mach-binary</code></td>
+<td>program or script, rejected in uploads</td>
+</tr>
+<tr>
+<td><code>Msi</code></td>
+<td>Windows installer</td>
+<td>.msi, .msp</td>
+<td><code>application/x-msi</code></td>
+<td>program or script, rejected in uploads; content detects as <code>CompoundFile</code>; the extension tells which</td>
+</tr>
+<tr>
+<td><code>WebAssembly</code></td>
+<td>WebAssembly module</td>
+<td>.wasm</td>
+<td><code>application/wasm</code></td>
+<td>program or script, rejected in uploads</td>
+</tr>
+<tr>
+<td><code>WindowsExecutable</code></td>
+<td>Windows executable</td>
+<td>.exe, .dll, .sys, .scr, .com, .cpl, .ocx</td>
+<td><code>application/vnd.microsoft.portable-executable</code></td>
+<td>program or script, rejected in uploads</td>
+</tr>
+<tr>
+<td><code>WindowsShortcut</code></td>
+<td>Windows shortcut</td>
+<td>.lnk</td>
+<td><code>application/x-ms-shortcut</code></td>
+<td>program or script, rejected in uploads</td>
+</tr>
+</tbody>
+</table>
+<h4 id="font">Font</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Name</th>
+<th>Extensions</th>
+<th>MIME type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OpenType</code></td>
+<td>OpenType font</td>
+<td>.otf</td>
+<td><code>font/otf</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>TrueType</code></td>
+<td>TrueType font</td>
+<td>.ttf</td>
+<td><code>font/ttf</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Woff</code></td>
+<td>WOFF font</td>
+<td>.woff</td>
+<td><code>font/woff</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Woff2</code></td>
+<td>WOFF2 font</td>
+<td>.woff2</td>
+<td><code>font/woff2</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="image">Image</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Name</th>
+<th>Extensions</th>
+<th>MIME type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Avif</code></td>
+<td>AVIF image</td>
+<td>.avif</td>
+<td><code>image/avif</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Bmp</code></td>
+<td>BMP image</td>
+<td>.bmp, .dib</td>
+<td><code>image/bmp</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Gif</code></td>
+<td>GIF image</td>
+<td>.gif</td>
+<td><code>image/gif</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Heic</code></td>
+<td>HEIC image</td>
+<td>.heic</td>
+<td><code>image/heic</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Heif</code></td>
+<td>HEIF image</td>
+<td>.heif</td>
+<td><code>image/heif</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Icon</code></td>
+<td>Windows icon</td>
+<td>.ico</td>
+<td><code>image/vnd.microsoft.icon</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Jpeg</code></td>
+<td>JPEG image</td>
+<td>.jpg, .jpeg, .jpe, .jfif</td>
+<td><code>image/jpeg</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>JpegXl</code></td>
+<td>JPEG XL image</td>
+<td>.jxl</td>
+<td><code>image/jxl</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Png</code></td>
+<td>PNG image</td>
+<td>.png, .apng</td>
+<td><code>image/png</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Psd</code></td>
+<td>Photoshop document</td>
+<td>.psd</td>
+<td><code>image/vnd.adobe.photoshop</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Svg</code></td>
+<td>SVG image</td>
+<td>.svg, .svgz</td>
+<td><code>image/svg+xml</code></td>
+<td>built on <code>Xml</code></td>
+</tr>
+<tr>
+<td><code>Tiff</code></td>
+<td>TIFF image</td>
+<td>.tif, .tiff</td>
+<td><code>image/tiff</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>WebP</code></td>
+<td>WebP image</td>
+<td>.webp</td>
+<td><code>image/webp</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="other">Other</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Name</th>
+<th>Extensions</th>
+<th>MIME type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Gltf</code></td>
+<td>glTF model</td>
+<td>.gltf</td>
+<td><code>model/gltf+json</code></td>
+<td>content detects as <code>Json</code>; the extension tells which</td>
+</tr>
+<tr>
+<td><code>GltfBinary</code></td>
+<td>glTF binary model</td>
+<td>.glb</td>
+<td><code>model/gltf-binary</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Parquet</code></td>
+<td>Apache Parquet file</td>
+<td>.parquet</td>
+<td><code>application/vnd.apache.parquet</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Sqlite</code></td>
+<td>SQLite database</td>
+<td>.sqlite, .sqlite3, .db</td>
+<td><code>application/vnd.sqlite3</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="script">Script</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Name</th>
+<th>Extensions</th>
+<th>MIME type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Batch</code></td>
+<td>Windows batch file</td>
+<td>.bat, .cmd</td>
+<td><code>application/x-bat</code></td>
+<td>program or script, rejected in uploads; content detects as <code>PlainText</code>; the extension tells which</td>
+</tr>
+<tr>
+<td><code>Html</code></td>
+<td>HTML document</td>
+<td>.html, .htm, .xhtml, .shtml, .hta</td>
+<td><code>text/html</code></td>
+<td>program or script, rejected in uploads; built on <code>PlainText</code></td>
+</tr>
+<tr>
+<td><code>JavaScript</code></td>
+<td>JavaScript</td>
+<td>.js, .mjs, .cjs</td>
+<td><code>text/javascript</code></td>
+<td>program or script, rejected in uploads; content detects as <code>PlainText</code>; the extension tells which</td>
+</tr>
+<tr>
+<td><code>Php</code></td>
+<td>PHP script</td>
+<td>.php, .phtml, .php3, .php4, .php5, .php7, .php8, .phar</td>
+<td><code>application/x-httpd-php</code></td>
+<td>program or script, rejected in uploads; content detects as <code>PlainText</code>; the extension tells which</td>
+</tr>
+<tr>
+<td><code>PowerShell</code></td>
+<td>PowerShell script</td>
+<td>.ps1, .psm1, .psd1</td>
+<td><code>application/x-powershell</code></td>
+<td>program or script, rejected in uploads; content detects as <code>PlainText</code>; the extension tells which</td>
+</tr>
+<tr>
+<td><code>ShellScript</code></td>
+<td>Shell script</td>
+<td>.sh, .bash, .zsh, .ksh, .csh</td>
+<td><code>application/x-sh</code></td>
+<td>program or script, rejected in uploads; built on <code>PlainText</code></td>
+</tr>
+<tr>
+<td><code>VbScript</code></td>
+<td>VBScript file</td>
+<td>.vbs, .vbe, .wsf, .wsh</td>
+<td><code>text/vbscript</code></td>
+<td>program or script, rejected in uploads; content detects as <code>PlainText</code>; the extension tells which</td>
+</tr>
+</tbody>
+</table>
+<h4 id="text">Text</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Name</th>
+<th>Extensions</th>
+<th>MIME type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Calendar</code></td>
+<td>iCalendar file</td>
+<td>.ics, .ifb</td>
+<td><code>text/calendar</code></td>
+<td>content detects as <code>PlainText</code>; the extension tells which</td>
+</tr>
+<tr>
+<td><code>Css</code></td>
+<td>CSS stylesheet</td>
+<td>.css</td>
+<td><code>text/css</code></td>
+<td>content detects as <code>PlainText</code>; the extension tells which</td>
+</tr>
+<tr>
+<td><code>Csv</code></td>
+<td>CSV file</td>
+<td>.csv</td>
+<td><code>text/csv</code></td>
+<td>content detects as <code>PlainText</code>; the extension tells which</td>
+</tr>
+<tr>
+<td><code>Json</code></td>
+<td>JSON document</td>
+<td>.json, .map, .geojson, .webmanifest</td>
+<td><code>application/json</code></td>
+<td>built on <code>PlainText</code></td>
+</tr>
+<tr>
+<td><code>Markdown</code></td>
+<td>Markdown document</td>
+<td>.md, .markdown</td>
+<td><code>text/markdown</code></td>
+<td>content detects as <code>PlainText</code>; the extension tells which</td>
+</tr>
+<tr>
+<td><code>PlainText</code></td>
+<td>Plain text</td>
+<td>.txt, .text, .log</td>
+<td><code>text/plain</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Tsv</code></td>
+<td>TSV file</td>
+<td>.tsv</td>
+<td><code>text/tab-separated-values</code></td>
+<td>content detects as <code>PlainText</code>; the extension tells which</td>
+</tr>
+<tr>
+<td><code>VCard</code></td>
+<td>vCard file</td>
+<td>.vcf, .vcard</td>
+<td><code>text/vcard</code></td>
+<td>content detects as <code>PlainText</code>; the extension tells which</td>
+</tr>
+<tr>
+<td><code>Xml</code></td>
+<td>XML document</td>
+<td>.xml, .xsd, .xsl, .xslt, .rss, .atom</td>
+<td><code>application/xml</code></td>
+<td>built on <code>PlainText</code></td>
+</tr>
+<tr>
+<td><code>Yaml</code></td>
+<td>YAML document</td>
+<td>.yaml, .yml</td>
+<td><code>application/yaml</code></td>
+<td>content detects as <code>PlainText</code>; the extension tells which</td>
+</tr>
+</tbody>
+</table>
+<h4 id="video">Video</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Name</th>
+<th>Extensions</th>
+<th>MIME type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Avi</code></td>
+<td>AVI video</td>
+<td>.avi</td>
+<td><code>video/x-msvideo</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Flv</code></td>
+<td>Flash video</td>
+<td>.flv</td>
+<td><code>video/x-flv</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>M4v</code></td>
+<td>MPEG-4 video (iTunes)</td>
+<td>.m4v</td>
+<td><code>video/x-m4v</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Matroska</code></td>
+<td>Matroska video</td>
+<td>.mkv, .mka, .mk3d</td>
+<td><code>video/x-matroska</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Mp4</code></td>
+<td>MPEG-4 video</td>
+<td>.mp4, .m4p</td>
+<td><code>video/mp4</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Mpeg</code></td>
+<td>MPEG video</td>
+<td>.mpg, .mpeg, .m2p, .vob</td>
+<td><code>video/mpeg</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>QuickTime</code></td>
+<td>QuickTime video</td>
+<td>.mov, .qt</td>
+<td><code>video/quicktime</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>ThreeGp</code></td>
+<td>3GPP video</td>
+<td>.3gp, .3g2</td>
+<td><code>video/3gpp</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>WebM</code></td>
+<td>WebM video</td>
+<td>.webm</td>
+<td><code>video/webm</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="does-the-content-fit-the-extension">Does the content fit the extension?</h2>
+<pre><code class="lang-csharp">FileTypes.ContentMatchesExtension(stream, &quot;photo.jpg&quot;); // false when the file is a PNG or a program
+</code></pre>
+<p>A more general detected type is accepted for a more specific extension: a <code>.docx</code> whose entries are beyond the header is a ZIP, and a <code>.csv</code> is plain text. <code>FileType.Parent</code> describes these links, and <code>IsA</code> follows them.</p>
+<h2 id="safe-uploads">Safe uploads</h2>
+<pre><code class="lang-csharp">var policy = new UploadPolicy { AllowedTypes = [FileTypes.Jpeg, FileTypes.Png, FileTypes.Pdf] };
+
+UploadCheckResult result = FileTypes.CheckUpload(file.OpenReadStream(), file.FileName, policy);
+if (!result.IsSafe)
+    return BadRequest(result.Message);
+</code></pre>
+<p><code>CheckUpload</code> follows the OWASP file upload advice. It rejects:</p>
+<table>
+<thead>
+<tr>
+<th>Rejection</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>InvalidFileName</code></td>
+<td><code>../a.png</code>, <code>a.png:evil.exe</code>, <code>.htaccess</code>, names with control characters or ending in a dot</td>
+</tr>
+<tr>
+<td><code>DangerousExtension</code></td>
+<td><code>.exe</code>, <code>.js</code>, <code>.php</code>, <code>.aspx</code>, <code>.html</code>, <code>web.config</code></td>
+</tr>
+<tr>
+<td><code>DoubleExtension</code></td>
+<td><code>invoice.php.jpg</code>, <code>photo.exe.png</code></td>
+</tr>
+<tr>
+<td><code>UnknownExtension</code></td>
+<td>no extension, or one HeroKit does not know</td>
+</tr>
+<tr>
+<td><code>EmptyContent</code></td>
+<td>an empty file</td>
+</tr>
+<tr>
+<td><code>TooLarge</code></td>
+<td>a file longer than <code>MaxLength</code> bytes (no limit by default)</td>
+</tr>
+<tr>
+<td><code>DangerousContent</code></td>
+<td>a program or script whatever the extension says, for example a Windows executable named <code>photo.png</code></td>
+</tr>
+<tr>
+<td><code>UnknownContent</code></td>
+<td>content no detector recognizes (allow it with <code>AllowUnknownContent</code>)</td>
+</tr>
+<tr>
+<td><code>ExtensionMismatch</code></td>
+<td>a PDF named <code>photo.png</code></td>
+</tr>
+<tr>
+<td><code>NotAllowed</code></td>
+<td>a type outside <code>AllowedTypes</code></td>
+</tr>
+<tr>
+<td><code>ActiveContent</code></td>
+<td>SVG with script, event handlers, <code>javascript:</code> links, <code>foreignObject</code>, entity declarations or external references; Office documents with macros (DOCM, XLSM, or a legacy DOC or XLS with a VBA project) unless <code>AllowMacros</code> is true</td>
+</tr>
+<tr>
+<td><code>CustomRule</code></td>
+<td>one of your <code>Rules</code></td>
+</tr>
+</tbody>
+</table>
+<p>The stream overload reads the whole SVG up to <code>MaxSvgScanLength</code> (1 MB) so a script at the end is found. A macro-enabled document disguised as <code>.docx</code> is rejected as <code>ExtensionMismatch</code>, also when the macro entry is at the end of a large file. Legacy Word and Excel files (DOC, XLS) have no separate macro type, so HeroKit reads their directory and rejects a file with a VBA project. Pass the whole file as a span, or a seekable stream; only the directory is read. Excel 4.0 macro sheets and PowerPoint 97-2003 macros are not found.</p>
+<p>A complete ASP.NET Core minimal API that uses <code>UploadValidator</code> and <code>Tckn</code> is in <a href="https://github.com/Lyconiq/HeroKit/tree/master/samples/HeroKit.Samples.WebApi">samples/HeroKit.Samples.WebApi</a>.</p>
+<h3 id="aspnet-core">ASP.NET Core</h3>
+<p><code>dotnet add package HeroKit.FileTypes.AspNetCore</code> adds checks for <code>IFormFile</code>:</p>
+<pre><code class="lang-csharp">using HeroKit.FileTypes;
+using HeroKit.FileTypes.AspNetCore;
+
+// Minimal APIs: a rejected file returns 400 (validation problem) before the handler runs.
+app.MapPost(&quot;/documents&quot;, (IFormFile file) =&gt; Results.Ok(file.GetSafeFileName()))
+   .ValidateUploads(new UploadPolicy { AllowedTypes = [FileTypes.Pdf], MaxLength = 10 * 1024 * 1024 });
+
+// MVC, Razor Pages and Blazor models
+public sealed class ProfileForm
+{
+    [Required, AllowedFileTypes(&quot;jpg&quot;, &quot;png&quot;, &quot;webp&quot;, MaxLength = 5 * 1024 * 1024)]
+    public IFormFile? Photo { get; set; }
+}
+
+// Anywhere
+var pdfOnly = new UploadPolicy { AllowedTypes = [FileTypes.Pdf] };
+UploadCheckResult result = file.CheckUpload(pdfOnly); // or validator.Validate(file) with a singleton UploadValidator
+</code></pre>
+<p><code>ValidateUploads</code> also works on route groups and checks <code>IFormFileCollection</code> arguments. With FluentValidation, use <code>RuleFor(x =&gt; x.Photo).SafeUpload(f =&gt; f.OpenReadStream(), f =&gt; f.FileName, policy)</code> from HeroKit.FluentValidation.</p>
+<h3 id="size-limit-and-safe-names">Size limit and safe names</h3>
+<pre><code class="lang-csharp">using HeroKit.FileTypes;
+
+// file is the uploaded IFormFile.
+var policy = new UploadPolicy { AllowedTypes = [FileTypes.Pdf], MaxLength = 10 * 1024 * 1024 }; // PDF up to 10 MB
+
+using Stream upload = file.OpenReadStream();
+UploadCheckResult result = FileTypes.CheckUpload(upload, file.FileName, policy);
+if (!result.IsSafe)
+    return Results.BadRequest(result.Message); // for example &quot;The file is larger than 10485760 bytes.&quot;
+
+// Store under a generated name; keep the cleaned original name for display and downloads.
+string displayName = FileTypes.ToSafeFileName(file.FileName); // &quot;rapor_.pdf&quot; for &quot;C:\temp\rapor?.pdf&quot;
+string storedName = Guid.NewGuid().ToString(&quot;N&quot;) + Path.GetExtension(displayName);
+
+// Later, when the file is downloaded (storedFile is the stream of the stored file):
+return Results.File(storedFile, FileTypes.GetMimeType(displayName), fileDownloadName: displayName);
+</code></pre>
+<p><code>MaxLength</code> checks the length of a span, or of a stream that can seek. Also set the request size limit of the web server (for example <code>[RequestSizeLimit]</code> or Kestrel's <code>MaxRequestBodySize</code>), so a large upload is refused before it is read.</p>
+<p><code>ToSafeFileName</code> drops any path, replaces characters that are not allowed in Windows file names with <code>_</code>, trims dots and spaces, guards Windows device names such as <code>CON</code>, and shortens the name to 255 characters. Letters of every language stay. With <code>fileDownloadName</code>, ASP.NET Core writes the <code>Content-Disposition: attachment</code> header and encodes non-ASCII names (<code>filename*=UTF-8''...</code>), so do not build that header by hand.</p>
+<p>The check is a first line of defense. Also limit the upload size, store files under generated names outside the web root, serve them with <code>Content-Disposition: attachment</code> where possible, and re-encode images or scan files when it matters.</p>
+<h2 id="dependency-injection-and-your-own-registry">Dependency injection and your own registry</h2>
+<p>The static <code>FileTypes</code> methods use the shared registry <code>FileTypes.Default</code>. For dependency injection, tests or per-tenant types, create instances:</p>
+<pre><code class="lang-csharp">var registry = new FileTypeRegistry();            // the built-in types; new FileTypeRegistry(types) for only your list
+registry.Register(myType);                         // does not change FileTypes.Default
+
+builder.Services.AddSingleton(registry);
+builder.Services.AddSingleton(new UploadValidator(new UploadPolicy { AllowedTypes = [FileTypes.Pdf] }, registry));
+
+public sealed class DocumentsController(UploadValidator validator) : ControllerBase
+{
+    [HttpPost]
+    public IActionResult Upload(IFormFile file)
+    {
+        UploadCheckResult result = validator.Validate(file.OpenReadStream(), file.FileName);
+        return result.IsSafe ? Ok() : BadRequest(result.Message);
+    }
+}
+</code></pre>
+<p>Both types are thread-safe. <code>UploadValidator</code> runs its checks as a chain: each check is a small step with one job, and your <code>IUploadRule</code> instances are the last steps. Extensions in <code>UploadPolicy.BlockedExtensions</code> are always rejected, together with the extensions of program and script types; extend the default list with <code>new HashSet&lt;string&gt;(UploadPolicy.DefaultBlockedExtensions) { &quot;dwg&quot; }</code>.</p>
+<h2 id="add-your-own-types-and-rules">Add your own types and rules</h2>
+<p>Register a type with one or more detectors. Registered types are checked before the built-in types, and their extensions and MIME types win.</p>
+<pre><code class="lang-csharp">FileTypes.Register(new FileType(&quot;Sketch document&quot;, &quot;application/x-sketch&quot;, FileTypeCategory.Document, &quot;sketch&quot;)
+{
+    Detectors = [new ZipEntryDetector(&quot;document.json&quot;)],
+    Parent = FileTypes.Zip,
+});
+
+FileTypes.Register(new FileType(&quot;Canon raw image&quot;, &quot;image/x-canon-cr3&quot;, FileTypeCategory.Image, &quot;cr3&quot;)
+{
+    Detectors = [new IsoMediaDetector(&quot;crx &quot;)],
+});
+
+FileTypes.Register(new FileType(&quot;My format&quot;, &quot;application/x-my-format&quot;, FileTypeCategory.Other, &quot;myf&quot;)
+{
+    Detectors = [new MagicNumber(&quot;4D 59 46 ?? 01&quot;), MagicNumber.FromText(&quot;MYF2&quot;)],
+});
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Detector</th>
+<th>Matches</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MagicNumber</code></td>
+<td>fixed bytes at an offset; <code>??</code> matches any byte</td>
+</tr>
+<tr>
+<td><code>ZipEntryDetector</code></td>
+<td>a ZIP entry name prefix, or an OpenDocument-style <code>mimetype</code> entry</td>
+</tr>
+<tr>
+<td><code>IsoMediaDetector</code></td>
+<td><code>ftyp</code> brands of MP4-style files</td>
+</tr>
+<tr>
+<td>your class</td>
+<td>implement <code>IFileTypeDetector.IsMatch(ReadOnlySpan&lt;byte&gt;)</code></td>
+</tr>
+</tbody>
+</table>
+<p>Add checks to uploads with <code>IUploadRule</code>. Rules run after the built-in checks:</p>
+<pre><code class="lang-csharp">sealed class MinimumImageSizeRule : IUploadRule
+{
+    public string? Validate(ReadOnlySpan&lt;byte&gt; header, string fileName, FileType? detectedType) =&gt;
+        detectedType?.Category == FileTypeCategory.Image &amp;&amp; header.Length &lt; 100 ? &quot;The image is too small.&quot; : null;
+}
+
+var policy = new UploadPolicy { Rules = [new MinimumImageSizeRule()] };
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/docs/articles/file-types.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class DateTimeRangeExtensions | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DateTimeRangeExtensions | HeroKit ">
+      
+      <meta name="description" content="Provides range, boundary and age helpers for DateTime and DateOnly values.">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/new/master/apiSpec/new?filename=HeroKit_DateTimes_DateTimeRangeExtensions.md&amp;value=---%0Auid%3A%20HeroKit.DateTimes.DateTimeRangeExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="HeroKit.DateTimes.DateTimeRangeExtensions">
+
+
+
+  <h1 id="HeroKit_DateTimes_DateTimeRangeExtensions" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions" class="text-break">
+Class DateTimeRangeExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">HeroKit</span>.<a class="xref" href="HeroKit.DateTimes.html">DateTimes</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>HeroKit.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Provides range, boundary and age helpers for DateTime and DateOnly values.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class DateTimeRangeExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">DateTimeRangeExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_Age_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.Age*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_Age_System_DateOnly_System_DateOnly_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.Age(System.DateOnly,System.DateOnly)">
+  Age(DateOnly, DateOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L270"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Calculates the completed years between a birth date and a reference date.
+A Feb 29 birthday counts as completed on Mar 1 in non-leap years.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int Age(this DateOnly birthDate, DateOnly asOf)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>birthDate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The birth date.</p>
+</dd>
+    <dt><code>asOf</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The reference date.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of completed years.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_Age_System_DateOnly_System_DateOnly__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateOnly(2000, 2, 29).Age(new DateOnly(2026, 3, 1)); // 26</code></pre>
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown when <code class="paramref">asOf</code> is earlier than <code class="paramref">birthDate</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_Age_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.Age*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_Age_System_DateTime_System_DateTime_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.Age(System.DateTime,System.DateTime)">
+  Age(DateTime, DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L154"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Calculates the completed years between a birth date and a reference date.
+A Feb 29 birthday counts as completed on Mar 1 in non-leap years.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int Age(this DateTime birthDate, DateTime asOf)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>birthDate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The birth date.</p>
+</dd>
+    <dt><code>asOf</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The reference date.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of completed years.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_Age_System_DateTime_System_DateTime__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateTime(1990, 5, 20).Age(new DateTime(2026, 5, 19)); // 35</code></pre>
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown when <code class="paramref">asOf</code> is earlier than <code class="paramref">birthDate</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfDay_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.EndOfDay*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfDay_System_DateTime_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.EndOfDay(System.DateTime)">
+  EndOfDay(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the last tick of the day and keeps the DateTimeKind.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime EndOfDay(this DateTime value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The date and time.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The last tick of the day.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfDay_System_DateTime__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateTime(2026, 3, 7, 14, 5, 9).EndOfDay(); // 2026-03-07 23:59:59.9999999</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfMonth_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.EndOfMonth*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfMonth_System_DateOnly_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.EndOfMonth(System.DateOnly)">
+  EndOfMonth(DateOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L228"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the last day of the month.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateOnly EndOfMonth(this DateOnly value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The date.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The last day of the month.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfMonth_System_DateOnly__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateOnly(2024, 2, 10).EndOfMonth(); // 2024-02-29</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfMonth_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.EndOfMonth*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfMonth_System_DateTime_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.EndOfMonth(System.DateTime)">
+  EndOfMonth(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the last tick of the month and keeps the DateTimeKind.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime EndOfMonth(this DateTime value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The date and time.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The last tick of the month.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfMonth_System_DateTime__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateTime(2024, 2, 10).EndOfMonth(); // 2024-02-29 23:59:59.9999999</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfWeek_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.EndOfWeek*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfWeek_System_DateOnly_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.EndOfWeek(System.DateOnly)">
+  EndOfWeek(DateOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L196"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the end of the week (last day of the week) for a date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateOnly EndOfWeek(this DateOnly value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The date.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The last day of the week (Monday start).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfWeek_System_DateOnly__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateOnly(2026, 3, 7).EndOfWeek(); // 2026-03-08</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfWeek_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.EndOfWeek*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfWeek_System_DateOnly_System_DayOfWeek_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.EndOfWeek(System.DateOnly,System.DayOfWeek)">
+  EndOfWeek(DateOnly, DayOfWeek)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L207"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the last day of the week for a date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateOnly EndOfWeek(this DateOnly value, DayOfWeek firstDayOfWeek)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The date.</p>
+</dd>
+    <dt><code>firstDayOfWeek</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dayofweek">DayOfWeek</a></dt>
+    <dd><p>The day that starts the week.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The last day of the week.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfWeek_System_DateOnly_System_DayOfWeek__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateOnly(2026, 3, 7).EndOfWeek(DayOfWeek.Sunday);</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfWeek_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.EndOfWeek*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfWeek_System_DateTime_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.EndOfWeek(System.DateTime)">
+  EndOfWeek(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the last tick of the week (Sunday) and keeps the DateTimeKind.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime EndOfWeek(this DateTime value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The date and time.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The last tick of the week.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfWeek_System_DateTime__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateTime(2026, 3, 7).EndOfWeek(); // 2026-03-08 23:59:59.9999999 (Sunday)</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfWeek_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.EndOfWeek*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfWeek_System_DateTime_System_DayOfWeek_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.EndOfWeek(System.DateTime,System.DayOfWeek)">
+  EndOfWeek(DateTime, DayOfWeek)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the last tick of the week for the given first day of the week and keeps the DateTimeKind.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime EndOfWeek(this DateTime value, DayOfWeek firstDayOfWeek)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The date and time.</p>
+</dd>
+    <dt><code>firstDayOfWeek</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dayofweek">DayOfWeek</a></dt>
+    <dd><p>The day that starts the week.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The last tick of the week.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfWeek_System_DateTime_System_DayOfWeek__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateTime(2026, 3, 7).EndOfWeek(DayOfWeek.Sunday);</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfYear_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.EndOfYear*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfYear_System_DateTime_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.EndOfYear(System.DateTime)">
+  EndOfYear(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L111"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the last tick of the year and keeps the DateTimeKind.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime EndOfYear(this DateTime value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The date and time.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The last tick of the year.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_EndOfYear_System_DateTime__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateTime(2026, 3, 7).EndOfYear(); // 2026-12-31 23:59:59.9999999</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_IsBetween_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.IsBetween*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_IsBetween_System_DateOnly_System_DateOnly_System_DateOnly_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.IsBetween(System.DateOnly,System.DateOnly,System.DateOnly)">
+  IsBetween(DateOnly, DateOnly, DateOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L251"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the date lies between start and end, both ends included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsBetween(this DateOnly value, DateOnly start, DateOnly end)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The date to test.</p>
+</dd>
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The lower bound.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The upper bound.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if start &lt;= value &lt;= end.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_IsBetween_System_DateOnly_System_DateOnly_System_DateOnly__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateOnly(2026, 3, 7).IsBetween(new DateOnly(2026, 3, 1), new DateOnly(2026, 3, 7)); // true</code></pre>
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown when <code class="paramref">start</code> is later than <code class="paramref">end</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_IsBetween_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.IsBetween*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_IsBetween_System_DateTime_System_DateTime_System_DateTime_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.IsBetween(System.DateTime,System.DateTime,System.DateTime)">
+  IsBetween(DateTime, DateTime, DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the value lies between start and end, both ends included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsBetween(this DateTime value, DateTime start, DateTime end)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The date and time to test.</p>
+</dd>
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The lower bound.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The upper bound.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if start &lt;= value &lt;= end.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_IsBetween_System_DateTime_System_DateTime_System_DateTime__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateTime(2026, 3, 7).IsBetween(new DateTime(2026, 3, 1), new DateTime(2026, 3, 7)); // true</code></pre>
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown when <code class="paramref">start</code> is later than <code class="paramref">end</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_IsWeekend_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.IsWeekend*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_IsWeekend_System_DateOnly_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.IsWeekend(System.DateOnly)">
+  IsWeekend(DateOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L238"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the date falls on a Saturday or Sunday.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsWeekend(this DateOnly value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The date.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> for Saturday and Sunday; otherwise <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_IsWeekend_System_DateOnly__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateOnly(2026, 3, 7).IsWeekend(); // true</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_IsWeekend_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.IsWeekend*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_IsWeekend_System_DateTime_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.IsWeekend(System.DateTime)">
+  IsWeekend(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the date falls on a Saturday or Sunday.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsWeekend(this DateTime value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The date and time.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> for Saturday and Sunday; otherwise <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_IsWeekend_System_DateTime__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateTime(2026, 3, 7).IsWeekend(); // true (Saturday)</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfDay_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.StartOfDay*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfDay_System_DateTime_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.StartOfDay(System.DateTime)">
+  StartOfDay(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the start of the day (00:00:00) and keeps the DateTimeKind.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime StartOfDay(this DateTime value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The date and time.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The first tick of the day.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfDay_System_DateTime__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateTime(2026, 3, 7, 14, 5, 9).StartOfDay(); // 2026-03-07 00:00:00</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfMonth_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.StartOfMonth*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfMonth_System_DateOnly_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.StartOfMonth(System.DateOnly)">
+  StartOfMonth(DateOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L218"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the first day of the month.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateOnly StartOfMonth(this DateOnly value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The date.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The first day of the month.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfMonth_System_DateOnly__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateOnly(2026, 3, 7).StartOfMonth(); // 2026-03-01</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfMonth_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.StartOfMonth*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfMonth_System_DateTime_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.StartOfMonth(System.DateTime)">
+  StartOfMonth(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the start of the month and keeps the DateTimeKind.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime StartOfMonth(this DateTime value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The date and time.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The first tick of the month.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfMonth_System_DateTime__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateTime(2026, 3, 7).StartOfMonth(); // 2026-03-01 00:00:00</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfWeek_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.StartOfWeek*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfWeek_System_DateOnly_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.StartOfWeek(System.DateOnly)">
+  StartOfWeek(DateOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L174"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the start of the week (first day of the week) for a date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateOnly StartOfWeek(this DateOnly value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The date.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The first day of the week (Monday start).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfWeek_System_DateOnly__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateOnly(2026, 3, 7).StartOfWeek(); // 2026-03-02</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfWeek_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.StartOfWeek*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfWeek_System_DateOnly_System_DayOfWeek_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.StartOfWeek(System.DateOnly,System.DayOfWeek)">
+  StartOfWeek(DateOnly, DayOfWeek)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L185"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the first day of the week for a date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateOnly StartOfWeek(this DateOnly value, DayOfWeek firstDayOfWeek)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The date.</p>
+</dd>
+    <dt><code>firstDayOfWeek</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dayofweek">DayOfWeek</a></dt>
+    <dd><p>The day that starts the week.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The first day of the week.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfWeek_System_DateOnly_System_DayOfWeek__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateOnly(2026, 3, 7).StartOfWeek(DayOfWeek.Sunday);</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfWeek_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.StartOfWeek*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfWeek_System_DateTime_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.StartOfWeek(System.DateTime)">
+  StartOfWeek(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the start of the week (Monday, 00:00:00) and keeps the DateTimeKind.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime StartOfWeek(this DateTime value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The date and time.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The first tick of the week.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfWeek_System_DateTime__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateTime(2026, 3, 7).StartOfWeek(); // 2026-03-02 (Monday)</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfWeek_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.StartOfWeek*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfWeek_System_DateTime_System_DayOfWeek_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.StartOfWeek(System.DateTime,System.DayOfWeek)">
+  StartOfWeek(DateTime, DayOfWeek)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the first tick of the week for the given first day of the week and keeps the DateTimeKind.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime StartOfWeek(this DateTime value, DayOfWeek firstDayOfWeek)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The date and time.</p>
+</dd>
+    <dt><code>firstDayOfWeek</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dayofweek">DayOfWeek</a></dt>
+    <dd><p>The day that starts the week.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The first tick of the week.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfWeek_System_DateTime_System_DayOfWeek__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateTime(2026, 3, 7).StartOfWeek(DayOfWeek.Sunday);</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfYear_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.StartOfYear*"></a>
+
+  <h3 id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfYear_System_DateTime_" data-uid="HeroKit.DateTimes.DateTimeRangeExtensions.StartOfYear(System.DateTime)">
+  StartOfYear(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the start of the year and keeps the DateTimeKind.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime StartOfYear(this DateTime value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The date and time.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The first tick of the year.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_DateTimes_DateTimeRangeExtensions_StartOfYear_System_DateTime__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateTime(2026, 3, 7).StartOfYear(); // 2026-01-01 00:00:00</code></pre>
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/DateTimes/DateTimeRangeExtensions.cs/#L6" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

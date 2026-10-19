@@ -1,0 +1,279 @@
+/* HeroKit brand: deep teal from the logo, with a warm accent. */
+:root,
+[data-bs-theme='light'] {
+  --hk-brand: #046380;
+  --hk-brand-strong: #034b61;
+  --hk-brand-soft: #e6f3f6;
+  --hk-accent: #f2a541;
+  --bs-link-color: #046380;
+  --bs-link-color-rgb: 4, 99, 128;
+  --bs-link-hover-color: #034b61;
+  --bs-link-hover-color-rgb: 3, 75, 97;
+  --bs-primary: #046380;
+  --bs-primary-rgb: 4, 99, 128;
+}
+
+[data-bs-theme='dark'] {
+  --hk-brand: #3fb4d4;
+  --hk-brand-strong: #7fd0e6;
+  --hk-brand-soft: #0d2a33;
+  --bs-link-color: #3fb4d4;
+  --bs-link-color-rgb: 63, 180, 212;
+  --bs-link-hover-color: #7fd0e6;
+  --bs-link-hover-color-rgb: 127, 208, 230;
+  --bs-primary: #3fb4d4;
+  --bs-primary-rgb: 63, 180, 212;
+}
+
+/* Top bar in brand color on every page. */
+header > nav.navbar {
+  background: linear-gradient(90deg, #034b61 0%, #046380 60%, #0a7fa3 100%) !important;
+  border-bottom: 0;
+}
+header > nav.navbar,
+header > nav.navbar .nav-link,
+header > nav.navbar .navbar-brand,
+header > nav.navbar .btn {
+  color: #fff !important;
+}
+header > nav.navbar .nav-link.active,
+header > nav.navbar .nav-link:hover {
+  color: var(--hk-accent) !important;
+}
+header > nav.navbar .navbar-brand img {
+  border-radius: 8px;
+  height: 32px;
+  width: 32px;
+}
+header > nav.navbar .form-control {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+header > nav.navbar .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Content headings and code. */
+article h1 {
+  color: var(--hk-brand);
+  font-weight: 700;
+}
+article h2 {
+  border-bottom: 2px solid var(--hk-brand-soft);
+  padding-bottom: 0.3rem;
+  margin-top: 2rem;
+}
+article pre {
+  border-left: 4px solid var(--hk-brand);
+  border-radius: 6px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Long code lines scroll inside their block instead of widening the page on phones. */
+main,
+article,
+.content {
+  min-width: 0;
+}
+.hk-hero,
+.hk-grid,
+.hk-stats {
+  max-width: 100%;
+}
+.toc .nav > li.active > a,
+.toc a.active {
+  color: var(--hk-brand) !important;
+  font-weight: 600;
+}
+
+/* Landing page. */
+.hk-hero {
+  background: radial-gradient(circle at 15% 20%, #0a8bb0 0%, #046380 45%, #023646 100%);
+  border-radius: 16px;
+  color: #fff;
+  margin: 1rem 0 2.5rem;
+  padding: 3.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.hk-hero::after {
+  content: '{ }';
+  font-family: SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 14rem;
+  line-height: 1;
+  opacity: 0.07;
+  position: absolute;
+  right: -1rem;
+  top: -1.5rem;
+}
+.hk-hero h1 {
+  color: #fff !important;
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+}
+.hk-hero .hk-tagline {
+  font-size: 1.3rem;
+  max-width: 40rem;
+  opacity: 0.95;
+}
+.hk-hero .hk-tagline strong {
+  color: var(--hk-accent);
+}
+.hk-install {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: inline-flex;
+  font-family: SFMono-Regular, Menlo, Consolas, monospace;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+  padding: 0.6rem 0.6rem 0.6rem 1rem;
+}
+.hk-install code {
+  background: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0;
+}
+.hk-install button {
+  background: var(--hk-accent);
+  border: 0;
+  border-radius: 6px;
+  color: #1d1d1d;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+}
+.hk-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.hk-actions a {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+}
+.hk-actions .hk-primary {
+  background: var(--hk-accent);
+  color: #1d1d1d;
+}
+.hk-actions .hk-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+.hk-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.5rem;
+}
+.hk-badges img {
+  height: 20px;
+}
+.hk-section-title {
+  border: 0 !important;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+  text-align: center;
+}
+.hk-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+.hk-card {
+  background: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 12px;
+  border-top: 4px solid var(--hk-brand);
+  color: inherit;
+  display: block;
+  padding: 1.25rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.hk-card:hover {
+  box-shadow: 0 8px 24px rgba(4, 99, 128, 0.18);
+  color: inherit;
+  transform: translateY(-3px);
+}
+.hk-card .hk-icon {
+  font-size: 1.6rem;
+}
+.hk-card h3 {
+  color: var(--hk-brand);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0.4rem 0;
+}
+.hk-card p {
+  font-size: 0.95rem;
+  margin: 0;
+  opacity: 0.85;
+}
+.hk-card.hk-featured {
+  background: var(--hk-brand-soft);
+  border-top-color: var(--hk-accent);
+}
+.hk-stats {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  margin: 2rem 0;
+  text-align: center;
+}
+.hk-stats div {
+  border: 1px solid var(--bs-border-color);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.hk-stats strong {
+  color: var(--hk-brand);
+  display: block;
+  font-size: 1.6rem;
+}
+.hk-stats span {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 576px) {
+  .hk-hero {
+    padding: 2.25rem 1.25rem;
+  }
+  .hk-hero h1 {
+    font-size: 2.2rem;
+  }
+  .hk-hero .hk-tagline {
+    font-size: 1.1rem;
+  }
+  .hk-install {
+    max-width: 100%;
+  }
+  .hk-install code {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .hk-actions {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .hk-actions a {
+    align-items: center;
+    display: flex;
+    font-size: 0.85rem;
+    justify-content: center;
+    line-height: 1.2;
+    padding: 0.55rem 0.4rem;
+    text-align: center;
+  }
+}

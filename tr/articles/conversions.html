@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>D&#246;n&#252;ş&#252;mler | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="D&#246;n&#252;ş&#252;mler | HeroKit ">
+      
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/blob/master/docs/tr/articles/conversions.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="dönüşümler">Dönüşümler</h1>
+
+<p>Her dönüşümün iki biçimi vardır. İkisi de null, boş ya da geçersiz girdide istisna fırlatmaz.</p>
+<table>
+<thead>
+<tr>
+<th>Biçim</th>
+<th>Örnek</th>
+<th>Hatalı girdide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Toleranslı <code>ToX</code></td>
+<td><code>&quot;abc&quot;.ToInt(-1)</code></td>
+<td>varsayılan değeri döner</td>
+</tr>
+<tr>
+<td>Denetimli <code>TryToX</code></td>
+<td><code>&quot;abc&quot;.TryTo(out int n)</code></td>
+<td><code>false</code> döner</td>
+</tr>
+</tbody>
+</table>
+<p>Bir provider vermezseniz ayrıştırma değişmez kültürü (invariant culture) kullanır.</p>
+<h2 id="metinden-değere">Metinden değere</h2>
+<pre><code class="lang-csharp">using System.Globalization;
+using HeroKit.Strings;
+
+// Herhangi bir IParsable&lt;T&gt;: int, long, decimal, double, DateTime, DateOnly, TimeOnly, Guid, ...
+&quot;42&quot;.To&lt;int&gt;();                         // 42
+&quot;x&quot;.To(defaultValue: -1);               // -1
+&quot;2026-03-07&quot;.To&lt;DateOnly&gt;();            // 2026-03-07
+&quot;1,5&quot;.To&lt;decimal&gt;(provider: CultureInfo.GetCultureInfo(&quot;tr-TR&quot;)); // 1.5
+&quot;42&quot;.TryTo(out int number);             // true, number == 42
+&quot;abc&quot;.ToNullable&lt;int&gt;();                // null
+
+// Kısayollar
+&quot;42&quot;.ToInt();                           // 42 (ToLong ve ToShort da var)
+&quot;2026-03-07&quot;.ToDateTime();              // 7 Mart 2026
+&quot;07.03.2026&quot;.ToDateTime(provider: CultureInfo.GetCultureInfo(&quot;tr-TR&quot;));
+&quot;yes&quot;.ToBoolean(trueText: &quot;yes&quot;);       // true
+&quot;SGVyb0tpdA==&quot;.FromBase64();            // bayt dizisi, geçersizse null
+</code></pre>
+<h2 id="decimal-değerler">Decimal değerler</h2>
+<p>Provider olmadan <code>ToDecimal</code> esnektir: virgül varsa ondalık ayırıcı virgüldür, yoksa noktadır.</p>
+<pre><code class="lang-csharp">&quot;1.234,56&quot;.ToDecimal();                 // 1234.56
+&quot;1234.56&quot;.ToDecimal();                  // 1234.56
+&quot;1,234.56&quot;.ToDecimal(provider: CultureInfo.InvariantCulture); // katı: 1234.56
+&quot;abc&quot;.TryToDecimal(out decimal amount); // false
+</code></pre>
+<h2 id="enum-değerleri">Enum değerleri</h2>
+<pre><code class="lang-csharp">&quot;friday&quot;.ToEnum&lt;DayOfWeek&gt;();           // DayOfWeek.Friday (ad, büyük-küçük harf yok sayılır)
+&quot;5&quot;.ToEnum&lt;DayOfWeek&gt;();                // DayOfWeek.Friday (tanımlı sayı)
+&quot;99&quot;.ToEnum(DayOfWeek.Monday);          // DayOfWeek.Monday (tanımlı değil: varsayılan)
+&quot;Sunday&quot;.TryToEnum(out DayOfWeek day);  // true
+</code></pre>
+<h2 id="nesneler">Nesneler</h2>
+<pre><code class="lang-csharp">using HeroKit.Objects;
+
+object cell = &quot;42&quot;;
+cell.ConvertTo&lt;int&gt;();                  // 42
+((object)&quot;abc&quot;).ConvertTo(-1);          // -1
+row[&quot;Count&quot;].TryConvertTo(out int count);
+</code></pre>
+<p><code>ConvertTo</code>; <code>DBNull</code>, null olabilen hedefleri, enum değerlerini ve metinden ya da 16 baytlık dizilerden GUID'leri işler.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/docs/tr/articles/conversions.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

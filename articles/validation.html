@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Form validation | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Form validation | HeroKit ">
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/blob/master/docs/articles/validation.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="form-validation">Form validation</h1>
+
+<p>DataAnnotations attributes for the HeroKit validators. They work with ASP.NET Core model validation, Blazor's <code>DataAnnotationsValidator</code>, minimal API filters and <code>Validator.TryValidateObject</code>.</p>
+<pre><code class="lang-csharp">using System.ComponentModel.DataAnnotations;
+using HeroKit.Validation;
+
+public sealed class Customer
+{
+    [Required, Tckn]
+    public string? IdentityNumber { get; set; }
+
+    [TaxId(&quot;TR&quot;)]
+    public string? TaxId { get; set; }
+
+    [Iban]
+    public string? Iban { get; set; }
+
+    [PhoneNumber(&quot;TR&quot;, MobileOnly = true, ErrorMessage = &quot;Cep telefonu geçersiz.&quot;)]
+    public string? Mobile { get; set; }
+
+    [PostalCode(&quot;TR&quot;)]
+    public string? PostalCode { get; set; }
+
+    [VehiclePlate(&quot;TR&quot;)]
+    public string? Plate { get; set; }
+
+    [CardNumber]
+    public string? Card { get; set; }
+
+    [GibInvoiceNumber]
+    public string? InvoiceNumber { get; set; }
+
+    [Ettn]
+    public string? Ettn { get; set; }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Checks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[Tckn]</code></td>
+<td>Turkish identity number checksum</td>
+</tr>
+<tr>
+<td><code>[Vkn]</code></td>
+<td>Turkish tax number checksum</td>
+</tr>
+<tr>
+<td><code>[Iban]</code></td>
+<td>ISO 13616 mod-97; national length where a country has IBAN rules (TR: 26)</td>
+</tr>
+<tr>
+<td><code>[CardNumber]</code></td>
+<td>Length and Luhn</td>
+</tr>
+<tr>
+<td><code>[GibInvoiceNumber]</code></td>
+<td>e-Fatura / e-Arşiv invoice number in the GİB format, for example <code>ABC2026000000001</code></td>
+</tr>
+<tr>
+<td><code>[Ettn]</code></td>
+<td>ETTN: a non-empty UUID in the 8-4-4-4-12 format</td>
+</tr>
+<tr>
+<td><code>[KepAddress]</code></td>
+<td>KEP address: an e-mail address on a <code>.kep.tr</code> domain</td>
+</tr>
+<tr>
+<td><code>[IdCardSerial]</code></td>
+<td>Chip identity card serial number, for example <code>A12B34567</code></td>
+</tr>
+<tr>
+<td><code>[Mersis]</code></td>
+<td>MERSİS number: &quot;0&quot;, a valid VKN and a 5-digit serial</td>
+</tr>
+<tr>
+<td><code>[Gtin]</code></td>
+<td>Barcode number (EAN-8, UPC-A, EAN-13, GTIN-14) with the GS1 check digit</td>
+</tr>
+<tr>
+<td><code>[PhoneNumber(&quot;TR&quot;)]</code></td>
+<td>Phone number of a country; <code>MobileOnly = true</code> for mobiles</td>
+</tr>
+<tr>
+<td><code>[VehiclePlate(&quot;TR&quot;)]</code></td>
+<td>Vehicle plate of a country</td>
+</tr>
+<tr>
+<td><code>[PostalCode(&quot;TR&quot;)]</code></td>
+<td>Postal code of a country (TR: 5 digits, valid province prefix)</td>
+</tr>
+<tr>
+<td><code>[NationalId(&quot;TR&quot;)]</code></td>
+<td>National identity number of a country (TR: TCKN)</td>
+</tr>
+<tr>
+<td><code>[TaxId(&quot;TR&quot;)]</code></td>
+<td>Tax identifier of a country (TR: VKN or TCKN)</td>
+</tr>
+</tbody>
+</table>
+<p>The country attributes take an ISO 3166-1 alpha-2 code. The country is looked up in <code>Countries</code> when a value is validated, so a country you add with <code>Countries.Register</code> works too. See <a href="countries-and-languages.html">Countries and languages</a>. A country without the needed rules throws <code>NotSupportedException</code>.</p>
+<h2 id="fluentvalidation">FluentValidation</h2>
+<p>The separate <code>HeroKit.FluentValidation</code> package adds the same checks as FluentValidation rules. The core package stays dependency-free.</p>
+<pre><code class="lang-bash">dotnet add package HeroKit.FluentValidation
+</code></pre>
+<pre><code class="lang-csharp">using FluentValidation;
+using HeroKit.FluentValidation;
+using HeroKit.Globalization;
+
+public sealed class CustomerValidator : AbstractValidator&lt;Customer&gt;
+{
+    public CustomerValidator()
+    {
+        RuleFor(x =&gt; x.IdentityNumber).NotEmpty().Tckn();
+        RuleFor(x =&gt; x.Iban).Iban();
+        RuleFor(x =&gt; x.Mobile).PhoneNumber(Countries.Turkey, mobileOnly: true);
+        RuleFor(x =&gt; x.Plate).VehiclePlate(Countries.Turkey);
+        RuleFor(x =&gt; x.InvoiceNumber).GibInvoiceNumber();
+    }
+}
+</code></pre>
+<p>Rules: <code>Tckn</code>, <code>Vkn</code>, <code>Iban</code>, <code>CardNumber</code>, <code>GibInvoiceNumber</code>, <code>Ettn</code>, <code>Mersis</code>, <code>Gtin</code>, <code>KepAddress</code>, <code>IdCardSerial</code>, and the country rules <code>PhoneNumber(country, mobileOnly)</code>, <code>VehiclePlate(country)</code>, <code>PostalCode(country)</code>, <code>NationalId(country)</code>, <code>TaxId(country)</code>. Messages use <code>{PropertyName}</code>; replace them with <code>WithMessage</code>.</p>
+<h2 id="notes">Notes</h2>
+<p>Null and empty values are valid, so optional fields stay optional. Add <code>[Required]</code> to require a value. Default messages are English and include the field name; set <code>ErrorMessage</code> or resource properties to localize them.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/docs/articles/validation.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

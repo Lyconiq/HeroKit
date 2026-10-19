@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class GibInvoiceQrCode | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class GibInvoiceQrCode | HeroKit ">
+      
+      <meta name="description" content="The content of the QR code (karekod) printed on a Turkish e-Fatura or e-Arşiv invoice, in the GİB JSON format.">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/new/master/apiSpec/new?filename=HeroKit_Globalization_Turkey_GibInvoiceQrCode.md&amp;value=---%0Auid%3A%20HeroKit.Globalization.Turkey.GibInvoiceQrCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode">
+
+
+
+  <h1 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode" class="text-break">
+Class GibInvoiceQrCode  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">HeroKit</span>.<a class="xref" href="HeroKit.Globalization.html">Globalization</a>.<a class="xref" href="HeroKit.Globalization.Turkey.html">Turkey</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>HeroKit.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The content of the QR code (karekod) printed on a Turkish e-Fatura or e-Arşiv invoice, in the GİB JSON format.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class GibInvoiceQrCode</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">GibInvoiceQrCode</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="HeroKit.Types.TypeControlExtensions.html#HeroKit_Types_TypeControlExtensions_IsDefaultValue__1___0_">TypeControlExtensions.IsDefaultValue&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectControlExtensions.html#HeroKit_Objects_ObjectControlExtensions_IsNotNull_System_Object_">ObjectControlExtensions.IsNotNull(object?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectControlExtensions.html#HeroKit_Objects_ObjectControlExtensions_IsNull_System_Object_">ObjectControlExtensions.IsNull(object?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectControlExtensions.html#HeroKit_Objects_ObjectControlExtensions_IsNumeric_System_Object_">ObjectControlExtensions.IsNumeric(object?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectConversionExtensions.html#HeroKit_Objects_ObjectConversionExtensions_ConvertTo__1_System_Object___0_">ObjectConversionExtensions.ConvertTo&lt;T&gt;(object?, T?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectConversionExtensions.html#HeroKit_Objects_ObjectConversionExtensions_TryConvertTo__1_System_Object___0__">ObjectConversionExtensions.TryConvertTo&lt;T&gt;(object?, out T?)</a>
+  </div>
+  </dd></dl>
+
+
+  <h2 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_examples">Examples</h2>
+  <pre><code class="lang-csharp">if (GibInvoiceQrCode.TryParse(scannedText, out GibInvoiceQrCode? qr))
+{
+    qr.Number.ToString(); // "ABC2026000000001"
+    qr.PayableAmount;     // 120.00
+    qr.VatAmounts[20m];   // 20.00
+}</code></pre>
+
+
+  <h2 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>The QR code holds a flat JSON object such as
+<code>{"vkntckn":"4840847211","avkntckn":"11111111111","senaryo":"EARSIVFATURA","tip":"SATIS","tarih":"2026-10-15","no":"ABC2026000000001","ettn":"51d3bb18-9650-4c8e-825d-5a7f845be630","parabirimi":"TRY","malhizmettoplam":"100.00","kdvmatrah(20)":"100.00","hesaplanankdv(20)":"20.00","vergidahil":"120.00","odenecek":"120.00"}</code>.</p>
+<p><a class="xref" href="HeroKit.Globalization.Turkey.GibInvoiceQrCode.html#HeroKit_Globalization_Turkey_GibInvoiceQrCode_TryParse_System_String_HeroKit_Globalization_Turkey_GibInvoiceQrCode__">TryParse(string?, out GibInvoiceQrCode?)</a> checks the fields that identify the invoice: the seller VKN or TCKN, the buyer VKN or TCKN
+("11111111111" for e-Arşiv buyers without one), the invoice number, the ETTN and the date. Amounts are optional.
+The method reads the text only; it does not ask GİB whether the invoice exists.</p>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_BuyerTaxId_" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.BuyerTaxId*"></a>
+
+  <h3 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_BuyerTaxId" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.BuyerTaxId">
+  BuyerTaxId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the VKN or TCKN of the buyer (&quot;avkntckn&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public required string BuyerTaxId { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_CurrencyCode_" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.CurrencyCode*"></a>
+
+  <h3 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_CurrencyCode" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.CurrencyCode">
+  CurrencyCode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the ISO 4217 currency code (&quot;parabirimi&quot;), for example &quot;TRY&quot;, or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? CurrencyCode { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_Date_" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.Date*"></a>
+
+  <h3 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_Date" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.Date">
+  Date
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the invoice date (&quot;tarih&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public required DateOnly Date { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_Ettn_" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.Ettn*"></a>
+
+  <h3 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_Ettn" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.Ettn">
+  Ettn
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the ETTN (&quot;ettn&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public required Guid Ettn { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_Fields_" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.Fields*"></a>
+
+  <h3 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_Fields" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.Fields">
+  Fields
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets every field of the QR code as text, with keys in lower case.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyDictionary&lt;string, string&gt; Fields { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_InvoiceType_" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.InvoiceType*"></a>
+
+  <h3 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_InvoiceType" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.InvoiceType">
+  InvoiceType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the invoice type (&quot;tip&quot;), for example &quot;SATIS&quot; or &quot;IADE&quot;, or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? InvoiceType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_LineTotal_" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.LineTotal*"></a>
+
+  <h3 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_LineTotal" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.LineTotal">
+  LineTotal
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the total of goods and services before tax (&quot;malhizmettoplam&quot;), or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public decimal? LineTotal { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_Number_" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.Number*"></a>
+
+  <h3 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_Number" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.Number">
+  Number
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the invoice number (&quot;no&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public required GibInvoiceNumber Number { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.Turkey.GibInvoiceNumber.html">GibInvoiceNumber</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_PayableAmount_" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.PayableAmount*"></a>
+
+  <h3 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_PayableAmount" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.PayableAmount">
+  PayableAmount
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the amount to pay (&quot;odenecek&quot;), or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public decimal? PayableAmount { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_Scenario_" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.Scenario*"></a>
+
+  <h3 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_Scenario" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.Scenario">
+  Scenario
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the scenario (&quot;senaryo&quot;), for example &quot;TEMELFATURA&quot;, &quot;TICARIFATURA&quot; or &quot;EARSIVFATURA&quot;, or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Scenario { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_SellerTaxId_" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.SellerTaxId*"></a>
+
+  <h3 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_SellerTaxId" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.SellerTaxId">
+  SellerTaxId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the VKN or TCKN of the seller (&quot;vkntckn&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public required string SellerTaxId { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_TaxInclusiveTotal_" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.TaxInclusiveTotal*"></a>
+
+  <h3 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_TaxInclusiveTotal" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.TaxInclusiveTotal">
+  TaxInclusiveTotal
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the total including taxes (&quot;vergidahil&quot;), or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public decimal? TaxInclusiveTotal { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_VatAmounts_" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.VatAmounts*"></a>
+
+  <h3 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_VatAmounts" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.VatAmounts">
+  VatAmounts
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the calculated VAT per VAT rate (&quot;hesaplanankdv(20)&quot; → 20).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyDictionary&lt;decimal, decimal&gt; VatAmounts { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_VatBases_" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.VatBases*"></a>
+
+  <h3 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_VatBases" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.VatBases">
+  VatBases
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the VAT base per VAT rate (&quot;kdvmatrah(20)&quot; → 20).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyDictionary&lt;decimal, decimal&gt; VatBases { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_TryParse_" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.TryParse*"></a>
+
+  <h3 id="HeroKit_Globalization_Turkey_GibInvoiceQrCode_TryParse_System_String_HeroKit_Globalization_Turkey_GibInvoiceQrCode__" data-uid="HeroKit.Globalization.Turkey.GibInvoiceQrCode.TryParse(System.String,HeroKit.Globalization.Turkey.GibInvoiceQrCode@)">
+  TryParse(string?, out GibInvoiceQrCode?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reads the JSON text of an e-Fatura or e-Arşiv QR code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryParse(string? json, out GibInvoiceQrCode? result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>json</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The text read from the QR code.</p>
+</dd>
+    <dt><code>result</code> <a class="xref" href="HeroKit.Globalization.Turkey.GibInvoiceQrCode.html">GibInvoiceQrCode</a></dt>
+    <dd><p>The QR code content when the method returns true; otherwise null.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the text is a JSON object with a valid seller and buyer tax id, invoice number, ETTN and date.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Turkey/GibInvoiceQrCode.cs/#L28" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

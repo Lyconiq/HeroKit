@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace HeroKit.FileTypes | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace HeroKit.FileTypes | HeroKit ">
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="HeroKit.FileTypes">
+
+  <h1 id="HeroKit_FileTypes" data-uid="HeroKit.FileTypes" class="text-break">Namespace HeroKit.FileTypes</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="HeroKit.FileTypes.FileType.html">FileType</a></dt>
+      <dd><p>A file type: name, MIME type, extensions and the detectors that recognize its content. Built-in types are in <a class="xref" href="HeroKit.FileTypes.FileTypes.html">FileTypes</a>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="HeroKit.FileTypes.FileTypeRegistry.html">FileTypeRegistry</a></dt>
+      <dd><p>A set of file types with detection by content and lookup by extension and MIME type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="HeroKit.FileTypes.FileTypes.html">FileTypes</a></dt>
+      <dd><p>The built-in file types and shortcuts to the shared <a class="xref" href="HeroKit.FileTypes.FileTypes.html#HeroKit_FileTypes_FileTypes_Default">Default</a> registry and to <a class="xref" href="HeroKit.FileTypes.UploadValidator.html">UploadValidator</a>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="HeroKit.FileTypes.IsoMediaDetector.html">IsoMediaDetector</a></dt>
+      <dd><p>Detects ISO base media files (MP4, MOV, M4A, 3GP, HEIC, AVIF) by the brands in the &quot;ftyp&quot; box.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="HeroKit.FileTypes.MagicNumber.html">MagicNumber</a></dt>
+      <dd><p>Detects a file type by fixed bytes at a fixed offset, also called a file signature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="HeroKit.FileTypes.UploadPolicy.html">UploadPolicy</a></dt>
+      <dd><p>Settings for <a class="xref" href="HeroKit.FileTypes.UploadValidator.html">UploadValidator</a>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="HeroKit.FileTypes.UploadValidator.html">UploadValidator</a></dt>
+      <dd><p>Checks whether an uploaded file is safe to accept, following the OWASP file upload advice.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="HeroKit.FileTypes.ZipEntryDetector.html">ZipEntryDetector</a></dt>
+      <dd><p>Detects a ZIP-based file type, such as DOCX, ODT, EPUB, JAR or APK, by the names of the entries in the header.</p>
+</dd>
+    </dl>
+    <h3 id="structs">
+Structs
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="HeroKit.FileTypes.UploadCheckResult.html">UploadCheckResult</a></dt>
+      <dd><p>The result of <a class="xref" href="HeroKit.FileTypes.UploadValidator.html#HeroKit_FileTypes_UploadValidator_Validate_System_ReadOnlySpan_System_Byte__System_String_">Validate(ReadOnlySpan&lt;byte&gt;, string)</a>.</p>
+</dd>
+    </dl>
+    <h3 id="interfaces">
+Interfaces
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="HeroKit.FileTypes.IFileTypeDetector.html">IFileTypeDetector</a></dt>
+      <dd><p>Recognizes a file type from the first bytes of a file.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="HeroKit.FileTypes.IUploadRule.html">IUploadRule</a></dt>
+      <dd><p>An extra check for uploads, run after the built-in checks. Add instances to <a class="xref" href="HeroKit.FileTypes.UploadPolicy.html#HeroKit_FileTypes_UploadPolicy_Rules">Rules</a>.</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="HeroKit.FileTypes.FileTypeCategory.html">FileTypeCategory</a></dt>
+      <dd><p>The broad group of a file type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="HeroKit.FileTypes.UploadRejection.html">UploadRejection</a></dt>
+      <dd><p>Why an upload was rejected.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

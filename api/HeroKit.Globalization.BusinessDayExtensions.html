@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class BusinessDayExtensions | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class BusinessDayExtensions | HeroKit ">
+      
+      <meta name="description" content="Public holiday and business day helpers based on the  of a .">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/new/master/apiSpec/new?filename=HeroKit_Globalization_BusinessDayExtensions.md&amp;value=---%0Auid%3A%20HeroKit.Globalization.BusinessDayExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="HeroKit.Globalization.BusinessDayExtensions">
+
+
+
+  <h1 id="HeroKit_Globalization_BusinessDayExtensions" data-uid="HeroKit.Globalization.BusinessDayExtensions" class="text-break">
+Class BusinessDayExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/BusinessDayExtensions.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">HeroKit</span>.<a class="xref" href="HeroKit.Globalization.html">Globalization</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>HeroKit.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Public holiday and business day helpers based on the <a class="xref" href="HeroKit.Globalization.IHolidayCalendar.html">IHolidayCalendar</a> of a <a class="xref" href="HeroKit.Globalization.Country.html">Country</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class BusinessDayExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">BusinessDayExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="HeroKit_Globalization_BusinessDayExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>Business days are non-weekend days without a full-day holiday. Half-day holidays count as business days.
+Methods throw <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a> for years the calendar does not cover and
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a> when the country has no calendar.</p>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="HeroKit_Globalization_BusinessDayExtensions_AddBusinessDays_" data-uid="HeroKit.Globalization.BusinessDayExtensions.AddBusinessDays*"></a>
+
+  <h3 id="HeroKit_Globalization_BusinessDayExtensions_AddBusinessDays_System_DateOnly_System_Int32_HeroKit_Globalization_Country_" data-uid="HeroKit.Globalization.BusinessDayExtensions.AddBusinessDays(System.DateOnly,System.Int32,HeroKit.Globalization.Country)">
+  AddBusinessDays(DateOnly, int, Country)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/BusinessDayExtensions.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Moves a date by a number of business days. Negative values move backward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateOnly AddBusinessDays(this DateOnly value, int days, Country country)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The start date. It does not need to be a business day.</p>
+</dd>
+    <dt><code>days</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of business days to move.</p>
+</dd>
+    <dt><code>country</code> <a class="xref" href="HeroKit.Globalization.Country.html">Country</a></dt>
+    <dd><p>The country.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The resulting business day, or <code class="paramref">value</code> when <code class="paramref">days</code> is zero.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Globalization_BusinessDayExtensions_AddBusinessDays_System_DateOnly_System_Int32_HeroKit_Globalization_Country__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateOnly(2026, 3, 19).AddBusinessDays(1, Countries.Turkey); // 2026-03-23</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_BusinessDayExtensions_AddBusinessDays_" data-uid="HeroKit.Globalization.BusinessDayExtensions.AddBusinessDays*"></a>
+
+  <h3 id="HeroKit_Globalization_BusinessDayExtensions_AddBusinessDays_System_DateTime_System_Int32_HeroKit_Globalization_Country_" data-uid="HeroKit.Globalization.BusinessDayExtensions.AddBusinessDays(System.DateTime,System.Int32,HeroKit.Globalization.Country)">
+  AddBusinessDays(DateTime, int, Country)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/BusinessDayExtensions.cs/#L111"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Moves a date by a number of business days. The time part and <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimekind">DateTimeKind</a> are kept.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime AddBusinessDays(this DateTime value, int days, Country country)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The start date and time.</p>
+</dd>
+    <dt><code>days</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of business days to move.</p>
+</dd>
+    <dt><code>country</code> <a class="xref" href="HeroKit.Globalization.Country.html">Country</a></dt>
+    <dd><p>The country.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The resulting date and time.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_BusinessDayExtensions_BusinessDaysUntil_" data-uid="HeroKit.Globalization.BusinessDayExtensions.BusinessDaysUntil*"></a>
+
+  <h3 id="HeroKit_Globalization_BusinessDayExtensions_BusinessDaysUntil_System_DateOnly_System_DateOnly_HeroKit_Globalization_Country_" data-uid="HeroKit.Globalization.BusinessDayExtensions.BusinessDaysUntil(System.DateOnly,System.DateOnly,HeroKit.Globalization.Country)">
+  BusinessDaysUntil(DateOnly, DateOnly, Country)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/BusinessDayExtensions.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Counts the business days after <code class="paramref">start</code> up to and including <code class="paramref">end</code>. A half-day holiday counts as a full day.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use CountBusinessDays, which counts a half-day holiday as 0.5. BusinessDaysUntil will be removed in 4.0.&quot;)]
+public static int BusinessDaysUntil(this DateOnly start, DateOnly end, Country country)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The start date (not counted).</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The end date (counted if it is a business day).</p>
+</dd>
+    <dt><code>country</code> <a class="xref" href="HeroKit.Globalization.Country.html">Country</a></dt>
+    <dd><p>The country.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of business days; negative when <code class="paramref">end</code> is earlier.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_BusinessDayExtensions_CountBusinessDays_" data-uid="HeroKit.Globalization.BusinessDayExtensions.CountBusinessDays*"></a>
+
+  <h3 id="HeroKit_Globalization_BusinessDayExtensions_CountBusinessDays_System_DateOnly_System_DateOnly_HeroKit_Globalization_Country_" data-uid="HeroKit.Globalization.BusinessDayExtensions.CountBusinessDays(System.DateOnly,System.DateOnly,HeroKit.Globalization.Country)">
+  CountBusinessDays(DateOnly, DateOnly, Country)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/BusinessDayExtensions.cs/#L152"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Counts the business days after <code class="paramref">start</code> up to and including <code class="paramref">end</code>.
+A half-day holiday on a weekday, for example the eve (arife) of a Turkish religious holiday, counts as 0.5.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static decimal CountBusinessDays(this DateOnly start, DateOnly end, Country country)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The start date (not counted).</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The end date (counted if it is a business day).</p>
+</dd>
+    <dt><code>country</code> <a class="xref" href="HeroKit.Globalization.Country.html">Country</a></dt>
+    <dd><p>The country.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></dt>
+    <dd><p>The number of business days; negative when <code class="paramref">end</code> is earlier.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Globalization_BusinessDayExtensions_CountBusinessDays_System_DateOnly_System_DateOnly_HeroKit_Globalization_Country__examples">Examples</h4>
+  <pre><code class="lang-csharp">// Tue 27, Wed 28 (eve of Republic Day, half day), Thu 29 (holiday), Fri 30 October 2026
+new DateOnly(2026, 10, 26).CountBusinessDays(new DateOnly(2026, 10, 30), Countries.Turkey); // 2.5</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_BusinessDayExtensions_CountBusinessDays_" data-uid="HeroKit.Globalization.BusinessDayExtensions.CountBusinessDays*"></a>
+
+  <h3 id="HeroKit_Globalization_BusinessDayExtensions_CountBusinessDays_System_DateTime_System_DateTime_HeroKit_Globalization_Country_" data-uid="HeroKit.Globalization.BusinessDayExtensions.CountBusinessDays(System.DateTime,System.DateTime,HeroKit.Globalization.Country)">
+  CountBusinessDays(DateTime, DateTime, Country)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/BusinessDayExtensions.cs/#L183"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Counts the business days between the dates of two <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a> values. See <a class="xref" href="HeroKit.Globalization.BusinessDayExtensions.html#HeroKit_Globalization_BusinessDayExtensions_CountBusinessDays_System_DateOnly_System_DateOnly_HeroKit_Globalization_Country_">CountBusinessDays(DateOnly, DateOnly, Country)</a>; the time parts are ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static decimal CountBusinessDays(this DateTime start, DateTime end, Country country)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The start (its date is not counted).</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The end (its date is counted if it is a business day).</p>
+</dd>
+    <dt><code>country</code> <a class="xref" href="HeroKit.Globalization.Country.html">Country</a></dt>
+    <dd><p>The country.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></dt>
+    <dd><p>The number of business days; negative when <code class="paramref">end</code> is earlier.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_BusinessDayExtensions_GetPublicHoliday_" data-uid="HeroKit.Globalization.BusinessDayExtensions.GetPublicHoliday*"></a>
+
+  <h3 id="HeroKit_Globalization_BusinessDayExtensions_GetPublicHoliday_System_DateOnly_HeroKit_Globalization_Country_" data-uid="HeroKit.Globalization.BusinessDayExtensions.GetPublicHoliday(System.DateOnly,HeroKit.Globalization.Country)">
+  GetPublicHoliday(DateOnly, Country)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/BusinessDayExtensions.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the public holiday on a date, including half days.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PublicHoliday? GetPublicHoliday(this DateOnly value, Country country)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The date.</p>
+</dd>
+    <dt><code>country</code> <a class="xref" href="HeroKit.Globalization.Country.html">Country</a></dt>
+    <dd><p>The country.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.PublicHoliday.html">PublicHoliday</a>?</dt>
+    <dd><p>The holiday, or null.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Globalization_BusinessDayExtensions_GetPublicHoliday_System_DateOnly_HeroKit_Globalization_Country__examples">Examples</h4>
+  <pre><code class="lang-csharp">new DateOnly(2026, 3, 20).GetPublicHoliday(Countries.Turkey)?.Name; // "Ramazan Bayramı 1. Gün"</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_BusinessDayExtensions_GetPublicHoliday_" data-uid="HeroKit.Globalization.BusinessDayExtensions.GetPublicHoliday*"></a>
+
+  <h3 id="HeroKit_Globalization_BusinessDayExtensions_GetPublicHoliday_System_DateTime_HeroKit_Globalization_Country_" data-uid="HeroKit.Globalization.BusinessDayExtensions.GetPublicHoliday(System.DateTime,HeroKit.Globalization.Country)">
+  GetPublicHoliday(DateTime, Country)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/BusinessDayExtensions.cs/#L192"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the public holiday on the date of a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>, including half days. The time part is ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PublicHoliday? GetPublicHoliday(this DateTime value, Country country)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The date and time.</p>
+</dd>
+    <dt><code>country</code> <a class="xref" href="HeroKit.Globalization.Country.html">Country</a></dt>
+    <dd><p>The country.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.PublicHoliday.html">PublicHoliday</a>?</dt>
+    <dd><p>The holiday, or null.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_BusinessDayExtensions_IsBusinessDay_" data-uid="HeroKit.Globalization.BusinessDayExtensions.IsBusinessDay*"></a>
+
+  <h3 id="HeroKit_Globalization_BusinessDayExtensions_IsBusinessDay_System_DateOnly_HeroKit_Globalization_Country_" data-uid="HeroKit.Globalization.BusinessDayExtensions.IsBusinessDay(System.DateOnly,HeroKit.Globalization.Country)">
+  IsBusinessDay(DateOnly, Country)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/BusinessDayExtensions.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks whether a date is a business day.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsBusinessDay(this DateOnly value, Country country)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The date.</p>
+</dd>
+    <dt><code>country</code> <a class="xref" href="HeroKit.Globalization.Country.html">Country</a></dt>
+    <dd><p>The country.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True for business days; otherwise false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_BusinessDayExtensions_IsBusinessDay_" data-uid="HeroKit.Globalization.BusinessDayExtensions.IsBusinessDay*"></a>
+
+  <h3 id="HeroKit_Globalization_BusinessDayExtensions_IsBusinessDay_System_DateTime_HeroKit_Globalization_Country_" data-uid="HeroKit.Globalization.BusinessDayExtensions.IsBusinessDay(System.DateTime,HeroKit.Globalization.Country)">
+  IsBusinessDay(DateTime, Country)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/BusinessDayExtensions.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks whether a date is a business day. The time part is ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsBusinessDay(this DateTime value, Country country)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The date.</p>
+</dd>
+    <dt><code>country</code> <a class="xref" href="HeroKit.Globalization.Country.html">Country</a></dt>
+    <dd><p>The country.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True for business days; otherwise false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_BusinessDayExtensions_IsHalfDayHoliday_" data-uid="HeroKit.Globalization.BusinessDayExtensions.IsHalfDayHoliday*"></a>
+
+  <h3 id="HeroKit_Globalization_BusinessDayExtensions_IsHalfDayHoliday_System_DateOnly_HeroKit_Globalization_Country_" data-uid="HeroKit.Globalization.BusinessDayExtensions.IsHalfDayHoliday(System.DateOnly,HeroKit.Globalization.Country)">
+  IsHalfDayHoliday(DateOnly, Country)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/BusinessDayExtensions.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks whether a date is a half-day holiday, for example the eve (arife) of a Turkish religious holiday.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsHalfDayHoliday(this DateOnly value, Country country)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The date.</p>
+</dd>
+    <dt><code>country</code> <a class="xref" href="HeroKit.Globalization.Country.html">Country</a></dt>
+    <dd><p>The country.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True for half-day holidays; otherwise false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_BusinessDayExtensions_IsHalfDayHoliday_" data-uid="HeroKit.Globalization.BusinessDayExtensions.IsHalfDayHoliday*"></a>
+
+  <h3 id="HeroKit_Globalization_BusinessDayExtensions_IsHalfDayHoliday_System_DateTime_HeroKit_Globalization_Country_" data-uid="HeroKit.Globalization.BusinessDayExtensions.IsHalfDayHoliday(System.DateTime,HeroKit.Globalization.Country)">
+  IsHalfDayHoliday(DateTime, Country)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/BusinessDayExtensions.cs/#L200"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks whether the date of a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a> is a half-day holiday. The time part is ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsHalfDayHoliday(this DateTime value, Country country)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The date and time.</p>
+</dd>
+    <dt><code>country</code> <a class="xref" href="HeroKit.Globalization.Country.html">Country</a></dt>
+    <dd><p>The country.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True for half-day holidays; otherwise false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_BusinessDayExtensions_IsPublicHoliday_" data-uid="HeroKit.Globalization.BusinessDayExtensions.IsPublicHoliday*"></a>
+
+  <h3 id="HeroKit_Globalization_BusinessDayExtensions_IsPublicHoliday_System_DateOnly_HeroKit_Globalization_Country_" data-uid="HeroKit.Globalization.BusinessDayExtensions.IsPublicHoliday(System.DateOnly,HeroKit.Globalization.Country)">
+  IsPublicHoliday(DateOnly, Country)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/BusinessDayExtensions.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks whether a date is a full-day public holiday.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsPublicHoliday(this DateOnly value, Country country)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>The date.</p>
+</dd>
+    <dt><code>country</code> <a class="xref" href="HeroKit.Globalization.Country.html">Country</a></dt>
+    <dd><p>The country.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True for full-day holidays; false for half days and ordinary days.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_BusinessDayExtensions_IsPublicHoliday_" data-uid="HeroKit.Globalization.BusinessDayExtensions.IsPublicHoliday*"></a>
+
+  <h3 id="HeroKit_Globalization_BusinessDayExtensions_IsPublicHoliday_System_DateTime_HeroKit_Globalization_Country_" data-uid="HeroKit.Globalization.BusinessDayExtensions.IsPublicHoliday(System.DateTime,HeroKit.Globalization.Country)">
+  IsPublicHoliday(DateTime, Country)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/BusinessDayExtensions.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks whether a date is a full-day public holiday. The time part is ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsPublicHoliday(this DateTime value, Country country)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The date.</p>
+</dd>
+    <dt><code>country</code> <a class="xref" href="HeroKit.Globalization.Country.html">Country</a></dt>
+    <dd><p>The country.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True for full-day holidays; otherwise false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/BusinessDayExtensions.cs/#L11" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

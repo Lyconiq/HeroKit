@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>3.0&#39;a y&#252;kseltme | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="3.0&#39;a y&#252;kseltme | HeroKit ">
+      
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/blob/master/docs/tr/articles/upgrading.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="30a-yükseltme">3.0'a yükseltme</h1>
+
+<p>Bugün kullandığınız sürümün bölümünü seçin. Değişikliklerin çoğu derleyicinin gösterdiği ad değişiklikleridir.</p>
+<h2 id="2xten">2.x'ten</h2>
+<p>HeroKit 3.0, yalnızca Türkiye'ye özgü metotların (<code>...Tr</code>, <code>ToTurkish...</code>) yerine <code>Country</code>, <code>Language</code> ya da <code>Currency</code> alan tek bir metot kümesi getirir. Türkiye <code>Countries.Turkey</code>, <code>Languages.Turkish</code> ve <code>Currencies.TurkishLira</code> olarak hazır gelir. Diğer ülkeler eklendikleri anda aynı metotları kullanır: bkz. <a href="countries-and-languages.html">Ülkeler ve diller</a>.</p>
+<p>Davranış ve sonuçlar aynıdır.</p>
+<h3 id="namespaceler">Namespace'ler</h3>
+<table>
+<thead>
+<tr>
+<th>2.x</th>
+<th>3.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>using HeroKit.Turkish;</code></td>
+<td><code>using HeroKit.Globalization;</code></td>
+</tr>
+<tr>
+<td><code>IsValidTckn</code>, <code>IsValidVkn</code></td>
+<td><code>using HeroKit.Globalization.Turkey;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="telefon-numaraları">Telefon numaraları</h3>
+<table>
+<thead>
+<tr>
+<th>2.x</th>
+<th>3.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value.IsValidPhoneTr()</code></td>
+<td><code>value.IsValidPhone(Countries.Turkey)</code></td>
+</tr>
+<tr>
+<td><code>value.IsValidMobileTr()</code></td>
+<td><code>value.IsValidMobilePhone(Countries.Turkey)</code></td>
+</tr>
+<tr>
+<td><code>value.ToE164Tr()</code></td>
+<td><code>value.ToE164(Countries.Turkey)</code></td>
+</tr>
+<tr>
+<td><code>value.FormatPhoneTr()</code></td>
+<td><code>value.FormatPhone(Countries.Turkey)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="kimlik-vergi-plaka-posta-kodu-ve-bölgeler">Kimlik, vergi, plaka, posta kodu ve bölgeler</h3>
+<table>
+<thead>
+<tr>
+<th>2.x</th>
+<th>3.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value.IsValidTckn()</code>, <code>value.IsValidVkn()</code></td>
+<td>değişmedi (namespace <code>HeroKit.Globalization.Turkey</code>)</td>
+</tr>
+<tr>
+<td>—</td>
+<td><code>value.IsValidNationalId(Countries.Turkey)</code> (TCKN)</td>
+</tr>
+<tr>
+<td><code>value.IsValidTaxIdTr()</code></td>
+<td><code>value.IsValidTaxId(Countries.Turkey)</code></td>
+</tr>
+<tr>
+<td><code>value.IsValidPlateTr()</code></td>
+<td><code>value.IsValidVehiclePlate(Countries.Turkey)</code></td>
+</tr>
+<tr>
+<td><code>value.FormatPlateTr()</code></td>
+<td><code>value.FormatVehiclePlate(Countries.Turkey)</code></td>
+</tr>
+<tr>
+<td><code>value.IsValidPostalCodeTr()</code></td>
+<td><code>value.IsValidPostalCode(Countries.Turkey)</code></td>
+</tr>
+<tr>
+<td><code>&quot;34&quot;.ToProvinceName()</code></td>
+<td><code>Countries.Turkey.FindRegion(&quot;34&quot;)?.Name</code></td>
+</tr>
+<tr>
+<td><code>6.ToProvinceName()</code></td>
+<td><code>Countries.Turkey.FindRegion(6)?.Name</code></td>
+</tr>
+<tr>
+<td><code>&quot;sanliurfa&quot;.ToProvinceCode()</code></td>
+<td><code>Countries.Turkey.FindRegion(&quot;sanliurfa&quot;)?.Code</code></td>
+</tr>
+<tr>
+<td><code>TurkishProvinces.All</code></td>
+<td><code>Countries.Turkey.Regions</code> (<code>Region(Code, Name)</code> listesi)</td>
+</tr>
+</tbody>
+</table>
+<p><code>FindRegion</code> bilinmeyen bir bölge için <code>null</code> döner.</p>
+<h3 id="tutar-para-birimi-ve-yazıyla-sayı">Tutar, para birimi ve yazıyla sayı</h3>
+<table>
+<thead>
+<tr>
+<th>2.x</th>
+<th>3.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>123.ToTurkishWords()</code></td>
+<td><code>123.ToWords(Languages.Turkish)</code></td>
+</tr>
+<tr>
+<td><code>amount.ToTurkishCurrencyWords()</code></td>
+<td><code>amount.ToCurrencyWords(Currencies.TurkishLira)</code></td>
+</tr>
+<tr>
+<td><code>amount.ToTurkishCurrencyWords(&quot;Euro&quot;, &quot;sent&quot;)</code></td>
+<td><code>amount.ToCurrencyWords(new Currency(&quot;EUR&quot;, &quot;€&quot;, Languages.Turkish) { UnitName = &quot;Euro&quot;, SubunitName = &quot;sent&quot; })</code></td>
+</tr>
+<tr>
+<td><code>amount.ToTurkishLira()</code></td>
+<td><code>amount.ToCurrencyString(Currencies.TurkishLira)</code></td>
+</tr>
+<tr>
+<td><code>amount.ToTurkishLira(TurkishLiraFormat.Code)</code></td>
+<td><code>amount.ToCurrencyString(Currencies.TurkishLira, CurrencyStyle.Abbreviation)</code> (<code>&quot;1.234,50 TL&quot;</code>)</td>
+</tr>
+<tr>
+<td>—</td>
+<td><code>CurrencyStyle.IsoCode</code> (<code>&quot;1.234,50 TRY&quot;</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="resmî-tatiller-ve-iş-günleri">Resmî tatiller ve iş günleri</h3>
+<table>
+<thead>
+<tr>
+<th>2.x</th>
+<th>3.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TurkishHolidays.GetHolidays(2026)</code></td>
+<td><code>Countries.Turkey.Holidays!.GetHolidays(2026)</code></td>
+</tr>
+<tr>
+<td><code>date.IsPublicHolidayTr()</code></td>
+<td><code>date.IsPublicHoliday(Countries.Turkey)</code></td>
+</tr>
+<tr>
+<td><code>date.IsHalfDayHolidayTr()</code></td>
+<td><code>date.IsHalfDayHoliday(Countries.Turkey)</code></td>
+</tr>
+<tr>
+<td><code>date.GetPublicHolidayTr()</code></td>
+<td><code>date.GetPublicHoliday(Countries.Turkey)</code></td>
+</tr>
+<tr>
+<td><code>date.IsBusinessDayTr()</code></td>
+<td><code>date.IsBusinessDay(Countries.Turkey)</code></td>
+</tr>
+<tr>
+<td><code>date.AddBusinessDaysTr(n)</code></td>
+<td><code>date.AddBusinessDays(n, Countries.Turkey)</code></td>
+</tr>
+<tr>
+<td><code>date.BusinessDaysUntilTr(end)</code></td>
+<td><code>date.CountBusinessDays(end, Countries.Turkey)</code> (3.7.0+, yarım gün 0,5 sayılır)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="harf-büyüklüğü-ve-metin">Harf büyüklüğü ve metin</h3>
+<table>
+<thead>
+<tr>
+<th>2.x</th>
+<th>3.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value.ToTitleCaseTr()</code></td>
+<td><code>value.ToTitleCase(Languages.Turkish)</code></td>
+</tr>
+<tr>
+<td><code>value.EqualsTr(other)</code></td>
+<td><code>value.EqualsIgnoreCase(other, Languages.Turkish)</code></td>
+</tr>
+<tr>
+<td><code>value.RemoveAccent()</code></td>
+<td><code>value.RemoveDiacritics()</code></td>
+</tr>
+<tr>
+<td><code>value.ClearTurkishChars()</code></td>
+<td><code>value.RemoveDiacritics()</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>RemoveDiacritics</code> sabit bir karakter tablosu kullanır; bu yüzden her sistemde aynı sonucu verir. Latin-1 ve yaygın Orta Avrupa harflerini de kapsar.</p>
+<h3 id="doğrulama-öznitelikleri">Doğrulama öznitelikleri</h3>
+<table>
+<thead>
+<tr>
+<th>2.x</th>
+<th>3.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[TurkishPhone]</code>, <code>[TurkishPhone(MobileOnly = true)]</code></td>
+<td><code>[PhoneNumber(&quot;TR&quot;)]</code>, <code>[PhoneNumber(&quot;TR&quot;, MobileOnly = true)]</code></td>
+</tr>
+<tr>
+<td><code>[PlateTr]</code></td>
+<td><code>[VehiclePlate(&quot;TR&quot;)]</code></td>
+</tr>
+<tr>
+<td><code>[PostalCodeTr]</code></td>
+<td><code>[PostalCode(&quot;TR&quot;)]</code></td>
+</tr>
+<tr>
+<td><code>[TaxIdTr]</code></td>
+<td><code>[TaxId(&quot;TR&quot;)]</code></td>
+</tr>
+<tr>
+<td>—</td>
+<td><code>[NationalId(&quot;TR&quot;)]</code></td>
+</tr>
+<tr>
+<td><code>[Tckn]</code>, <code>[Vkn]</code>, <code>[Iban]</code>, <code>[CardNumber]</code></td>
+<td>değişmedi</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fluentvalidation">FluentValidation</h3>
+<table>
+<thead>
+<tr>
+<th>2.x</th>
+<th>3.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TurkishPhone(mobileOnly)</code></td>
+<td><code>PhoneNumber(Countries.Turkey, mobileOnly)</code></td>
+</tr>
+<tr>
+<td><code>PlateTr()</code></td>
+<td><code>VehiclePlate(Countries.Turkey)</code></td>
+</tr>
+<tr>
+<td><code>PostalCodeTr()</code></td>
+<td><code>PostalCode(Countries.Turkey)</code></td>
+</tr>
+<tr>
+<td><code>TaxIdTr()</code></td>
+<td><code>TaxId(Countries.Turkey)</code></td>
+</tr>
+<tr>
+<td>—</td>
+<td><code>NationalId(Countries.Turkey)</code></td>
+</tr>
+<tr>
+<td><code>Tckn()</code>, <code>Vkn()</code>, <code>Iban()</code>, <code>CardNumber()</code></td>
+<td>değişmedi</td>
+</tr>
+</tbody>
+</table>
+<h3 id="30da-yeni">3.0'da yeni</h3>
+<p>Bunlar daha önce yayımlanmış bir sürümde yoktu:</p>
+<ul>
+<li><strong>e-Fatura ve e-Arşiv:</strong> <code>GibInvoiceNumber</code> (<code>TryParse</code>, <code>Create</code>, <code>Next</code>), <code>IsValidGibInvoiceNumber</code>, <code>IsValidEttn</code>, <code>[GibInvoiceNumber]</code> ve <code>[Ettn]</code> öznitelikleri, <code>GibInvoiceNumber()</code> ve <code>Ettn()</code> FluentValidation kuralları.</li>
+<li><strong>ICU olmadan Türkçe sıralama:</strong> <code>Languages.Turkish.TextRules!.Comparer</code> ve <code>IgnoreCaseComparer</code>; <code>Array.Sort</code>, <code>OrderBy(key, comparer)</code> ile ya da sözlük karşılaştırıcısı olarak kullanılır. Değişmez globalleştirmeyle de çalışır.</li>
+<li><strong>Harf büyüklüğü:</strong> <code>ToUpper(Languages.Turkish)</code> ve <code>ToLower(Languages.Turkish)</code>.</li>
+<li><strong>Kendi ülkeniz, diliniz ya da para biriminiz:</strong> <code>new Country(...)</code>, <code>Countries.Register</code>, <code>new Language(...)</code>, <code>new Currency(...)</code>.</li>
+</ul>
+<h3 id="güncelleme-listesi">Güncelleme listesi</h3>
+<ol>
+<li><code>using HeroKit.Turkish;</code> satırını <code>using HeroKit.Globalization;</code> ile değiştirin; <code>IsValidTckn</code> ya da <code>IsValidVkn</code> çağırdığınız yere <code>using HeroKit.Globalization.Turkey;</code> ekleyin.</li>
+<li>Çağrıları yukarıdaki tablolara göre yeniden adlandırın. Derleyici eski adların hepsini listeler.</li>
+<li>Ülke özniteliklerini ve FluentValidation kurallarını değiştirin.</li>
+</ol>
+<h2 id="1xten">1.x'ten</h2>
+<p>Önce bu değişiklikleri uygulayın, sonra <a href="#2xten">2.x'ten</a> tablolarını.</p>
+<p>HeroKit 2.0 her dönüşüme tek bir hata politikası uygular, adları tutarlı hâle getirir ve eski ya da .NET'in kendisiyle çakışan yardımcıları kaldırır. Değişikliklerin çoğu, derleyicinin gösterdiği yeniden adlandırmalardır.</p>
+<h3 id="dönüşümler">Dönüşümler</h3>
+<p>Toleranslı <code>ToX</code> varsayılan değer döner; <code>TryToX</code> <code>false</code> döner. İkisi de hatalı girdide istisna fırlatmaz.</p>
+<table>
+<thead>
+<tr>
+<th>1.x</th>
+<th>2.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;x&quot;.ToDecimal(&quot;,&quot;, true)</code> (geçersiz girdide istisna fırlatırdı)</td>
+<td><code>&quot;x&quot;.ToDecimal()</code> 0 döner; <code>ToDecimal(defaultValue, provider)</code>; <code>TryToDecimal(out …)</code></td>
+</tr>
+<tr>
+<td><code>&quot;x&quot;.ToDateTime(culture, defaultValue)</code></td>
+<td><code>&quot;x&quot;.ToDateTime(defaultValue, provider)</code></td>
+</tr>
+<tr>
+<td><code>&quot;x&quot;.ToBoolean(trueCondition: &quot;yes&quot;, defaultvalue: false)</code></td>
+<td><code>&quot;x&quot;.ToBoolean(trueText: &quot;yes&quot;, defaultValue: false)</code></td>
+</tr>
+<tr>
+<td><code>&quot;x&quot;.ToEnum&lt;T&gt;()</code> her <code>T</code> için</td>
+<td><code>T : struct, Enum</code>; yeni <code>TryToEnum&lt;T&gt;(out …)</code></td>
+</tr>
+<tr>
+<td><code>&quot;x&quot;.ToNullable&lt;T&gt;()</code> → <code>(bool status, T? result)</code></td>
+<td><code>&quot;x&quot;.ToNullable&lt;T&gt;()</code> → <code>T?</code> (başarısızlıkta null)</td>
+</tr>
+<tr>
+<td><code>&quot;x&quot;.ToByteArray()</code> (geçersiz base64'te istisna fırlatırdı)</td>
+<td><code>&quot;x&quot;.FromBase64()</code> → <code>byte[]?</code></td>
+</tr>
+<tr>
+<td><code>obj.ConvertTo&lt;T&gt;()</code> (geçersiz girdide istisna fırlatırdı)</td>
+<td>varsayılan değeri döner; <code>TryConvertTo&lt;T&gt;(out …)</code></td>
+</tr>
+<tr>
+<td><code>obj.TryCast&lt;T&gt;(out …)</code></td>
+<td><code>obj.TryConvertTo&lt;T&gt;(out …)</code></td>
+</tr>
+<tr>
+<td><code>property.TrySetConvertedValue&lt;T&gt;(instance, value)</code></td>
+<td><code>property.TrySetConvertedValue(instance, value)</code></td>
+</tr>
+<tr>
+<td>—</td>
+<td>Her <code>IParsable&lt;T&gt;</code> için <code>&quot;x&quot;.To&lt;T&gt;()</code> / <code>TryTo&lt;T&gt;(out …)</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>TryConvertTo</code> ve <code>TrySetConvertedValue</code> artık null girdide, onu varsayılan değere çevirmek yerine <code>false</code> döner. <code>TrySetConvertedValue(instance, null)</code> referans tipli ve null olabilen özellikleri temizler.</p>
+<h3 id="yeniden-adlandırmalar">Yeniden adlandırmalar</h3>
+<table>
+<thead>
+<tr>
+<th>1.x</th>
+<th>2.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IsEvenNumber()</code> / <code>IsOddNumber()</code></td>
+<td><code>IsEven()</code> / <code>IsOdd()</code></td>
+</tr>
+<tr>
+<td><code>ToMonthString(cultureInfo)</code></td>
+<td><code>ToMonthName(culture)</code></td>
+</tr>
+<tr>
+<td><code>flag.ToString(&quot;Yes&quot;, &quot;No&quot;)</code></td>
+<td><code>flag.ToText(&quot;Yes&quot;, &quot;No&quot;)</code></td>
+</tr>
+<tr>
+<td><code>status.GetValue&lt;int&gt;()</code> → <code>&quot;2&quot;</code></td>
+<td><code>status.ToUnderlying&lt;int&gt;()</code> → <code>2</code></td>
+</tr>
+<tr>
+<td><code>array.InsertItems(items)</code></td>
+<td><code>array.CopyFrom(items)</code> (sayıyı döner)</td>
+</tr>
+<tr>
+<td><code>bytes.UrlTokenEncode()</code></td>
+<td><code>bytes.ToBase64Url()</code> (RFC 4648 URL güvenli base64)</td>
+</tr>
+<tr>
+<td><code>date.ToCultureString(formatProvider: …)</code></td>
+<td><code>date.ToCultureString(culture: …)</code></td>
+</tr>
+</tbody>
+</table>
+<p>Tek değerli parametreler her yerde <code>value</code> olarak adlandırılır (önceden <code>input</code>, <code>datetime</code>, <code>target</code>, <code>number</code>, <code>source</code>). Adlandırılmış argüman kullandıysanız güncelleyin.</p>
+<h3 id="kaldırılanlar">Kaldırılanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Kaldırılan</th>
+<th>Yerine kullanın</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ToUpperTr()</code>, <code>ToLowerTr()</code></td>
+<td><code>ToUpper(Languages.Turkish)</code>, <code>ToLower(Languages.Turkish)</code></td>
+</tr>
+<tr>
+<td><code>ToTrString()</code></td>
+<td><code>ToCultureString(CultureInfo.GetCultureInfo(&quot;tr-TR&quot;))</code></td>
+</tr>
+<tr>
+<td><code>PropertyInfoExtensions.SetValue&lt;T&gt;()</code></td>
+<td><code>TrySetConvertedValue(instance, value)</code></td>
+</tr>
+<tr>
+<td><code>ToPixel()</code></td>
+<td><code>point * 4m / 3m</code></td>
+</tr>
+<tr>
+<td><code>Seconds()</code></td>
+<td><code>TimeSpan.FromSeconds(n)</code></td>
+</tr>
+<tr>
+<td><code>NameEqualityComparer</code></td>
+<td><code>StringComparer.OrdinalIgnoreCase</code></td>
+</tr>
+<tr>
+<td><code>array.ToList(mapFunction)</code></td>
+<td><code>array.Select(map).ToList()</code></td>
+</tr>
+<tr>
+<td><code>TypesExtensions.GetDefault&lt;T&gt;()</code></td>
+<td><code>default(T)</code></td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/docs/tr/articles/upgrading.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

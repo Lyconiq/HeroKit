@@ -1,0 +1,1865 @@
+{
+  "docfx_version": "2.81.0+ba844df625370a6bd7c1ecab0d0ec4d1d9128ac4",
+  "sitemap": {
+    "baseUrl": "https://herokit.lyconiq.com/",
+    "changefreq": "weekly"
+  },
+  "source_base_path": "/home/runner/work/HeroKit/HeroKit/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Arrays.ArrayControlExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Arrays.ArrayControlExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Arrays.ArrayControlExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Arrays.ArrayControlExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for Array value checking</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Arrays.ArrayConversionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Arrays.ArrayConversionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Arrays.ArrayConversionExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Arrays.ArrayConversionExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for converting arrays.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Arrays.ArrayManipulationExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Arrays.ArrayManipulationExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Arrays.ArrayManipulationExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Arrays.ArrayManipulationExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for changing arrays.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Arrays.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Arrays.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Arrays",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Assemblies.AssemblyExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Assemblies.AssemblyExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Assemblies.AssemblyExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Assemblies.AssemblyExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for Assembly values.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Assemblies.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Assemblies.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Assemblies",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Banking.Bank.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Banking.Bank.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Banking.Bank",
+      "Summary": "<p sourcefile=\"api/HeroKit.Banking.Bank.yml\" sourcestartlinenumber=\"1\">A bank identified by its national bank code.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Banking.CardBrand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Banking.CardBrand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Banking.CardBrand",
+      "Summary": "<p sourcefile=\"api/HeroKit.Banking.CardBrand.yml\" sourcestartlinenumber=\"1\">Identifies the brand (network) of a payment card.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Banking.CardNumberExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Banking.CardNumberExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Banking.CardNumberExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Banking.CardNumberExtensions.yml\" sourcestartlinenumber=\"1\">Contains extension methods for validating payment card numbers and detecting the card brand.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Banking.IbanExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Banking.IbanExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Banking.IbanExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Banking.IbanExtensions.yml\" sourcestartlinenumber=\"1\">Contains extension methods for validating and formatting IBANs (ISO 13616).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Banking.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Banking.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Banking",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Barcodes.BarcodeExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Barcodes.BarcodeExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Barcodes.BarcodeExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Barcodes.BarcodeExtensions.yml\" sourcestartlinenumber=\"1\">Validation helpers for GS1 product barcodes.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Barcodes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Barcodes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Barcodes",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Booleans.BooleanControlExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Booleans.BooleanControlExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Booleans.BooleanControlExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Booleans.BooleanControlExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for <code sourcefile=\"api/HeroKit.Booleans.BooleanControlExtensions.yml\" sourcestartlinenumber=\"1\">bool</code> value checking and manipulation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Booleans.BooleanConversionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Booleans.BooleanConversionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Booleans.BooleanConversionExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Booleans.BooleanConversionExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for converting boolean values.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Booleans.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Booleans.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Booleans",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.DateTimes.DateTimeFormattingExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.DateTimes.DateTimeFormattingExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.DateTimes.DateTimeFormattingExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.DateTimes.DateTimeFormattingExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for DateTime values.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.DateTimes.DateTimeRangeExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.DateTimes.DateTimeRangeExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.DateTimes.DateTimeRangeExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.DateTimes.DateTimeRangeExtensions.yml\" sourcestartlinenumber=\"1\">Provides range, boundary and age helpers for DateTime and DateOnly values.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.DateTimes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.DateTimes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.DateTimes",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Decimals.DecimalPriceExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Decimals.DecimalPriceExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Decimals.DecimalPriceExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Decimals.DecimalPriceExtensions.yml\" sourcestartlinenumber=\"1\">Provides price rounding, percentage and VAT helpers for decimal values.\nMethods return unrounded values unless a <code>decimals</code> argument is given.\nCallers round money with <code>Math.Round(x, 2, MidpointRounding.AwayFromZero)</code>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Decimals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Decimals.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Decimals",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Enumerables.EnumerableExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Enumerables.EnumerableExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Enumerables.EnumerableExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Enumerables.EnumerableExtensions.yml\" sourcestartlinenumber=\"1\">Provides helpers for sequences that LINQ does not include.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Enumerables.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Enumerables.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Enumerables",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Enums.EnumDescriptionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Enums.EnumDescriptionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Enums.EnumDescriptionExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Enums.EnumDescriptionExtensions.yml\" sourcestartlinenumber=\"1\">Reads display texts of enum values.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Enums.EnumExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Enums.EnumExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Enums.EnumExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Enums.EnumExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for enums.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Enums.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Enums",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.FileTypes.FileType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.FileTypes.FileType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.FileTypes.FileType",
+      "Summary": "<p sourcefile=\"api/HeroKit.FileTypes.FileType.yml\" sourcestartlinenumber=\"1\">A file type: name, MIME type, extensions and the detectors that recognize its content. Built-in types are in <xref href=\"HeroKit.FileTypes.FileTypes\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.FileTypes.FileTypeCategory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.FileTypes.FileTypeCategory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.FileTypes.FileTypeCategory",
+      "Summary": "<p sourcefile=\"api/HeroKit.FileTypes.FileTypeCategory.yml\" sourcestartlinenumber=\"1\">The broad group of a file type.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.FileTypes.FileTypeRegistry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.FileTypes.FileTypeRegistry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.FileTypes.FileTypeRegistry",
+      "Summary": "<p sourcefile=\"api/HeroKit.FileTypes.FileTypeRegistry.yml\" sourcestartlinenumber=\"1\">A set of file types with detection by content and lookup by extension and MIME type.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.FileTypes.FileTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.FileTypes.FileTypes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.FileTypes.FileTypes",
+      "Summary": "<p sourcefile=\"api/HeroKit.FileTypes.FileTypes.yml\" sourcestartlinenumber=\"1\">The built-in file types and shortcuts to the shared <xref href=\"HeroKit.FileTypes.FileTypes.Default\" data-throw-if-not-resolved=\"false\"></xref> registry and to <xref href=\"HeroKit.FileTypes.UploadValidator\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.FileTypes.IFileTypeDetector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.FileTypes.IFileTypeDetector.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.FileTypes.IFileTypeDetector",
+      "Summary": "<p sourcefile=\"api/HeroKit.FileTypes.IFileTypeDetector.yml\" sourcestartlinenumber=\"1\">Recognizes a file type from the first bytes of a file.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.FileTypes.IUploadRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.FileTypes.IUploadRule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.FileTypes.IUploadRule",
+      "Summary": "<p sourcefile=\"api/HeroKit.FileTypes.IUploadRule.yml\" sourcestartlinenumber=\"1\">An extra check for uploads, run after the built-in checks. Add instances to <xref href=\"HeroKit.FileTypes.UploadPolicy.Rules\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.FileTypes.IsoMediaDetector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.FileTypes.IsoMediaDetector.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.FileTypes.IsoMediaDetector",
+      "Summary": "<p sourcefile=\"api/HeroKit.FileTypes.IsoMediaDetector.yml\" sourcestartlinenumber=\"1\">Detects ISO base media files (MP4, MOV, M4A, 3GP, HEIC, AVIF) by the brands in the &quot;ftyp&quot; box.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.FileTypes.MagicNumber.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.FileTypes.MagicNumber.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.FileTypes.MagicNumber",
+      "Summary": "<p sourcefile=\"api/HeroKit.FileTypes.MagicNumber.yml\" sourcestartlinenumber=\"1\">Detects a file type by fixed bytes at a fixed offset, also called a file signature.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.FileTypes.UploadCheckResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.FileTypes.UploadCheckResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.FileTypes.UploadCheckResult",
+      "Summary": "<p sourcefile=\"api/HeroKit.FileTypes.UploadCheckResult.yml\" sourcestartlinenumber=\"1\">The result of <xref href=\"HeroKit.FileTypes.UploadValidator.Validate(System.ReadOnlySpan%7bSystem.Byte%7d%2cSystem.String)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.FileTypes.UploadPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.FileTypes.UploadPolicy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.FileTypes.UploadPolicy",
+      "Summary": "<p sourcefile=\"api/HeroKit.FileTypes.UploadPolicy.yml\" sourcestartlinenumber=\"1\">Settings for <xref href=\"HeroKit.FileTypes.UploadValidator\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.FileTypes.UploadRejection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.FileTypes.UploadRejection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.FileTypes.UploadRejection",
+      "Summary": "<p sourcefile=\"api/HeroKit.FileTypes.UploadRejection.yml\" sourcestartlinenumber=\"1\">Why an upload was rejected.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.FileTypes.UploadValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.FileTypes.UploadValidator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.FileTypes.UploadValidator",
+      "Summary": "<p sourcefile=\"api/HeroKit.FileTypes.UploadValidator.yml\" sourcestartlinenumber=\"1\">Checks whether an uploaded file is safe to accept, following the OWASP file upload advice.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.FileTypes.ZipEntryDetector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.FileTypes.ZipEntryDetector.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.FileTypes.ZipEntryDetector",
+      "Summary": "<p sourcefile=\"api/HeroKit.FileTypes.ZipEntryDetector.yml\" sourcestartlinenumber=\"1\">Detects a ZIP-based file type, such as DOCX, ODT, EPUB, JAR or APK, by the names of the entries in the header.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.FileTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.FileTypes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.FileTypes",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.FluentValidation.HeroKitRuleBuilderExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.yml\" sourcestartlinenumber=\"1\">FluentValidation rules for HeroKit validators.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.FluentValidation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.FluentValidation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.FluentValidation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.BusinessDayExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.BusinessDayExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.BusinessDayExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.BusinessDayExtensions.yml\" sourcestartlinenumber=\"1\">Public holiday and business day helpers based on the <xref href=\"HeroKit.Globalization.IHolidayCalendar\" data-throw-if-not-resolved=\"false\"></xref> of a <xref href=\"HeroKit.Globalization.Country\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.Countries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.Countries.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.Countries",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.Countries.yml\" sourcestartlinenumber=\"1\">Predefined countries and a registry that resolves countries by ISO code, for example in validation attributes.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.Country.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.Country.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.Country",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.Country.yml\" sourcestartlinenumber=\"1\">A country and its rules. Predefined countries are in <xref href=\"HeroKit.Globalization.Countries\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.CountryRuleExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.CountryRuleExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.CountryRuleExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.CountryRuleExtensions.yml\" sourcestartlinenumber=\"1\">Validates and formats country-specific values with the rules of a <xref href=\"HeroKit.Globalization.Country\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.Currencies.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.Currencies.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.Currencies",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.Currencies.yml\" sourcestartlinenumber=\"1\">Predefined currencies.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.Currency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.Currency.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.Currency",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.Currency.yml\" sourcestartlinenumber=\"1\">A currency with its notation and names. Predefined currencies are in <xref href=\"HeroKit.Globalization.Currencies\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.CurrencyExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.CurrencyExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.CurrencyExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.CurrencyExtensions.yml\" sourcestartlinenumber=\"1\">Formats amounts and writes them in words with the notation of a <xref href=\"HeroKit.Globalization.Currency\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.CurrencyStyle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.CurrencyStyle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.CurrencyStyle",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.CurrencyStyle.yml\" sourcestartlinenumber=\"1\">Selects how a currency is written next to an amount.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.District.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.District.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.District",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.District.yml\" sourcestartlinenumber=\"1\">A second-level administrative unit of a country, such as a Turkish district (ilçe).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.IBankDirectory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.IBankDirectory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.IBankDirectory",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.IBankDirectory.yml\" sourcestartlinenumber=\"1\">The banks of a country and how to find them from an IBAN.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.IHolidayCalendar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.IHolidayCalendar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.IHolidayCalendar",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.IHolidayCalendar.yml\" sourcestartlinenumber=\"1\">Public holidays and weekend days of a country.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.IIdentifierRules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.IIdentifierRules.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.IIdentifierRules",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.IIdentifierRules.yml\" sourcestartlinenumber=\"1\">Validation rules of an identifier, such as a postal code, a national identity number or a tax number.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.INumberSpeller.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.INumberSpeller.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.INumberSpeller",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.INumberSpeller.yml\" sourcestartlinenumber=\"1\">Writes numbers in words in a language.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.IPhoneNumberRules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.IPhoneNumberRules.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.IPhoneNumberRules",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.IPhoneNumberRules.yml\" sourcestartlinenumber=\"1\">Phone number rules of a country.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.ITextRules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.ITextRules.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.ITextRules",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.ITextRules.yml\" sourcestartlinenumber=\"1\">Casing and sorting rules of a language that do not depend on ICU or the operating system's culture data.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.IVehiclePlateRules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.IVehiclePlateRules.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.IVehiclePlateRules",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.IVehiclePlateRules.yml\" sourcestartlinenumber=\"1\">Vehicle registration plate rules of a country.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.Language.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.Language.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.Language",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.Language.yml\" sourcestartlinenumber=\"1\">A language and its rules. Predefined languages are in <xref href=\"HeroKit.Globalization.Languages\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.LanguageExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.LanguageExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.LanguageExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.LanguageExtensions.yml\" sourcestartlinenumber=\"1\">Text helpers that use the <xref href=\"HeroKit.Globalization.ITextRules\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"HeroKit.Globalization.INumberSpeller\" data-throw-if-not-resolved=\"false\"></xref> of a <xref href=\"HeroKit.Globalization.Language\" data-throw-if-not-resolved=\"false\"></xref>.\nThey do not depend on ICU, so they also work with invariant globalization.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.Languages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.Languages.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.Languages",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.Languages.yml\" sourcestartlinenumber=\"1\">Predefined languages.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.PublicHoliday.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.PublicHoliday.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.PublicHoliday",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.PublicHoliday.yml\" sourcestartlinenumber=\"1\">A public holiday.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.Region.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.Region.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.Region",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.Region.yml\" sourcestartlinenumber=\"1\">A first-level administrative region of a country, such as a Turkish province.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.Turkey.EInvoiceExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.Turkey.EInvoiceExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.Turkey.EInvoiceExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.Turkey.EInvoiceExtensions.yml\" sourcestartlinenumber=\"1\">Validation helpers for Turkish e-Fatura and e-Arşiv documents.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.Turkey.GibInvoiceNumber.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.Turkey.GibInvoiceNumber.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.Turkey.GibInvoiceNumber",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.Turkey.GibInvoiceNumber.yml\" sourcestartlinenumber=\"1\">A Turkish e-Fatura or e-Arşiv invoice number in the GİB format: a 3-character series, a 4-digit year and a 9-digit sequence,\nfor example &quot;ABC2026000000001&quot;.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.Turkey.GibInvoiceQrCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.Turkey.GibInvoiceQrCode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.Turkey.GibInvoiceQrCode",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.Turkey.GibInvoiceQrCode.yml\" sourcestartlinenumber=\"1\">The content of the QR code (karekod) printed on a Turkish e-Fatura or e-Arşiv invoice, in the GİB JSON format.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.Turkey.Tckn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.Turkey.Tckn.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.Turkey.Tckn",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.Turkey.Tckn.yml\" sourcestartlinenumber=\"1\">A Turkish identity number (T.C. Kimlik Numarası) that has passed the checksum check. Validate once at the edge, then pass the value around.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.Turkey.TcknJsonConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.Turkey.TcknJsonConverter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.Turkey.TcknJsonConverter",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.Turkey.TcknJsonConverter.yml\" sourcestartlinenumber=\"1\">Reads and writes a <xref href=\"HeroKit.Globalization.Turkey.Tckn\" data-throw-if-not-resolved=\"false\"></xref> as a JSON string. An invalid number fails deserialization; <code>default(Tckn)</code> is written as null.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.Turkey.TurkeyIdentityExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.Turkey.TurkeyIdentityExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.Turkey.TurkeyIdentityExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Globalization.Turkey.TurkeyIdentityExtensions.yml\" sourcestartlinenumber=\"1\">Provides validation for Turkish identity and tax numbers.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.Turkey.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.Turkey.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization.Turkey",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Globalization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Globalization.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Globalization",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Guids.GuidExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Guids.GuidExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Guids.GuidExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Guids.GuidExtensions.yml\" sourcestartlinenumber=\"1\">Contains extension methods for <xref href=\"System.Guid\" data-throw-if-not-resolved=\"false\"></xref> type.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Guids.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Guids.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Guids",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Integers.IntegerExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Integers.IntegerExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Integers.IntegerExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Integers.IntegerExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for integers.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Integers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Integers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Integers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Objects.ObjectControlExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Objects.ObjectControlExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Objects.ObjectControlExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Objects.ObjectControlExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for Object values.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Objects.ObjectConversionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Objects.ObjectConversionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Objects.ObjectConversionExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Objects.ObjectConversionExtensions.yml\" sourcestartlinenumber=\"1\">Converts objects to other types.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Objects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Objects.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Objects",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Properties.PropertyInfoExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Properties.PropertyInfoExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Properties.PropertyInfoExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Properties.PropertyInfoExtensions.yml\" sourcestartlinenumber=\"1\">Provides helpers for reading and setting properties through reflection.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Properties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Properties.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Properties",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Strings.StringControlExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Strings.StringControlExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Strings.StringControlExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Strings.StringControlExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for string value checking and manipulation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Strings.StringConversionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Strings.StringConversionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Strings.StringConversionExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Strings.StringConversionExtensions.yml\" sourcestartlinenumber=\"1\">Converts strings to other types.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Strings.StringManipulationExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Strings.StringManipulationExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Strings.StringManipulationExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Strings.StringManipulationExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for string manipulations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Strings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Strings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Strings",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Types.TypeControlExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Types.TypeControlExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Types.TypeControlExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Types.TypeControlExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for Type values.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Types.TypesExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Types.TypesExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Types.TypesExtensions",
+      "Summary": "<p sourcefile=\"api/HeroKit.Types.TypesExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for Type values.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Types.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Types.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Types",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.CardNumberAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.CardNumberAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation.CardNumberAttribute",
+      "Summary": "<p sourcefile=\"api/HeroKit.Validation.CardNumberAttribute.yml\" sourcestartlinenumber=\"1\">Validates a payment card number (length and Luhn) with <xref href=\"HeroKit.Banking.CardNumberExtensions.IsValidCardNumber(System.String)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.CountryValidationAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.CountryValidationAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation.CountryValidationAttribute",
+      "Summary": "<p sourcefile=\"api/HeroKit.Validation.CountryValidationAttribute.yml\" sourcestartlinenumber=\"1\">Base class for attributes that validate a string with the rules of a country registered in <xref href=\"HeroKit.Globalization.Countries\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.EttnAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.EttnAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation.EttnAttribute",
+      "Summary": "<p sourcefile=\"api/HeroKit.Validation.EttnAttribute.yml\" sourcestartlinenumber=\"1\">Validates an e-invoice ETTN (UUID) with <xref href=\"HeroKit.Globalization.Turkey.EInvoiceExtensions.IsValidEttn(System.String)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.GibInvoiceNumberAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.GibInvoiceNumberAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation.GibInvoiceNumberAttribute",
+      "Summary": "<p sourcefile=\"api/HeroKit.Validation.GibInvoiceNumberAttribute.yml\" sourcestartlinenumber=\"1\">Validates a Turkish e-Fatura or e-Arşiv invoice number (GİB format) with <xref href=\"HeroKit.Globalization.Turkey.EInvoiceExtensions.IsValidGibInvoiceNumber(System.String)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.GtinAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.GtinAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation.GtinAttribute",
+      "Summary": "<p sourcefile=\"api/HeroKit.Validation.GtinAttribute.yml\" sourcestartlinenumber=\"1\">Validates a GTIN barcode number (EAN-8, UPC-A, EAN-13, GTIN-14) with <xref href=\"HeroKit.Barcodes.BarcodeExtensions.IsValidGtin(System.String)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.IbanAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.IbanAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation.IbanAttribute",
+      "Summary": "<p sourcefile=\"api/HeroKit.Validation.IbanAttribute.yml\" sourcestartlinenumber=\"1\">Validates an IBAN (ISO 13616) with <xref href=\"HeroKit.Banking.IbanExtensions.IsValidIban(System.String)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.IdCardSerialAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.IdCardSerialAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation.IdCardSerialAttribute",
+      "Summary": "<p sourcefile=\"api/HeroKit.Validation.IdCardSerialAttribute.yml\" sourcestartlinenumber=\"1\">Validates a Turkish chip identity card serial number with <xref href=\"HeroKit.Globalization.Turkey.TurkeyIdentityExtensions.IsValidIdCardSerial(System.String)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.KepAddressAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.KepAddressAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation.KepAddressAttribute",
+      "Summary": "<p sourcefile=\"api/HeroKit.Validation.KepAddressAttribute.yml\" sourcestartlinenumber=\"1\">Validates a KEP (Kayıtlı Elektronik Posta) address with <xref href=\"HeroKit.Globalization.Turkey.TurkeyIdentityExtensions.IsValidKepAddress(System.String)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.MersisAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.MersisAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation.MersisAttribute",
+      "Summary": "<p sourcefile=\"api/HeroKit.Validation.MersisAttribute.yml\" sourcestartlinenumber=\"1\">Validates a MERSİS number with <xref href=\"HeroKit.Globalization.Turkey.TurkeyIdentityExtensions.IsValidMersis(System.String)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.NationalIdAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.NationalIdAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation.NationalIdAttribute",
+      "Summary": "<p sourcefile=\"api/HeroKit.Validation.NationalIdAttribute.yml\" sourcestartlinenumber=\"1\">Validates a national identity number of a country, for example <code>[NationalId(&quot;TR&quot;)]</code> for a TCKN.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.PhoneNumberAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.PhoneNumberAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation.PhoneNumberAttribute",
+      "Summary": "<p sourcefile=\"api/HeroKit.Validation.PhoneNumberAttribute.yml\" sourcestartlinenumber=\"1\">Validates a phone number of a country, for example <code>[PhoneNumber(&quot;TR&quot;)]</code>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.PostalCodeAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.PostalCodeAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation.PostalCodeAttribute",
+      "Summary": "<p sourcefile=\"api/HeroKit.Validation.PostalCodeAttribute.yml\" sourcestartlinenumber=\"1\">Validates a postal code of a country, for example <code>[PostalCode(&quot;TR&quot;)]</code>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.TaxIdAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.TaxIdAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation.TaxIdAttribute",
+      "Summary": "<p sourcefile=\"api/HeroKit.Validation.TaxIdAttribute.yml\" sourcestartlinenumber=\"1\">Validates a tax identifier of a country, for example <code>[TaxId(&quot;TR&quot;)]</code> for a VKN or TCKN.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.TcknAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.TcknAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation.TcknAttribute",
+      "Summary": "<p sourcefile=\"api/HeroKit.Validation.TcknAttribute.yml\" sourcestartlinenumber=\"1\">Validates a Turkish identity number (T.C. Kimlik No) with <xref href=\"HeroKit.Globalization.Turkey.TurkeyIdentityExtensions.IsValidTckn(System.String)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.VehiclePlateAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.VehiclePlateAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation.VehiclePlateAttribute",
+      "Summary": "<p sourcefile=\"api/HeroKit.Validation.VehiclePlateAttribute.yml\" sourcestartlinenumber=\"1\">Validates a vehicle plate of a country, for example <code>[VehiclePlate(&quot;TR&quot;)]</code>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.VknAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.VknAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation.VknAttribute",
+      "Summary": "<p sourcefile=\"api/HeroKit.Validation.VknAttribute.yml\" sourcestartlinenumber=\"1\">Validates a Turkish tax number (Vergi Kimlik No) with <xref href=\"HeroKit.Globalization.Turkey.TurkeyIdentityExtensions.IsValidVkn(System.String)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/HeroKit.Validation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HeroKit.Validation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "HeroKit.Validation",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/collections-and-dates.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/collections-and-dates.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/conversions.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/conversions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/countries-and-languages.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/countries-and-languages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/file-types.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/file-types.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/iban-validation.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/iban-validation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/nullable-and-aot.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/nullable-and-aot.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/prices.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/prices.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/strings.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/strings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/tckn-validation.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/tckn-validation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/upgrading.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/upgrading.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/validation.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/validation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/vkn-validation.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/vkn-validation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/herokit.svg",
+      "output": {
+        "resource": {
+          "relative_path": "images/herokit.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "robots.txt",
+      "output": {
+        "resource": {
+          "relative_path": "robots.txt"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tr/articles/collections-and-dates.md",
+      "output": {
+        ".html": {
+          "relative_path": "tr/articles/collections-and-dates.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tr/articles/conversions.md",
+      "output": {
+        ".html": {
+          "relative_path": "tr/articles/conversions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tr/articles/countries-and-languages.md",
+      "output": {
+        ".html": {
+          "relative_path": "tr/articles/countries-and-languages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tr/articles/file-types.md",
+      "output": {
+        ".html": {
+          "relative_path": "tr/articles/file-types.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tr/articles/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "tr/articles/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tr/articles/iban-validation.md",
+      "output": {
+        ".html": {
+          "relative_path": "tr/articles/iban-validation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tr/articles/nullable-and-aot.md",
+      "output": {
+        ".html": {
+          "relative_path": "tr/articles/nullable-and-aot.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tr/articles/prices.md",
+      "output": {
+        ".html": {
+          "relative_path": "tr/articles/prices.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tr/articles/strings.md",
+      "output": {
+        ".html": {
+          "relative_path": "tr/articles/strings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tr/articles/tckn-validation.md",
+      "output": {
+        ".html": {
+          "relative_path": "tr/articles/tckn-validation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "tr/articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "tr/articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "tr/articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tr/articles/upgrading.md",
+      "output": {
+        ".html": {
+          "relative_path": "tr/articles/upgrading.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tr/articles/validation.md",
+      "output": {
+        ".html": {
+          "relative_path": "tr/articles/validation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tr/articles/vkn-validation.md",
+      "output": {
+        ".html": {
+          "relative_path": "tr/articles/vkn-validation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tr/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "tr/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "tr/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "tr/toc.html"
+        },
+        ".json": {
+          "relative_path": "tr/toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Nullable and AOT | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Nullable and AOT | HeroKit ">
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/blob/master/docs/articles/nullable-and-aot.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="nullable-and-aot">Nullable and AOT</h1>
+
+<h2 id="nullable-annotations">Nullable annotations</h2>
+<p>With <a href="https://learn.microsoft.com/en-us/dotnet/csharp/nullable-references">nullable reference types</a>, <code>string</code> means &quot;never null&quot; and <code>string?</code> means &quot;can be null&quot;, and the compiler warns before a null value causes a <code>NullReferenceException</code>. HeroKit's annotations give the compiler this information for every method.</p>
+<p>Every public API is annotated. Null-check helpers tell the compiler about the result:</p>
+<pre><code class="lang-csharp">string? input = GetInput();
+
+if (input.IsNotNullOrEmpty())
+    Console.WriteLine(input.Length); // no warning: input is not null here
+</code></pre>
+<h2 id="trimming-and-native-aot">Trimming and Native AOT</h2>
+<h3 id="what-is-native-aot">What is Native AOT?</h3>
+<p>A .NET app normally ships as intermediate code (IL). The runtime turns it into machine code while the app runs; this is just-in-time (JIT) compilation. With <strong>Native AOT</strong> (ahead-of-time), <code>dotnet publish</code> compiles the whole app to machine code in advance. The result is one native executable that:</p>
+<ul>
+<li>starts faster and uses less memory,</li>
+<li>runs on a machine without the .NET runtime.</li>
+</ul>
+<p>This matters most for containers, serverless functions, command-line tools and ASP.NET Core minimal APIs.</p>
+<p>The cost: the app cannot load or generate code at run time, and code the app does not use is removed (<strong>trimming</strong>). Code that depends on reflection can then fail at run time. A library is <strong>AOT compatible</strong> when it does not need these features, so publishing produces no warnings for it.</p>
+<p>You do not have to use Native AOT. HeroKit works the same in a normal .NET app. AOT compatibility only means that HeroKit does not stop you from choosing it.</p>
+<h3 id="herokit-and-native-aot">HeroKit and Native AOT</h3>
+<p>The package is marked <code>IsAotCompatible</code>. CI publishes a test app with Native AOT on every pull request and fails on any trimming warning.</p>
+<p>A few reflection-based helpers cannot be fully trimmed. They carry <code>[RequiresUnreferencedCode]</code> or <code>[RequiresDynamicCode]</code>, so you get a warning at the call site:</p>
+<ul>
+<li><code>TypesExtensions.GetExtensionMethods</code>, <code>GetExtensionMethod</code>, <code>GetRealType</code></li>
+</ul>
+<p>The <code>Country</code>, <code>Language</code> and <code>Currency</code> model is made of plain objects and interfaces. It does not use reflection.</p>
+<p>Conversions, enum helpers and <code>TrySetConvertedValue</code> are AOT-safe since 2.0: they use <code>IParsable&lt;T&gt;</code> and generic enum APIs instead of reflection.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/">Native AOT deployment overview</a> (Microsoft Learn): what Native AOT is, its limitations and how to publish.</li>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/native-aot">ASP.NET Core support for Native AOT</a></li>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/trim-self-contained">Trim self-contained deployments</a></li>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/fixing-warnings">Introduction to AOT warnings</a> and <a href="https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/prepare-libraries-for-trimming">Prepare .NET libraries for trimming</a>: what <code>IsAotCompatible</code> checks in a library.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/docs/articles/nullable-and-aot.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

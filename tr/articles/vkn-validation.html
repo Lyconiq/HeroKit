@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>C# ile vergi kimlik numarası (VKN) doğrulama | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="C# ile vergi kimlik numarası (VKN) doğrulama | HeroKit ">
+      
+      <meta name="description" content="C# ve .NET&#39;te 10 haneli vergi kimlik numarası (VKN) doğrulama algoritması, &#246;rnek hesap, şahıs işletmeleri i&#231;in TCKN ve ASP.NET Core form doğrulaması.">
+      <link rel="icon" href="../../images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/blob/master/docs/tr/articles/vkn-validation.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="c-ile-vergi-kimlik-numarası-vkn-doğrulama">C# ile vergi kimlik numarası (VKN) doğrulama</h1>
+
+<p>Vergi kimlik numarası (VKN) 10 hanelidir ve son hanesi ilk dokuz haneden hesaplanan kontrol hanesidir. Şirketler VKN kullanır. Şahıs işletmeleri ise vergi numarası olarak sahibinin TC kimlik numarasını kullanır. Bu sayfa algoritmayı anlatır ve iki durumu da kabul eden kontrolü gösterir.</p>
+<h2 id="kısa-cevap">Kısa cevap</h2>
+<pre><code class="lang-csharp">using HeroKit.Globalization;
+using HeroKit.Globalization.Turkey;
+
+&quot;4840847211&quot;.IsValidVkn();                     // true
+&quot;4840847212&quot;.IsValidVkn();                     // false
+&quot;10000000146&quot;.IsValidTaxId(Countries.Turkey);  // true: şahıs işletmesi, TCKN
+&quot;4840847211&quot;.IsValidTaxId(Countries.Turkey);   // true: şirket, VKN
+</code></pre>
+<pre><code class="lang-bash">dotnet add package HeroKit
+</code></pre>
+<h2 id="kurallar">Kurallar</h2>
+<ol>
+<li>Tam olarak 10 hane vardır ve hepsi rakamdır.</li>
+<li>İlk 9 hanenin her biri için, <code>p</code> hanenin sırası (1–9) olmak üzere:
+<ul>
+<li><code>a = (hane + 10 − p) mod 10</code></li>
+<li><code>b = (a × 2^(10 − p)) mod 9</code></li>
+<li><code>a</code> sıfır değilken <code>b</code> sıfır çıkarsa <code>b = 9</code> alınır.</li>
+</ul>
+</li>
+<li>Bütün <code>b</code> değerleri toplanır. <strong>10. hane</strong> <code>(10 − toplam mod 10) mod 10</code> değerine eşittir.</li>
+</ol>
+<p>Örnek: <code>4840847211</code></p>
+<table>
+<thead>
+<tr>
+<th>Sıra</th>
+<th>Hane</th>
+<th>a</th>
+<th>2^(10 − p)</th>
+<th>b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+<td>512</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8</td>
+<td>6</td>
+<td>256</td>
+<td>6</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>1</td>
+<td>128</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>6</td>
+<td>64</td>
+<td>6</td>
+</tr>
+<tr>
+<td>5</td>
+<td>8</td>
+<td>3</td>
+<td>32</td>
+<td>6</td>
+</tr>
+<tr>
+<td>6</td>
+<td>4</td>
+<td>8</td>
+<td>16</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>7</td>
+<td>0</td>
+<td>8</td>
+<td>0</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2</td>
+<td>4</td>
+<td>4</td>
+<td>7</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Toplam 39. Kontrol hanesi (10 − 9) mod 10 = <strong>1</strong>. Numaranın son hanesi de 1, yani numara geçerli.</p>
+<h2 id="kütüphanesiz-c-kodu">Kütüphanesiz C# kodu</h2>
+<pre><code class="lang-csharp">static bool IsValidVkn(string? value)
+{
+    if (value is null || value.Length != 10 || !value.All(char.IsAsciiDigit))
+        return false;
+
+    int sum = 0;
+    for (int i = 0; i &lt; 9; i++)                         // i = sıra − 1
+    {
+        int a = (value[i] - '0' + 9 - i) % 10;
+        int b = a * (1 &lt;&lt; (9 - i)) % 9;                 // 1 &lt;&lt; n = 2^n
+        if (a != 0 &amp;&amp; b == 0)
+            b = 9;
+
+        sum += b;
+    }
+
+    return (10 - sum % 10) % 10 == value[9] - '0';
+}
+</code></pre>
+<p>Bu kod, HeroKit'in <code>IsValidVkn</code> metoduyla 300.000 rastgele sayıda aynı sonucu verir.</p>
+<h2 id="sık-yapılan-hatalar">Sık yapılan hatalar</h2>
+<ul>
+<li><strong>9 kuralını atlamak.</strong> <code>a</code> sıfır değilken <code>b</code> sıfır çıkarsa 9 alınmalıdır. Bu kural atlanırsa geçerli numaraların bir kısmı reddedilir.</li>
+<li><strong>Şahıs işletmelerini reddetmek.</strong> Fatura ya da cari kartında vergi numarası alanı yalnız VKN kabul ederse, şahıs işletmeleri TCKN'lerini giremez. Bu alanda <code>IsValidTaxId(Countries.Turkey)</code> ya da <code>[TaxId(&quot;TR&quot;)]</code> kullanın.</li>
+<li><strong>Sayı tipinde saklamak.</strong> VKN <code>0</code> ile başlayabilir. <code>long</code> olarak saklanırsa baştaki sıfır kaybolur. <code>string</code> kullanın.</li>
+<li><strong>Biçim kontrolünü mükellef kontrolü sanmak.</strong> Algoritma numaranın doğru kurulduğunu söyler. Numaranın kayıtlı bir mükellefe ait olduğunu söylemez. Bunun için Gelir İdaresi Başkanlığı'nın (GİB) sorgulama hizmetlerini kullanın.</li>
+</ul>
+<h2 id="aspnet-core-form-doğrulaması">ASP.NET Core form doğrulaması</h2>
+<pre><code class="lang-csharp">using HeroKit.Validation;
+
+public sealed class InvoiceForm
+{
+    [Required, TaxId(&quot;TR&quot;)]   // VKN ya da TCKN
+    public string? TaxNumber { get; set; }
+
+    [Vkn]                     // yalnız VKN
+    public string? CompanyTaxNumber { get; set; }
+}
+</code></pre>
+<p>FluentValidation kullanıyorsanız (<code>dotnet add package HeroKit.FluentValidation</code>):</p>
+<pre><code class="lang-csharp">RuleFor(x =&gt; x.TaxNumber).NotEmpty().TaxId(Countries.Turkey);
+RuleFor(x =&gt; x.CompanyTaxNumber).Vkn();
+</code></pre>
+<h2 id="mersİs-numarası">MERSİS numarası</h2>
+<p>16 haneli MERSİS numarası &quot;0&quot;, şirketin VKN'si ve 5 haneli bir sıra numarasından oluşur:</p>
+<pre><code class="lang-csharp">&quot;0879001756600379&quot;.IsValidMersis(); // true
+</code></pre>
+<h2 id="İlgili">İlgili</h2>
+<ul>
+<li><a href="tckn-validation.html">TCKN doğrulama</a></li>
+<li><a href="iban-validation.html">IBAN doğrulama</a></li>
+<li><a href="validation.html">Form doğrulama</a>: bütün doğrulama öznitelikleri</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/docs/tr/articles/vkn-validation.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Validate an IBAN in C# (Turkish IBAN example) | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Validate an IBAN in C# (Turkish IBAN example) | HeroKit ">
+      
+      <meta name="description" content="How to validate an IBAN in C# and .NET. The ISO 13616 mod-97 algorithm, the 26-character Turkish IBAN, spaces and lower case in user input, finding the bank, and ASP.NET Core form validation.">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/blob/master/docs/articles/iban-validation.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="validate-an-iban-in-c-turkish-iban-example">Validate an IBAN in C# (Turkish IBAN example)</h1>
+
+<p>The 3rd and 4th characters of an IBAN are check digits calculated from the rest of the number (ISO 13616, mod-97). Turkish IBANs have 26 characters. This page explains the algorithm, shows how to handle spaces and lower case in user input, and how to find the bank of an IBAN. HeroKit validates the IBANs of every country.</p>
+<h2 id="short-answer">Short answer</h2>
+<pre><code class="lang-csharp">using HeroKit.Banking;
+
+var iban = &quot;tr33 0006 1005 1978 6457 8413 26&quot;;
+
+iban.IsValidIban();   // true
+iban.NormalizeIban(); // &quot;TR330006100519786457841326&quot;: store this
+iban.FormatIban();    // &quot;TR33 0006 1005 1978 6457 8413 26&quot;: show this
+
+&quot;TR78 0006 2000 0000 0006 2950 05&quot;.GetBank()?.Name; // &quot;Türkiye Garanti Bankası A.Ş.&quot;
+</code></pre>
+<pre><code class="lang-bash">dotnet add package HeroKit
+</code></pre>
+<h2 id="structure-of-a-turkish-iban">Structure of a Turkish IBAN</h2>
+<table>
+<thead>
+<tr>
+<th>Characters</th>
+<th>Example</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–2</td>
+<td><code>TR</code></td>
+<td>Country code</td>
+</tr>
+<tr>
+<td>3–4</td>
+<td><code>33</code></td>
+<td>Check digits</td>
+</tr>
+<tr>
+<td>5–9</td>
+<td><code>00061</code></td>
+<td>Bank code (EFT code)</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>0</code></td>
+<td>Reserved, always 0</td>
+</tr>
+<tr>
+<td>11–26</td>
+<td><code>0519786457841326</code></td>
+<td>Account number (16 digits)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-mod-97-rule">The mod-97 rule</h2>
+<ol>
+<li>Remove the spaces and convert letters to upper case.</li>
+<li>Move the first 4 characters to the end: <code>0006100519786457841326TR33</code>.</li>
+<li>Replace each letter with a two-digit number: A = 10, B = 11 … Z = 35. <code>T</code> = 29, <code>R</code> = 27.</li>
+<li>If the resulting long number modulo 97 is <strong>1</strong>, the IBAN is valid.</li>
+</ol>
+<p>The number is too long for <code>long</code>. Calculating the remainder digit by digit is enough; <code>BigInteger</code> is not needed.</p>
+<h2 id="plain-c-without-a-library">Plain C# without a library</h2>
+<pre><code class="lang-csharp">static bool IsValidTurkishIban(string? value)
+{
+    string iban = (value ?? &quot;&quot;).Replace(&quot; &quot;, &quot;&quot;).ToUpperInvariant();
+    if (iban.Length != 26 || !iban.StartsWith(&quot;TR&quot;))
+        return false;
+
+    int remainder = 0;
+    foreach (char c in iban[4..] + iban[..4])
+    {
+        if (char.IsAsciiDigit(c))
+            remainder = (remainder * 10 + (c - '0')) % 97;
+        else if (char.IsAsciiLetterUpper(c))
+            remainder = (remainder * 100 + (c - 'A' + 10)) % 97;
+        else
+            return false;
+    }
+
+    return remainder == 1;
+}
+</code></pre>
+<p>For Turkish IBANs, this code gives the same result as HeroKit's <code>IsValidIban</code> for 300,000 random numbers. HeroKit also accepts the IBANs of other countries (15 to 34 characters) and checks the national length where a country has IBAN rules.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<ul>
+<li><strong>Rejecting spaces.</strong> Users copy IBANs from banking apps in groups of four. Remove the spaces and convert to upper case before the check. <code>NormalizeIban</code> does this and returns <code>null</code> for an invalid IBAN.</li>
+<li><strong>Only using a regex.</strong> <code>^TR\d{24}$</code> does not catch a mistyped digit. The mod-97 check does.</li>
+<li><strong>Calculating with <code>long</code>.</strong> With letters converted to numbers, a 26-character IBAN has 28 digits and does not fit in <code>long</code>. Calculate the remainder step by step.</li>
+<li><strong>Taking a valid IBAN for an open account.</strong> The algorithm says the number is well formed. It does not say that the account is open or that the name matches. Only the bank's services can confirm that.</li>
+</ul>
+<h2 id="find-the-bank">Find the bank</h2>
+<p><code>GetBank</code> reads the bank code of a valid IBAN (characters 5–9) and looks it up in the EFT codes of the Banks Association of Türkiye:</p>
+<pre><code class="lang-csharp">Bank? bank = &quot;TR78 0006 2000 0000 0006 2950 05&quot;.GetBank();
+bank?.Name; // &quot;Türkiye Garanti Bankası A.Ş.&quot;
+bank?.Code; // &quot;00062&quot;
+</code></pre>
+<p>It returns <code>null</code> for an unknown code. If a bank is missing, <a href="https://github.com/Lyconiq/HeroKit/issues">open an issue</a>.</p>
+<h2 id="aspnet-core-form-validation">ASP.NET Core form validation</h2>
+<pre><code class="lang-csharp">using HeroKit.Validation;
+
+public sealed class PaymentForm
+{
+    [Required, Iban]
+    public string? Iban { get; set; }
+}
+</code></pre>
+<p>With FluentValidation (<code>dotnet add package HeroKit.FluentValidation</code>):</p>
+<pre><code class="lang-csharp">RuleFor(x =&gt; x.Iban).NotEmpty().Iban();
+</code></pre>
+<h2 id="masking-for-logs">Masking for logs</h2>
+<pre><code class="lang-csharp">using HeroKit.Strings;
+
+&quot;TR330006100519786457841326&quot;.Mask(4); // &quot;**********************1326&quot;
+</code></pre>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="tckn-validation.html">TCKN validation</a></li>
+<li><a href="vkn-validation.html">VKN validation</a></li>
+<li><a href="countries-and-languages.html">Countries and languages</a>: IBAN rules of other countries</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/docs/articles/iban-validation.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

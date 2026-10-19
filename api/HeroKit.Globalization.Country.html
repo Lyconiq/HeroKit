@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class Country | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Country | HeroKit ">
+      
+      <meta name="description" content="A country and its rules. Predefined countries are in .">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/new/master/apiSpec/new?filename=HeroKit_Globalization_Country.md&amp;value=---%0Auid%3A%20HeroKit.Globalization.Country%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="HeroKit.Globalization.Country">
+
+
+
+  <h1 id="HeroKit_Globalization_Country" data-uid="HeroKit.Globalization.Country" class="text-break">
+Class Country  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">HeroKit</span>.<a class="xref" href="HeroKit.Globalization.html">Globalization</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>HeroKit.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A country and its rules. Predefined countries are in <a class="xref" href="HeroKit.Globalization.Countries.html">Countries</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class Country</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Country</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="HeroKit.Types.TypeControlExtensions.html#HeroKit_Types_TypeControlExtensions_IsDefaultValue__1___0_">TypeControlExtensions.IsDefaultValue&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectControlExtensions.html#HeroKit_Objects_ObjectControlExtensions_IsNotNull_System_Object_">ObjectControlExtensions.IsNotNull(object?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectControlExtensions.html#HeroKit_Objects_ObjectControlExtensions_IsNull_System_Object_">ObjectControlExtensions.IsNull(object?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectControlExtensions.html#HeroKit_Objects_ObjectControlExtensions_IsNumeric_System_Object_">ObjectControlExtensions.IsNumeric(object?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectConversionExtensions.html#HeroKit_Objects_ObjectConversionExtensions_ConvertTo__1_System_Object___0_">ObjectConversionExtensions.ConvertTo&lt;T&gt;(object?, T?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectConversionExtensions.html#HeroKit_Objects_ObjectConversionExtensions_TryConvertTo__1_System_Object___0__">ObjectConversionExtensions.TryConvertTo&lt;T&gt;(object?, out T?)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="HeroKit_Globalization_Country_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>Every rule is optional. Methods that need a rule the country does not have throw <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a>.
+To support another country, implement the rule interfaces, create an instance and register it with <a class="xref" href="HeroKit.Globalization.Countries.html#HeroKit_Globalization_Countries_Register_HeroKit_Globalization_Country_">Register(Country)</a>.</p>
+</div>
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="HeroKit_Globalization_Country__ctor_" data-uid="HeroKit.Globalization.Country.#ctor*"></a>
+
+  <h3 id="HeroKit_Globalization_Country__ctor_System_String_System_String_HeroKit_Globalization_Language_" data-uid="HeroKit.Globalization.Country.#ctor(System.String,System.String,HeroKit.Globalization.Language)">
+  Country(string, string, Language)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A country and its rules. Predefined countries are in <a class="xref" href="HeroKit.Globalization.Countries.html">Countries</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Country(string code, string name, Language language)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The ISO 3166-1 alpha-2 code, for example &quot;TR&quot;.</p>
+</dd>
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The English name, for example &quot;Türkiye&quot;.</p>
+</dd>
+    <dt><code>language</code> <a class="xref" href="HeroKit.Globalization.Language.html">Language</a></dt>
+    <dd><p>The primary language, used for region names.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Globalization_Country__ctor_System_String_System_String_HeroKit_Globalization_Language__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Every rule is optional. Methods that need a rule the country does not have throw <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a>.
+To support another country, implement the rule interfaces, create an instance and register it with <a class="xref" href="HeroKit.Globalization.Countries.html#HeroKit_Globalization_Countries_Register_HeroKit_Globalization_Country_">Register(Country)</a>.</p>
+</div>
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="HeroKit_Globalization_Country_Banks_" data-uid="HeroKit.Globalization.Country.Banks*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_Banks" data-uid="HeroKit.Globalization.Country.Banks">
+  Banks
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the banks and how to find them from an IBAN, or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IBankDirectory? Banks { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.IBankDirectory.html">IBankDirectory</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_Code_" data-uid="HeroKit.Globalization.Country.Code*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_Code" data-uid="HeroKit.Globalization.Country.Code">
+  Code
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the ISO 3166-1 alpha-2 code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Code { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_Currency_" data-uid="HeroKit.Globalization.Country.Currency*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_Currency" data-uid="HeroKit.Globalization.Country.Currency">
+  Currency
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the national currency, or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Currency? Currency { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.Currency.html">Currency</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_Districts_" data-uid="HeroKit.Globalization.Country.Districts*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_Districts" data-uid="HeroKit.Globalization.Country.Districts">
+  Districts
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the second-level administrative units, for example the 973 Turkish districts (ilçe).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;District&gt; Districts { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="HeroKit.Globalization.District.html">District</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_Holidays_" data-uid="HeroKit.Globalization.Country.Holidays*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_Holidays" data-uid="HeroKit.Globalization.Country.Holidays">
+  Holidays
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the public holiday calendar, or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IHolidayCalendar? Holidays { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.IHolidayCalendar.html">IHolidayCalendar</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_IbanRules_" data-uid="HeroKit.Globalization.Country.IbanRules*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_IbanRules" data-uid="HeroKit.Globalization.Country.IbanRules">
+  IbanRules
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the national IBAN rules (length and fixed positions), or null. IBAN validation applies them to IBANs with this country code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IIdentifierRules? IbanRules { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.IIdentifierRules.html">IIdentifierRules</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_Language_" data-uid="HeroKit.Globalization.Country.Language*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_Language" data-uid="HeroKit.Globalization.Country.Language">
+  Language
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the primary language.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Language Language { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.Language.html">Language</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_Name_" data-uid="HeroKit.Globalization.Country.Name*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_Name" data-uid="HeroKit.Globalization.Country.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the English name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_NationalIds_" data-uid="HeroKit.Globalization.Country.NationalIds*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_NationalIds" data-uid="HeroKit.Globalization.Country.NationalIds">
+  NationalIds
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the national identity number rules, or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IIdentifierRules? NationalIds { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.IIdentifierRules.html">IIdentifierRules</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_PhoneNumbers_" data-uid="HeroKit.Globalization.Country.PhoneNumbers*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_PhoneNumbers" data-uid="HeroKit.Globalization.Country.PhoneNumbers">
+  PhoneNumbers
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the phone number rules, or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IPhoneNumberRules? PhoneNumbers { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.IPhoneNumberRules.html">IPhoneNumberRules</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_PostalCodes_" data-uid="HeroKit.Globalization.Country.PostalCodes*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_PostalCodes" data-uid="HeroKit.Globalization.Country.PostalCodes">
+  PostalCodes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the postal code rules, or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IIdentifierRules? PostalCodes { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.IIdentifierRules.html">IIdentifierRules</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_Regions_" data-uid="HeroKit.Globalization.Country.Regions*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_Regions" data-uid="HeroKit.Globalization.Country.Regions">
+  Regions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the first-level administrative regions, for example the 81 Turkish provinces.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;Region&gt; Regions { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="HeroKit.Globalization.Region.html">Region</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_TaxIds_" data-uid="HeroKit.Globalization.Country.TaxIds*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_TaxIds" data-uid="HeroKit.Globalization.Country.TaxIds">
+  TaxIds
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the tax identifier rules, or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IIdentifierRules? TaxIds { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.IIdentifierRules.html">IIdentifierRules</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_TimeZone_" data-uid="HeroKit.Globalization.Country.TimeZone*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_TimeZone" data-uid="HeroKit.Globalization.Country.TimeZone">
+  TimeZone
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the time zone of the country, or null when the country has more than one (for example the United States).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeZoneInfo? TimeZone { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_VehiclePlates_" data-uid="HeroKit.Globalization.Country.VehiclePlates*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_VehiclePlates" data-uid="HeroKit.Globalization.Country.VehiclePlates">
+  VehiclePlates
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the vehicle plate rules, or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IVehiclePlateRules? VehiclePlates { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.IVehiclePlateRules.html">IVehiclePlateRules</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="HeroKit_Globalization_Country_FindDistrict_" data-uid="HeroKit.Globalization.Country.FindDistrict*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_FindDistrict_System_Int32_" data-uid="HeroKit.Globalization.Country.FindDistrict(System.Int32)">
+  FindDistrict(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L168"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds a district by its official code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public District? FindDistrict(int code)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The district code, for example 1757.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.District.html">District</a>?</dt>
+    <dd><p>The district, or null.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_FindDistrict_" data-uid="HeroKit.Globalization.Country.FindDistrict*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_FindDistrict_System_String_System_String_" data-uid="HeroKit.Globalization.Country.FindDistrict(System.String,System.String)">
+  FindDistrict(string?, string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L190"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds a district by its name within a region, ignoring case and diacritics.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public District? FindDistrict(string? regionCodeOrName, string? districtName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>regionCodeOrName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The region code or name, for example &quot;34&quot; or &quot;istanbul&quot;.</p>
+</dd>
+    <dt><code>districtName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The district name, for example &quot;kadikoy&quot;.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.District.html">District</a>?</dt>
+    <dd><p>The district, or null if the region or the district is unknown.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Globalization_Country_FindDistrict_System_String_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">Countries.Turkey.FindDistrict("istanbul", "kadikoy")?.Name; // "Kadıköy"</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_FindRegion_" data-uid="HeroKit.Globalization.Country.FindRegion*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_FindRegion_System_Int32_" data-uid="HeroKit.Globalization.Country.FindRegion(System.Int32)">
+  FindRegion(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L210"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds a region by its code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Region? FindRegion(int code)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The region code.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.Region.html">Region</a>?</dt>
+    <dd><p>The region, or null.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_FindRegion_" data-uid="HeroKit.Globalization.Country.FindRegion*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_FindRegion_System_String_" data-uid="HeroKit.Globalization.Country.FindRegion(System.String)">
+  FindRegion(string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L233"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds a region by its code (&quot;34&quot;, &quot;06&quot;), its abbreviation (&quot;CA&quot;) or its name, ignoring case and diacritics (&quot;istanbul&quot;, &quot;Sanliurfa&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Region? FindRegion(string? codeOrName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>codeOrName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The code or the name.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.Region.html">Region</a>?</dt>
+    <dd><p>The region, or null.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Globalization_Country_FindRegion_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">Countries.Turkey.FindRegion("34")?.Name;        // "İstanbul"
+Countries.Turkey.FindRegion("sanliurfa")?.Code; // 63
+Countries.UnitedStates.FindRegion("ca")?.Name;   // "California"</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_GetDistricts_" data-uid="HeroKit.Globalization.Country.GetDistricts*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_GetDistricts_System_Int32_" data-uid="HeroKit.Globalization.Country.GetDistricts(System.Int32)">
+  GetDistricts(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L153"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the districts of a region.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;District&gt; GetDistricts(int regionCode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>regionCode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The region code, for example 34.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="HeroKit.Globalization.District.html">District</a>&gt;</dt>
+    <dd><p>The districts in the order of <a class="xref" href="HeroKit.Globalization.Country.html#HeroKit_Globalization_Country_Districts">Districts</a>; empty for an unknown region.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Globalization_Country_GetDistricts_System_Int32__examples">Examples</h4>
+  <pre><code class="lang-csharp">Countries.Turkey.GetDistricts(34).Count; // 39</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_GetDistricts_" data-uid="HeroKit.Globalization.Country.GetDistricts*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_GetDistricts_System_String_" data-uid="HeroKit.Globalization.Country.GetDistricts(System.String)">
+  GetDistricts(string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L160"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the districts of a region found by <a class="xref" href="HeroKit.Globalization.Country.html#HeroKit_Globalization_Country_FindRegion_System_String_">FindRegion(string?)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;District&gt; GetDistricts(string? regionCodeOrName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>regionCodeOrName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The region code or name, for example &quot;34&quot; or &quot;istanbul&quot;.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="HeroKit.Globalization.District.html">District</a>&gt;</dt>
+    <dd><p>The districts; empty for an unknown region.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_Now_" data-uid="HeroKit.Globalization.Country.Now*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_Now_System_TimeProvider_" data-uid="HeroKit.Globalization.Country.Now(System.TimeProvider)">
+  Now(TimeProvider?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the current date and time in the country's <a class="xref" href="HeroKit.Globalization.Country.html#HeroKit_Globalization_Country_TimeZone">TimeZone</a>, also when the server runs in UTC.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTimeOffset Now(TimeProvider? timeProvider = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>timeProvider</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timeprovider">TimeProvider</a></dt>
+    <dd><p>The clock, for tests; null uses <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timeprovider.system">System</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd><p>The current local date and time with its UTC offset.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Globalization_Country_Now_System_TimeProvider__examples">Examples</h4>
+  <pre><code class="lang-csharp">Countries.Turkey.Now(); // 2026-10-19 09:30:00 +03:00 while the server clock shows 06:30 UTC</code></pre>
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></dt>
+    <dd><p>The country has no single time zone.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="HeroKit_Globalization_Country_ToString_" data-uid="HeroKit.Globalization.Country.ToString*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_ToString" data-uid="HeroKit.Globalization.Country.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L261"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a string that represents the current object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string that represents the current object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_Country_Today_" data-uid="HeroKit.Globalization.Country.Today*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_Today_System_TimeProvider_" data-uid="HeroKit.Globalization.Country.Today(System.TimeProvider)">
+  Today(TimeProvider?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets today's date in the country's <a class="xref" href="HeroKit.Globalization.Country.html#HeroKit_Globalization_Country_TimeZone">TimeZone</a>. From 00:00 to 03:00 Türkiye time (21:00 to 00:00 UTC on the previous day), <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime.today">Today</a> on a server in UTC still shows the previous day.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateOnly Today(TimeProvider? timeProvider = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>timeProvider</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timeprovider">TimeProvider</a></dt>
+    <dd><p>The clock, for tests; null uses <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timeprovider.system">System</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dateonly">DateOnly</a></dt>
+    <dd><p>Today's date in the country.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Globalization_Country_Today_System_TimeProvider__examples">Examples</h4>
+  <pre><code class="lang-csharp">Countries.Turkey.Today().IsBusinessDay(Countries.Turkey);</code></pre>
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></dt>
+    <dd><p>The country has no single time zone.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="HeroKit_Globalization_Country_WithAdditionalHolidays_" data-uid="HeroKit.Globalization.Country.WithAdditionalHolidays*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_WithAdditionalHolidays_System_Collections_Generic_IEnumerable_HeroKit_Globalization_PublicHoliday__" data-uid="HeroKit.Globalization.Country.WithAdditionalHolidays(System.Collections.Generic.IEnumerable{HeroKit.Globalization.PublicHoliday})">
+  WithAdditionalHolidays(IEnumerable&lt;PublicHoliday&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a copy of the country whose holiday calendar also contains the given days, for example administrative leave
+(&quot;idari izin&quot;) or company holidays. A given day replaces a holiday of the country on the same date. The country itself does not change.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Country WithAdditionalHolidays(IEnumerable&lt;PublicHoliday&gt; holidays)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>holidays</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="HeroKit.Globalization.PublicHoliday.html">PublicHoliday</a>&gt;</dt>
+    <dd><p>The days to add; set <a class="xref" href="HeroKit.Globalization.PublicHoliday.html#HeroKit_Globalization_PublicHoliday_IsHalfDay">IsHalfDay</a> for an afternoon off.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.Country.html">Country</a></dt>
+    <dd><p>A copy with every other rule of this country.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Globalization_Country_WithAdditionalHolidays_System_Collections_Generic_IEnumerable_HeroKit_Globalization_PublicHoliday___examples">Examples</h4>
+  <pre><code class="lang-csharp">Country turkeyWithLeave = Countries.Turkey.WithAdditionalHolidays([new(new DateOnly(2026, 5, 18), "İdari izin", false)]);
+new DateOnly(2026, 5, 18).IsBusinessDay(turkeyWithLeave); // false: 18 May is added as administrative leave</code></pre>
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></dt>
+    <dd><p>The country has no holiday calendar.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>A date is given more than once, or a name is empty.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>A date is outside the supported years of the calendar.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="HeroKit_Globalization_Country_WithHolidays_" data-uid="HeroKit.Globalization.Country.WithHolidays*"></a>
+
+  <h3 id="HeroKit_Globalization_Country_WithHolidays_HeroKit_Globalization_IHolidayCalendar_" data-uid="HeroKit.Globalization.Country.WithHolidays(HeroKit.Globalization.IHolidayCalendar)">
+  WithHolidays(IHolidayCalendar)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a copy of the country with another holiday calendar. The country itself does not change.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Country WithHolidays(IHolidayCalendar holidays)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>holidays</code> <a class="xref" href="HeroKit.Globalization.IHolidayCalendar.html">IHolidayCalendar</a></dt>
+    <dd><p>The holiday calendar of the copy.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Globalization.Country.html">Country</a></dt>
+    <dd><p>A copy with every other rule of this country.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/Country.cs/#L13" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

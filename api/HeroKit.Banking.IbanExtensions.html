@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class IbanExtensions | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class IbanExtensions | HeroKit ">
+      
+      <meta name="description" content="Contains extension methods for validating and formatting IBANs (ISO 13616).">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/new/master/apiSpec/new?filename=HeroKit_Banking_IbanExtensions.md&amp;value=---%0Auid%3A%20HeroKit.Banking.IbanExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="HeroKit.Banking.IbanExtensions">
+
+
+
+  <h1 id="HeroKit_Banking_IbanExtensions" data-uid="HeroKit.Banking.IbanExtensions" class="text-break">
+Class IbanExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Banking/IbanExtensions.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">HeroKit</span>.<a class="xref" href="HeroKit.Banking.html">Banking</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>HeroKit.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Contains extension methods for validating and formatting IBANs (ISO 13616).</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class IbanExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">IbanExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="HeroKit_Banking_IbanExtensions_FormatIban_" data-uid="HeroKit.Banking.IbanExtensions.FormatIban*"></a>
+
+  <h3 id="HeroKit_Banking_IbanExtensions_FormatIban_System_String_" data-uid="HeroKit.Banking.IbanExtensions.FormatIban(System.String)">
+  FormatIban(string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Banking/IbanExtensions.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Formats a valid IBAN in uppercase blocks of four characters separated by single spaces.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string? FormatIban(this string? value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The IBAN to format. Spaces are ignored and lowercase letters are accepted.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The formatted IBAN, or null if the input is not a valid IBAN.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Banking_IbanExtensions_FormatIban_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">"tr330006100519786457841326".FormatIban(); // "TR33 0006 1005 1978 6457 8413 26"</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_Banking_IbanExtensions_GetBank_" data-uid="HeroKit.Banking.IbanExtensions.GetBank*"></a>
+
+  <h3 id="HeroKit_Banking_IbanExtensions_GetBank_System_String_" data-uid="HeroKit.Banking.IbanExtensions.GetBank(System.String)">
+  GetBank(string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Banking/IbanExtensions.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the bank of a valid IBAN from the bank directory of its country (<a class="xref" href="HeroKit.Globalization.Country.html#HeroKit_Globalization_Country_Banks">Banks</a>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Bank? GetBank(this string? value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The IBAN, with or without spaces.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.Banking.Bank.html">Bank</a></dt>
+    <dd><p>The bank, or null if the IBAN is invalid, its country has no bank directory or the bank code is unknown.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Banking_IbanExtensions_GetBank_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">"TR33 0006 1005 1978 6457 8413 26".GetBank()?.Name; // null: bank code 00061 is not assigned
+"TR78 0006 2000 0000 0006 2950 05".GetBank()?.Name; // "Türkiye Garanti Bankası A.Ş."</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_Banking_IbanExtensions_IsValidIban_" data-uid="HeroKit.Banking.IbanExtensions.IsValidIban*"></a>
+
+  <h3 id="HeroKit_Banking_IbanExtensions_IsValidIban_System_String_" data-uid="HeroKit.Banking.IbanExtensions.IsValidIban(System.String)">
+  IsValidIban(string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Banking/IbanExtensions.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether a string is a valid IBAN (ISO 13616).
+Spaces are ignored and lowercase letters are accepted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsValidIban(this string? value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string to check.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the string is a valid IBAN; otherwise, false. Null or empty input returns false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Banking_IbanExtensions_IsValidIban_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">"TR33 0006 1005 1978 6457 8413 26".IsValidIban(); // true
+"TR330006100519786457841327".IsValidIban();       // false</code></pre>
+
+
+  <h4 class="section" id="HeroKit_Banking_IbanExtensions_IsValidIban_System_String__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The check covers structure (country letters, check digits, alphanumeric BBAN, length 15 to 34)
+and the mod-97 checksum. For Turkey (&quot;TR&quot;) the length must be 26 and the reserved fifth character must be '0'.</p>
+</div>
+
+
+
+
+  <a id="HeroKit_Banking_IbanExtensions_NormalizeIban_" data-uid="HeroKit.Banking.IbanExtensions.NormalizeIban*"></a>
+
+  <h3 id="HeroKit_Banking_IbanExtensions_NormalizeIban_System_String_" data-uid="HeroKit.Banking.IbanExtensions.NormalizeIban(System.String)">
+  NormalizeIban(string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Banking/IbanExtensions.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Normalizes a valid IBAN to uppercase without spaces.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string? NormalizeIban(this string? value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The IBAN to normalize. Spaces are ignored and lowercase letters are accepted.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The normalized IBAN, or null if the input is not a valid IBAN.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Banking_IbanExtensions_NormalizeIban_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">"tr33 0006 1005 1978 6457 8413 26".NormalizeIban(); // "TR330006100519786457841326"</code></pre>
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Banking/IbanExtensions.cs/#L8" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class CurrencyExtensions | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CurrencyExtensions | HeroKit ">
+      
+      <meta name="description" content="Formats amounts and writes them in words with the notation of a .">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/new/master/apiSpec/new?filename=HeroKit_Globalization_CurrencyExtensions.md&amp;value=---%0Auid%3A%20HeroKit.Globalization.CurrencyExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="HeroKit.Globalization.CurrencyExtensions">
+
+
+
+  <h1 id="HeroKit_Globalization_CurrencyExtensions" data-uid="HeroKit.Globalization.CurrencyExtensions" class="text-break">
+Class CurrencyExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/CurrencyExtensions.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">HeroKit</span>.<a class="xref" href="HeroKit.Globalization.html">Globalization</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>HeroKit.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Formats amounts and writes them in words with the notation of a <a class="xref" href="HeroKit.Globalization.Currency.html">Currency</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class CurrencyExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CurrencyExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="HeroKit_Globalization_CurrencyExtensions_ToAmount_" data-uid="HeroKit.Globalization.CurrencyExtensions.ToAmount*"></a>
+
+  <h3 id="HeroKit_Globalization_CurrencyExtensions_ToAmount_System_String_HeroKit_Globalization_Currency_System_Decimal_" data-uid="HeroKit.Globalization.CurrencyExtensions.ToAmount(System.String,HeroKit.Globalization.Currency,System.Decimal)">
+  ToAmount(string?, Currency, decimal)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/CurrencyExtensions.cs/#L172"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reads an amount written with the separators of a currency, or returns a default value. See <a class="xref" href="HeroKit.Globalization.CurrencyExtensions.html#HeroKit_Globalization_CurrencyExtensions_TryToAmount_System_String_HeroKit_Globalization_Currency_System_Decimal__">TryToAmount(string?, Currency, out decimal)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static decimal ToAmount(this string? value, Currency currency, decimal defaultValue = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The text, for example &quot;₺1.234,56&quot;.</p>
+</dd>
+    <dt><code>currency</code> <a class="xref" href="HeroKit.Globalization.Currency.html">Currency</a></dt>
+    <dd><p>The currency whose separators, symbol, abbreviation and ISO code are accepted.</p>
+</dd>
+    <dt><code>defaultValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></dt>
+    <dd><p>The value returned when the text is not a valid amount.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></dt>
+    <dd><p>The amount, or <code class="paramref">defaultValue</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_CurrencyExtensions_ToCurrencyString_" data-uid="HeroKit.Globalization.CurrencyExtensions.ToCurrencyString*"></a>
+
+  <h3 id="HeroKit_Globalization_CurrencyExtensions_ToCurrencyString_System_Decimal_HeroKit_Globalization_Currency_HeroKit_Globalization_CurrencyStyle_" data-uid="HeroKit.Globalization.CurrencyExtensions.ToCurrencyString(System.Decimal,HeroKit.Globalization.Currency,HeroKit.Globalization.CurrencyStyle)">
+  ToCurrencyString(decimal, Currency, CurrencyStyle)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/CurrencyExtensions.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Formats an amount with two decimals in the notation of a currency.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ToCurrencyString(this decimal value, Currency currency, CurrencyStyle style = CurrencyStyle.Symbol)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></dt>
+    <dd><p>The amount. It is rounded to two decimals with <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.midpointrounding#system-midpointrounding-awayfromzero">AwayFromZero</a>.</p>
+</dd>
+    <dt><code>currency</code> <a class="xref" href="HeroKit.Globalization.Currency.html">Currency</a></dt>
+    <dd><p>The currency, for example <a class="xref" href="HeroKit.Globalization.Currencies.html#HeroKit_Globalization_Currencies_TurkishLira">TurkishLira</a>.</p>
+</dd>
+    <dt><code>style</code> <a class="xref" href="HeroKit.Globalization.CurrencyStyle.html">CurrencyStyle</a></dt>
+    <dd><p>Symbol before (&quot;₺1.234,50&quot;), abbreviation after (&quot;1.234,50 TL&quot;) or ISO code after (&quot;1.234,50 TRY&quot;).</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The formatted amount. Negative amounts start with &quot;-&quot;.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Globalization_CurrencyExtensions_ToCurrencyString_System_Decimal_HeroKit_Globalization_Currency_HeroKit_Globalization_CurrencyStyle__examples">Examples</h4>
+  <pre><code class="lang-csharp">1234.5m.ToCurrencyString(Currencies.TurkishLira);                            // "₺1.234,50"
+1234.5m.ToCurrencyString(Currencies.TurkishLira, CurrencyStyle.Abbreviation); // "1.234,50 TL"</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_CurrencyExtensions_ToCurrencyWords_" data-uid="HeroKit.Globalization.CurrencyExtensions.ToCurrencyWords*"></a>
+
+  <h3 id="HeroKit_Globalization_CurrencyExtensions_ToCurrencyWords_System_Decimal_HeroKit_Globalization_Currency_" data-uid="HeroKit.Globalization.CurrencyExtensions.ToCurrencyWords(System.Decimal,HeroKit.Globalization.Currency)">
+  ToCurrencyWords(decimal, Currency)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/CurrencyExtensions.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Writes an amount in words with the unit and subunit names of a currency, as printed on invoices.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ToCurrencyWords(this decimal amount, Currency currency)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></dt>
+    <dd><p>The amount. It is rounded to two decimals with <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.midpointrounding#system-midpointrounding-awayfromzero">AwayFromZero</a>.</p>
+</dd>
+    <dt><code>currency</code> <a class="xref" href="HeroKit.Globalization.Currency.html">Currency</a></dt>
+    <dd><p>The currency. Its <a class="xref" href="HeroKit.Globalization.Currency.html#HeroKit_Globalization_Currency_Language">Language</a> spells the numbers.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The amount in words, for example &quot;yüz yirmi üç Türk lirası elli kuruş&quot;. The subunit part is omitted when zero;
+the unit part is omitted when zero and the subunit is not.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Globalization_CurrencyExtensions_ToCurrencyWords_System_Decimal_HeroKit_Globalization_Currency__examples">Examples</h4>
+  <pre><code class="lang-csharp">123.50m.ToCurrencyWords(Currencies.TurkishLira); // "yüz yirmi üç Türk lirası elli kuruş"
+123.50m.ToCurrencyWords(Currencies.USDollar);    // "one hundred twenty-three dollars and fifty cents"</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_Globalization_CurrencyExtensions_TryToAmount_" data-uid="HeroKit.Globalization.CurrencyExtensions.TryToAmount*"></a>
+
+  <h3 id="HeroKit_Globalization_CurrencyExtensions_TryToAmount_System_String_HeroKit_Globalization_Currency_System_Decimal__" data-uid="HeroKit.Globalization.CurrencyExtensions.TryToAmount(System.String,HeroKit.Globalization.Currency,System.Decimal@)">
+  TryToAmount(string?, Currency, out decimal)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/CurrencyExtensions.cs/#L114"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reads an amount written with the separators of a currency, with or without its symbol, abbreviation or ISO code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryToAmount(this string? value, Currency currency, out decimal result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The text, for example &quot;₺1.234,56&quot;, &quot;1.234,56 TL&quot;, &quot;-1234,5&quot; or &quot;$1,234.56&quot;.</p>
+</dd>
+    <dt><code>currency</code> <a class="xref" href="HeroKit.Globalization.Currency.html">Currency</a></dt>
+    <dd><p>The currency whose separators, symbol, abbreviation and ISO code are accepted.</p>
+</dd>
+    <dt><code>result</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></dt>
+    <dd><p>The amount when the method returns true; otherwise 0.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the text is a valid amount.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Globalization_CurrencyExtensions_TryToAmount_System_String_HeroKit_Globalization_Currency_System_Decimal___examples">Examples</h4>
+  <pre><code class="lang-csharp">"₺1.234,56".TryToAmount(Currencies.TurkishLira, out decimal amount); // true, 1234.56
+"1.234".TryToAmount(Currencies.TurkishLira, out _);                 // true, 1234
+"1.5".TryToAmount(Currencies.TurkishLira, out _);                   // false</code></pre>
+
+
+  <h4 class="section" id="HeroKit_Globalization_CurrencyExtensions_TryToAmount_System_String_HeroKit_Globalization_Currency_System_Decimal___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Group separators must split the whole part into groups of three digits, so &quot;1.234,56&quot; is a Turkish lira amount
+but &quot;1.5&quot; is rejected instead of being read as 15. The method does not use the culture of the machine.</p>
+</div>
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Globalization/CurrencyExtensions.cs/#L9" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

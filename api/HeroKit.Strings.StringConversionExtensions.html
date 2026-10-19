@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class StringConversionExtensions | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class StringConversionExtensions | HeroKit ">
+      
+      <meta name="description" content="Converts strings to other types.">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/new/master/apiSpec/new?filename=HeroKit_Strings_StringConversionExtensions.md&amp;value=---%0Auid%3A%20HeroKit.Strings.StringConversionExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="HeroKit.Strings.StringConversionExtensions">
+
+
+
+  <h1 id="HeroKit_Strings_StringConversionExtensions" data-uid="HeroKit.Strings.StringConversionExtensions" class="text-break">
+Class StringConversionExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Strings/StringConversionExtensions.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">HeroKit</span>.<a class="xref" href="HeroKit.Strings.html">Strings</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>HeroKit.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Converts strings to other types.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class StringConversionExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">StringConversionExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="HeroKit_Strings_StringConversionExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>Every conversion comes in two forms. <code>ToX</code> is lenient: it returns a default value for null, empty or invalid input and never throws.
+<code>TryToX</code> reports success: it returns false for null, empty or invalid input and never throws.
+Parsing uses the invariant culture unless a format provider is passed.</p>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="HeroKit_Strings_StringConversionExtensions_FromBase64_" data-uid="HeroKit.Strings.StringConversionExtensions.FromBase64*"></a>
+
+  <h3 id="HeroKit_Strings_StringConversionExtensions_FromBase64_System_String_" data-uid="HeroKit.Strings.StringConversionExtensions.FromBase64(System.String)">
+  FromBase64(string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Strings/StringConversionExtensions.cs/#L244"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Decodes a base64 string to bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static byte[]? FromBase64(this string? value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The base64 string.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The decoded bytes, or null if the string is null, empty or not valid base64.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Strings_StringConversionExtensions_FromBase64_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">"SGVyb0tpdA==".FromBase64(); // bytes of "HeroKit"</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_Strings_StringConversionExtensions_ToBoolean_" data-uid="HeroKit.Strings.StringConversionExtensions.ToBoolean*"></a>
+
+  <h3 id="HeroKit_Strings_StringConversionExtensions_ToBoolean_System_String_System_String_System_Boolean_" data-uid="HeroKit.Strings.StringConversionExtensions.ToBoolean(System.String,System.String,System.Boolean)">
+  ToBoolean(string?, string?, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Strings/StringConversionExtensions.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts a string to a boolean. Accepts &quot;true&quot;/&quot;false&quot; in any case and an optional custom true text.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool ToBoolean(this string? value, string? trueText = null, bool defaultValue = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string to convert.</p>
+</dd>
+    <dt><code>trueText</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>An extra text that means true, compared ignoring case, for example &quot;yes&quot; or &quot;1&quot;.</p>
+</dd>
+    <dt><code>defaultValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The value returned when the string is null or empty.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The boolean value. Any other non-empty text returns false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Strings_StringConversionExtensions_ToBoolean_System_String_System_String_System_Boolean__examples">Examples</h4>
+  <pre><code class="lang-csharp">"TRUE".ToBoolean();               // true
+"yes".ToBoolean(trueText: "yes"); // true
+"".ToBoolean(defaultValue: true); // true</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_Strings_StringConversionExtensions_ToDateTime_" data-uid="HeroKit.Strings.StringConversionExtensions.ToDateTime*"></a>
+
+  <h3 id="HeroKit_Strings_StringConversionExtensions_ToDateTime_System_String_System_DateTime_System_IFormatProvider_" data-uid="HeroKit.Strings.StringConversionExtensions.ToDateTime(System.String,System.DateTime,System.IFormatProvider)">
+  ToDateTime(string?, DateTime, IFormatProvider?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Strings/StringConversionExtensions.cs/#L164"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts a string to a DateTime.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime ToDateTime(this string? value, DateTime defaultValue = default, IFormatProvider? provider = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string to convert.</p>
+</dd>
+    <dt><code>defaultValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The value returned when the string is null, empty or invalid.</p>
+</dd>
+    <dt><code>provider</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></dt>
+    <dd><p>The format provider. Defaults to <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo.invariantculture">InvariantCulture</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The DateTime, or <code class="paramref">defaultValue</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Strings_StringConversionExtensions_ToDateTime_System_String_System_DateTime_System_IFormatProvider__examples">Examples</h4>
+  <pre><code class="lang-csharp">"2026-03-07".ToDateTime();                                          // 7 March 2026
+"07.03.2026".ToDateTime(provider: CultureInfo.GetCultureInfo("tr-TR")); // 7 March 2026</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_Strings_StringConversionExtensions_ToDecimal_" data-uid="HeroKit.Strings.StringConversionExtensions.ToDecimal*"></a>
+
+  <h3 id="HeroKit_Strings_StringConversionExtensions_ToDecimal_System_String_System_Decimal_System_IFormatProvider_" data-uid="HeroKit.Strings.StringConversionExtensions.ToDecimal(System.String,System.Decimal,System.IFormatProvider)">
+  ToDecimal(string?, decimal, IFormatProvider?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Strings/StringConversionExtensions.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts a string to a decimal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static decimal ToDecimal(this string? value, decimal defaultValue = 0, IFormatProvider? provider = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string to convert.</p>
+</dd>
+    <dt><code>defaultValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></dt>
+    <dd><p>The value returned when the string is null, empty or invalid.</p>
+</dd>
+    <dt><code>provider</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></dt>
+    <dd><p>The format provider for strict parsing, or null for the flexible rule.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></dt>
+    <dd><p>The decimal, or <code class="paramref">defaultValue</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Strings_StringConversionExtensions_ToDecimal_System_String_System_Decimal_System_IFormatProvider__examples">Examples</h4>
+  <pre><code class="lang-csharp">"1.234,56".ToDecimal();  // 1234.56
+"1234.56".ToDecimal();   // 1234.56
+"abc".ToDecimal(-1m);    // -1</code></pre>
+
+
+  <h4 class="section" id="HeroKit_Strings_StringConversionExtensions_ToDecimal_System_String_System_Decimal_System_IFormatProvider__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Without a provider the conversion is flexible: a comma is the decimal separator when present (&quot;1.234,56&quot;),
+otherwise a dot is (&quot;1234.56&quot;). With a provider the string is parsed strictly with that culture.</p>
+</div>
+
+
+
+
+  <a id="HeroKit_Strings_StringConversionExtensions_ToEnum_" data-uid="HeroKit.Strings.StringConversionExtensions.ToEnum*"></a>
+
+  <h3 id="HeroKit_Strings_StringConversionExtensions_ToEnum__1_System_String___0_" data-uid="HeroKit.Strings.StringConversionExtensions.ToEnum``1(System.String,``0)">
+  ToEnum&lt;T&gt;(string?, T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Strings/StringConversionExtensions.cs/#L208"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts a string to an enum value by name (ignoring case) or by a defined numeric value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T ToEnum&lt;T&gt;(this string? value, T defaultValue = default) where T : struct, Enum</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string to convert.</p>
+</dd>
+    <dt><code>defaultValue</code> <span class="xref">T</span></dt>
+    <dd><p>The value returned when the string is null, empty or not a defined value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>The enum value, or <code class="paramref">defaultValue</code>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The enum type.</p>
+</dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Strings_StringConversionExtensions_ToEnum__1_System_String___0__examples">Examples</h4>
+  <pre><code class="lang-csharp">"Friday".ToEnum&lt;DayOfWeek&gt;();   // DayOfWeek.Friday
+"5".ToEnum&lt;DayOfWeek&gt;();        // DayOfWeek.Friday
+"99".ToEnum(DayOfWeek.Monday);  // DayOfWeek.Monday</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_Strings_StringConversionExtensions_ToInt_" data-uid="HeroKit.Strings.StringConversionExtensions.ToInt*"></a>
+
+  <h3 id="HeroKit_Strings_StringConversionExtensions_ToInt_System_String_System_Int32_" data-uid="HeroKit.Strings.StringConversionExtensions.ToInt(System.String,System.Int32)">
+  ToInt(string?, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Strings/StringConversionExtensions.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts a string to an integer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ToInt(this string? value, int defaultValue = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string to convert.</p>
+</dd>
+    <dt><code>defaultValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The value returned when the string is null, empty or invalid.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The integer, or <code class="paramref">defaultValue</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Strings_StringConversionExtensions_ToLong_" data-uid="HeroKit.Strings.StringConversionExtensions.ToLong*"></a>
+
+  <h3 id="HeroKit_Strings_StringConversionExtensions_ToLong_System_String_System_Int64_" data-uid="HeroKit.Strings.StringConversionExtensions.ToLong(System.String,System.Int64)">
+  ToLong(string?, long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Strings/StringConversionExtensions.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts a string to a long integer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long ToLong(this string? value, long defaultValue = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string to convert.</p>
+</dd>
+    <dt><code>defaultValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The value returned when the string is null, empty or invalid.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The long integer, or <code class="paramref">defaultValue</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Strings_StringConversionExtensions_ToNullable_" data-uid="HeroKit.Strings.StringConversionExtensions.ToNullable*"></a>
+
+  <h3 id="HeroKit_Strings_StringConversionExtensions_ToNullable__1_System_String_System_IFormatProvider_" data-uid="HeroKit.Strings.StringConversionExtensions.ToNullable``1(System.String,System.IFormatProvider)">
+  ToNullable&lt;T&gt;(string?, IFormatProvider?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Strings/StringConversionExtensions.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts a string to a nullable value. Returns null when the string is null, empty or invalid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T? ToNullable&lt;T&gt;(this string? value, IFormatProvider? provider = null) where T : struct, IParsable&lt;T&gt;</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string to convert.</p>
+</dd>
+    <dt><code>provider</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></dt>
+    <dd><p>The format provider. Defaults to <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo.invariantculture">InvariantCulture</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>T?</dt>
+    <dd><p>The converted value, or null.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The target value type.</p>
+</dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Strings_StringConversionExtensions_ToNullable__1_System_String_System_IFormatProvider__examples">Examples</h4>
+  <pre><code class="lang-csharp">"42".ToNullable&lt;int&gt;();   // 42
+"abc".ToNullable&lt;int&gt;();  // null</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_Strings_StringConversionExtensions_ToShort_" data-uid="HeroKit.Strings.StringConversionExtensions.ToShort*"></a>
+
+  <h3 id="HeroKit_Strings_StringConversionExtensions_ToShort_System_String_System_Int16_" data-uid="HeroKit.Strings.StringConversionExtensions.ToShort(System.String,System.Int16)">
+  ToShort(string?, short)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Strings/StringConversionExtensions.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts a string to a short integer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static short ToShort(this string? value, short defaultValue = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string to convert.</p>
+</dd>
+    <dt><code>defaultValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a></dt>
+    <dd><p>The value returned when the string is null, empty or invalid.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a></dt>
+    <dd><p>The short integer, or <code class="paramref">defaultValue</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Strings_StringConversionExtensions_To_" data-uid="HeroKit.Strings.StringConversionExtensions.To*"></a>
+
+  <h3 id="HeroKit_Strings_StringConversionExtensions_To__1_System_String___0_System_IFormatProvider_" data-uid="HeroKit.Strings.StringConversionExtensions.To``1(System.String,``0,System.IFormatProvider)">
+  To&lt;T&gt;(string?, T, IFormatProvider?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Strings/StringConversionExtensions.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts a string to any type that implements <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iparsable-1">IParsable&lt;TSelf&gt;</a>, such as int, decimal, DateTime, DateOnly or Guid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T To&lt;T&gt;(this string? value, T defaultValue = default, IFormatProvider? provider = null) where T : IParsable&lt;T&gt;</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string to convert.</p>
+</dd>
+    <dt><code>defaultValue</code> <span class="xref">T</span></dt>
+    <dd><p>The value returned when the string is null, empty or invalid.</p>
+</dd>
+    <dt><code>provider</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></dt>
+    <dd><p>The format provider. Defaults to <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo.invariantculture">InvariantCulture</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>The converted value, or <code class="paramref">defaultValue</code>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The target type.</p>
+</dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Strings_StringConversionExtensions_To__1_System_String___0_System_IFormatProvider__examples">Examples</h4>
+  <pre><code class="lang-csharp">"42".To&lt;int&gt;();                 // 42
+"2026-03-07".To&lt;DateOnly&gt;();    // 2026-03-07
+"x".To(defaultValue: -1);       // -1</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_Strings_StringConversionExtensions_TryToDecimal_" data-uid="HeroKit.Strings.StringConversionExtensions.TryToDecimal*"></a>
+
+  <h3 id="HeroKit_Strings_StringConversionExtensions_TryToDecimal_System_String_System_Decimal__System_IFormatProvider_" data-uid="HeroKit.Strings.StringConversionExtensions.TryToDecimal(System.String,System.Decimal@,System.IFormatProvider)">
+  TryToDecimal(string?, out decimal, IFormatProvider?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Strings/StringConversionExtensions.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to convert a string to a decimal with the same rules as <a class="xref" href="HeroKit.Strings.StringConversionExtensions.html#HeroKit_Strings_StringConversionExtensions_ToDecimal_System_String_System_Decimal_System_IFormatProvider_">ToDecimal(string?, decimal, IFormatProvider?)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryToDecimal(this string? value, out decimal result, IFormatProvider? provider = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string to convert.</p>
+</dd>
+    <dt><code>result</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></dt>
+    <dd><p>The decimal when the method returns true; otherwise zero.</p>
+</dd>
+    <dt><code>provider</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></dt>
+    <dd><p>The format provider for strict parsing, or null for the flexible rule.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the string was converted; otherwise false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Strings_StringConversionExtensions_TryToEnum_" data-uid="HeroKit.Strings.StringConversionExtensions.TryToEnum*"></a>
+
+  <h3 id="HeroKit_Strings_StringConversionExtensions_TryToEnum__1_System_String___0__" data-uid="HeroKit.Strings.StringConversionExtensions.TryToEnum``1(System.String,``0@)">
+  TryToEnum&lt;T&gt;(string?, out T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Strings/StringConversionExtensions.cs/#L219"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to convert a string to an enum value by name (ignoring case) or by a defined numeric value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryToEnum&lt;T&gt;(this string? value, out T result) where T : struct, Enum</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string to convert.</p>
+</dd>
+    <dt><code>result</code> <span class="xref">T</span></dt>
+    <dd><p>The enum value when the method returns true; otherwise the default value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the string matches a defined value; otherwise false.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The enum type.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_Strings_StringConversionExtensions_TryTo_" data-uid="HeroKit.Strings.StringConversionExtensions.TryTo*"></a>
+
+  <h3 id="HeroKit_Strings_StringConversionExtensions_TryTo__1_System_String___0__System_IFormatProvider_" data-uid="HeroKit.Strings.StringConversionExtensions.TryTo``1(System.String,``0@,System.IFormatProvider)">
+  TryTo&lt;T&gt;(string?, out T, IFormatProvider?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Strings/StringConversionExtensions.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to convert a string to any type that implements <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iparsable-1">IParsable&lt;TSelf&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryTo&lt;T&gt;(this string? value, out T result, IFormatProvider? provider = null) where T : IParsable&lt;T&gt;</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string to convert.</p>
+</dd>
+    <dt><code>result</code> <span class="xref">T</span></dt>
+    <dd><p>The converted value when the method returns true; otherwise the default value of <code class="typeparamref">T</code>.</p>
+</dd>
+    <dt><code>provider</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></dt>
+    <dd><p>The format provider. Defaults to <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo.invariantculture">InvariantCulture</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the string was converted; otherwise false.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The target type.</p>
+</dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="HeroKit_Strings_StringConversionExtensions_TryTo__1_System_String___0__System_IFormatProvider__examples">Examples</h4>
+  <pre><code class="lang-csharp">if ("42".TryTo(out int number)) { /* number == 42 */ }</code></pre>
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit/Strings/StringConversionExtensions.cs/#L14" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

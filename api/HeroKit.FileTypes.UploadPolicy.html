@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class UploadPolicy | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class UploadPolicy | HeroKit ">
+      
+      <meta name="description" content="Settings for .">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/new/master/apiSpec/new?filename=HeroKit_FileTypes_UploadPolicy.md&amp;value=---%0Auid%3A%20HeroKit.FileTypes.UploadPolicy%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="HeroKit.FileTypes.UploadPolicy">
+
+
+
+  <h1 id="HeroKit_FileTypes_UploadPolicy" data-uid="HeroKit.FileTypes.UploadPolicy" class="text-break">
+Class UploadPolicy  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">HeroKit</span>.<a class="xref" href="HeroKit.FileTypes.html">FileTypes</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>HeroKit.FileTypes.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Settings for <a class="xref" href="HeroKit.FileTypes.UploadValidator.html">UploadValidator</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class UploadPolicy</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">UploadPolicy</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="HeroKit.Types.TypeControlExtensions.html#HeroKit_Types_TypeControlExtensions_IsDefaultValue__1___0_">TypeControlExtensions.IsDefaultValue&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectControlExtensions.html#HeroKit_Objects_ObjectControlExtensions_IsNotNull_System_Object_">ObjectControlExtensions.IsNotNull(object?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectControlExtensions.html#HeroKit_Objects_ObjectControlExtensions_IsNull_System_Object_">ObjectControlExtensions.IsNull(object?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectControlExtensions.html#HeroKit_Objects_ObjectControlExtensions_IsNumeric_System_Object_">ObjectControlExtensions.IsNumeric(object?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectConversionExtensions.html#HeroKit_Objects_ObjectConversionExtensions_ConvertTo__1_System_Object___0_">ObjectConversionExtensions.ConvertTo&lt;T&gt;(object?, T?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectConversionExtensions.html#HeroKit_Objects_ObjectConversionExtensions_TryConvertTo__1_System_Object___0__">ObjectConversionExtensions.TryConvertTo&lt;T&gt;(object?, out T?)</a>
+  </div>
+  </dd></dl>
+
+
+  <h2 id="HeroKit_FileTypes_UploadPolicy_examples">Examples</h2>
+  <pre><code class="lang-csharp">var imagesOnly = new UploadPolicy { AllowedTypes = [FileTypes.Jpeg, FileTypes.Png, FileTypes.WebP] };
+var validator = new UploadValidator(imagesOnly);
+UploadCheckResult result = validator.Validate(stream, file.FileName);
+if (!result.IsSafe) return BadRequest(result.Message);</code></pre>
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="HeroKit_FileTypes_UploadPolicy_AllowMacros_" data-uid="HeroKit.FileTypes.UploadPolicy.AllowMacros*"></a>
+
+  <h3 id="HeroKit_FileTypes_UploadPolicy_AllowMacros" data-uid="HeroKit.FileTypes.UploadPolicy.AllowMacros">
+  AllowMacros
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L111"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets whether documents with macros are accepted: macro-enabled types (<a class="xref" href="HeroKit.FileTypes.FileType.html#HeroKit_FileTypes_FileType_HasMacros">HasMacros</a>, for example DOCM and XLSM)
+and legacy DOC and XLS files with a VBA project. Defaults to false.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AllowMacros { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="HeroKit_FileTypes_UploadPolicy_AllowMacros_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>A legacy file is searched for a VBA project only when its directory is available: pass the whole file as a span, or a seekable stream.
+Excel 4.0 (XLM) macro sheets and PowerPoint 97-2003 macros are not found.</p>
+</div>
+
+
+
+
+  <a id="HeroKit_FileTypes_UploadPolicy_AllowUnknownContent_" data-uid="HeroKit.FileTypes.UploadPolicy.AllowUnknownContent*"></a>
+
+  <h3 id="HeroKit_FileTypes_UploadPolicy_AllowUnknownContent" data-uid="HeroKit.FileTypes.UploadPolicy.AllowUnknownContent">
+  AllowUnknownContent
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets whether content that no detector recognizes is accepted when its extension is allowed. Defaults to false.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AllowUnknownContent { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_UploadPolicy_AllowedTypes_" data-uid="HeroKit.FileTypes.UploadPolicy.AllowedTypes*"></a>
+
+  <h3 id="HeroKit_FileTypes_UploadPolicy_AllowedTypes" data-uid="HeroKit.FileTypes.UploadPolicy.AllowedTypes">
+  AllowedTypes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the allowed types, or null to allow every type that is not a program or script. The extension's type must be in the list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyCollection&lt;FileType&gt;? AllowedTypes { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="HeroKit.FileTypes.FileType.html">FileType</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_UploadPolicy_BlockedExtensions_" data-uid="HeroKit.FileTypes.UploadPolicy.BlockedExtensions*"></a>
+
+  <h3 id="HeroKit_FileTypes_UploadPolicy_BlockedExtensions" data-uid="HeroKit.FileTypes.UploadPolicy.BlockedExtensions">
+  BlockedExtensions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the extensions that are always rejected, in lower case without a dot. Extensions of program and script types
+(<a class="xref" href="HeroKit.FileTypes.FileType.html#HeroKit_FileTypes_FileType_IsExecutable">IsExecutable</a>) in the registry are rejected as well. Defaults to <a class="xref" href="HeroKit.FileTypes.UploadPolicy.html#HeroKit_FileTypes_UploadPolicy_DefaultBlockedExtensions">DefaultBlockedExtensions</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlySet&lt;string&gt; BlockedExtensions { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlyset-1">IReadOnlySet</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="HeroKit_FileTypes_UploadPolicy_BlockedExtensions_examples">Examples</h4>
+  <pre><code class="lang-csharp">var policy = new UploadPolicy { BlockedExtensions = new HashSet&lt;string&gt;(UploadPolicy.DefaultBlockedExtensions) { "dwg" } };</code></pre>
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_UploadPolicy_Default_" data-uid="HeroKit.FileTypes.UploadPolicy.Default*"></a>
+
+  <h3 id="HeroKit_FileTypes_UploadPolicy_Default" data-uid="HeroKit.FileTypes.UploadPolicy.Default">
+  Default
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L154"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the default policy: any type that is not a program or script, with a known extension that fits the content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UploadPolicy Default { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.FileTypes.UploadPolicy.html">UploadPolicy</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_UploadPolicy_DefaultBlockedExtensions_" data-uid="HeroKit.FileTypes.UploadPolicy.DefaultBlockedExtensions*"></a>
+
+  <h3 id="HeroKit_FileTypes_UploadPolicy_DefaultBlockedExtensions" data-uid="HeroKit.FileTypes.UploadPolicy.DefaultBlockedExtensions">
+  DefaultBlockedExtensions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L142"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets server-side and Windows script extensions that are not built-in types: &quot;asp&quot;, &quot;aspx&quot;, &quot;jsp&quot;, &quot;cgi&quot;, &quot;py&quot;, &quot;config&quot;, &quot;reg&quot; and similar.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlySet&lt;string&gt; DefaultBlockedExtensions { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlyset-1">IReadOnlySet</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_UploadPolicy_MaxFileNameLength_" data-uid="HeroKit.FileTypes.UploadPolicy.MaxFileNameLength*"></a>
+
+  <h3 id="HeroKit_FileTypes_UploadPolicy_MaxFileNameLength" data-uid="HeroKit.FileTypes.UploadPolicy.MaxFileNameLength">
+  MaxFileNameLength
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L123"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the longest allowed file name. Defaults to 255.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxFileNameLength { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_UploadPolicy_MaxLength_" data-uid="HeroKit.FileTypes.UploadPolicy.MaxLength*"></a>
+
+  <h3 id="HeroKit_FileTypes_UploadPolicy_MaxLength" data-uid="HeroKit.FileTypes.UploadPolicy.MaxLength">
+  MaxLength
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the largest allowed file in bytes, or null for no limit. Defaults to null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long? MaxLength { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="HeroKit_FileTypes_UploadPolicy_MaxLength_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The length of a span is its length; the length of a stream is read only when the stream can seek. Also limit the request body
+in the web server (for example <code>[RequestSizeLimit]</code> in ASP.NET Core), so a large upload is refused before it is read.</p>
+</div>
+
+
+
+
+  <a id="HeroKit_FileTypes_UploadPolicy_MaxSvgScanLength_" data-uid="HeroKit.FileTypes.UploadPolicy.MaxSvgScanLength*"></a>
+
+  <h3 id="HeroKit_FileTypes_UploadPolicy_MaxSvgScanLength" data-uid="HeroKit.FileTypes.UploadPolicy.MaxSvgScanLength">
+  MaxSvgScanLength
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the largest SVG that is scanned for active content when a stream is checked; larger SVG files are rejected. Defaults to 1 MB.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxSvgScanLength { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_UploadPolicy_Rules_" data-uid="HeroKit.FileTypes.UploadPolicy.Rules*"></a>
+
+  <h3 id="HeroKit_FileTypes_UploadPolicy_Rules" data-uid="HeroKit.FileTypes.UploadPolicy.Rules">
+  Rules
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L149"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets extra rules that run after the built-in checks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;IUploadRule&gt; Rules { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="HeroKit.FileTypes.IUploadRule.html">IUploadRule</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L95" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

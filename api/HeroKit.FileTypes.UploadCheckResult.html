@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Struct UploadCheckResult | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct UploadCheckResult | HeroKit ">
+      
+      <meta name="description" content="The result of .">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/new/master/apiSpec/new?filename=HeroKit_FileTypes_UploadCheckResult.md&amp;value=---%0Auid%3A%20HeroKit.FileTypes.UploadCheckResult%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="HeroKit.FileTypes.UploadCheckResult">
+
+
+
+  <h1 id="HeroKit_FileTypes_UploadCheckResult" data-uid="HeroKit.FileTypes.UploadCheckResult" class="text-break">
+Struct UploadCheckResult  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">HeroKit</span>.<a class="xref" href="HeroKit.FileTypes.html">FileTypes</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>HeroKit.FileTypes.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The result of <a class="xref" href="HeroKit.FileTypes.UploadValidator.html#HeroKit_FileTypes_UploadValidator_Validate_System_ReadOnlySpan_System_Byte__System_String_">Validate(ReadOnlySpan&lt;byte&gt;, string)</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly record struct UploadCheckResult : IEquatable&lt;UploadCheckResult&gt;</code></pre>
+  </div>
+
+
+
+
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="HeroKit.FileTypes.UploadCheckResult.html">UploadCheckResult</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="HeroKit.Types.TypeControlExtensions.html#HeroKit_Types_TypeControlExtensions_IsDefaultValue__1___0_">TypeControlExtensions.IsDefaultValue&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectControlExtensions.html#HeroKit_Objects_ObjectControlExtensions_IsNotNull_System_Object_">ObjectControlExtensions.IsNotNull(object?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectControlExtensions.html#HeroKit_Objects_ObjectControlExtensions_IsNull_System_Object_">ObjectControlExtensions.IsNull(object?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectControlExtensions.html#HeroKit_Objects_ObjectControlExtensions_IsNumeric_System_Object_">ObjectControlExtensions.IsNumeric(object?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectConversionExtensions.html#HeroKit_Objects_ObjectConversionExtensions_ConvertTo__1_System_Object___0_">ObjectConversionExtensions.ConvertTo&lt;T&gt;(object?, T?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectConversionExtensions.html#HeroKit_Objects_ObjectConversionExtensions_TryConvertTo__1_System_Object___0__">ObjectConversionExtensions.TryConvertTo&lt;T&gt;(object?, out T?)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="HeroKit_FileTypes_UploadCheckResult__ctor_" data-uid="HeroKit.FileTypes.UploadCheckResult.#ctor*"></a>
+
+  <h3 id="HeroKit_FileTypes_UploadCheckResult__ctor_HeroKit_FileTypes_UploadRejection_HeroKit_FileTypes_FileType_System_String_" data-uid="HeroKit.FileTypes.UploadCheckResult.#ctor(HeroKit.FileTypes.UploadRejection,HeroKit.FileTypes.FileType,System.String)">
+  UploadCheckResult(UploadRejection, FileType?, string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The result of <a class="xref" href="HeroKit.FileTypes.UploadValidator.html#HeroKit_FileTypes_UploadValidator_Validate_System_ReadOnlySpan_System_Byte__System_String_">Validate(ReadOnlySpan&lt;byte&gt;, string)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UploadCheckResult(UploadRejection Rejection, FileType? DetectedType, string? Message)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Rejection</code> <a class="xref" href="HeroKit.FileTypes.UploadRejection.html">UploadRejection</a></dt>
+    <dd><p>Why the upload was rejected, or <a class="xref" href="HeroKit.FileTypes.UploadRejection.html#HeroKit_FileTypes_UploadRejection_None">None</a>.</p>
+</dd>
+    <dt><code>DetectedType</code> <a class="xref" href="HeroKit.FileTypes.FileType.html">FileType</a></dt>
+    <dd><p>The type detected from the content, or null.</p>
+</dd>
+    <dt><code>Message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A message in English that explains the rejection, or null when the upload is safe.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="HeroKit_FileTypes_UploadCheckResult_DetectedType_" data-uid="HeroKit.FileTypes.UploadCheckResult.DetectedType*"></a>
+
+  <h3 id="HeroKit_FileTypes_UploadCheckResult_DetectedType" data-uid="HeroKit.FileTypes.UploadCheckResult.DetectedType">
+  DetectedType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type detected from the content, or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FileType? DetectedType { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.FileTypes.FileType.html">FileType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_UploadCheckResult_IsSafe_" data-uid="HeroKit.FileTypes.UploadCheckResult.IsSafe*"></a>
+
+  <h3 id="HeroKit_FileTypes_UploadCheckResult_IsSafe" data-uid="HeroKit.FileTypes.UploadCheckResult.IsSafe">
+  IsSafe
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets whether the upload passed every check.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSafe { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_UploadCheckResult_Message_" data-uid="HeroKit.FileTypes.UploadCheckResult.Message*"></a>
+
+  <h3 id="HeroKit_FileTypes_UploadCheckResult_Message" data-uid="HeroKit.FileTypes.UploadCheckResult.Message">
+  Message
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A message in English that explains the rejection, or null when the upload is safe.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Message { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_UploadCheckResult_Rejection_" data-uid="HeroKit.FileTypes.UploadCheckResult.Rejection*"></a>
+
+  <h3 id="HeroKit_FileTypes_UploadCheckResult_Rejection" data-uid="HeroKit.FileTypes.UploadCheckResult.Rejection">
+  Rejection
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Why the upload was rejected, or <a class="xref" href="HeroKit.FileTypes.UploadRejection.html#HeroKit_FileTypes_UploadRejection_None">None</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UploadRejection Rejection { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.FileTypes.UploadRejection.html">UploadRejection</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/Upload/UploadTypes.cs/#L54" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

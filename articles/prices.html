@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Prices, VAT and cards | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Prices, VAT and cards | HeroKit ">
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/blob/master/docs/articles/prices.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="prices-vat-and-cards">Prices, VAT and cards</h1>
+
+<pre><code class="lang-csharp">using HeroKit.Decimals;
+
+12.37m.RoundToStep(0.05m);          // 12.35
+12.30m.ToPsychologicalPrice();      // 12.99
+100m.AddPercent(18);                // 118
+100m.IncludeVat(20);                // 120
+120m.ExcludeVat(20);                // 100
+120m.VatAmountFromGross(20);        // 20
+</code></pre>
+<h2 id="cards">Cards</h2>
+<pre><code class="lang-csharp">using HeroKit.Banking;
+
+&quot;4111 1111 1111 1111&quot;.IsValidCardNumber(); // true (length and Luhn)
+&quot;4111111111111111&quot;.GetCardBrand();         // CardBrand.Visa
+troyCard.GetCardBrand();                   // CardBrand.Troy (prefix 9792)
+&quot;4111111111111111&quot;.Mask();                 // &quot;************1111&quot;
+</code></pre>
+<p>Brands: Visa, Mastercard, American Express, Discover, JCB and Troy.</p>
+<h2 id="currency-formatting">Currency formatting</h2>
+<pre><code class="lang-csharp">using HeroKit.Globalization;
+
+1234.5m.ToCurrencyString(Currencies.TurkishLira);                             // &quot;₺1.234,50&quot;
+1234.5m.ToCurrencyString(Currencies.TurkishLira, CurrencyStyle.Abbreviation); // &quot;1.234,50 TL&quot;
+1234.5m.ToCurrencyString(Currencies.TurkishLira, CurrencyStyle.IsoCode);      // &quot;1.234,50 TRY&quot;
+123.50m.ToCurrencyWords(Currencies.TurkishLira);                              // &quot;yüz yirmi üç Türk lirası elli kuruş&quot;
+</code></pre>
+<p>A <code>Currency</code> holds its own symbol, separators and unit names, so the output does not depend on the current culture. Create your own instance for other currencies, for example <code>new Currency(&quot;EUR&quot;, &quot;€&quot;, Languages.Turkish) { UnitName = &quot;Euro&quot;, SubunitName = &quot;sent&quot; }</code>. See <a href="countries-and-languages.html">Countries and languages</a>.</p>
+<h2 id="reading-amounts">Reading amounts</h2>
+<pre><code class="lang-csharp">using HeroKit.Globalization;
+
+&quot;₺1.234,56&quot;.ToAmount(Currencies.TurkishLira);                     // 1234.56
+&quot;1.234,56 TL&quot;.TryToAmount(Currencies.TurkishLira, out decimal a); // true, 1234.56
+&quot;1.5&quot;.TryToAmount(Currencies.TurkishLira, out _);                 // false: &quot;.&quot; groups thousands
+&quot;$1,234.56&quot;.ToAmount(Currencies.USDollar);                        // 1234.56
+</code></pre>
+<p><code>TryToAmount</code> and <code>ToAmount</code> read text with the separators of a currency, with or without its symbol, abbreviation or ISO code, and with a leading sign. Group separators must split the whole part into groups of three digits, so a mistyped price is rejected instead of being read as a different number. The culture of the machine is not used.</p>
+<h2 id="barcodes">Barcodes</h2>
+<pre><code class="lang-csharp">using HeroKit.Barcodes;
+
+&quot;8691234567890&quot;.IsValidGtin(); // true (EAN-13; GS1 Türkiye prefixes are 868 and 869)
+&quot;96385074&quot;.IsValidGtin();      // true (EAN-8)
+</code></pre>
+<p><code>IsValidGtin</code> checks EAN-8, UPC-A, EAN-13 and GTIN-14 numbers with the GS1 check digit.</p>
+<h2 id="rounding">Rounding</h2>
+<p>VAT helpers return unrounded values. Pass <code>decimals: 2</code> to round with <code>MidpointRounding.AwayFromZero</code>, the usual rule on invoices.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/docs/articles/prices.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

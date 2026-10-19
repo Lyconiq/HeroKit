@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class FileType | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class FileType | HeroKit ">
+      
+      <meta name="description" content="A file type: name, MIME type, extensions and the detectors that recognize its content. Built-in types are in .">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/new/master/apiSpec/new?filename=HeroKit_FileTypes_FileType.md&amp;value=---%0Auid%3A%20HeroKit.FileTypes.FileType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="HeroKit.FileTypes.FileType">
+
+
+
+  <h1 id="HeroKit_FileTypes_FileType" data-uid="HeroKit.FileTypes.FileType" class="text-break">
+Class FileType  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">HeroKit</span>.<a class="xref" href="HeroKit.FileTypes.html">FileTypes</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>HeroKit.FileTypes.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A file type: name, MIME type, extensions and the detectors that recognize its content. Built-in types are in <a class="xref" href="HeroKit.FileTypes.FileTypes.html">FileTypes</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class FileType</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">FileType</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="HeroKit.Types.TypeControlExtensions.html#HeroKit_Types_TypeControlExtensions_IsDefaultValue__1___0_">TypeControlExtensions.IsDefaultValue&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectControlExtensions.html#HeroKit_Objects_ObjectControlExtensions_IsNotNull_System_Object_">ObjectControlExtensions.IsNotNull(object?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectControlExtensions.html#HeroKit_Objects_ObjectControlExtensions_IsNull_System_Object_">ObjectControlExtensions.IsNull(object?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectControlExtensions.html#HeroKit_Objects_ObjectControlExtensions_IsNumeric_System_Object_">ObjectControlExtensions.IsNumeric(object?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectConversionExtensions.html#HeroKit_Objects_ObjectConversionExtensions_ConvertTo__1_System_Object___0_">ObjectConversionExtensions.ConvertTo&lt;T&gt;(object?, T?)</a>
+  </div>
+  <div>
+      <a class="xref" href="HeroKit.Objects.ObjectConversionExtensions.html#HeroKit_Objects_ObjectConversionExtensions_TryConvertTo__1_System_Object___0__">ObjectConversionExtensions.TryConvertTo&lt;T&gt;(object?, out T?)</a>
+  </div>
+  </dd></dl>
+
+
+  <h2 id="HeroKit_FileTypes_FileType_examples">Examples</h2>
+  <pre><code class="lang-csharp">var sketch = new FileType("Sketch document", "application/x-sketch", FileTypeCategory.Document, "sketch")
+{
+    Detectors = [new ZipEntryDetector("document.json")],
+    Parent = FileTypes.Zip,
+};
+FileTypes.Register(sketch);</code></pre>
+
+
+  <h2 id="HeroKit_FileTypes_FileType_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>Create an instance and register it with <a class="xref" href="HeroKit.FileTypes.FileTypes.html#HeroKit_FileTypes_FileTypes_Register_HeroKit_FileTypes_FileType_">Register(FileType)</a> or <a class="xref" href="HeroKit.FileTypes.FileTypeRegistry.html#HeroKit_FileTypes_FileTypeRegistry_Register_HeroKit_FileTypes_FileType_">Register(FileType)</a>; registered types are checked before the built-in types.</p>
+</div>
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="HeroKit_FileTypes_FileType__ctor_" data-uid="HeroKit.FileTypes.FileType.#ctor*"></a>
+
+  <h3 id="HeroKit_FileTypes_FileType__ctor_System_String_System_String_HeroKit_FileTypes_FileTypeCategory_System_String___" data-uid="HeroKit.FileTypes.FileType.#ctor(System.String,System.String,HeroKit.FileTypes.FileTypeCategory,System.String[])">
+  FileType(string, string, FileTypeCategory, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a file type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FileType(string name, string mimeType, FileTypeCategory category, params string[] extensions)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A readable name, for example &quot;PNG image&quot;.</p>
+</dd>
+    <dt><code>mimeType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The MIME type, for example &quot;image/png&quot;.</p>
+</dd>
+    <dt><code>category</code> <a class="xref" href="HeroKit.FileTypes.FileTypeCategory.html">FileTypeCategory</a></dt>
+    <dd><p>The broad group of the type.</p>
+</dd>
+    <dt><code>extensions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd><p>The file extensions without a dot, the usual one first, for example &quot;jpg&quot;, &quot;jpeg&quot;.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p><code class="paramref">name</code> or <code class="paramref">mimeType</code> is empty.</p>
+</dd>
+  </dl>
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="HeroKit_FileTypes_FileType_Category_" data-uid="HeroKit.FileTypes.FileType.Category*"></a>
+
+  <h3 id="HeroKit_FileTypes_FileType_Category" data-uid="HeroKit.FileTypes.FileType.Category">
+  Category
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the broad group.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FileTypeCategory Category { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.FileTypes.FileTypeCategory.html">FileTypeCategory</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_FileType_Detectors_" data-uid="HeroKit.FileTypes.FileType.Detectors*"></a>
+
+  <h3 id="HeroKit_FileTypes_FileType_Detectors" data-uid="HeroKit.FileTypes.FileType.Detectors">
+  Detectors
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the detectors that recognize the content. A type without detectors is known by its extension and MIME type only.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;IFileTypeDetector&gt; Detectors { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="HeroKit.FileTypes.IFileTypeDetector.html">IFileTypeDetector</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_FileType_Extension_" data-uid="HeroKit.FileTypes.FileType.Extension*"></a>
+
+  <h3 id="HeroKit_FileTypes_FileType_Extension" data-uid="HeroKit.FileTypes.FileType.Extension">
+  Extension
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the usual extension without a dot, or an empty string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Extension { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_FileType_Extensions_" data-uid="HeroKit.FileTypes.FileType.Extensions*"></a>
+
+  <h3 id="HeroKit_FileTypes_FileType_Extensions" data-uid="HeroKit.FileTypes.FileType.Extensions">
+  Extensions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the extensions in lower case without a dot, the usual one first.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Extensions { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_FileType_HasMacros_" data-uid="HeroKit.FileTypes.FileType.HasMacros*"></a>
+
+  <h3 id="HeroKit_FileTypes_FileType_HasMacros" data-uid="HeroKit.FileTypes.FileType.HasMacros">
+  HasMacros
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets whether files of this type carry macros, for example macro-enabled Office documents (DOCM, XLSM, PPTM).
+<a class="xref" href="HeroKit.FileTypes.UploadValidator.html">UploadValidator</a> rejects them unless <a class="xref" href="HeroKit.FileTypes.UploadPolicy.html#HeroKit_FileTypes_UploadPolicy_AllowMacros">AllowMacros</a> is true.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasMacros { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_FileType_IsExecutable_" data-uid="HeroKit.FileTypes.FileType.IsExecutable*"></a>
+
+  <h3 id="HeroKit_FileTypes_FileType_IsExecutable" data-uid="HeroKit.FileTypes.FileType.IsExecutable">
+  IsExecutable
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets whether files of this type can run code: <a class="xref" href="HeroKit.FileTypes.FileTypeCategory.html#HeroKit_FileTypes_FileTypeCategory_Executable">Executable</a> or <a class="xref" href="HeroKit.FileTypes.FileTypeCategory.html#HeroKit_FileTypes_FileTypeCategory_Script">Script</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsExecutable { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_FileType_MimeType_" data-uid="HeroKit.FileTypes.FileType.MimeType*"></a>
+
+  <h3 id="HeroKit_FileTypes_FileType_MimeType" data-uid="HeroKit.FileTypes.FileType.MimeType">
+  MimeType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the MIME type in lower case.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string MimeType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_FileType_Name_" data-uid="HeroKit.FileTypes.FileType.Name*"></a>
+
+  <h3 id="HeroKit_FileTypes_FileType_Name" data-uid="HeroKit.FileTypes.FileType.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the readable name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_FileType_OtherMimeTypes_" data-uid="HeroKit.FileTypes.FileType.OtherMimeTypes*"></a>
+
+  <h3 id="HeroKit_FileTypes_FileType_OtherMimeTypes" data-uid="HeroKit.FileTypes.FileType.OtherMimeTypes">
+  OtherMimeTypes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets other MIME types that are used for the same files, for example &quot;image/x-icon&quot;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; OtherMimeTypes { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_FileType_Parent_" data-uid="HeroKit.FileTypes.FileType.Parent*"></a>
+
+  <h3 id="HeroKit_FileTypes_FileType_Parent" data-uid="HeroKit.FileTypes.FileType.Parent">
+  Parent
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the more general type this type is built on, or null. For example, DOCX is a ZIP file and JSON is plain text.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FileType? Parent { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="HeroKit.FileTypes.FileType.html">FileType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="HeroKit_FileTypes_FileType_Parent_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a class="xref" href="HeroKit.FileTypes.FileTypeRegistry.html#HeroKit_FileTypes_FileTypeRegistry_ContentMatchesExtension_System_ReadOnlySpan_System_Byte__System_String_">ContentMatchesExtension(ReadOnlySpan&lt;byte&gt;, string?)</a> accepts content of a parent type for a more specific extension,
+because the content can only be recognized as far as the header shows.</p>
+</div>
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="HeroKit_FileTypes_FileType_IsA_" data-uid="HeroKit.FileTypes.FileType.IsA*"></a>
+
+  <h3 id="HeroKit_FileTypes_FileType_IsA_HeroKit_FileTypes_FileType_" data-uid="HeroKit.FileTypes.FileType.IsA(HeroKit.FileTypes.FileType)">
+  IsA(FileType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks whether this type is <code class="paramref">other</code> or is built on it through <a class="xref" href="HeroKit.FileTypes.FileType.html#HeroKit_FileTypes_FileType_Parent">Parent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsA(FileType other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="HeroKit.FileTypes.FileType.html">FileType</a></dt>
+    <dd><p>The other type.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if this type is the other type or one of its descendants.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_FileType_IsCompatibleWith_" data-uid="HeroKit.FileTypes.FileType.IsCompatibleWith*"></a>
+
+  <h3 id="HeroKit_FileTypes_FileType_IsCompatibleWith_HeroKit_FileTypes_FileType_" data-uid="HeroKit.FileTypes.FileType.IsCompatibleWith(HeroKit.FileTypes.FileType)">
+  IsCompatibleWith(FileType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L123"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks whether content of this type fits a file that claims to be <code class="paramref">other</code>:
+the types are the same, have the same MIME type, or one is built on the other through <a class="xref" href="HeroKit.FileTypes.FileType.html#HeroKit_FileTypes_FileType_Parent">Parent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCompatibleWith(FileType other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="HeroKit.FileTypes.FileType.html">FileType</a></dt>
+    <dd><p>The type the file claims to be, for example the type of its extension.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the types fit.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_FileType_IsMatch_" data-uid="HeroKit.FileTypes.FileType.IsMatch*"></a>
+
+  <h3 id="HeroKit_FileTypes_FileType_IsMatch_System_ReadOnlySpan_System_Byte__" data-uid="HeroKit.FileTypes.FileType.IsMatch(System.ReadOnlySpan{System.Byte})">
+  IsMatch(ReadOnlySpan&lt;byte&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks whether the first bytes of a file match one of the detectors.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsMatch(ReadOnlySpan&lt;byte&gt; header)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>header</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd><p>The first bytes of the file.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if a detector matches.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="HeroKit_FileTypes_FileType_ToString_" data-uid="HeroKit.FileTypes.FileType.ToString*"></a>
+
+  <h3 id="HeroKit_FileTypes_FileType_ToString" data-uid="HeroKit.FileTypes.FileType.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a string that represents the current object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string that represents the current object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/HeroKit.FileTypes/FileType.cs/#L19" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>&#220;lkeler ve diller | HeroKit </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="&#220;lkeler ve diller | HeroKit ">
+      
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Lyconiq/HeroKit/blob/master/docs/tr/articles/countries-and-languages.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.png" alt="HeroKit">
+            HeroKit
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="ülkeler-ve-diller">Ülkeler ve diller</h1>
+
+<p>HeroKit 3.0 her ülke için ayrı bir metot kümesi eklemez. Ülke ya da dil alan tek bir metot kümesi vardır. Türkiye ve ABD hazır gelir. Diğer ülkeler, tanımladığınız anda aynı metotları kullanır.</p>
+<h2 id="model">Model</h2>
+<table>
+<thead>
+<tr>
+<th>Tip</th>
+<th>Ne tutar</th>
+<th>Hazır olan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Country</code></td>
+<td>ISO kodu, ad, dil, para birimi ve isteğe bağlı kurallar: telefon numaraları, araç plakaları, posta kodları, kimlik ve vergi numaraları, resmî tatiller, bölgeler, IBAN uzunlukları</td>
+<td><code>Countries.Turkey</code>, <code>Countries.UnitedStates</code></td>
+</tr>
+<tr>
+<td><code>Language</code></td>
+<td>ISO kodu ve isteğe bağlı kurallar: harf büyüklüğü ve sıralama (<code>TextRules</code>), yazıyla sayı (<code>NumberSpeller</code>)</td>
+<td><code>Languages.Turkish</code>, <code>Languages.English</code></td>
+</tr>
+<tr>
+<td><code>Currency</code></td>
+<td>ISO kodu, simge, ayırıcılar, birim adları</td>
+<td><code>Currencies.TurkishLira</code>, <code>Currencies.USDollar</code></td>
+</tr>
+</tbody>
+</table>
+<p>Bütün tipler <code>HeroKit.Globalization</code> namespace'indedir. Yalnızca Türkiye'ye ait kontroller (TCKN, VKN, e-fatura) <code>HeroKit.Globalization.Turkey</code> içindedir.</p>
+<pre><code class="lang-csharp">using HeroKit.Globalization;
+
+&quot;0532 123 45 67&quot;.IsValidPhone(Countries.Turkey);   // true
+&quot;34 ABC 123&quot;.IsValidVehiclePlate(Countries.Turkey); // true
+1234.5m.ToCurrencyString(Currencies.TurkishLira);   // &quot;₺1.234,50&quot;
+&quot;istanbul&quot;.ToUpper(Languages.Turkish);              // &quot;İSTANBUL&quot;
+</code></pre>
+<p>Bir ülkenin her kuralı isteğe bağlıdır. Ülkede olmayan bir kurala ihtiyaç duyan metot <code>NotSupportedException</code> fırlatır.</p>
+<p>Bu kuralların hiçbiri ICU'yu ya da işletim sisteminin kültür verisini kullanmaz. Sonuç her makinede aynıdır; <code>InvariantGlobalization</code> açıkken de.</p>
+<h2 id="kendi-ülkenizi-ekleyin">Kendi ülkenizi ekleyin</h2>
+<p>İhtiyacınız olan kural arayüzlerini uygulayın, bir <code>Country</code> oluşturun ve kaydedin. <code>Program.cs</code> olarak yazarken önce ifadeler, ardından sınıf gelir:</p>
+<pre><code class="lang-csharp">using HeroKit.Globalization;
+
+var testland = new Country(&quot;XT&quot;, &quot;Testland&quot;, Languages.Turkish)
+{
+    PhoneNumbers = new SixDigitPhoneRules(),
+};
+
+Countries.Register(testland);
+
+&quot;912345&quot;.IsValidPhone(testland);        // true
+&quot;912345&quot;.IsValidMobilePhone(testland);  // true
+&quot;912345&quot;.ToE164(testland);              // &quot;+999912345&quot;
+&quot;912345&quot;.FormatPhone(testland);         // &quot;912 345&quot;
+
+public sealed class SixDigitPhoneRules : IPhoneNumberRules
+{
+    public bool IsValid(string? value) =&gt; value is { Length: 6 } &amp;&amp; value.All(char.IsAsciiDigit);
+    public bool IsMobile(string? value) =&gt; IsValid(value) &amp;&amp; value![0] == '9';
+    public string? ToE164(string? value) =&gt; IsValid(value) ? &quot;+999&quot; + value : null;
+    public string? Format(string? value) =&gt; IsValid(value) ? $&quot;{value![..3]} {value[3..]}&quot; : null;
+}
+</code></pre>
+<p>Diğer kural özellikleri: <code>VehiclePlates</code> (<code>IVehiclePlateRules</code>), <code>PostalCodes</code>, <code>NationalIds</code>, <code>TaxIds</code> ve <code>IbanRules</code> (<code>IIdentifierRules</code>), <code>Holidays</code> (<code>IHolidayCalendar</code>), <code>Regions</code> ve <code>Currency</code>.</p>
+<p><code>Countries.Register</code>, ülkeyi doğrulama özniteliklerine ISO koduyla da açar: ülke kaydedildikten sonra <code>[PhoneNumber(&quot;XT&quot;)]</code> çalışır. Kaydı <code>Countries.Get(&quot;XT&quot;)</code>, <code>Countries.TryGet</code> ve <code>Countries.All</code> okur.</p>
+<p>Yeni bir dil de aynı şekilde eklenir: kendi <code>ITextRules</code> ve <code>INumberSpeller</code> uygulamalarınızla <code>new Language(&quot;xx&quot;, &quot;Ad&quot;) { TextRules = ..., NumberSpeller = ... }</code> oluşturun.</p>
+<h2 id="amerika-birleşik-devletleri">Amerika Birleşik Devletleri</h2>
+<p><code>Countries.UnitedStates</code>, <code>Languages.English</code> ve <code>Currencies.USDollar</code> aynı metotlarla çalışır:</p>
+<pre><code class="lang-csharp">using HeroKit.Globalization;
+
+var us = Countries.UnitedStates;
+
+&quot;(212) 555-0123&quot;.IsValidPhone(us);                  // true
+&quot;+1 212 555 0123&quot;.FormatPhone(us);                  // &quot;(212) 555-0123&quot;
+&quot;212.555.0123&quot;.ToE164(us);                          // &quot;+12125550123&quot;
+&quot;10001-1234&quot;.IsValidPostalCode(us);                 // true (ZIP ya da ZIP+4)
+&quot;123-45-6789&quot;.IsValidNationalId(us);                // true (SSN)
+&quot;12-3456789&quot;.IsValidTaxId(us);                      // true (EIN; SSN ve ITIN de kabul edilir)
+us.FindRegion(&quot;ca&quot;)?.Name;                          // &quot;California&quot; (FIPS kodu 6)
+new DateOnly(2026, 7, 2).AddBusinessDays(1, us);    // 2026-07-06 (3 Temmuz, Bağımsızlık Günü'nün resmî tatil günü)
+1234.5m.ToCurrencyString(Currencies.USDollar);      // &quot;$1,234.50&quot;
+123.50m.ToCurrencyWords(Currencies.USDollar);       // &quot;one hundred twenty-three dollars and fifty cents&quot;
+2_500_340L.ToWords(Languages.English);              // &quot;two million five hundred thousand three hundred forty&quot;
+</code></pre>
+<ul>
+<li><strong>Telefon numaraları</strong> Kuzey Amerika Numaralandırma Planı'na uyar: alan kodu ve santral kodu 2–9 ile başlayan 10 haneli numara; isteğe bağlı <code>+1</code>, <code>1</code> ya da <code>001</code> öneki. ABD numaraları hattın mobil olup olmadığını göstermez; bu yüzden <code>IsValidMobilePhone</code> her geçerli numarayı kabul eder.</li>
+<li><strong>SSN, ITIN ve EIN</strong> kontrolleri yapısaldır. Hiç verilmeyen numaraları (ör. SSN alan kodu 000, 666 ya da 900–999) reddeder, ama numaranın gerçekten verildiğini kanıtlamaz.</li>
+<li><strong>Resmî tatiller</strong> 1986'dan itibaren 11 federal tatildir; Juneteenth 2021'den itibaren eklenir. Cumartesiye gelen tatil önceki cuma, pazara gelen tatil sonraki pazartesi kullanılır. Bu günler &quot;… (observed)&quot; adıyla ayrı kayıttır. Eyalet tatilleri dahil değildir.</li>
+<li><strong>Bölgeler</strong> 50 eyalet ve District of Columbia'dır. <code>FindRegion</code> FIPS kodunu, USPS kısaltmasını ya da adı kabul eder.</li>
+<li><strong>Araç plakaları</strong> eyalete göre değişir; bu yüzden <code>IsValidVehiclePlate(Countries.UnitedStates)</code> <code>NotSupportedException</code> fırlatır.</li>
+<li><strong>İngilizce metin kuralları</strong> değişmez (invariant) harf dönüşümü kullanır. <code>Languages.English.TextRules!.Comparer</code> büyük/küçük harfe bakmadan sıralar, eşitlikte küçük harfi öne koyar: <code>apple, Apple, banana</code>.</li>
+</ul>
+<h2 id="türkiye">Türkiye</h2>
+<h3 id="kimlik-ve-vergi-numaraları">Kimlik ve vergi numaraları</h3>
+<pre><code class="lang-csharp">using HeroKit.Globalization;
+using HeroKit.Globalization.Turkey;
+
+&quot;10000000146&quot;.IsValidTckn();                        // true (TCKN)
+&quot;4840847211&quot;.IsValidVkn();                          // true (VKN)
+&quot;10000000146&quot;.IsValidNationalId(Countries.Turkey);  // true (TCKN)
+&quot;4840847211&quot;.IsValidTaxId(Countries.Turkey);        // true: VKN veya TCKN
+&quot;0879001756600379&quot;.IsValidMersis();                 // true: &quot;0&quot;, VKN, 5 haneli sıra no
+&quot;firma@hs01.kep.tr&quot;.IsValidKepAddress();            // true: .kep.tr alan adlı e-posta adresi
+&quot;A12B34567&quot;.IsValidIdCardSerial();                  // true: çipli kimlik kartı seri no
+</code></pre>
+<p>Bunlar sağlama toplamı kontrolleridir; <code>IsValidMersis</code> MERSİS numarasının içindeki VKN'yi kontrol eder. Bir numaranın biçiminin doğru olduğunu gösterir; numaranın verilmiş olduğunu göstermez. Girdi yalnızca rakam içermelidir. Algoritmaları adım adım anlatan rehberler: <a href="tckn-validation.html">TCKN</a>, <a href="vkn-validation.html">VKN</a>.</p>
+<h4 id="doğrulanmış-tckn-değeri">Doğrulanmış TCKN değeri</h4>
+<p><code>Tckn</code>, kontrolden geçmiş bir TCKN tutar. Değer sisteme girdiği yerde bir kez doğrulayın, sonra <code>string</code> yerine <code>Tckn</code> taşıyın:</p>
+<pre><code class="lang-csharp">Tckn id = Tckn.Parse(&quot;10000000146&quot;); // geçersiz numarada FormatException
+Tckn.TryParse(input, out Tckn checkedId);
+id.ToMaskedString();                 // loglar için &quot;10*******46&quot;
+
+public sealed record Customer(Tckn Id, string Name); // JSON: {&quot;Id&quot;:&quot;10000000146&quot;, ...}; geçersiz numara deserialize edilmez
+app.MapGet(&quot;/customers/{id}&quot;, (Tckn id) =&gt; ...);    // minimal API bağlar; geçersiz numara 400 döner
+</code></pre>
+<p><code>Tckn</code>, <code>IParsable&lt;Tckn&gt;</code> uygular; JSON dönüştürücüsü (System.Text.Json kaynak üreticisi ve Native AOT dahil) ve MVC model bağlama için tip dönüştürücüsü vardır. <code>default(Tckn)</code> numara tutmaz: <code>IsEmpty</code> true'dur.</p>
+<h3 id="iban">IBAN</h3>
+<pre><code class="lang-csharp">using HeroKit.Banking;
+
+var iban = &quot;tr33 0006 1005 1978 6457 8413 26&quot;;
+
+iban.IsValidIban();   // true
+iban.NormalizeIban(); // &quot;TR330006100519786457841326&quot;
+iban.FormatIban();    // &quot;TR33 0006 1005 1978 6457 8413 26&quot;
+
+&quot;TR78 0006 2000 0000 0006 2950 05&quot;.GetBank()?.Name; // &quot;Türkiye Garanti Bankası A.Ş.&quot;
+Countries.Turkey.Banks!.All;                        // 5 haneli EFT kodlarıyla 30 banka
+</code></pre>
+<p>IBAN doğrulama her ülke için ISO 13616 mod-97 kontrolüyle çalışır. Kayıtlı bir ülkenin <code>IbanRules</code> kuralı varsa uzunluğu ve sabit konumları da kontrol edilir: Türkiye IBAN'ları 26 karakter olmalıdır. Algoritma için <a href="iban-validation.html">IBAN doğrulama rehberine</a> bakın.</p>
+<p><code>GetBank</code> geçerli bir IBAN'ın banka kodunu okur (Türkiye'de 5–9. karakterler) ve ülkenin banka listesinde (<code>Country.Banks</code>) arar. Bilinmeyen kod için null döner. Liste Türkiye Bankalar Birliği EFT kodlarını izler; eksik banka için issue açın.</p>
+<h3 id="bölgeler-plakalar-ve-posta-kodları">Bölgeler, plakalar ve posta kodları</h3>
+<pre><code class="lang-csharp">using HeroKit.Globalization;
+
+Countries.Turkey.FindRegion(&quot;34&quot;)?.Name;        // &quot;İstanbul&quot;
+Countries.Turkey.FindRegion(6)?.Name;           // &quot;Ankara&quot;
+Countries.Turkey.FindRegion(&quot;sanliurfa&quot;)?.Code; // 63 (büyük-küçük harf ve aksanlar yok sayılır)
+Countries.Turkey.Regions.Count;                 // 81
+
+Countries.Turkey.GetDistricts(&quot;istanbul&quot;).Count;              // 39
+Countries.Turkey.FindDistrict(&quot;istanbul&quot;, &quot;kadikoy&quot;)?.Name;   // &quot;Kadıköy&quot;
+Countries.Turkey.FindDistrict(1421)?.RegionCode;              // 34
+
+&quot;34abc123&quot;.FormatVehiclePlate(Countries.Turkey);   // &quot;34 ABC 123&quot;
+&quot;06 A 1234&quot;.IsValidVehiclePlate(Countries.Turkey); // true
+&quot;34 Q 1234&quot;.IsValidVehiclePlate(Countries.Turkey); // false: Q plakada kullanılan bir harf değil
+
+&quot;34710&quot;.IsValidPostalCode(Countries.Turkey);       // true
+</code></pre>
+<p><code>Regions</code>, <code>Region(Code, Name)</code> değerlerinin listesidir. Türkiye için bölgeler 81 ildir. <code>Districts</code>, 973 ilçeyi resmî MERNİS kodlarıyla <code>District(Code, Name, RegionCode)</code> olarak, her il içinde Türk alfabesine göre sıralı tutar. Mahalle ve sokaklar dahil değildir: on binlerce satırdır ve sık değişir.</p>
+<h3 id="telefon-numaraları">Telefon numaraları</h3>
+<pre><code class="lang-csharp">&quot;0532 123 45 67&quot;.ToE164(Countries.Turkey);          // &quot;+905321234567&quot;
+&quot;+905321234567&quot;.FormatPhone(Countries.Turkey);      // &quot;0532 123 45 67&quot;
+&quot;(0212) 555 12 34&quot;.IsValidPhone(Countries.Turkey);  // true
+&quot;0212 555 12 34&quot;.IsValidMobilePhone(Countries.Turkey); // false
+</code></pre>
+<p>Kabul edilen önekler: <code>+90</code>, <code>0090</code>, <code>90</code>, <code>0</code> veya öneksiz. Kontrol yapısaldır; operatör ya da alan kodu izin listesi değildir.</p>
+<h3 id="resmî-tatiller-ve-iş-günleri">Resmî tatiller ve iş günleri</h3>
+<pre><code class="lang-csharp">new DateOnly(2026, 10, 29).IsPublicHoliday(Countries.Turkey);   // true  (Cumhuriyet Bayramı)
+new DateOnly(2026, 10, 28).IsHalfDayHoliday(Countries.Turkey);  // true  (öğleden sonra tatil)
+new DateOnly(2026, 3, 20).GetPublicHoliday(Countries.Turkey)?.Name; // &quot;Ramazan Bayramı 1. Gün&quot;
+
+new DateOnly(2026, 3, 19).AddBusinessDays(1, Countries.Turkey); // 2026-03-23, bayramı ve hafta sonunu atlar
+new DateOnly(2026, 10, 26).CountBusinessDays(new DateOnly(2026, 10, 30), Countries.Turkey); // 2,5: 28 Ekim yarım gün
+
+foreach (PublicHoliday holiday in Countries.Turkey.Holidays!.GetHolidays(2026))
+    Console.WriteLine($&quot;{holiday.Date:dd.MM.yyyy} {holiday.Name}{(holiday.IsHalfDay ? &quot; (yarım gün)&quot; : &quot;&quot;)}&quot;);
+</code></pre>
+<ul>
+<li>Sabit tatiller 2429 sayılı Kanun'a göre belirlenir. Ramazan ve Kurban Bayramı tarihleri Diyanet takviminden gelir ve takvimin <code>FirstSupportedYear</code>–<code>LastSupportedYear</code> (2022–2027) aralığı için vardır. Diğer yıllarda eksik veri döndürmek yerine istisna fırlatılır.</li>
+<li>İş günleri, tam gün tatiller hariç Pazartesi'den Cuma'ya kadardır. Yarım gün (arife ve 28 Ekim) <code>IsBusinessDay</code> ve <code>AddBusinessDays</code> için iş günüdür, <code>CountBusinessDays</code> içinde 0,5 sayılır. <code>BusinessDaysUntil</code> (3.7.0'dan beri eski) onu tam gün sayar.</li>
+<li>İdari izin köprü günleri duruma göre ilan edilir ve takvimde yerleşik değildir. Bunları ya da şirketinizin tatillerini ülkenin bir kopyasına ekleyin:</li>
+</ul>
+<pre><code class="lang-csharp">using HeroKit.Globalization;
+
+Country turkeyWithLeave = Countries.Turkey.WithAdditionalHolidays(
+[
+    new PublicHoliday(new DateOnly(2026, 5, 18), &quot;İdari izin&quot;, IsHalfDay: false),
+    new PublicHoliday(new DateOnly(2026, 12, 31), &quot;Yılbaşı arifesi&quot;, IsHalfDay: true),
+]);
+
+new DateOnly(2026, 5, 18).IsBusinessDay(turkeyWithLeave);  // false: 18 Mayıs idari izin olarak eklendi
+new DateOnly(2026, 5, 18).IsBusinessDay(Countries.Turkey); // true: Countries.Turkey değişmez
+</code></pre>
+<p>Eklediğiniz gün, aynı tarihteki tatilin yerine geçer. <code>WithHolidays(calendar)</code> bütün takvimi kendi <code>IHolidayCalendar</code> uygulamanızla değiştirir. Kopyayı singleton olarak kaydedin ve <code>Countries.Turkey</code> yerine her yerde onu kullanın.</p>
+<ul>
+<li><code>IsBusinessDay(country)</code> de vardır. <code>IHolidayCalendar</code> tanımlı olan her özel ülke bu metotları alır.</li>
+</ul>
+<h3 id="türkiyede-bugün">Türkiye'de bugün</h3>
+<p>Sunucular çoğunlukla UTC'de çalışır. Türkiye UTC'den 3 saat ileridedir; bu yüzden Türkiye saatiyle 00:00–03:00 arasında (UTC'de önceki günün 21:00–00:00 aralığı) sunucudaki <code>DateTime.Today</code> hâlâ önceki günü gösterir. <code>Country.Today()</code> ülkenin saat dilimini kullanır:</p>
+<pre><code class="lang-csharp">using HeroKit.Globalization;
+
+Countries.Turkey.Today();                                  // Türkiye'de bugünün tarihi
+Countries.Turkey.Now();                                    // örneğin 2026-10-19 01:30 +03:00
+Countries.Turkey.Today().IsBusinessDay(Countries.Turkey);
+Countries.Turkey.Today(TimeProvider.System);              // testlerde sahte bir TimeProvider verin
+</code></pre>
+<p><code>TimeZone</code>, Europe/Istanbul'dur. Birden çok saat dilimi olan bir ülkenin (ABD) <code>TimeZone</code> değeri yoktur ve <code>Today()</code> <code>NotSupportedException</code> fırlatır.</p>
+<h3 id="türk-lirası">Türk lirası</h3>
+<pre><code class="lang-csharp">1234.5m.ToCurrencyString(Currencies.TurkishLira);                              // &quot;₺1.234,50&quot;
+1234.5m.ToCurrencyString(Currencies.TurkishLira, CurrencyStyle.Abbreviation);  // &quot;1.234,50 TL&quot;
+1234.5m.ToCurrencyString(Currencies.TurkishLira, CurrencyStyle.IsoCode);       // &quot;1.234,50 TRY&quot;
+</code></pre>
+<p>Para birimi kendi ayırıcılarını taşır; sonuç geçerli kültüre bağlı değildir.</p>
+<h3 id="yazıyla-tutar">Yazıyla tutar</h3>
+<pre><code class="lang-csharp">123.ToWords(Languages.Turkish);                        // &quot;yüz yirmi üç&quot;
+1_001_000L.ToWords(Languages.Turkish);                 // &quot;bir milyon bin&quot;
+123.50m.ToCurrencyWords(Currencies.TurkishLira);
+// &quot;yüz yirmi üç Türk lirası elli kuruş&quot;
+
+var euro = new Currency(&quot;EUR&quot;, &quot;€&quot;, Languages.Turkish) { UnitName = &quot;Euro&quot;, SubunitName = &quot;sent&quot; };
+10.20m.ToCurrencyWords(euro);
+// &quot;on Euro yirmi sent&quot;
+</code></pre>
+<h3 id="icu-olmadan-harf-büyüklüğü-ve-sıralama">ICU olmadan harf büyüklüğü ve sıralama</h3>
+<pre><code class="lang-csharp">&quot;istanbul ılıca&quot;.ToTitleCase(Languages.Turkish);   // &quot;İstanbul Ilıca&quot;
+&quot;istanbul&quot;.ToUpper(Languages.Turkish);             // &quot;İSTANBUL&quot;
+&quot;IŞIK&quot;.ToLower(Languages.Turkish);                 // &quot;ışık&quot;
+&quot;IŞIK&quot;.EqualsIgnoreCase(&quot;ışık&quot;, Languages.Turkish); // true
+&quot;ISIK&quot;.EqualsIgnoreCase(&quot;isik&quot;, Languages.Turkish); // false: I, ı harfinin büyüğüdür
+</code></pre>
+<p>Diğer kültürler için <code>HeroKit.Strings</code> içindeki <code>ToTitleCase(culture)</code> ve <code>EqualsIgnoreCase(other, culture)</code> metotlarını kullanın.</p>
+<p>Türkçe karşılaştırıcılar ICU olmadan Türk alfabesini izler (c, ç, g, ğ, ı, i, o, ö, s, ş, u, ü). Bu, değişmez globalleştirme (invariant globalization) ile çalışan kapsayıcılarda ve uygulamalarda da geçerlidir; oralarda kültüre dayalı karşılaştırma Türk alfabesini izlemez.</p>
+<pre><code class="lang-csharp">using HeroKit.Globalization;
+
+var comparer = Languages.Turkish.TextRules!.Comparer;
+
+string[] names = [&quot;Zeynep&quot;, &quot;Çağla&quot;, &quot;Ilgın&quot;, &quot;İpek&quot;, &quot;Cem&quot;, &quot;Şule&quot;, &quot;Oya&quot;, &quot;Ömer&quot;, &quot;Uğur&quot;, &quot;Ümit&quot;, &quot;Gül&quot;];
+Array.Sort(names, comparer);
+// Cem, Çağla, Gül, Ilgın, İpek, Oya, Ömer, Şule, Uğur, Ümit, Zeynep
+
+var sorted = customers.OrderBy(c =&gt; c.Name, comparer).ThenBy(c =&gt; c.City, comparer);
+
+var cities = new Dictionary&lt;string, int&gt;(Languages.Turkish.TextRules!.IgnoreCaseComparer) { [&quot;İzmir&quot;] = 35 };
+cities.ContainsKey(&quot;izmir&quot;); // true
+cities.ContainsKey(&quot;IZMIR&quot;); // false: I, ı harfidir; i değil
+</code></pre>
+<p><code>Comparer</code> küçük harfi önce sıralar. <code>IgnoreCaseComparer</code> büyük-küçük harfi Türkçe kurallarla yok sayar; sözlük ya da hash set karşılaştırıcısı olarak kullanılabilir.</p>
+<h3 id="e-fatura-ve-e-arşiv">e-Fatura ve e-Arşiv</h3>
+<pre><code class="lang-csharp">using HeroKit.Globalization.Turkey;
+
+&quot;ABC2026000000001&quot;.IsValidGibInvoiceNumber(); // true
+&quot;ABC2026000000000&quot;.IsValidGibInvoiceNumber(); // false: sıra numarası 1'den başlar
+&quot;51d3bb18-9650-4c8e-825d-5a7f845be630&quot;.IsValidEttn(); // true
+
+GibInvoiceNumber.TryParse(&quot;ABC2026000000001&quot;, out GibInvoiceNumber parsed); // true
+var invoice = GibInvoiceNumber.Create(&quot;ABC&quot;, 2026, 41);
+invoice.ToString();        // &quot;ABC2026000000041&quot;
+invoice.Next().ToString(); // &quot;ABC2026000000042&quot;
+</code></pre>
+<p>GİB fatura numarası 16 karakterdir: 3 büyük harf ya da rakamdan (A–Z, 0–9) oluşan seri, 4 haneli yıl (2000–2099) ve 1'den başlayan 9 haneli sıra numarası. <code>Create</code> geçersiz bir parça için <code>ArgumentException</code>, <code>Next</code> sıra numarası 999.999.999'a ulaştığında <code>InvalidOperationException</code> fırlatır. ETTN, 8-4-4-4-12 biçiminde boş olmayan bir UUID'dir.</p>
+<p><code>[GibInvoiceNumber]</code> ve <code>[Ettn]</code> öznitelikleri ile <code>GibInvoiceNumber()</code> ve <code>Ettn()</code> FluentValidation kuralları <a href="validation.html">Form doğrulama</a> sayfasında anlatılır.</p>
+<h4 id="karekod">Karekod</h4>
+<pre><code class="lang-csharp">if (GibInvoiceQrCode.TryParse(scannedText, out GibInvoiceQrCode? qr))
+{
+    qr.SellerTaxId;       // &quot;4840847211&quot;
+    qr.Number.ToString(); // &quot;ABC2026000000001&quot;
+    qr.Date;              // 2026-10-15
+    qr.PayableAmount;     // 120.00
+    qr.VatAmounts[20m];   // 20.00 (orana göre KDV)
+}
+</code></pre>
+<p><code>TryParse</code>, e-Fatura ya da e-Arşiv faturasının karekodundaki JSON metnini okur. Geçerli satıcı ve alıcı VKN/TCKN'si (VKN'si olmayan e-Arşiv alıcıları için &quot;11111111111&quot; kabul edilir), fatura numarası, ETTN ve tarih ister. Tutarlar isteğe bağlıdır; bütün alanlar <code>Fields</code> içinde de bulunur. Yalnızca metni okur; faturanın GİB'de var olup olmadığını sormaz.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Lyconiq/HeroKit/blob/master/docs/tr/articles/countries-and-languages.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>HeroKit · MIT License · Built with care for .NET developers · <a href="https://github.com/Lyconiq/HeroKit">GitHub</a> · <a href="https://www.nuget.org/packages/HeroKit">NuGet</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
