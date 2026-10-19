@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <EnablePackageValidation>true</EnablePackageValidation>
+        <!-- New in 3.7.0: add PackageValidationBaselineVersion 3.7.0 after the first release. -->
+        <IsAotCompatible>true</IsAotCompatible>
+    </PropertyGroup>
+
+    <PropertyGroup Label="Package">
+        <PackageId>HeroKit.FileTypes.AspNetCore</PackageId>
+        <Title>HeroKit.FileTypes.AspNetCore</Title>
+        <Authors>Emre Akdemir</Authors>
+        <Company>Lyconiq</Company>
+        <Description>ASP.NET Core integration for HeroKit.FileTypes: safe upload checks for IFormFile, an [AllowedFileTypes] attribute for MVC and Razor Pages models, and a ValidateUploads() endpoint filter for minimal APIs that returns 400 with the reason.</Description>
+        <PackageTags>aspnetcore;iformfile;upload;file-upload;validation;minimal-api;mime;magic-bytes;security;herokit</PackageTags>
+        <PackageProjectUrl>https://herokit.lyconiq.com</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Lyconiq/HeroKit</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageIcon>herokit.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageReleaseNotes>First release: IFormFile.CheckUpload, UploadValidator.Validate(IFormFile), IFormFile.GetSafeFileName, [AllowedFileTypes] and the ValidateUploads() endpoint filter.</PackageReleaseNotes>
+        <Copyright>Copyright © 2023-2026 Emre Akdemir, Lyconiq</Copyright>
+        <NeutralLanguage>en</NeutralLanguage>
+    </PropertyGroup>
+
+    <PropertyGroup Label="SourceLink">
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <Deterministic>true</Deterministic>
+        <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="/" />
+        <None Include="../HeroKit/herokit.png" Pack="true" PackagePath="/" />
+        <AdditionalFiles Include="PublicAPI.Shipped.txt" />
+        <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+        <ProjectReference Include="..\HeroKit.FileTypes\HeroKit.FileTypes.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="5.6.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+
+</Project>

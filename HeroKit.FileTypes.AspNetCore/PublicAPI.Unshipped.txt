@@ -1,0 +1,14 @@
+#nullable enable
+HeroKit.FileTypes.AspNetCore.AllowedFileTypesAttribute
+HeroKit.FileTypes.AspNetCore.AllowedFileTypesAttribute.AllowMacros.get -> bool
+HeroKit.FileTypes.AspNetCore.AllowedFileTypesAttribute.AllowMacros.set -> void
+HeroKit.FileTypes.AspNetCore.AllowedFileTypesAttribute.AllowedFileTypesAttribute(params string![]! extensions) -> void
+HeroKit.FileTypes.AspNetCore.AllowedFileTypesAttribute.Extensions.get -> System.Collections.Generic.IReadOnlyList<string!>!
+HeroKit.FileTypes.AspNetCore.AllowedFileTypesAttribute.MaxLength.get -> long
+HeroKit.FileTypes.AspNetCore.AllowedFileTypesAttribute.MaxLength.set -> void
+HeroKit.FileTypes.AspNetCore.FormFileExtensions
+HeroKit.FileTypes.AspNetCore.UploadEndpointFilterExtensions
+static HeroKit.FileTypes.AspNetCore.FormFileExtensions.CheckUpload(this Microsoft.AspNetCore.Http.IFormFile! file, HeroKit.FileTypes.UploadPolicy? policy = null) -> HeroKit.FileTypes.UploadCheckResult
+static HeroKit.FileTypes.AspNetCore.FormFileExtensions.GetSafeFileName(this Microsoft.AspNetCore.Http.IFormFile! file, string! fallback = "file") -> string!
+static HeroKit.FileTypes.AspNetCore.FormFileExtensions.Validate(this HeroKit.FileTypes.UploadValidator! validator, Microsoft.AspNetCore.Http.IFormFile! file) -> HeroKit.FileTypes.UploadCheckResult
+static HeroKit.FileTypes.AspNetCore.UploadEndpointFilterExtensions.ValidateUploads<TBuilder>(this TBuilder builder, HeroKit.FileTypes.UploadPolicy? policy = null) -> TBuilder

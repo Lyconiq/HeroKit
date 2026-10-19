@@ -1,1 +1,2 @@
 #nullable enable
+static HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.SafeUpload<T, TFile>(this FluentValidation.IRuleBuilder<T, TFile?>! ruleBuilder, System.Func<TFile!, System.IO.Stream!>! openRead, System.Func<TFile!, string!>! fileName, HeroKit.FileTypes.UploadPolicy? policy = null) -> FluentValidation.IRuleBuilderOptions<T, TFile?>!
