@@ -6,6 +6,8 @@ FluentValidation rules for [HeroKit](https://www.nuget.org/packages/HeroKit): Tu
 dotnet add package HeroKit.FluentValidation
 ```
 
+Requires FluentValidation 12.0.0 or later.
+
 ```csharp
 using FluentValidation;
 using HeroKit.FluentValidation;
@@ -26,6 +28,15 @@ public sealed class CustomerValidator : AbstractValidator<Customer>
         RuleFor(x => x.Mersis).Mersis();
     }
 }
+```
+
+Safe file uploads (HeroKit.FileTypes): file name, program or script content, content that does not fit the extension, macros, size and allowed types.
+
+```csharp
+using HeroKit.FileTypes;
+
+var imagesOnly = new UploadPolicy { AllowedTypes = [FileTypes.Jpeg, FileTypes.Png], MaxLength = 5 * 1024 * 1024 };
+RuleFor(x => x.Photo).NotNull().SafeUpload(f => f.OpenReadStream(), f => f.FileName, imagesOnly); // IFormFile
 ```
 
 Null and empty values pass; add `NotEmpty()` to require a value. Messages use `{PropertyName}` and can be replaced with `WithMessage`.
