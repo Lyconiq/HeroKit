@@ -15,5 +15,6 @@ internal static class TurkeyCountry
         Banks = TurkeyBanks.Instance,
         Regions = TurkeyProvinces.All,
         Districts = TurkeyDistricts.All,
+        TimeZone = TimeZones.Find("Europe/Istanbul", "Turkey Standard Time", TimeSpan.FromHours(3), "Türkiye Time"),
     };
 }
