@@ -43,8 +43,7 @@
     "resource": [
       {
         "files": [
-          "images/**",
-          "CNAME"
+          "images/**"
         ]
       }
     ],
