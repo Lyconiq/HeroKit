@@ -7,9 +7,9 @@ namespace HeroKit.FileTypes;
 /// </summary>
 /// <remarks>
 /// <para>The checks run as a chain, in this order, and the first rejection stops it: file name, program or script extension
-/// (also hidden as in "a.php.jpg"), empty content, program or script content, known extension, detected content and whether it fits
-/// the extension, <see cref="UploadPolicy.AllowedTypes"/>, macros in Office documents, active content in SVG, then the rules in <see cref="UploadPolicy.Rules"/>.</para>
-/// <para>An instance is immutable and thread-safe; register one per policy as a singleton. The check does not replace size limits,
+/// (also hidden as in "a.php.jpg"), empty content, <see cref="UploadPolicy.MaxLength"/>, program or script content, known extension, detected content and whether it fits
+/// the extension, <see cref="UploadPolicy.AllowedTypes"/>, macros in Office documents (also VBA projects in legacy DOC and XLS files), active content in SVG, then the rules in <see cref="UploadPolicy.Rules"/>.</para>
+/// <para>An instance is immutable and thread-safe; register one per policy as a singleton. The check does not replace a request size limit in the web server,
 /// generated file names, re-encoding images or virus scanning.</para>
 /// </remarks>
 /// <example>
@@ -28,6 +28,7 @@ public sealed class UploadValidator
         new FileNameStep(),
         new BlockedExtensionStep(),
         new EmptyContentStep(),
+        new FileLengthStep(),
         new ExecutableContentStep(),
         new KnownExtensionStep(),
         new ContentTypeStep(),
@@ -90,7 +91,7 @@ public sealed class UploadValidator
     /// </code>
     /// </example>
     public UploadCheckResult Validate(ReadOnlySpan<byte> content, string fileName) =>
-        Run(content, content[..Math.Min(content.Length, FileTypeRegistry.HeaderSize)], contentTruncated: false, fileName);
+        Run(new UploadInspection(content, content[..Math.Min(content.Length, FileTypeRegistry.HeaderSize)], contentTruncated: false, fileName, Policy, Registry));
 
     /// <summary>
     /// Checks an uploaded file from a stream. Reads like <see cref="FileTypeRegistry.Detect(Stream)"/> (the header and, for ZIP files,
@@ -103,6 +104,8 @@ public sealed class UploadValidator
     {
         ArgumentNullException.ThrowIfNull(stream);
         long start = stream.CanSeek ? stream.Position : 0;
+        long? fileLength = stream.CanSeek ? stream.Length - start : null;
+        Stream? seekable = stream.CanSeek ? stream : null;
         DetectionBytes bytes = HeaderReader.ReadDetectionBytes(stream, start);
         byte[]? contentBuffer = null;
         try
@@ -110,7 +113,7 @@ public sealed class UploadValidator
             ReadOnlySpan<byte> header = bytes.Header;
             bool moreToRead = !bytes.HasDirectory && header.Length == FileTypeRegistry.HeaderSize;
             if (!moreToRead || Registry.Detect(header)?.IsA(FileTypes.Svg) != true)
-                return Run(header, bytes.Span, contentTruncated: false, fileName);
+                return Run(new UploadInspection(header, bytes.Span, contentTruncated: false, fileName, Policy, Registry, fileLength, seekable, start));
 
             // Read the rest of the SVG, one byte past the limit to notice a larger file.
             int read = header.Length;
@@ -119,7 +122,8 @@ public sealed class UploadValidator
             header.CopyTo(contentBuffer);
             int total = read + stream.ReadAtLeast(contentBuffer.AsSpan(read, limit + 1 - read), limit + 1 - read, throwOnEndOfStream: false);
 
-            return Run(contentBuffer.AsSpan(0, Math.Min(total, limit)), header, contentTruncated: total > limit, fileName);
+            return Run(new UploadInspection(
+                contentBuffer.AsSpan(0, Math.Min(total, limit)), header, contentTruncated: total > limit, fileName, Policy, Registry, fileLength, seekable, start));
         }
         finally
         {
@@ -132,9 +136,8 @@ public sealed class UploadValidator
         }
     }
 
-    private UploadCheckResult Run(ReadOnlySpan<byte> content, ReadOnlySpan<byte> header, bool contentTruncated, string fileName)
+    private static UploadCheckResult Run(UploadInspection inspection)
     {
-        var inspection = new UploadInspection(content, header, contentTruncated, fileName, Policy, Registry);
         foreach (IUploadStep step in Steps)
         {
             if (step.Check(ref inspection) is { } rejection)

@@ -8,6 +8,8 @@
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <EnablePackageValidation>true</EnablePackageValidation>
+        <!-- Fails the pack when the public API breaks compatibility with the last release. Update after each release. -->
+        <PackageValidationBaselineVersion>3.5.0</PackageValidationBaselineVersion>
         <IsAotCompatible>true</IsAotCompatible>
     </PropertyGroup>
 
@@ -24,7 +26,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageIcon>herokit.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageReleaseNotes>No changes; released with the other HeroKit packages. 3.4.0 added the KepAddress() and IdCardSerial() rules.</PackageReleaseNotes>
+        <PackageReleaseNotes>No API changes; released with the other HeroKit packages. The repository moved to github.com/Lyconiq/HeroKit; releases now carry an SBOM and a build provenance attestation.</PackageReleaseNotes>
         <Copyright>Copyright © 2023-2026 Emre Akdemir</Copyright>
         <NeutralLanguage>en</NeutralLanguage>
     </PropertyGroup>

@@ -3,6 +3,15 @@ HeroKit.Arrays.ArrayControlExtensions
 HeroKit.Arrays.ArrayConversionExtensions
 HeroKit.Arrays.ArrayManipulationExtensions
 HeroKit.Assemblies.AssemblyExtensions
+HeroKit.Banking.Bank
+HeroKit.Banking.Bank.<Clone>$() -> HeroKit.Banking.Bank!
+HeroKit.Banking.Bank.Bank(string! Code, string! Name) -> void
+HeroKit.Banking.Bank.Code.get -> string!
+HeroKit.Banking.Bank.Code.init -> void
+HeroKit.Banking.Bank.Deconstruct(out string! Code, out string! Name) -> void
+HeroKit.Banking.Bank.Equals(HeroKit.Banking.Bank? other) -> bool
+HeroKit.Banking.Bank.Name.get -> string!
+HeroKit.Banking.Bank.Name.init -> void
 HeroKit.Banking.CardBrand
 HeroKit.Banking.CardBrand.AmericanExpress = 3 -> HeroKit.Banking.CardBrand
 HeroKit.Banking.CardBrand.Discover = 4 -> HeroKit.Banking.CardBrand
@@ -13,6 +22,7 @@ HeroKit.Banking.CardBrand.Unknown = 0 -> HeroKit.Banking.CardBrand
 HeroKit.Banking.CardBrand.Visa = 1 -> HeroKit.Banking.CardBrand
 HeroKit.Banking.CardNumberExtensions
 HeroKit.Banking.IbanExtensions
+HeroKit.Barcodes.BarcodeExtensions
 HeroKit.Booleans.BooleanControlExtensions
 HeroKit.Booleans.BooleanConversionExtensions
 HeroKit.DateTimes.DateTimeFormattingExtensions
@@ -24,12 +34,20 @@ HeroKit.Enums.EnumExtensions
 HeroKit.Globalization.BusinessDayExtensions
 HeroKit.Globalization.Countries
 HeroKit.Globalization.Country
+HeroKit.Globalization.Country.Banks.get -> HeroKit.Globalization.IBankDirectory?
+HeroKit.Globalization.Country.Banks.init -> void
 HeroKit.Globalization.Country.Code.get -> string!
 HeroKit.Globalization.Country.Country(string! code, string! name, HeroKit.Globalization.Language! language) -> void
 HeroKit.Globalization.Country.Currency.get -> HeroKit.Globalization.Currency?
 HeroKit.Globalization.Country.Currency.init -> void
+HeroKit.Globalization.Country.Districts.get -> System.Collections.Generic.IReadOnlyList<HeroKit.Globalization.District>!
+HeroKit.Globalization.Country.Districts.init -> void
+HeroKit.Globalization.Country.FindDistrict(int code) -> HeroKit.Globalization.District?
+HeroKit.Globalization.Country.FindDistrict(string? regionCodeOrName, string? districtName) -> HeroKit.Globalization.District?
 HeroKit.Globalization.Country.FindRegion(int code) -> HeroKit.Globalization.Region?
 HeroKit.Globalization.Country.FindRegion(string? codeOrName) -> HeroKit.Globalization.Region?
+HeroKit.Globalization.Country.GetDistricts(int regionCode) -> System.Collections.Generic.IReadOnlyList<HeroKit.Globalization.District>!
+HeroKit.Globalization.Country.GetDistricts(string? regionCodeOrName) -> System.Collections.Generic.IReadOnlyList<HeroKit.Globalization.District>!
 HeroKit.Globalization.Country.Holidays.get -> HeroKit.Globalization.IHolidayCalendar?
 HeroKit.Globalization.Country.Holidays.init -> void
 HeroKit.Globalization.Country.IbanRules.get -> HeroKit.Globalization.IIdentifierRules?
@@ -60,16 +78,36 @@ HeroKit.Globalization.Currency.GroupSeparator.get -> string!
 HeroKit.Globalization.Currency.GroupSeparator.init -> void
 HeroKit.Globalization.Currency.IsoCode.get -> string!
 HeroKit.Globalization.Currency.Language.get -> HeroKit.Globalization.Language!
+HeroKit.Globalization.Currency.SubunitConjunction.get -> string!
+HeroKit.Globalization.Currency.SubunitConjunction.init -> void
 HeroKit.Globalization.Currency.SubunitName.get -> string!
 HeroKit.Globalization.Currency.SubunitName.init -> void
+HeroKit.Globalization.Currency.SubunitNamePlural.get -> string?
+HeroKit.Globalization.Currency.SubunitNamePlural.init -> void
 HeroKit.Globalization.Currency.Symbol.get -> string!
 HeroKit.Globalization.Currency.UnitName.get -> string!
 HeroKit.Globalization.Currency.UnitName.init -> void
+HeroKit.Globalization.Currency.UnitNamePlural.get -> string?
+HeroKit.Globalization.Currency.UnitNamePlural.init -> void
 HeroKit.Globalization.CurrencyExtensions
 HeroKit.Globalization.CurrencyStyle
 HeroKit.Globalization.CurrencyStyle.Abbreviation = 1 -> HeroKit.Globalization.CurrencyStyle
 HeroKit.Globalization.CurrencyStyle.IsoCode = 2 -> HeroKit.Globalization.CurrencyStyle
 HeroKit.Globalization.CurrencyStyle.Symbol = 0 -> HeroKit.Globalization.CurrencyStyle
+HeroKit.Globalization.District
+HeroKit.Globalization.District.Code.get -> int
+HeroKit.Globalization.District.Code.init -> void
+HeroKit.Globalization.District.Deconstruct(out int Code, out string! Name, out int RegionCode) -> void
+HeroKit.Globalization.District.District() -> void
+HeroKit.Globalization.District.District(int Code, string! Name, int RegionCode) -> void
+HeroKit.Globalization.District.Equals(HeroKit.Globalization.District other) -> bool
+HeroKit.Globalization.District.Name.get -> string!
+HeroKit.Globalization.District.Name.init -> void
+HeroKit.Globalization.District.RegionCode.get -> int
+HeroKit.Globalization.District.RegionCode.init -> void
+HeroKit.Globalization.IBankDirectory
+HeroKit.Globalization.IBankDirectory.All.get -> System.Collections.Generic.IReadOnlyList<HeroKit.Banking.Bank!>!
+HeroKit.Globalization.IBankDirectory.FindByIban(string! iban) -> HeroKit.Banking.Bank?
 HeroKit.Globalization.IHolidayCalendar
 HeroKit.Globalization.IHolidayCalendar.FirstSupportedYear.get -> int
 HeroKit.Globalization.IHolidayCalendar.GetHolidays(int year) -> System.Collections.Generic.IReadOnlyList<HeroKit.Globalization.PublicHoliday>!
@@ -114,6 +152,8 @@ HeroKit.Globalization.PublicHoliday.Name.init -> void
 HeroKit.Globalization.PublicHoliday.PublicHoliday() -> void
 HeroKit.Globalization.PublicHoliday.PublicHoliday(System.DateOnly Date, string! Name, bool IsHalfDay) -> void
 HeroKit.Globalization.Region
+HeroKit.Globalization.Region.Abbreviation.get -> string?
+HeroKit.Globalization.Region.Abbreviation.init -> void
 HeroKit.Globalization.Region.Code.get -> int
 HeroKit.Globalization.Region.Code.init -> void
 HeroKit.Globalization.Region.Deconstruct(out int Code, out string! Name) -> void
@@ -135,6 +175,35 @@ HeroKit.Globalization.Turkey.GibInvoiceNumber.Series.get -> string!
 HeroKit.Globalization.Turkey.GibInvoiceNumber.Series.init -> void
 HeroKit.Globalization.Turkey.GibInvoiceNumber.Year.get -> int
 HeroKit.Globalization.Turkey.GibInvoiceNumber.Year.init -> void
+HeroKit.Globalization.Turkey.GibInvoiceQrCode
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.BuyerTaxId.get -> string!
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.BuyerTaxId.init -> void
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.CurrencyCode.get -> string?
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.Date.get -> System.DateOnly
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.Date.init -> void
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.Ettn.get -> System.Guid
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.Ettn.init -> void
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.Fields.get -> System.Collections.Generic.IReadOnlyDictionary<string!, string!>!
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.InvoiceType.get -> string?
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.LineTotal.get -> decimal?
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.Number.get -> HeroKit.Globalization.Turkey.GibInvoiceNumber
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.Number.init -> void
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.PayableAmount.get -> decimal?
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.Scenario.get -> string?
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.SellerTaxId.get -> string!
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.SellerTaxId.init -> void
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.TaxInclusiveTotal.get -> decimal?
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.VatAmounts.get -> System.Collections.Generic.IReadOnlyDictionary<decimal, decimal>!
+HeroKit.Globalization.Turkey.GibInvoiceQrCode.VatBases.get -> System.Collections.Generic.IReadOnlyDictionary<decimal, decimal>!
+HeroKit.Globalization.Turkey.Tckn
+HeroKit.Globalization.Turkey.Tckn.CompareTo(HeroKit.Globalization.Turkey.Tckn other) -> int
+HeroKit.Globalization.Turkey.Tckn.Equals(HeroKit.Globalization.Turkey.Tckn other) -> bool
+HeroKit.Globalization.Turkey.Tckn.IsEmpty.get -> bool
+HeroKit.Globalization.Turkey.Tckn.Tckn() -> void
+HeroKit.Globalization.Turkey.Tckn.ToMaskedString() -> string!
+HeroKit.Globalization.Turkey.Tckn.Value.get -> string!
+HeroKit.Globalization.Turkey.TcknJsonConverter
+HeroKit.Globalization.Turkey.TcknJsonConverter.TcknJsonConverter() -> void
 HeroKit.Globalization.Turkey.TurkeyIdentityExtensions
 HeroKit.Guids.GuidExtensions
 HeroKit.Integers.IntegerExtensions
@@ -155,8 +224,16 @@ HeroKit.Validation.EttnAttribute
 HeroKit.Validation.EttnAttribute.EttnAttribute() -> void
 HeroKit.Validation.GibInvoiceNumberAttribute
 HeroKit.Validation.GibInvoiceNumberAttribute.GibInvoiceNumberAttribute() -> void
+HeroKit.Validation.GtinAttribute
+HeroKit.Validation.GtinAttribute.GtinAttribute() -> void
 HeroKit.Validation.IbanAttribute
 HeroKit.Validation.IbanAttribute.IbanAttribute() -> void
+HeroKit.Validation.IdCardSerialAttribute
+HeroKit.Validation.IdCardSerialAttribute.IdCardSerialAttribute() -> void
+HeroKit.Validation.KepAddressAttribute
+HeroKit.Validation.KepAddressAttribute.KepAddressAttribute() -> void
+HeroKit.Validation.MersisAttribute
+HeroKit.Validation.MersisAttribute.MersisAttribute() -> void
 HeroKit.Validation.NationalIdAttribute
 HeroKit.Validation.NationalIdAttribute.NationalIdAttribute(string! countryCode) -> void
 HeroKit.Validation.PhoneNumberAttribute
@@ -175,18 +252,31 @@ HeroKit.Validation.VknAttribute
 HeroKit.Validation.VknAttribute.VknAttribute() -> void
 abstract HeroKit.Validation.CountryValidationAttribute.IsValid(string! value, HeroKit.Globalization.Country! country) -> bool
 const HeroKit.Globalization.Turkey.GibInvoiceNumber.MaxSequence = 999999999 -> int
+override HeroKit.Banking.Bank.Equals(object? obj) -> bool
+override HeroKit.Banking.Bank.GetHashCode() -> int
+override HeroKit.Banking.Bank.ToString() -> string!
 override HeroKit.Globalization.Country.ToString() -> string!
 override HeroKit.Globalization.Currency.ToString() -> string!
+override HeroKit.Globalization.District.GetHashCode() -> int
 override HeroKit.Globalization.Language.ToString() -> string!
 override HeroKit.Globalization.PublicHoliday.GetHashCode() -> int
 override HeroKit.Globalization.Region.GetHashCode() -> int
 override HeroKit.Globalization.Turkey.GibInvoiceNumber.GetHashCode() -> int
 override HeroKit.Globalization.Turkey.GibInvoiceNumber.ToString() -> string!
+override HeroKit.Globalization.Turkey.Tckn.Equals(object? obj) -> bool
+override HeroKit.Globalization.Turkey.Tckn.GetHashCode() -> int
+override HeroKit.Globalization.Turkey.Tckn.ToString() -> string!
+override HeroKit.Globalization.Turkey.TcknJsonConverter.Read(ref System.Text.Json.Utf8JsonReader reader, System.Type! typeToConvert, System.Text.Json.JsonSerializerOptions! options) -> HeroKit.Globalization.Turkey.Tckn
+override HeroKit.Globalization.Turkey.TcknJsonConverter.Write(System.Text.Json.Utf8JsonWriter! writer, HeroKit.Globalization.Turkey.Tckn value, System.Text.Json.JsonSerializerOptions! options) -> void
 override HeroKit.Validation.CardNumberAttribute.IsValid(object? value) -> bool
 override HeroKit.Validation.CountryValidationAttribute.IsValid(object? value) -> bool
 override HeroKit.Validation.EttnAttribute.IsValid(object? value) -> bool
 override HeroKit.Validation.GibInvoiceNumberAttribute.IsValid(object? value) -> bool
+override HeroKit.Validation.GtinAttribute.IsValid(object? value) -> bool
 override HeroKit.Validation.IbanAttribute.IsValid(object? value) -> bool
+override HeroKit.Validation.IdCardSerialAttribute.IsValid(object? value) -> bool
+override HeroKit.Validation.KepAddressAttribute.IsValid(object? value) -> bool
+override HeroKit.Validation.MersisAttribute.IsValid(object? value) -> bool
 override HeroKit.Validation.TcknAttribute.IsValid(object? value) -> bool
 override HeroKit.Validation.VknAttribute.IsValid(object? value) -> bool
 static HeroKit.Arrays.ArrayControlExtensions.IsNotNullOrEmpty<T>(this T[]? array) -> bool
@@ -194,11 +284,15 @@ static HeroKit.Arrays.ArrayControlExtensions.IsNullOrEmpty<T>(this T[]? array) -
 static HeroKit.Arrays.ArrayConversionExtensions.ToBase64Url(this byte[]? value) -> string!
 static HeroKit.Arrays.ArrayManipulationExtensions.CopyFrom<T>(this T[]! array, System.Collections.Generic.IEnumerable<T>! items) -> int
 static HeroKit.Assemblies.AssemblyExtensions.GetAttribute<T>(this System.Reflection.Assembly! callingAssembly) -> T?
+static HeroKit.Banking.Bank.operator !=(HeroKit.Banking.Bank? left, HeroKit.Banking.Bank? right) -> bool
+static HeroKit.Banking.Bank.operator ==(HeroKit.Banking.Bank? left, HeroKit.Banking.Bank? right) -> bool
 static HeroKit.Banking.CardNumberExtensions.GetCardBrand(this string? value) -> HeroKit.Banking.CardBrand
 static HeroKit.Banking.CardNumberExtensions.IsValidCardNumber(this string? value) -> bool
 static HeroKit.Banking.IbanExtensions.FormatIban(this string? value) -> string?
+static HeroKit.Banking.IbanExtensions.GetBank(this string? value) -> HeroKit.Banking.Bank?
 static HeroKit.Banking.IbanExtensions.IsValidIban(this string? value) -> bool
 static HeroKit.Banking.IbanExtensions.NormalizeIban(this string? value) -> string?
+static HeroKit.Barcodes.BarcodeExtensions.IsValidGtin(this string? value) -> bool
 static HeroKit.Booleans.BooleanControlExtensions.AllFalse(this System.Collections.Generic.IEnumerable<bool>! values) -> bool
 static HeroKit.Booleans.BooleanControlExtensions.AllTrue(this System.Collections.Generic.IEnumerable<bool>! values) -> bool
 static HeroKit.Booleans.BooleanControlExtensions.AnyFalse(this System.Collections.Generic.IEnumerable<bool>! values) -> bool
@@ -268,6 +362,7 @@ static HeroKit.Globalization.Countries.Get(string! code) -> HeroKit.Globalizatio
 static HeroKit.Globalization.Countries.Register(HeroKit.Globalization.Country! country) -> void
 static HeroKit.Globalization.Countries.TryGet(string? code, out HeroKit.Globalization.Country? country) -> bool
 static HeroKit.Globalization.Countries.Turkey.get -> HeroKit.Globalization.Country!
+static HeroKit.Globalization.Countries.UnitedStates.get -> HeroKit.Globalization.Country!
 static HeroKit.Globalization.CountryRuleExtensions.FormatPhone(this string? value, HeroKit.Globalization.Country! country) -> string?
 static HeroKit.Globalization.CountryRuleExtensions.FormatVehiclePlate(this string? value, HeroKit.Globalization.Country! country) -> string?
 static HeroKit.Globalization.CountryRuleExtensions.IsValidMobilePhone(this string? value, HeroKit.Globalization.Country! country) -> bool
@@ -278,14 +373,20 @@ static HeroKit.Globalization.CountryRuleExtensions.IsValidTaxId(this string? val
 static HeroKit.Globalization.CountryRuleExtensions.IsValidVehiclePlate(this string? value, HeroKit.Globalization.Country! country) -> bool
 static HeroKit.Globalization.CountryRuleExtensions.ToE164(this string? value, HeroKit.Globalization.Country! country) -> string?
 static HeroKit.Globalization.Currencies.TurkishLira.get -> HeroKit.Globalization.Currency!
+static HeroKit.Globalization.Currencies.USDollar.get -> HeroKit.Globalization.Currency!
+static HeroKit.Globalization.CurrencyExtensions.ToAmount(this string? value, HeroKit.Globalization.Currency! currency, decimal defaultValue = 0) -> decimal
 static HeroKit.Globalization.CurrencyExtensions.ToCurrencyString(this decimal value, HeroKit.Globalization.Currency! currency, HeroKit.Globalization.CurrencyStyle style = HeroKit.Globalization.CurrencyStyle.Symbol) -> string!
 static HeroKit.Globalization.CurrencyExtensions.ToCurrencyWords(this decimal amount, HeroKit.Globalization.Currency! currency) -> string!
+static HeroKit.Globalization.CurrencyExtensions.TryToAmount(this string? value, HeroKit.Globalization.Currency! currency, out decimal result) -> bool
+static HeroKit.Globalization.District.operator !=(HeroKit.Globalization.District left, HeroKit.Globalization.District right) -> bool
+static HeroKit.Globalization.District.operator ==(HeroKit.Globalization.District left, HeroKit.Globalization.District right) -> bool
 static HeroKit.Globalization.LanguageExtensions.EqualsIgnoreCase(this string? value, string? other, HeroKit.Globalization.Language! language) -> bool
 static HeroKit.Globalization.LanguageExtensions.ToLower(this string? value, HeroKit.Globalization.Language! language) -> string!
 static HeroKit.Globalization.LanguageExtensions.ToTitleCase(this string? value, HeroKit.Globalization.Language! language) -> string!
 static HeroKit.Globalization.LanguageExtensions.ToUpper(this string? value, HeroKit.Globalization.Language! language) -> string!
 static HeroKit.Globalization.LanguageExtensions.ToWords(this int value, HeroKit.Globalization.Language! language) -> string!
 static HeroKit.Globalization.LanguageExtensions.ToWords(this long value, HeroKit.Globalization.Language! language) -> string!
+static HeroKit.Globalization.Languages.English.get -> HeroKit.Globalization.Language!
 static HeroKit.Globalization.Languages.Turkish.get -> HeroKit.Globalization.Language!
 static HeroKit.Globalization.PublicHoliday.operator !=(HeroKit.Globalization.PublicHoliday left, HeroKit.Globalization.PublicHoliday right) -> bool
 static HeroKit.Globalization.PublicHoliday.operator ==(HeroKit.Globalization.PublicHoliday left, HeroKit.Globalization.PublicHoliday right) -> bool
@@ -297,6 +398,16 @@ static HeroKit.Globalization.Turkey.GibInvoiceNumber.Create(string! series, int 
 static HeroKit.Globalization.Turkey.GibInvoiceNumber.TryParse(string? value, out HeroKit.Globalization.Turkey.GibInvoiceNumber result) -> bool
 static HeroKit.Globalization.Turkey.GibInvoiceNumber.operator !=(HeroKit.Globalization.Turkey.GibInvoiceNumber left, HeroKit.Globalization.Turkey.GibInvoiceNumber right) -> bool
 static HeroKit.Globalization.Turkey.GibInvoiceNumber.operator ==(HeroKit.Globalization.Turkey.GibInvoiceNumber left, HeroKit.Globalization.Turkey.GibInvoiceNumber right) -> bool
+static HeroKit.Globalization.Turkey.GibInvoiceQrCode.TryParse(string? json, out HeroKit.Globalization.Turkey.GibInvoiceQrCode? result) -> bool
+static HeroKit.Globalization.Turkey.Tckn.Parse(string! value) -> HeroKit.Globalization.Turkey.Tckn
+static HeroKit.Globalization.Turkey.Tckn.TryParse(string? value, out HeroKit.Globalization.Turkey.Tckn result) -> bool
+static HeroKit.Globalization.Turkey.Tckn.explicit operator HeroKit.Globalization.Turkey.Tckn(string! value) -> HeroKit.Globalization.Turkey.Tckn
+static HeroKit.Globalization.Turkey.Tckn.implicit operator string!(HeroKit.Globalization.Turkey.Tckn value) -> string!
+static HeroKit.Globalization.Turkey.Tckn.operator !=(HeroKit.Globalization.Turkey.Tckn left, HeroKit.Globalization.Turkey.Tckn right) -> bool
+static HeroKit.Globalization.Turkey.Tckn.operator ==(HeroKit.Globalization.Turkey.Tckn left, HeroKit.Globalization.Turkey.Tckn right) -> bool
+static HeroKit.Globalization.Turkey.TurkeyIdentityExtensions.IsValidIdCardSerial(this string? value) -> bool
+static HeroKit.Globalization.Turkey.TurkeyIdentityExtensions.IsValidKepAddress(this string? value) -> bool
+static HeroKit.Globalization.Turkey.TurkeyIdentityExtensions.IsValidMersis(this string? value) -> bool
 static HeroKit.Globalization.Turkey.TurkeyIdentityExtensions.IsValidTckn(this string? value) -> bool
 static HeroKit.Globalization.Turkey.TurkeyIdentityExtensions.IsValidVkn(this string? value) -> bool
 static HeroKit.Guids.GuidExtensions.IsEmpty(this System.Guid value) -> bool
@@ -338,6 +449,9 @@ static HeroKit.Strings.StringConversionExtensions.TryToEnum<T>(this string? valu
 static HeroKit.Strings.StringManipulationExtensions.Format(this string! value, params object![]! args) -> string!
 static HeroKit.Strings.StringManipulationExtensions.Left(this string? value, int length) -> string?
 static HeroKit.Strings.StringManipulationExtensions.Mask(this string? value, int visibleCount = 4, char maskChar = '*') -> string?
+static HeroKit.Strings.StringManipulationExtensions.MaskEmail(this string? value, char maskChar = '*') -> string?
+static HeroKit.Strings.StringManipulationExtensions.MaskMiddle(this string? value, int visibleStart, int visibleEnd, char maskChar = '*') -> string?
+static HeroKit.Strings.StringManipulationExtensions.MaskName(this string? value, char maskChar = '*') -> string?
 static HeroKit.Strings.StringManipulationExtensions.RemoveDiacritics(this string? value) -> string!
 static HeroKit.Strings.StringManipulationExtensions.RemoveWhitespace(this string? value) -> string?
 static HeroKit.Strings.StringManipulationExtensions.Right(this string? value, int length) -> string?
@@ -355,6 +469,8 @@ static HeroKit.Types.TypesExtensions.GetExtensionMethod(this System.Type! type, 
 static HeroKit.Types.TypesExtensions.GetExtensionMethod(this System.Type! type, System.Reflection.Assembly! extensionsAssembly, string! name, System.Type![]! types) -> System.Reflection.MethodInfo?
 static HeroKit.Types.TypesExtensions.GetExtensionMethods(this System.Type! type, System.Reflection.Assembly! extensionsAssembly, System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public) -> System.Collections.Generic.IEnumerable<System.Reflection.MethodInfo!>!
 static HeroKit.Types.TypesExtensions.GetRealType(this System.Type! type) -> System.Type?
+~override HeroKit.Globalization.District.Equals(object obj) -> bool
+~override HeroKit.Globalization.District.ToString() -> string
 ~override HeroKit.Globalization.PublicHoliday.Equals(object obj) -> bool
 ~override HeroKit.Globalization.PublicHoliday.ToString() -> string
 ~override HeroKit.Globalization.Region.Equals(object obj) -> bool

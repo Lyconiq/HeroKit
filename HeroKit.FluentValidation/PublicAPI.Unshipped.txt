@@ -1,5 +1,1 @@
 #nullable enable
-static HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.Gtin<T>(this FluentValidation.IRuleBuilder<T, string?>! ruleBuilder) -> FluentValidation.IRuleBuilderOptions<T, string?>!
-static HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.IdCardSerial<T>(this FluentValidation.IRuleBuilder<T, string?>! ruleBuilder) -> FluentValidation.IRuleBuilderOptions<T, string?>!
-static HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.KepAddress<T>(this FluentValidation.IRuleBuilder<T, string?>! ruleBuilder) -> FluentValidation.IRuleBuilderOptions<T, string?>!
-static HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.Mersis<T>(this FluentValidation.IRuleBuilder<T, string?>! ruleBuilder) -> FluentValidation.IRuleBuilderOptions<T, string?>!

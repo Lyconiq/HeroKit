@@ -3,7 +3,11 @@ HeroKit.FluentValidation.HeroKitRuleBuilderExtensions
 static HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.CardNumber<T>(this FluentValidation.IRuleBuilder<T, string?>! ruleBuilder) -> FluentValidation.IRuleBuilderOptions<T, string?>!
 static HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.Ettn<T>(this FluentValidation.IRuleBuilder<T, string?>! ruleBuilder) -> FluentValidation.IRuleBuilderOptions<T, string?>!
 static HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.GibInvoiceNumber<T>(this FluentValidation.IRuleBuilder<T, string?>! ruleBuilder) -> FluentValidation.IRuleBuilderOptions<T, string?>!
+static HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.Gtin<T>(this FluentValidation.IRuleBuilder<T, string?>! ruleBuilder) -> FluentValidation.IRuleBuilderOptions<T, string?>!
 static HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.Iban<T>(this FluentValidation.IRuleBuilder<T, string?>! ruleBuilder) -> FluentValidation.IRuleBuilderOptions<T, string?>!
+static HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.IdCardSerial<T>(this FluentValidation.IRuleBuilder<T, string?>! ruleBuilder) -> FluentValidation.IRuleBuilderOptions<T, string?>!
+static HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.KepAddress<T>(this FluentValidation.IRuleBuilder<T, string?>! ruleBuilder) -> FluentValidation.IRuleBuilderOptions<T, string?>!
+static HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.Mersis<T>(this FluentValidation.IRuleBuilder<T, string?>! ruleBuilder) -> FluentValidation.IRuleBuilderOptions<T, string?>!
 static HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.NationalId<T>(this FluentValidation.IRuleBuilder<T, string?>! ruleBuilder, HeroKit.Globalization.Country! country) -> FluentValidation.IRuleBuilderOptions<T, string?>!
 static HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.PhoneNumber<T>(this FluentValidation.IRuleBuilder<T, string?>! ruleBuilder, HeroKit.Globalization.Country! country, bool mobileOnly = false) -> FluentValidation.IRuleBuilderOptions<T, string?>!
 static HeroKit.FluentValidation.HeroKitRuleBuilderExtensions.PostalCode<T>(this FluentValidation.IRuleBuilder<T, string?>! ruleBuilder, HeroKit.Globalization.Country! country) -> FluentValidation.IRuleBuilderOptions<T, string?>!
