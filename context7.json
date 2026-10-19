@@ -3,7 +3,7 @@
   "url": "https://context7.com/lyconiq/herokit",
   "public_key": "pk_PdTGdFhLp52wFzxBj66ad",
   "projectTitle": "HeroKit",
-  "description": "Extension methods for .NET with first-class Turkish data: TCKN, VKN and IBAN validation, phone numbers, plates, provinces and districts, public holidays and business days, amounts in words. Also file type detection and safe upload checks (HeroKit.FileTypes), ASP.NET Core and FluentValidation integrations.",
+  "description": "Extension methods for .NET with built-in Turkish data rules. It validates Turkish identity numbers, tax numbers, IBANs, phone numbers and vehicle plates, and covers provinces, districts, public holidays, business days and amounts in words. Separate packages add file type detection, safe upload checks, ASP.NET Core support and FluentValidation rules.",
   "folders": [
     "docs/articles",
     "HeroKit.FileTypes",
