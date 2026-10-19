@@ -1,0 +1,22 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "HeroKit",
+  "description": "Extension methods for .NET with first-class Turkish data: TCKN, VKN and IBAN validation, phone numbers, plates, provinces and districts, public holidays and business days, amounts in words. Also file type detection and safe upload checks (HeroKit.FileTypes), ASP.NET Core and FluentValidation integrations.",
+  "folders": [
+    "docs/articles",
+    "HeroKit.FileTypes",
+    "HeroKit.FileTypes.AspNetCore",
+    "HeroKit.FluentValidation",
+    "samples"
+  ],
+  "excludeFolders": ["bin", "obj"],
+  "excludeFiles": ["README.TR.md", "CONTRIBUTING.md", "SECURITY.md", "CHANGELOG.md", "LICENSE"],
+  "rules": [
+    "Packages: HeroKit (core), HeroKit.FileTypes (file type detection, uploads, no dependencies), HeroKit.FileTypes.AspNetCore (IFormFile) and HeroKit.FluentValidation. Install only what you use.",
+    "Country rules take a Country object, for example value.IsValidPhone(Countries.Turkey). Since 3.0 there are no Tr-suffixed methods. Türkiye-only checks (IsValidTckn, IsValidVkn, Tckn) are in HeroKit.Globalization.Turkey.",
+    "Keep TCKN, VKN and IBAN values as string, never as long or int. Validate with IsValidTckn, IsValidVkn and IsValidIban; pass the Tckn value type once a number is validated.",
+    "Use CountBusinessDays (decimal, half-day holidays count 0.5) instead of the obsolete BusinessDaysUntil. Use Countries.Turkey.Today() instead of DateTime.Today on servers that run in UTC.",
+    "Conversions such as ToInt(defaultValue) never throw; use the TryToX(out) form to know whether parsing worked. Parsing is culture-invariant unless you pass an IFormatProvider.",
+    "Check uploads by content with UploadValidator or FileTypes.CheckUpload, never by extension or Content-Type alone. In minimal APIs use .ValidateUploads(policy); in models use [AllowedFileTypes]."
+  ]
+}
