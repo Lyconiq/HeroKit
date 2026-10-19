@@ -27,18 +27,10 @@ None of these rules use ICU or the culture data of the operating system. The res
 
 ## Add your own country
 
-Implement the rule interfaces you need, create a `Country` and register it:
+Implement the rule interfaces you need, create a `Country` and register it. As a `Program.cs`, the statements come first and the class after them:
 
 ```csharp
 using HeroKit.Globalization;
-
-public sealed class SixDigitPhoneRules : IPhoneNumberRules
-{
-    public bool IsValid(string? value) => value is { Length: 6 } && value.All(char.IsAsciiDigit);
-    public bool IsMobile(string? value) => IsValid(value) && value![0] == '9';
-    public string? ToE164(string? value) => IsValid(value) ? "+999" + value : null;
-    public string? Format(string? value) => IsValid(value) ? $"{value![..3]} {value[3..]}" : null;
-}
 
 var testland = new Country("XT", "Testland", Languages.Turkish)
 {
@@ -51,6 +43,14 @@ Countries.Register(testland);
 "912345".IsValidMobilePhone(testland);  // true
 "912345".ToE164(testland);              // "+999912345"
 "912345".FormatPhone(testland);         // "912 345"
+
+public sealed class SixDigitPhoneRules : IPhoneNumberRules
+{
+    public bool IsValid(string? value) => value is { Length: 6 } && value.All(char.IsAsciiDigit);
+    public bool IsMobile(string? value) => IsValid(value) && value![0] == '9';
+    public string? ToE164(string? value) => IsValid(value) ? "+999" + value : null;
+    public string? Format(string? value) => IsValid(value) ? $"{value![..3]} {value[3..]}" : null;
+}
 ```
 
 The other rule properties are `VehiclePlates` (`IVehiclePlateRules`), `PostalCodes`, `NationalIds`, `TaxIds` and `IbanRules` (`IIdentifierRules`), `Holidays` (`IHolidayCalendar`), `Regions` and `Currency`.
@@ -212,7 +212,7 @@ new DateOnly(2026, 5, 18).IsBusinessDay(Countries.Turkey); // true: Countries.Tu
 
 ### Today in Türkiye
 
-A server usually runs in UTC. Between midnight in Türkiye and 03:00 UTC, `DateTime.Today` on the server still shows yesterday. `Country.Today()` uses the country's time zone:
+A server usually runs in UTC. Türkiye is 3 hours ahead of UTC, so from 00:00 to 03:00 Türkiye time (21:00 to 00:00 UTC on the previous day), `DateTime.Today` on the server still shows the previous day. `Country.Today()` uses the country's time zone:
 
 ```csharp
 using HeroKit.Globalization;

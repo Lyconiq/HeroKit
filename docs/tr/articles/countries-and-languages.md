@@ -27,18 +27,10 @@ Bu kuralların hiçbiri ICU'yu ya da işletim sisteminin kültür verisini kulla
 
 ## Kendi ülkenizi ekleyin
 
-İhtiyacınız olan kural arayüzlerini uygulayın, bir `Country` oluşturun ve kaydedin:
+İhtiyacınız olan kural arayüzlerini uygulayın, bir `Country` oluşturun ve kaydedin. `Program.cs` olarak yazarken önce ifadeler, ardından sınıf gelir:
 
 ```csharp
 using HeroKit.Globalization;
-
-public sealed class SixDigitPhoneRules : IPhoneNumberRules
-{
-    public bool IsValid(string? value) => value is { Length: 6 } && value.All(char.IsAsciiDigit);
-    public bool IsMobile(string? value) => IsValid(value) && value![0] == '9';
-    public string? ToE164(string? value) => IsValid(value) ? "+999" + value : null;
-    public string? Format(string? value) => IsValid(value) ? $"{value![..3]} {value[3..]}" : null;
-}
 
 var testland = new Country("XT", "Testland", Languages.Turkish)
 {
@@ -51,6 +43,14 @@ Countries.Register(testland);
 "912345".IsValidMobilePhone(testland);  // true
 "912345".ToE164(testland);              // "+999912345"
 "912345".FormatPhone(testland);         // "912 345"
+
+public sealed class SixDigitPhoneRules : IPhoneNumberRules
+{
+    public bool IsValid(string? value) => value is { Length: 6 } && value.All(char.IsAsciiDigit);
+    public bool IsMobile(string? value) => IsValid(value) && value![0] == '9';
+    public string? ToE164(string? value) => IsValid(value) ? "+999" + value : null;
+    public string? Format(string? value) => IsValid(value) ? $"{value![..3]} {value[3..]}" : null;
+}
 ```
 
 Diğer kural özellikleri: `VehiclePlates` (`IVehiclePlateRules`), `PostalCodes`, `NationalIds`, `TaxIds` ve `IbanRules` (`IIdentifierRules`), `Holidays` (`IHolidayCalendar`), `Regions` ve `Currency`.
@@ -212,7 +212,7 @@ new DateOnly(2026, 5, 18).IsBusinessDay(Countries.Turkey); // true: Countries.Tu
 
 ### Türkiye'de bugün
 
-Sunucular çoğunlukla UTC'de çalışır. Türkiye'de gece yarısı ile 03:00 UTC arasında, sunucudaki `DateTime.Today` hâlâ dünü gösterir. `Country.Today()` ülkenin saat dilimini kullanır:
+Sunucular çoğunlukla UTC'de çalışır. Türkiye UTC'den 3 saat ileridedir; bu yüzden Türkiye saatiyle 00:00–03:00 arasında (UTC'de önceki günün 21:00–00:00 aralığı) sunucudaki `DateTime.Today` hâlâ önceki günü gösterir. `Country.Today()` ülkenin saat dilimini kullanır:
 
 ```csharp
 using HeroKit.Globalization;
