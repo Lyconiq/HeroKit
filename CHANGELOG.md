@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Country.WithAdditionalHolidays(...)` returns a copy of a country whose calendar also has your days, for example administrative leave (idari izin) or company holidays; a day replaces a holiday on the same date. `Country.WithHolidays(calendar)` swaps the whole calendar. The country itself does not change.
 - `Country.TimeZone`, `Country.Now(timeProvider)` and `Country.Today(timeProvider)`: the current date in the country, also on a server that runs in UTC. Türkiye uses Europe/Istanbul; the United States has no single time zone and throws `NotSupportedException`.
 - `DateTime` overloads of `GetPublicHoliday` and `IsHalfDayHoliday`.
+- New package HeroKit.FileTypes.AspNetCore: `IFormFile.CheckUpload(policy)`, `UploadValidator.Validate(IFormFile)`, `IFormFile.GetSafeFileName()`, the `[AllowedFileTypes("jpg", "png", MaxLength = ...)]` attribute for MVC, Razor Pages and Blazor models (also for `IFormFileCollection`), and the `ValidateUploads(policy)` endpoint filter for minimal APIs and route groups, which returns 400 with a validation problem before the handler runs.
 - HeroKit.FluentValidation: `SafeUpload(openRead, fileName, policy)` checks an uploaded file of any type (`IFormFile`, `IBrowserFile` or your own) with `UploadValidator`. The package now depends on HeroKit.FileTypes. The README states the minimum FluentValidation version (12.0.0).
 
 ### Deprecated

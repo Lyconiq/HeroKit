@@ -47,6 +47,7 @@ jobs:
           dotnet pack HeroKit/HeroKit.csproj -c Release --output ${{ env.NuGetDirectory }}
           dotnet pack HeroKit.FluentValidation/HeroKit.FluentValidation.csproj -c Release --output ${{ env.NuGetDirectory }}
           dotnet pack HeroKit.FileTypes/HeroKit.FileTypes.csproj -c Release --output ${{ env.NuGetDirectory }}
+          dotnet pack HeroKit.FileTypes.AspNetCore/HeroKit.FileTypes.AspNetCore.csproj -c Release --output ${{ env.NuGetDirectory }}
 
       # Software bill of materials (SPDX) for each package, from its project's resolved dependencies.
       - name: SBOM
@@ -55,7 +56,7 @@ jobs:
         run: |
           dotnet tool install -g Microsoft.Sbom.DotNetTool
           mkdir -p sbom
-          for p in HeroKit HeroKit.FluentValidation HeroKit.FileTypes; do
+          for p in HeroKit HeroKit.FluentValidation HeroKit.FileTypes HeroKit.FileTypes.AspNetCore; do
             mkdir -p "$RUNNER_TEMP/$p"
             cp ${{ env.NuGetDirectory }}/$p.[0-9]*.nupkg "$RUNNER_TEMP/$p/"
             sbom-tool generate -b "$RUNNER_TEMP/$p" -bc "$p" -pn "$p" -pv "$VERSION" -ps Lyconiq \

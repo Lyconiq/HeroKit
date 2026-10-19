@@ -28,6 +28,7 @@
         <ProjectReference Include="..\HeroKit.FluentValidation\HeroKit.FluentValidation.csproj" />
         <ProjectReference Include="..\HeroKit.FileTypes\HeroKit.FileTypes.csproj" />
         <ProjectReference Include="..\samples\HeroKit.Samples.WebApi\HeroKit.Samples.WebApi.csproj" />
+        <ProjectReference Include="..\HeroKit.FileTypes.AspNetCore\HeroKit.FileTypes.AspNetCore.csproj" />
     </ItemGroup>
 
 </Project>
