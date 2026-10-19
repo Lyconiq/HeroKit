@@ -6,6 +6,11 @@ updates:
       interval: "weekly"
       day: "monday"
     open-pull-requests-limit: 5
+    # Libraries keep the lowest dependency version they support, so users are not forced to upgrade.
+    # Security updates and major versions of FluentValidation still come through.
+    ignore:
+      - dependency-name: "FluentValidation"
+        update-types: ["version-update:semver-minor", "version-update:semver-patch"]
     groups:
       all:
         patterns: ["*"]
