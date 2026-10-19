@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- The documentation moved to https://herokit.lyconiq.com. The old address redirects.
+
 ## [3.6.0] - 2026-10-19
 
 ### Added
@@ -83,7 +86,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.0.0] - 2026-10-15
 
-Breaking release. Country- and language-specific behavior is selected with objects instead of method names, so new countries and languages need no new methods. See the [upgrade guide](https://herokit.emreakdemir.dev/articles/upgrading.html).
+Breaking release. Country- and language-specific behavior is selected with objects instead of method names, so new countries and languages need no new methods. See the [upgrade guide](https://herokit.lyconiq.com/articles/upgrading.html).
 
 ### Changed (breaking)
 - New model in `HeroKit.Globalization`: `Country` / `Countries`, `Language` / `Languages`, `Currency` / `Currencies` with rule interfaces `IPhoneNumberRules`, `IVehiclePlateRules`, `IIdentifierRules`, `IHolidayCalendar`, `INumberSpeller`, `ITextRules` (#104).

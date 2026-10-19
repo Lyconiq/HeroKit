@@ -7,7 +7,7 @@
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Lyconiq/HeroKit/badge)](https://scorecard.dev/viewer/?uri=github.com/Lyconiq/HeroKit)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Türkçe: [README.TR.md](README.TR.md) · **Documentation: [herokit.emreakdemir.dev](https://herokit.emreakdemir.dev)**
+Türkçe: [README.TR.md](README.TR.md) · **Documentation: [herokit.lyconiq.com](https://herokit.lyconiq.com)**
 
 Everyday extension methods for .NET, with first-class support for Turkish data: TCKN, VKN, IBAN, phone numbers, plates, regions, public holidays and amounts in words. Country rules follow one model (`Country`, `Language`, `Currency`), so new countries can be added without new methods.
 
@@ -103,7 +103,7 @@ using HeroKit.Strings;
 | Cards | `IsValidCardNumber` (Luhn), `GetCardBrand` (incl. Troy) |
 | Enums | `GetDescription`, `ToEnum`, `ToUnderlying<T>` |
 
-The [guides and API reference](https://herokit.emreakdemir.dev) cover every method. Upgrading from 1.x or 2.x? See the [upgrade guide](https://herokit.emreakdemir.dev/articles/upgrading.html).
+The [guides and API reference](https://herokit.lyconiq.com) cover every method. Upgrading from 1.x or 2.x? See the [upgrade guide](https://herokit.lyconiq.com/articles/upgrading.html).
 
 ## Questions and contributions
 

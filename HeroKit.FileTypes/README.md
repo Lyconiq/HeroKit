@@ -37,4 +37,4 @@ FileTypes.Register(new FileType("Sketch document", "application/x-sketch", FileT
 
 Magic bytes are a first check, not a proof. For uploads, also limit the size, store files under generated names, and re-encode images or scan files when it matters.
 
-Documentation: https://herokit.emreakdemir.dev/articles/file-types.html
+Documentation: https://herokit.lyconiq.com/articles/file-types.html
