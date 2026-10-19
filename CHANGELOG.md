@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Turkish IBANs: the reserved digit (10th character) must be 0, as the format requires. Before, the 5th character (the first digit of the bank code) was checked instead. A Turkish IBAN with a non-zero reserved digit is now invalid; one with a bank code that starts with another digit than 0 is now valid.
+
 ### Changed
 - The documentation moved to https://herokit.lyconiq.com. The old address redirects.
 
