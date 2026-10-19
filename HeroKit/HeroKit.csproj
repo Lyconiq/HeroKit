@@ -18,8 +18,8 @@
         <Title>HeroKit</Title>
         <Authors>Emre Akdemir</Authors>
         <Company>Lyconiq</Company>
-        <Description>Extension methods for everyday .NET types: validation, conversion and manipulation helpers for arrays, booleans, strings, dates, enums, GUIDs, objects, types and more.</Description>
-        <PackageTags>csharp;dotnet;extensions;extension-methods;utilities;helpers;turkish;turkiye;tckn;vkn;iban;validation;dataannotations;plate;troy</PackageTags>
+        <Description>Turkish data for .NET: TCKN, VKN and IBAN validation with bank lookup, phone numbers, vehicle plates, provinces and districts, public holidays and business days with half days, amounts in words and e-invoice numbers, on one Country, Language and Currency model. Also everyday extension methods for strings, conversions, dates, collections and prices. Native AOT compatible.</Description>
+        <PackageTags>turkey;turkiye;turkish;tckn;vkn;iban;validation;holidays;business-days;e-invoice;efatura;phone-number;plate;dataannotations;extensions;extension-methods;csharp;dotnet</PackageTags>
         <PackageProjectUrl>https://herokit.lyconiq.com</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Lyconiq/HeroKit</RepositoryUrl>
         <RepositoryType>git</RepositoryType>

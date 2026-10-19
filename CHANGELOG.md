@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Package descriptions and tags lead with what each package is for: Turkish data for HeroKit, safe file uploads for HeroKit.FileTypes.
+
 ## [3.7.0] - 2026-10-19
 
 ### Added

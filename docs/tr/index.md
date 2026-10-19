@@ -5,14 +5,15 @@ _disableToc: true
 
 <div class="hk-hero">
   <h1>HeroKit</h1>
-  <p class="hk-tagline">.NET için günlük uzantı metotları ve <strong>Türkiye verisi için birinci sınıf destek</strong>: TCKN, VKN, IBAN, telefon numaraları ve yazıyla tutar. Türkiye ve ABD'nin hazır geldiği tek bir ülke ve dil modeli; yeni metot olmadan kendi ülkenizi ekleyin.</p>
+  <p class="hk-tagline"><strong>.NET için Türkiye verisi, doğru şekilde</strong>: TCKN, VKN ve IBAN, telefon, il ve ilçeler, tatiller ve iş günleri, yazıyla tutar. Ve uzantıya değil, dosyanın gerçek türüne bakan <strong>güvenli dosya yükleme</strong>. Yanında günlük uzantı metotları.</p>
   <div class="hk-install">
     <code>dotnet add package HeroKit</code>
     <button type="button" data-copy="dotnet add package HeroKit">Kopyala</button>
   </div>
   <div class="hk-actions">
     <a class="hk-primary" href="articles/getting-started.md">Başlayın</a>
-    <a class="hk-secondary" href="articles/countries-and-languages.md">Ülkeler ve diller</a>
+    <a class="hk-secondary" href="articles/countries-and-languages.md">Türkiye verisi</a>
+    <a class="hk-secondary" href="articles/file-types.md">Güvenli dosya yükleme</a>
     <a class="hk-secondary" href="../api/HeroKit.Strings.yml">API referansı</a>
   </div>
   <div class="hk-badges">
@@ -46,6 +47,11 @@ using HeroKit.Globalization.Turkey;
     <h3>Ülkeler ve diller</h3>
     <p>Türkiye'nin hazır geldiği Country, Language ve Currency modeli: TCKN ve VKN, IBAN, telefon numaraları, bölgeler, plakalar, posta kodları, lira, yazıyla tutar, resmî tatiller ve iş günleri, e-fatura numaraları, İ/ı duyarlı büyük-küçük harf dönüşümü ve ICU olmadan sıralama. Kendi ülkenizi ekleyin.</p>
   </a>
+  <a class="hk-card hk-featured" href="articles/file-types.md">
+    <div class="hk-icon">📁</div>
+    <h3>Dosya türleri ve yükleme</h3>
+    <p>Ayrı paket: içerikten yaklaşık 70 tür tespiti, uzantı ve MIME eşlemesi, güvensiz yüklemeleri reddetme: programlar, çift uzantı, betikli SVG. Kendi türlerinizi ekleyin.</p>
+  </a>
   <a class="hk-card" href="articles/validation.md">
     <div class="hk-icon">✅</div>
     <h3>Form doğrulama</h3>
@@ -70,11 +76,6 @@ using HeroKit.Globalization.Turkey;
     <div class="hk-icon">🧾</div>
     <h3>Fiyat, KDV ve kartlar</h3>
     <p>Adıma yuvarlama, psikolojik fiyatlar, KDV ekleme ve çıkarma. Troy destekli kart doğrulama.</p>
-  </a>
-  <a class="hk-card" href="articles/file-types.md">
-    <div class="hk-icon">📁</div>
-    <h3>Dosya türleri ve yükleme</h3>
-    <p>Ayrı paket: içerikten yaklaşık 70 tür tespiti, uzantı ve MIME eşlemesi, güvensiz yüklemeleri reddetme: programlar, çift uzantı, betikli SVG. Kendi türlerinizi ekleyin.</p>
   </a>
 </div>
 

@@ -1,6 +1,6 @@
 # HeroKit.FileTypes
 
-Dependency-free file type detection for .NET 8 and .NET 10, Native AOT compatible.
+Safe file uploads and file type detection for .NET 8 and .NET 10, with no dependencies and Native AOT support. It checks what a file really is, not what its name says.
 
 - **Content detection** by magic bytes for about 70 formats, including the ones other libraries get wrong: DOCX/XLSX/PPTX and OpenDocument inside ZIP, HEIC, AVIF and MP4 brands, WebP, JPEG XL, WebM vs. Matroska, Java class vs. Mach-O.
 - **Extension and MIME mapping** in both directions.

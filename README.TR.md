@@ -9,7 +9,19 @@
 
 English: [README.md](README.md) · **Dokümantasyon: [herokit.lyconiq.com](https://herokit.lyconiq.com)**
 
-.NET için günlük işlerde kullanılan uzantı metotları; Türkçe veriler için birinci sınıf destekle: TCKN, VKN, IBAN, telefon, plaka, bölge, resmî tatiller ve yazıyla tutar. Ülke kuralları tek bir modeli (`Country`, `Language`, `Currency`) izler; yeni ülkeler yeni metot gerekmeden eklenebilir.
+HeroKit, iki iş için .NET kütüphaneleridir:
+
+- **Türkiye verisi, doğru şekilde.** Banka tespitli TCKN, VKN ve IBAN doğrulama, telefon numaraları, plakalar, il ve ilçeler, resmî tatiller ve iş günleri (yarım günler dahil), yazıyla tutar ve e-Fatura numaraları. Hepsi tek bir `Country`, `Language` ve `Currency` modeli üzerinde çalışır; başka ülkeler de aynı şekilde eklenir.
+- **Güvenli dosya yükleme.** [HeroKit.FileTypes](https://www.nuget.org/packages/HeroKit.FileTypes) dosyanın gerçek türünü içeriğinden bulur; adı değiştirilmiş programları, gizli çift uzantıları (`a.php.jpg`), SVG içindeki betikleri ve Office dosyalarındaki makroları reddeder. Bağımlılığı yoktur ve tek başına kullanılır.
+
+Çekirdek pakette ayrıca metin, dönüşüm, tarih, koleksiyon ve fiyat için günlük uzantı metotları vardır.
+
+| Paket | Ne için |
+|---|---|
+| [HeroKit](https://www.nuget.org/packages/HeroKit) | Türkiye verisi, ülke modeli ve uzantı metotları |
+| [HeroKit.FileTypes](https://www.nuget.org/packages/HeroKit.FileTypes) | Dosya türü tespiti ve güvenli yükleme kontrolü, bağımlılıksız |
+| [HeroKit.FileTypes.AspNetCore](https://www.nuget.org/packages/HeroKit.FileTypes.AspNetCore) | `IFormFile` kontrolleri, `[AllowedFileTypes]`, minimal API filtresi |
+| [HeroKit.FluentValidation](https://www.nuget.org/packages/HeroKit.FluentValidation) | Bunların hepsi için FluentValidation kuralları |
 
 ```bash
 dotnet add package HeroKit

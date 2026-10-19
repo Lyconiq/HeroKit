@@ -9,7 +9,19 @@
 
 Türkçe: [README.TR.md](README.TR.md) · **Documentation: [herokit.lyconiq.com](https://herokit.lyconiq.com)**
 
-Everyday extension methods for .NET, with first-class support for Turkish data: TCKN, VKN, IBAN, phone numbers, plates, regions, public holidays and amounts in words. Country rules follow one model (`Country`, `Language`, `Currency`), so new countries can be added without new methods.
+HeroKit is a set of .NET libraries for two jobs:
+
+- **Turkish data, done right.** TCKN, VKN and IBAN validation with bank lookup, phone numbers, vehicle plates, provinces and districts, public holidays and business days (half days included), amounts in words and e-invoice numbers. Everything runs on one `Country`, `Language` and `Currency` model, so other countries plug in the same way.
+- **Safe file uploads.** [HeroKit.FileTypes](https://www.nuget.org/packages/HeroKit.FileTypes) detects the real file type from its content and rejects renamed executables, hidden double extensions (`a.php.jpg`), script in SVG and macros in Office files. It has no dependencies and works on its own.
+
+The core package also has everyday extension methods for strings, conversions, dates, collections and prices.
+
+| Package | For |
+|---|---|
+| [HeroKit](https://www.nuget.org/packages/HeroKit) | Turkish data, the country model and the extension methods |
+| [HeroKit.FileTypes](https://www.nuget.org/packages/HeroKit.FileTypes) | File type detection and safe upload checks, no dependencies |
+| [HeroKit.FileTypes.AspNetCore](https://www.nuget.org/packages/HeroKit.FileTypes.AspNetCore) | `IFormFile` checks, `[AllowedFileTypes]`, a minimal API filter |
+| [HeroKit.FluentValidation](https://www.nuget.org/packages/HeroKit.FluentValidation) | FluentValidation rules for all of the above |
 
 ```bash
 dotnet add package HeroKit

@@ -18,8 +18,8 @@
         <Title>HeroKit.FileTypes</Title>
         <Authors>Emre Akdemir</Authors>
         <Company>Lyconiq</Company>
-        <Description>Dependency-free file type detection for .NET: magic bytes for about 70 formats (Office and OpenDocument inside ZIP, HEIC/AVIF/MP4 brands, WebP, JPEG XL), extension and MIME mapping, content vs. extension checks and safe upload checks (executables, scripts, double extensions, SVG with script). Register your own file types and upload rules. Native AOT compatible.</Description>
-        <PackageTags>mime;mimetype;content-type;file-type;magic-bytes;file-signature;upload;security;aot;herokit</PackageTags>
+        <Description>Safe file uploads and file type detection for .NET, with no dependencies. Detects the real type from content for about 70 formats (Office and OpenDocument inside ZIP, HEIC, AVIF and MP4 brands, WebP, JPEG XL), maps extensions and MIME types, and rejects renamed executables, scripts, hidden double extensions, script in SVG and macros in Office files, following OWASP. Native AOT compatible.</Description>
+        <PackageTags>file-upload;upload;security;owasp;file-type;mime;mimetype;content-type;magic-bytes;file-signature;aot;herokit</PackageTags>
         <PackageProjectUrl>https://herokit.lyconiq.com</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Lyconiq/HeroKit</RepositoryUrl>
         <RepositoryType>git</RepositoryType>

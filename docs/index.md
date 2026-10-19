@@ -5,14 +5,15 @@ _disableToc: true
 
 <div class="hk-hero">
   <h1>HeroKit</h1>
-  <p class="hk-tagline">Everyday extension methods for .NET, with <strong>first-class support for Turkish data</strong>: TCKN, VKN, IBAN, phone numbers and amounts in words. One country and language model with Türkiye and the United States built in; add your own country without new methods.</p>
+  <p class="hk-tagline"><strong>Turkish data for .NET, done right</strong>: TCKN, VKN and IBAN, phone numbers, provinces, holidays and business days, amounts in words. And <strong>safe file uploads</strong> that check the real file type, not the extension. Plus everyday extension methods.</p>
   <div class="hk-install">
     <code>dotnet add package HeroKit</code>
     <button type="button" data-copy="dotnet add package HeroKit">Copy</button>
   </div>
   <div class="hk-actions">
     <a class="hk-primary" href="articles/getting-started.md">Get started</a>
-    <a class="hk-secondary" href="articles/countries-and-languages.md">Countries and languages</a>
+    <a class="hk-secondary" href="articles/countries-and-languages.md">Turkish data</a>
+    <a class="hk-secondary" href="articles/file-types.md">Safe file uploads</a>
     <a class="hk-secondary" href="api/HeroKit.Strings.yml">API reference</a>
   </div>
   <div class="hk-badges">
@@ -46,6 +47,11 @@ using HeroKit.Globalization.Turkey;
     <h3>Countries and languages</h3>
     <p>A Country, Language and Currency model with Türkiye built in: TCKN and VKN, IBAN, phone numbers, regions, plates, postal codes, lira, amounts in words, holidays and business days, e-invoice numbers, İ/ı-aware casing and sorting without ICU. Add your own country.</p>
   </a>
+  <a class="hk-card hk-featured" href="articles/file-types.md">
+    <div class="hk-icon">📁</div>
+    <h3>File types and uploads</h3>
+    <p>Separate package: detect about 70 types from content, map extensions and MIME types, and reject unsafe uploads: programs, double extensions, SVG with script. Add your own types.</p>
+  </a>
   <a class="hk-card" href="articles/validation.md">
     <div class="hk-icon">✅</div>
     <h3>Form validation</h3>
@@ -70,11 +76,6 @@ using HeroKit.Globalization.Turkey;
     <div class="hk-icon">🧾</div>
     <h3>Prices, VAT and cards</h3>
     <p>Round to a step, psychological prices, VAT in and out. Card validation with Troy support.</p>
-  </a>
-  <a class="hk-card" href="articles/file-types.md">
-    <div class="hk-icon">📁</div>
-    <h3>File types and uploads</h3>
-    <p>Separate package: detect about 70 types from content, map extensions and MIME types, and reject unsafe uploads: programs, double extensions, SVG with script. Add your own types.</p>
   </a>
 </div>
 
