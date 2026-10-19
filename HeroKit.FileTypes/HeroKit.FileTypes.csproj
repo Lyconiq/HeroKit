@@ -9,7 +9,7 @@
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <EnablePackageValidation>true</EnablePackageValidation>
         <!-- Fails the pack when the public API breaks compatibility with the last release. Update after each release. -->
-        <PackageValidationBaselineVersion>3.5.0</PackageValidationBaselineVersion>
+        <PackageValidationBaselineVersion>3.6.0</PackageValidationBaselineVersion>
         <IsAotCompatible>true</IsAotCompatible>
     </PropertyGroup>
 
@@ -26,7 +26,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageIcon>herokit.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageReleaseNotes>Legacy DOC and XLS uploads with a VBA project are rejected unless UploadPolicy.AllowMacros is true; UploadPolicy.MaxLength (UploadRejection.TooLarge); FileTypes.ToSafeFileName for stored and download names. Releases now carry an SBOM and a build provenance attestation.</PackageReleaseNotes>
+        <PackageReleaseNotes>No API changes; released with HeroKit.FileTypes.AspNetCore 3.7.0, the new ASP.NET Core integration. Documentation moved to herokit.lyconiq.com.</PackageReleaseNotes>
         <Copyright>Copyright © 2023-2026 Emre Akdemir, Lyconiq</Copyright>
         <NeutralLanguage>en</NeutralLanguage>
     </PropertyGroup>
