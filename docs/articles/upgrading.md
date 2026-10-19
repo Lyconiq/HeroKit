@@ -62,7 +62,7 @@ The behavior and the results are the same.
 | `date.GetPublicHolidayTr()` | `date.GetPublicHoliday(Countries.Turkey)` |
 | `date.IsBusinessDayTr()` | `date.IsBusinessDay(Countries.Turkey)` |
 | `date.AddBusinessDaysTr(n)` | `date.AddBusinessDays(n, Countries.Turkey)` |
-| `date.BusinessDaysUntilTr(end)` | `date.BusinessDaysUntil(end, Countries.Turkey)` |
+| `date.BusinessDaysUntilTr(end)` | `date.CountBusinessDays(end, Countries.Turkey)` (3.7.0+, half days count 0.5) |
 
 ### Casing and text
 

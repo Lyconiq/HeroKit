@@ -90,6 +90,30 @@ Stream overload'u SVG'nin tamamını `MaxSvgScanLength` (1 MB) sınırına kadar
 
 `UploadValidator` ve `Tckn` kullanan eksiksiz bir ASP.NET Core minimal API örneği [samples/HeroKit.Samples.WebApi](https://github.com/Lyconiq/HeroKit/tree/master/samples/HeroKit.Samples.WebApi) klasöründedir.
 
+### ASP.NET Core
+
+`dotnet add package HeroKit.FileTypes.AspNetCore`, `IFormFile` için denetimler ekler:
+
+```csharp
+using HeroKit.FileTypes.AspNetCore;
+
+// Minimal API'ler: reddedilen dosya, handler çalışmadan 400 (validation problem) döner.
+app.MapPost("/documents", (IFormFile file) => Results.Ok(file.GetSafeFileName()))
+   .ValidateUploads(new UploadPolicy { AllowedTypes = [FileTypes.Pdf], MaxLength = 10 * 1024 * 1024 });
+
+// MVC, Razor Pages ve Blazor modelleri
+public sealed class ProfileForm
+{
+    [Required, AllowedFileTypes("jpg", "png", "webp", MaxLength = 5 * 1024 * 1024)]
+    public IFormFile? Photo { get; set; }
+}
+
+// Her yerde
+UploadCheckResult result = file.CheckUpload(policy); // ya da validator.Validate(file)
+```
+
+`ValidateUploads` route group'larda da çalışır ve `IFormFileCollection` parametrelerini de denetler. FluentValidation kullanıyorsanız HeroKit.FluentValidation'daki `RuleFor(x => x.Photo).SafeUpload(f => f.OpenReadStream(), f => f.FileName, policy)` kuralını kullanın.
+
 ### Boyut sınırı ve güvenli adlar
 
 ```csharp

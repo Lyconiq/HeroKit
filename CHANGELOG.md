@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.7.0] - 2026-10-19
+
 ### Added
 - `CountBusinessDays(start, end, country)` for `DateOnly` and `DateTime`: counts a half-day holiday on a weekday (arife, 28 October) as 0.5 and returns a `decimal`.
 - `Country.WithAdditionalHolidays(...)` returns a copy of a country whose calendar also has your days, for example administrative leave (idari izin) or company holidays; a day replaces a holiday on the same date. `Country.WithHolidays(calendar)` swaps the whole calendar. The country itself does not change.
@@ -150,7 +152,8 @@ Superseded by 3.0.0. Highlights:
 
 1.0.0-alpha to 1.0.0-alpha.6: the first array, boolean, string, type and conversion helpers (contributors: @emreakdemir, @jepozdemir).
 
-[Unreleased]: https://github.com/Lyconiq/HeroKit/compare/3.6.0...HEAD
+[Unreleased]: https://github.com/Lyconiq/HeroKit/compare/3.7.0...HEAD
+[3.7.0]: https://github.com/Lyconiq/HeroKit/compare/3.6.0...3.7.0
 [3.6.0]: https://github.com/Lyconiq/HeroKit/compare/3.5.0...3.6.0
 [3.5.0]: https://github.com/Lyconiq/HeroKit/compare/3.4.0...3.5.0
 [3.4.0]: https://github.com/Lyconiq/HeroKit/compare/3.3.0...3.4.0

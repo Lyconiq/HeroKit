@@ -9,7 +9,7 @@
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <EnablePackageValidation>true</EnablePackageValidation>
         <!-- Fails the pack when the public API breaks compatibility with the last release. Update after each release. -->
-        <PackageValidationBaselineVersion>3.5.0</PackageValidationBaselineVersion>
+        <PackageValidationBaselineVersion>3.6.0</PackageValidationBaselineVersion>
         <IsAotCompatible>true</IsAotCompatible>
     </PropertyGroup>
 
@@ -26,7 +26,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageIcon>herokit.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageReleaseNotes>No API changes; released with the other HeroKit packages. The repository moved to github.com/Lyconiq/HeroKit; releases now carry an SBOM and a build provenance attestation.</PackageReleaseNotes>
+        <PackageReleaseNotes>SafeUpload(openRead, fileName, policy) checks uploaded files of any type with HeroKit.FileTypes. The package now depends on HeroKit.FileTypes. Requires FluentValidation 12.0.0 or later.</PackageReleaseNotes>
         <Copyright>Copyright © 2023-2026 Emre Akdemir, Lyconiq</Copyright>
         <NeutralLanguage>en</NeutralLanguage>
     </PropertyGroup>

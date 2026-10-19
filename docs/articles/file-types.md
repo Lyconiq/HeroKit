@@ -90,6 +90,30 @@ The stream overload reads the whole SVG up to `MaxSvgScanLength` (1 MB) so a scr
 
 A complete ASP.NET Core minimal API that uses `UploadValidator` and `Tckn` is in [samples/HeroKit.Samples.WebApi](https://github.com/Lyconiq/HeroKit/tree/master/samples/HeroKit.Samples.WebApi).
 
+### ASP.NET Core
+
+`dotnet add package HeroKit.FileTypes.AspNetCore` adds checks for `IFormFile`:
+
+```csharp
+using HeroKit.FileTypes.AspNetCore;
+
+// Minimal APIs: a rejected file returns 400 (validation problem) before the handler runs.
+app.MapPost("/documents", (IFormFile file) => Results.Ok(file.GetSafeFileName()))
+   .ValidateUploads(new UploadPolicy { AllowedTypes = [FileTypes.Pdf], MaxLength = 10 * 1024 * 1024 });
+
+// MVC, Razor Pages and Blazor models
+public sealed class ProfileForm
+{
+    [Required, AllowedFileTypes("jpg", "png", "webp", MaxLength = 5 * 1024 * 1024)]
+    public IFormFile? Photo { get; set; }
+}
+
+// Anywhere
+UploadCheckResult result = file.CheckUpload(policy); // or validator.Validate(file)
+```
+
+`ValidateUploads` also works on route groups and checks `IFormFileCollection` arguments. With FluentValidation, use `RuleFor(x => x.Photo).SafeUpload(f => f.OpenReadStream(), f => f.FileName, policy)` from HeroKit.FluentValidation.
+
 ### Size limit and safe names
 
 ```csharp

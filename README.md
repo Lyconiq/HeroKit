@@ -75,6 +75,8 @@ FileTypes.GetMimeType("report.docx");             // "application/vnd.openxmlfor
 FileTypes.CheckUpload(stream, "photo.php.jpg").Rejection; // UploadRejection.DoubleExtension
 ```
 
+For ASP.NET Core, [HeroKit.FileTypes.AspNetCore](https://www.nuget.org/packages/HeroKit.FileTypes.AspNetCore) checks `IFormFile` uploads: a `ValidateUploads()` endpoint filter for minimal APIs and an `[AllowedFileTypes("jpg", "png")]` attribute for MVC, Razor Pages and Blazor.
+
 A runnable ASP.NET Core sample with uploads, `Tckn` binding and districts: [samples/HeroKit.Samples.WebApi](samples/HeroKit.Samples.WebApi).
 
 ## Conversions

@@ -1,6 +1,6 @@
 <Project>
     <!-- Shared by all HeroKit packages so they always ship with the same version. -->
     <PropertyGroup>
-        <Version>3.6.0</Version>
+        <Version>3.7.0</Version>
     </PropertyGroup>
 </Project>

@@ -40,7 +40,7 @@ var day = new DateOnly(2026, 3, 19);
 
 day.IsBusinessDay(Countries.Turkey);               // true
 day.AddBusinessDays(1, Countries.Turkey);          // 2026-03-23, bayramı ve hafta sonunu atlar
-day.BusinessDaysUntil(new DateOnly(2026, 3, 27), Countries.Turkey); // day'den sonra 27 Mart dahil iş günü sayısı
+day.CountBusinessDays(new DateOnly(2026, 3, 27), Countries.Turkey); // day'den sonra 27 Mart dahil iş günü sayısı; yarım gün 0,5
 new DateOnly(2026, 10, 29).IsPublicHoliday(Countries.Turkey); // true
 ```
 

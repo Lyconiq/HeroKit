@@ -40,7 +40,7 @@ var day = new DateOnly(2026, 3, 19);
 
 day.IsBusinessDay(Countries.Turkey);               // true
 day.AddBusinessDays(1, Countries.Turkey);          // 2026-03-23, skips the bayram and the weekend
-day.BusinessDaysUntil(new DateOnly(2026, 3, 27), Countries.Turkey); // business days after day, up to and including 27 March
+day.CountBusinessDays(new DateOnly(2026, 3, 27), Countries.Turkey); // business days after day, up to and including 27 March; a half day counts 0.5
 new DateOnly(2026, 10, 29).IsPublicHoliday(Countries.Turkey); // true
 ```
 

@@ -9,7 +9,7 @@
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <EnablePackageValidation>true</EnablePackageValidation>
         <!-- Fails the pack when the public API breaks compatibility with the last release. Update after each release. -->
-        <PackageValidationBaselineVersion>3.5.0</PackageValidationBaselineVersion>
+        <PackageValidationBaselineVersion>3.6.0</PackageValidationBaselineVersion>
         <IsAotCompatible>true</IsAotCompatible>
     </PropertyGroup>
 
@@ -26,7 +26,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageIcon>herokit.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageReleaseNotes>No API changes in HeroKit; released with HeroKit.FileTypes 3.6.0. The repository moved to github.com/Lyconiq/HeroKit; releases now carry an SBOM and a build provenance attestation.</PackageReleaseNotes>
+        <PackageReleaseNotes>CountBusinessDays counts half-day holidays as 0.5 (BusinessDaysUntil is obsolete); Country.WithAdditionalHolidays for administrative leave and company holidays; Country.TimeZone, Now and Today; DateTime overloads of GetPublicHoliday and IsHalfDayHoliday; Turkish IBANs check the reserved 10th character. Documentation moved to herokit.lyconiq.com.</PackageReleaseNotes>
         <Copyright>Copyright © 2023-2026 Emre Akdemir, Lyconiq</Copyright>
         <NeutralLanguage>en</NeutralLanguage>
     </PropertyGroup>
