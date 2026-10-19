@@ -184,16 +184,42 @@ new DateOnly(2026, 10, 28).IsHalfDayHoliday(Countries.Turkey);  // true  (aftern
 new DateOnly(2026, 3, 20).GetPublicHoliday(Countries.Turkey)?.Name; // "Ramazan Bayramı 1. Gün"
 
 new DateOnly(2026, 3, 19).AddBusinessDays(1, Countries.Turkey); // 2026-03-23, skips the bayram and the weekend
-new DateOnly(2026, 10, 26).BusinessDaysUntil(new DateOnly(2026, 10, 30), Countries.Turkey); // 3
+new DateOnly(2026, 10, 26).CountBusinessDays(new DateOnly(2026, 10, 30), Countries.Turkey); // 2.5: 28 October is a half day
 
 foreach (PublicHoliday holiday in Countries.Turkey.Holidays!.GetHolidays(2026))
     Console.WriteLine($"{holiday.Date:dd.MM.yyyy} {holiday.Name}{(holiday.IsHalfDay ? " (yarım gün)" : "")}");
 ```
 
 - Fixed holidays follow Law No. 2429. Ramazan and Kurban Bayramı dates come from the Diyanet calendar and are available for `FirstSupportedYear`–`LastSupportedYear` of the calendar (2022–2027). Other years throw instead of returning incomplete data.
-- Business days are Monday to Friday without full-day holidays. Half days (arife and 28 October) count as business days.
-- Administrative bridge days (idari izin) are announced case by case and are not included.
+- Business days are Monday to Friday without full-day holidays. A half day (arife and 28 October) is a business day for `IsBusinessDay` and `AddBusinessDays`, and counts as 0.5 in `CountBusinessDays`. `BusinessDaysUntil` (obsolete since 3.7.0) counts it as a full day.
+- Administrative bridge days (idari izin) are announced case by case and are not built in. Add them, or your company's holidays, to a copy of the country:
+
+```csharp
+Country turkey = Countries.Turkey.WithAdditionalHolidays(
+[
+    new PublicHoliday(new DateOnly(2026, 5, 18), "İdari izin", IsHalfDay: false),
+    new PublicHoliday(new DateOnly(2026, 12, 31), "Yılbaşı arifesi", IsHalfDay: true),
+]);
+
+new DateOnly(2026, 5, 18).IsBusinessDay(turkey);           // false
+new DateOnly(2026, 5, 18).IsBusinessDay(Countries.Turkey); // true: the original does not change
+```
+
+  A day you add replaces a holiday on the same date. `WithHolidays(calendar)` swaps the whole calendar for your own `IHolidayCalendar`. Register the copy as a singleton and use it everywhere instead of `Countries.Turkey`.
 - `IsBusinessDay(country)` is also available. A custom country gets all of these methods when it has an `IHolidayCalendar`.
+
+### Today in Türkiye
+
+A server usually runs in UTC. Between midnight in Türkiye and 03:00 UTC, `DateTime.Today` on the server still shows yesterday. `Country.Today()` uses the country's time zone:
+
+```csharp
+Countries.Turkey.Today();                                  // today's date in Türkiye
+Countries.Turkey.Now();                                    // e.g. 2026-10-19 01:30 +03:00
+Countries.Turkey.Today().IsBusinessDay(Countries.Turkey);
+Countries.Turkey.Today(timeProvider);                      // a TimeProvider for tests
+```
+
+`TimeZone` is Europe/Istanbul. A country with more than one time zone (the United States) has no `TimeZone`, and `Today()` throws `NotSupportedException`.
 
 ### Turkish lira
 

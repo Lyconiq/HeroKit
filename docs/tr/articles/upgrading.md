@@ -62,7 +62,7 @@ Davranış ve sonuçlar aynıdır.
 | `date.GetPublicHolidayTr()` | `date.GetPublicHoliday(Countries.Turkey)` |
 | `date.IsBusinessDayTr()` | `date.IsBusinessDay(Countries.Turkey)` |
 | `date.AddBusinessDaysTr(n)` | `date.AddBusinessDays(n, Countries.Turkey)` |
-| `date.BusinessDaysUntilTr(end)` | `date.BusinessDaysUntil(end, Countries.Turkey)` |
+| `date.BusinessDaysUntilTr(end)` | `date.CountBusinessDays(end, Countries.Turkey)` (3.7.0+, yarım gün 0,5 sayılır) |
 
 ### Harf büyüklüğü ve metin
 
