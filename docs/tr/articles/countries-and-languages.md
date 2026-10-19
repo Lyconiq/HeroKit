@@ -195,14 +195,16 @@ foreach (PublicHoliday holiday in Countries.Turkey.Holidays!.GetHolidays(2026))
 - İdari izin köprü günleri duruma göre ilan edilir ve takvimde yerleşik değildir. Bunları ya da şirketinizin tatillerini ülkenin bir kopyasına ekleyin:
 
 ```csharp
-Country turkey = Countries.Turkey.WithAdditionalHolidays(
+using HeroKit.Globalization;
+
+Country turkeyWithLeave = Countries.Turkey.WithAdditionalHolidays(
 [
     new PublicHoliday(new DateOnly(2026, 5, 18), "İdari izin", IsHalfDay: false),
     new PublicHoliday(new DateOnly(2026, 12, 31), "Yılbaşı arifesi", IsHalfDay: true),
 ]);
 
-new DateOnly(2026, 5, 18).IsBusinessDay(turkey);           // false
-new DateOnly(2026, 5, 18).IsBusinessDay(Countries.Turkey); // true: asıl ülke değişmez
+new DateOnly(2026, 5, 18).IsBusinessDay(turkeyWithLeave);  // false: 18 Mayıs idari izin olarak eklendi
+new DateOnly(2026, 5, 18).IsBusinessDay(Countries.Turkey); // true: Countries.Turkey değişmez
 ```
 
   Eklediğiniz gün, aynı tarihteki tatilin yerine geçer. `WithHolidays(calendar)` bütün takvimi kendi `IHolidayCalendar` uygulamanızla değiştirir. Kopyayı singleton olarak kaydedin ve `Countries.Turkey` yerine her yerde onu kullanın.
@@ -213,10 +215,12 @@ new DateOnly(2026, 5, 18).IsBusinessDay(Countries.Turkey); // true: asıl ülke 
 Sunucular çoğunlukla UTC'de çalışır. Türkiye'de gece yarısı ile 03:00 UTC arasında, sunucudaki `DateTime.Today` hâlâ dünü gösterir. `Country.Today()` ülkenin saat dilimini kullanır:
 
 ```csharp
+using HeroKit.Globalization;
+
 Countries.Turkey.Today();                                  // Türkiye'de bugünün tarihi
 Countries.Turkey.Now();                                    // örneğin 2026-10-19 01:30 +03:00
 Countries.Turkey.Today().IsBusinessDay(Countries.Turkey);
-Countries.Turkey.Today(timeProvider);                      // testler için TimeProvider
+Countries.Turkey.Today(TimeProvider.System);              // testlerde sahte bir TimeProvider verin
 ```
 
 `TimeZone`, Europe/Istanbul'dur. Birden çok saat dilimi olan bir ülkenin (ABD) `TimeZone` değeri yoktur ve `Today()` `NotSupportedException` fırlatır.

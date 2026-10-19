@@ -20,7 +20,9 @@
     "CONTRIBUTING.md",
     "SECURITY.md",
     "CHANGELOG.md",
-    "LICENSE"
+    "LICENSE",
+    "PublicAPI.Shipped.txt",
+    "PublicAPI.Unshipped.txt"
   ],
   "rules": [
     "Packages: HeroKit (core), HeroKit.FileTypes (file type detection, uploads, no dependencies), HeroKit.FileTypes.AspNetCore (IFormFile) and HeroKit.FluentValidation. Install only what you use.",
@@ -28,6 +30,7 @@
     "Keep TCKN, VKN and IBAN values as string, never as long or int. Validate with IsValidTckn, IsValidVkn and IsValidIban; pass the Tckn value type once a number is validated.",
     "Use CountBusinessDays (decimal, half-day holidays count 0.5) instead of the obsolete BusinessDaysUntil. Use Countries.Turkey.Today() instead of DateTime.Today on servers that run in UTC.",
     "Conversions such as ToInt(defaultValue) never throw; use the TryToX(out) form to know whether parsing worked. Parsing is culture-invariant unless you pass an IFormatProvider.",
-    "Check uploads by content with UploadValidator or FileTypes.CheckUpload, never by extension or Content-Type alone. In minimal APIs use .ValidateUploads(policy); in models use [AllowedFileTypes]."
+    "Check uploads by content with UploadValidator or FileTypes.CheckUpload, never by extension or Content-Type alone. In minimal APIs use .ValidateUploads(policy); in models use [AllowedFileTypes].",
+    "Upload checks are a first line of defense, not proof that a file is harmless. Also limit the request size, store files under generated names outside the web root, serve them as downloads and scan them when the risk calls for it."
   ]
 }

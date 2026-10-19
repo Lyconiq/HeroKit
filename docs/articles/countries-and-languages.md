@@ -195,14 +195,16 @@ foreach (PublicHoliday holiday in Countries.Turkey.Holidays!.GetHolidays(2026))
 - Administrative bridge days (idari izin) are announced case by case and are not built in. Add them, or your company's holidays, to a copy of the country:
 
 ```csharp
-Country turkey = Countries.Turkey.WithAdditionalHolidays(
+using HeroKit.Globalization;
+
+Country turkeyWithLeave = Countries.Turkey.WithAdditionalHolidays(
 [
     new PublicHoliday(new DateOnly(2026, 5, 18), "İdari izin", IsHalfDay: false),
     new PublicHoliday(new DateOnly(2026, 12, 31), "Yılbaşı arifesi", IsHalfDay: true),
 ]);
 
-new DateOnly(2026, 5, 18).IsBusinessDay(turkey);           // false
-new DateOnly(2026, 5, 18).IsBusinessDay(Countries.Turkey); // true: the original does not change
+new DateOnly(2026, 5, 18).IsBusinessDay(turkeyWithLeave);  // false: 18 May is added as administrative leave
+new DateOnly(2026, 5, 18).IsBusinessDay(Countries.Turkey); // true: Countries.Turkey itself does not change
 ```
 
   A day you add replaces a holiday on the same date. `WithHolidays(calendar)` swaps the whole calendar for your own `IHolidayCalendar`. Register the copy as a singleton and use it everywhere instead of `Countries.Turkey`.
@@ -213,10 +215,12 @@ new DateOnly(2026, 5, 18).IsBusinessDay(Countries.Turkey); // true: the original
 A server usually runs in UTC. Between midnight in Türkiye and 03:00 UTC, `DateTime.Today` on the server still shows yesterday. `Country.Today()` uses the country's time zone:
 
 ```csharp
+using HeroKit.Globalization;
+
 Countries.Turkey.Today();                                  // today's date in Türkiye
 Countries.Turkey.Now();                                    // e.g. 2026-10-19 01:30 +03:00
 Countries.Turkey.Today().IsBusinessDay(Countries.Turkey);
-Countries.Turkey.Today(timeProvider);                      // a TimeProvider for tests
+Countries.Turkey.Today(TimeProvider.System);              // pass a fake TimeProvider in tests
 ```
 
 `TimeZone` is Europe/Istanbul. A country with more than one time zone (the United States) has no `TimeZone`, and `Today()` throws `NotSupportedException`.

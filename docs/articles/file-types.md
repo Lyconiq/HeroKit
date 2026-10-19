@@ -95,6 +95,7 @@ A complete ASP.NET Core minimal API that uses `UploadValidator` and `Tckn` is in
 `dotnet add package HeroKit.FileTypes.AspNetCore` adds checks for `IFormFile`:
 
 ```csharp
+using HeroKit.FileTypes;
 using HeroKit.FileTypes.AspNetCore;
 
 // Minimal APIs: a rejected file returns 400 (validation problem) before the handler runs.
@@ -109,7 +110,8 @@ public sealed class ProfileForm
 }
 
 // Anywhere
-UploadCheckResult result = file.CheckUpload(policy); // or validator.Validate(file)
+var pdfOnly = new UploadPolicy { AllowedTypes = [FileTypes.Pdf] };
+UploadCheckResult result = file.CheckUpload(pdfOnly); // or validator.Validate(file) with a singleton UploadValidator
 ```
 
 `ValidateUploads` also works on route groups and checks `IFormFileCollection` arguments. With FluentValidation, use `RuleFor(x => x.Photo).SafeUpload(f => f.OpenReadStream(), f => f.FileName, policy)` from HeroKit.FluentValidation.
@@ -117,14 +119,22 @@ UploadCheckResult result = file.CheckUpload(policy); // or validator.Validate(fi
 ### Size limit and safe names
 
 ```csharp
-var policy = new UploadPolicy { MaxLength = 10 * 1024 * 1024 }; // 10 MB
+using HeroKit.FileTypes;
+
+// file is the uploaded IFormFile.
+var policy = new UploadPolicy { AllowedTypes = [FileTypes.Pdf], MaxLength = 10 * 1024 * 1024 }; // PDF up to 10 MB
+
+using Stream upload = file.OpenReadStream();
+UploadCheckResult result = FileTypes.CheckUpload(upload, file.FileName, policy);
+if (!result.IsSafe)
+    return Results.BadRequest(result.Message); // for example "The file is larger than 10485760 bytes."
 
 // Store under a generated name; keep the cleaned original name for display and downloads.
-string displayName = FileTypes.ToSafeFileName(file.FileName);
+string displayName = FileTypes.ToSafeFileName(file.FileName); // "rapor_.pdf" for "C:\temp\rapor?.pdf"
 string storedName = Guid.NewGuid().ToString("N") + Path.GetExtension(displayName);
 
-// Later, when the file is downloaded:
-return Results.File(stream, FileTypes.GetMimeType(displayName), fileDownloadName: displayName);
+// Later, when the file is downloaded (storedFile is the stream of the stored file):
+return Results.File(storedFile, FileTypes.GetMimeType(displayName), fileDownloadName: displayName);
 ```
 
 `MaxLength` checks the length of a span, or of a stream that can seek. Also set the request size limit of the web server (for example `[RequestSizeLimit]` or Kestrel's `MaxRequestBodySize`), so a large upload is refused before it is read.
