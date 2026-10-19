@@ -51,6 +51,163 @@ FileTypes.FromMimeType("image/x-icon")?.Extension; // "ico" (aliases are accepte
 FileTypes.FromMimeType("application/json; charset=utf-8"); // FileTypes.Json
 ```
 
+## Built-in file types
+
+Every built-in type is a static property of `FileTypes` that returns a `FileType`. `FileTypes.BuiltIn` lists all 89 of them in detection order.
+
+```csharp
+using HeroKit.FileTypes;
+
+FileType msi = FileTypes.Msi;
+msi.Name;                                         // "Windows installer"
+msi.MimeType;                                     // "application/x-msi"
+msi.Extensions;                                   // ["msi", "msp"]
+msi.IsExecutable;                                 // true: uploads of it are rejected
+msi.IsA(FileTypes.CompoundFile);                  // true: an MSI is an OLE compound file
+FileTypes.FromExtension("setup.msi") == FileTypes.Msi; // true
+```
+
+Some formats share one container. Legacy Office files, Outlook messages and MSI installers are all OLE compound files, so their content detects as `CompoundFile` and the extension tells which one it is. The notes below say when this applies.
+
+#### Archive
+
+| Property | Name | Extensions | MIME type | Notes |
+|---|---|---|---|---|
+| `Bzip2` | Bzip2 archive | .bz2, .tbz2 | `application/x-bzip2` |  |
+| `Gzip` | Gzip archive | .gz, .tgz | `application/gzip` |  |
+| `Rar` | RAR archive | .rar | `application/vnd.rar` |  |
+| `SevenZip` | 7-Zip archive | .7z | `application/x-7z-compressed` |  |
+| `Tar` | Tar archive | .tar | `application/x-tar` |  |
+| `Xz` | XZ archive | .xz, .txz | `application/x-xz` |  |
+| `Zip` | ZIP archive | .zip | `application/zip` |  |
+| `Zstandard` | Zstandard archive | .zst | `application/zstd` |  |
+
+#### Audio
+
+| Property | Name | Extensions | MIME type | Notes |
+|---|---|---|---|---|
+| `Aac` | AAC audio | .aac | `audio/aac` |  |
+| `Flac` | FLAC audio | .flac | `audio/flac` |  |
+| `M4a` | MPEG-4 audio | .m4a, .m4b | `audio/mp4` |  |
+| `Midi` | MIDI audio | .mid, .midi | `audio/midi` |  |
+| `Mp3` | MP3 audio | .mp3 | `audio/mpeg` |  |
+| `Ogg` | Ogg audio | .ogg, .oga, .opus | `audio/ogg` |  |
+| `Wav` | WAV audio | .wav | `audio/wav` |  |
+
+#### Document
+
+| Property | Name | Extensions | MIME type | Notes |
+|---|---|---|---|---|
+| `CompoundFile` | OLE compound file | — | `application/x-ole-storage` |  |
+| `Doc` | Word 97-2003 document | .doc, .dot | `application/msword` | content detects as `CompoundFile`; the extension tells which |
+| `Docm` | Macro-enabled Word document | .docm, .dotm | `application/vnd.ms-word.document.macroenabled.12` | has macros, rejected unless `AllowMacros`; built on `Zip` |
+| `Docx` | Word document | .docx, .dotx | `application/vnd.openxmlformats-officedocument.wordprocessingml.document` | built on `Zip` |
+| `Epub` | EPUB e-book | .epub | `application/epub+zip` | built on `Zip` |
+| `Msg` | Outlook message | .msg | `application/vnd.ms-outlook` | content detects as `CompoundFile`; the extension tells which |
+| `Odp` | OpenDocument presentation | .odp | `application/vnd.oasis.opendocument.presentation` | built on `Zip` |
+| `Ods` | OpenDocument spreadsheet | .ods | `application/vnd.oasis.opendocument.spreadsheet` | built on `Zip` |
+| `Odt` | OpenDocument text | .odt | `application/vnd.oasis.opendocument.text` | built on `Zip` |
+| `Pdf` | PDF document | .pdf | `application/pdf` |  |
+| `Ppt` | PowerPoint 97-2003 presentation | .ppt, .pps, .pot | `application/vnd.ms-powerpoint` | content detects as `CompoundFile`; the extension tells which |
+| `Pptm` | Macro-enabled PowerPoint presentation | .pptm, .potm, .ppsm, .ppam | `application/vnd.ms-powerpoint.presentation.macroenabled.12` | has macros, rejected unless `AllowMacros`; built on `Zip` |
+| `Pptx` | PowerPoint presentation | .pptx, .ppsx | `application/vnd.openxmlformats-officedocument.presentationml.presentation` | built on `Zip` |
+| `Rtf` | Rich Text Format document | .rtf | `application/rtf` |  |
+| `Xls` | Excel 97-2003 workbook | .xls, .xlt | `application/vnd.ms-excel` | content detects as `CompoundFile`; the extension tells which |
+| `Xlsm` | Macro-enabled Excel workbook | .xlsm, .xltm, .xlam | `application/vnd.ms-excel.sheet.macroenabled.12` | has macros, rejected unless `AllowMacros`; built on `Zip` |
+| `Xlsx` | Excel workbook | .xlsx, .xltx | `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` | built on `Zip` |
+
+#### Executable
+
+| Property | Name | Extensions | MIME type | Notes |
+|---|---|---|---|---|
+| `Apk` | Android package | .apk, .aab | `application/vnd.android.package-archive` | program or script, rejected in uploads; built on `Zip` |
+| `Dex` | Android Dalvik executable | .dex | `application/vnd.android.dex` | program or script, rejected in uploads |
+| `Elf` | ELF executable | .elf, .so | `application/x-executable` | program or script, rejected in uploads |
+| `Jar` | Java archive | .jar, .war, .ear | `application/java-archive` | program or script, rejected in uploads; built on `Zip` |
+| `JavaClass` | Java class file | .class | `application/java-vm` | program or script, rejected in uploads |
+| `MachO` | Mach-O executable | .dylib | `application/x-mach-binary` | program or script, rejected in uploads |
+| `Msi` | Windows installer | .msi, .msp | `application/x-msi` | program or script, rejected in uploads; content detects as `CompoundFile`; the extension tells which |
+| `WebAssembly` | WebAssembly module | .wasm | `application/wasm` | program or script, rejected in uploads |
+| `WindowsExecutable` | Windows executable | .exe, .dll, .sys, .scr, .com, .cpl, .ocx | `application/vnd.microsoft.portable-executable` | program or script, rejected in uploads |
+| `WindowsShortcut` | Windows shortcut | .lnk | `application/x-ms-shortcut` | program or script, rejected in uploads |
+
+#### Font
+
+| Property | Name | Extensions | MIME type | Notes |
+|---|---|---|---|---|
+| `OpenType` | OpenType font | .otf | `font/otf` |  |
+| `TrueType` | TrueType font | .ttf | `font/ttf` |  |
+| `Woff` | WOFF font | .woff | `font/woff` |  |
+| `Woff2` | WOFF2 font | .woff2 | `font/woff2` |  |
+
+#### Image
+
+| Property | Name | Extensions | MIME type | Notes |
+|---|---|---|---|---|
+| `Avif` | AVIF image | .avif | `image/avif` |  |
+| `Bmp` | BMP image | .bmp, .dib | `image/bmp` |  |
+| `Gif` | GIF image | .gif | `image/gif` |  |
+| `Heic` | HEIC image | .heic | `image/heic` |  |
+| `Heif` | HEIF image | .heif | `image/heif` |  |
+| `Icon` | Windows icon | .ico | `image/vnd.microsoft.icon` |  |
+| `Jpeg` | JPEG image | .jpg, .jpeg, .jpe, .jfif | `image/jpeg` |  |
+| `JpegXl` | JPEG XL image | .jxl | `image/jxl` |  |
+| `Png` | PNG image | .png, .apng | `image/png` |  |
+| `Psd` | Photoshop document | .psd | `image/vnd.adobe.photoshop` |  |
+| `Svg` | SVG image | .svg, .svgz | `image/svg+xml` | built on `Xml` |
+| `Tiff` | TIFF image | .tif, .tiff | `image/tiff` |  |
+| `WebP` | WebP image | .webp | `image/webp` |  |
+
+#### Other
+
+| Property | Name | Extensions | MIME type | Notes |
+|---|---|---|---|---|
+| `Gltf` | glTF model | .gltf | `model/gltf+json` | content detects as `Json`; the extension tells which |
+| `GltfBinary` | glTF binary model | .glb | `model/gltf-binary` |  |
+| `Parquet` | Apache Parquet file | .parquet | `application/vnd.apache.parquet` |  |
+| `Sqlite` | SQLite database | .sqlite, .sqlite3, .db | `application/vnd.sqlite3` |  |
+
+#### Script
+
+| Property | Name | Extensions | MIME type | Notes |
+|---|---|---|---|---|
+| `Batch` | Windows batch file | .bat, .cmd | `application/x-bat` | program or script, rejected in uploads; content detects as `PlainText`; the extension tells which |
+| `Html` | HTML document | .html, .htm, .xhtml, .shtml, .hta | `text/html` | program or script, rejected in uploads; built on `PlainText` |
+| `JavaScript` | JavaScript | .js, .mjs, .cjs | `text/javascript` | program or script, rejected in uploads; content detects as `PlainText`; the extension tells which |
+| `Php` | PHP script | .php, .phtml, .php3, .php4, .php5, .php7, .php8, .phar | `application/x-httpd-php` | program or script, rejected in uploads; content detects as `PlainText`; the extension tells which |
+| `PowerShell` | PowerShell script | .ps1, .psm1, .psd1 | `application/x-powershell` | program or script, rejected in uploads; content detects as `PlainText`; the extension tells which |
+| `ShellScript` | Shell script | .sh, .bash, .zsh, .ksh, .csh | `application/x-sh` | program or script, rejected in uploads; built on `PlainText` |
+| `VbScript` | VBScript file | .vbs, .vbe, .wsf, .wsh | `text/vbscript` | program or script, rejected in uploads; content detects as `PlainText`; the extension tells which |
+
+#### Text
+
+| Property | Name | Extensions | MIME type | Notes |
+|---|---|---|---|---|
+| `Calendar` | iCalendar file | .ics, .ifb | `text/calendar` | content detects as `PlainText`; the extension tells which |
+| `Css` | CSS stylesheet | .css | `text/css` | content detects as `PlainText`; the extension tells which |
+| `Csv` | CSV file | .csv | `text/csv` | content detects as `PlainText`; the extension tells which |
+| `Json` | JSON document | .json, .map, .geojson, .webmanifest | `application/json` | built on `PlainText` |
+| `Markdown` | Markdown document | .md, .markdown | `text/markdown` | content detects as `PlainText`; the extension tells which |
+| `PlainText` | Plain text | .txt, .text, .log | `text/plain` |  |
+| `Tsv` | TSV file | .tsv | `text/tab-separated-values` | content detects as `PlainText`; the extension tells which |
+| `VCard` | vCard file | .vcf, .vcard | `text/vcard` | content detects as `PlainText`; the extension tells which |
+| `Xml` | XML document | .xml, .xsd, .xsl, .xslt, .rss, .atom | `application/xml` | built on `PlainText` |
+| `Yaml` | YAML document | .yaml, .yml | `application/yaml` | content detects as `PlainText`; the extension tells which |
+
+#### Video
+
+| Property | Name | Extensions | MIME type | Notes |
+|---|---|---|---|---|
+| `Avi` | AVI video | .avi | `video/x-msvideo` |  |
+| `Flv` | Flash video | .flv | `video/x-flv` |  |
+| `M4v` | MPEG-4 video (iTunes) | .m4v | `video/x-m4v` |  |
+| `Matroska` | Matroska video | .mkv, .mka, .mk3d | `video/x-matroska` |  |
+| `Mp4` | MPEG-4 video | .mp4, .m4p | `video/mp4` |  |
+| `Mpeg` | MPEG video | .mpg, .mpeg, .m2p, .vob | `video/mpeg` |  |
+| `QuickTime` | QuickTime video | .mov, .qt | `video/quicktime` |  |
+| `ThreeGp` | 3GPP video | .3gp, .3g2 | `video/3gpp` |  |
+| `WebM` | WebM video | .webm | `video/webm` |  |
+
 ## Does the content fit the extension?
 
 ```csharp

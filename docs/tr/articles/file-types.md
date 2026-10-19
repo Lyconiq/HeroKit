@@ -51,6 +51,163 @@ FileTypes.FromMimeType("image/x-icon")?.Extension; // "ico" (diğer adlar da kab
 FileTypes.FromMimeType("application/json; charset=utf-8"); // FileTypes.Json
 ```
 
+## Hazır dosya türleri
+
+Her hazır tür, `FileTypes` sınıfının `FileType` döndüren statik bir özelliğidir. `FileTypes.BuiltIn` 89 türün hepsini tespit sırasıyla listeler.
+
+```csharp
+using HeroKit.FileTypes;
+
+FileType msi = FileTypes.Msi;
+msi.Name;                                         // "Windows installer"
+msi.MimeType;                                     // "application/x-msi"
+msi.Extensions;                                   // ["msi", "msp"]
+msi.IsExecutable;                                 // true: yüklemesi reddedilir
+msi.IsA(FileTypes.CompoundFile);                  // true: MSI bir OLE compound dosyasıdır
+FileTypes.FromExtension("setup.msi") == FileTypes.Msi; // true
+```
+
+Bazı biçimler aynı kabı paylaşır. Eski Office dosyaları, Outlook iletileri ve MSI kurulum dosyaları OLE compound dosyasıdır; içerikleri `CompoundFile` olarak tespit edilir, hangisi olduğunu uzantı söyler. Aşağıdaki notlar bunun nerede geçerli olduğunu gösterir.
+
+#### Arşiv
+
+| Özellik | Ad | Uzantılar | MIME türü | Notlar |
+|---|---|---|---|---|
+| `Bzip2` | Bzip2 archive | .bz2, .tbz2 | `application/x-bzip2` |  |
+| `Gzip` | Gzip archive | .gz, .tgz | `application/gzip` |  |
+| `Rar` | RAR archive | .rar | `application/vnd.rar` |  |
+| `SevenZip` | 7-Zip archive | .7z | `application/x-7z-compressed` |  |
+| `Tar` | Tar archive | .tar | `application/x-tar` |  |
+| `Xz` | XZ archive | .xz, .txz | `application/x-xz` |  |
+| `Zip` | ZIP archive | .zip | `application/zip` |  |
+| `Zstandard` | Zstandard archive | .zst | `application/zstd` |  |
+
+#### Ses
+
+| Özellik | Ad | Uzantılar | MIME türü | Notlar |
+|---|---|---|---|---|
+| `Aac` | AAC audio | .aac | `audio/aac` |  |
+| `Flac` | FLAC audio | .flac | `audio/flac` |  |
+| `M4a` | MPEG-4 audio | .m4a, .m4b | `audio/mp4` |  |
+| `Midi` | MIDI audio | .mid, .midi | `audio/midi` |  |
+| `Mp3` | MP3 audio | .mp3 | `audio/mpeg` |  |
+| `Ogg` | Ogg audio | .ogg, .oga, .opus | `audio/ogg` |  |
+| `Wav` | WAV audio | .wav | `audio/wav` |  |
+
+#### Belge
+
+| Özellik | Ad | Uzantılar | MIME türü | Notlar |
+|---|---|---|---|---|
+| `CompoundFile` | OLE compound file | — | `application/x-ole-storage` |  |
+| `Doc` | Word 97-2003 document | .doc, .dot | `application/msword` | içerik `CompoundFile` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+| `Docm` | Macro-enabled Word document | .docm, .dotm | `application/vnd.ms-word.document.macroenabled.12` | makrolu, `AllowMacros` yoksa reddedilir; `Zip` üzerine kurulu |
+| `Docx` | Word document | .docx, .dotx | `application/vnd.openxmlformats-officedocument.wordprocessingml.document` | `Zip` üzerine kurulu |
+| `Epub` | EPUB e-book | .epub | `application/epub+zip` | `Zip` üzerine kurulu |
+| `Msg` | Outlook message | .msg | `application/vnd.ms-outlook` | içerik `CompoundFile` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+| `Odp` | OpenDocument presentation | .odp | `application/vnd.oasis.opendocument.presentation` | `Zip` üzerine kurulu |
+| `Ods` | OpenDocument spreadsheet | .ods | `application/vnd.oasis.opendocument.spreadsheet` | `Zip` üzerine kurulu |
+| `Odt` | OpenDocument text | .odt | `application/vnd.oasis.opendocument.text` | `Zip` üzerine kurulu |
+| `Pdf` | PDF document | .pdf | `application/pdf` |  |
+| `Ppt` | PowerPoint 97-2003 presentation | .ppt, .pps, .pot | `application/vnd.ms-powerpoint` | içerik `CompoundFile` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+| `Pptm` | Macro-enabled PowerPoint presentation | .pptm, .potm, .ppsm, .ppam | `application/vnd.ms-powerpoint.presentation.macroenabled.12` | makrolu, `AllowMacros` yoksa reddedilir; `Zip` üzerine kurulu |
+| `Pptx` | PowerPoint presentation | .pptx, .ppsx | `application/vnd.openxmlformats-officedocument.presentationml.presentation` | `Zip` üzerine kurulu |
+| `Rtf` | Rich Text Format document | .rtf | `application/rtf` |  |
+| `Xls` | Excel 97-2003 workbook | .xls, .xlt | `application/vnd.ms-excel` | içerik `CompoundFile` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+| `Xlsm` | Macro-enabled Excel workbook | .xlsm, .xltm, .xlam | `application/vnd.ms-excel.sheet.macroenabled.12` | makrolu, `AllowMacros` yoksa reddedilir; `Zip` üzerine kurulu |
+| `Xlsx` | Excel workbook | .xlsx, .xltx | `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` | `Zip` üzerine kurulu |
+
+#### Program
+
+| Özellik | Ad | Uzantılar | MIME türü | Notlar |
+|---|---|---|---|---|
+| `Apk` | Android package | .apk, .aab | `application/vnd.android.package-archive` | program ya da betik, yüklemede reddedilir; `Zip` üzerine kurulu |
+| `Dex` | Android Dalvik executable | .dex | `application/vnd.android.dex` | program ya da betik, yüklemede reddedilir |
+| `Elf` | ELF executable | .elf, .so | `application/x-executable` | program ya da betik, yüklemede reddedilir |
+| `Jar` | Java archive | .jar, .war, .ear | `application/java-archive` | program ya da betik, yüklemede reddedilir; `Zip` üzerine kurulu |
+| `JavaClass` | Java class file | .class | `application/java-vm` | program ya da betik, yüklemede reddedilir |
+| `MachO` | Mach-O executable | .dylib | `application/x-mach-binary` | program ya da betik, yüklemede reddedilir |
+| `Msi` | Windows installer | .msi, .msp | `application/x-msi` | program ya da betik, yüklemede reddedilir; içerik `CompoundFile` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+| `WebAssembly` | WebAssembly module | .wasm | `application/wasm` | program ya da betik, yüklemede reddedilir |
+| `WindowsExecutable` | Windows executable | .exe, .dll, .sys, .scr, .com, .cpl, .ocx | `application/vnd.microsoft.portable-executable` | program ya da betik, yüklemede reddedilir |
+| `WindowsShortcut` | Windows shortcut | .lnk | `application/x-ms-shortcut` | program ya da betik, yüklemede reddedilir |
+
+#### Yazı tipi
+
+| Özellik | Ad | Uzantılar | MIME türü | Notlar |
+|---|---|---|---|---|
+| `OpenType` | OpenType font | .otf | `font/otf` |  |
+| `TrueType` | TrueType font | .ttf | `font/ttf` |  |
+| `Woff` | WOFF font | .woff | `font/woff` |  |
+| `Woff2` | WOFF2 font | .woff2 | `font/woff2` |  |
+
+#### Görsel
+
+| Özellik | Ad | Uzantılar | MIME türü | Notlar |
+|---|---|---|---|---|
+| `Avif` | AVIF image | .avif | `image/avif` |  |
+| `Bmp` | BMP image | .bmp, .dib | `image/bmp` |  |
+| `Gif` | GIF image | .gif | `image/gif` |  |
+| `Heic` | HEIC image | .heic | `image/heic` |  |
+| `Heif` | HEIF image | .heif | `image/heif` |  |
+| `Icon` | Windows icon | .ico | `image/vnd.microsoft.icon` |  |
+| `Jpeg` | JPEG image | .jpg, .jpeg, .jpe, .jfif | `image/jpeg` |  |
+| `JpegXl` | JPEG XL image | .jxl | `image/jxl` |  |
+| `Png` | PNG image | .png, .apng | `image/png` |  |
+| `Psd` | Photoshop document | .psd | `image/vnd.adobe.photoshop` |  |
+| `Svg` | SVG image | .svg, .svgz | `image/svg+xml` | `Xml` üzerine kurulu |
+| `Tiff` | TIFF image | .tif, .tiff | `image/tiff` |  |
+| `WebP` | WebP image | .webp | `image/webp` |  |
+
+#### Diğer
+
+| Özellik | Ad | Uzantılar | MIME türü | Notlar |
+|---|---|---|---|---|
+| `Gltf` | glTF model | .gltf | `model/gltf+json` | içerik `Json` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+| `GltfBinary` | glTF binary model | .glb | `model/gltf-binary` |  |
+| `Parquet` | Apache Parquet file | .parquet | `application/vnd.apache.parquet` |  |
+| `Sqlite` | SQLite database | .sqlite, .sqlite3, .db | `application/vnd.sqlite3` |  |
+
+#### Betik
+
+| Özellik | Ad | Uzantılar | MIME türü | Notlar |
+|---|---|---|---|---|
+| `Batch` | Windows batch file | .bat, .cmd | `application/x-bat` | program ya da betik, yüklemede reddedilir; içerik `PlainText` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+| `Html` | HTML document | .html, .htm, .xhtml, .shtml, .hta | `text/html` | program ya da betik, yüklemede reddedilir; `PlainText` üzerine kurulu |
+| `JavaScript` | JavaScript | .js, .mjs, .cjs | `text/javascript` | program ya da betik, yüklemede reddedilir; içerik `PlainText` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+| `Php` | PHP script | .php, .phtml, .php3, .php4, .php5, .php7, .php8, .phar | `application/x-httpd-php` | program ya da betik, yüklemede reddedilir; içerik `PlainText` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+| `PowerShell` | PowerShell script | .ps1, .psm1, .psd1 | `application/x-powershell` | program ya da betik, yüklemede reddedilir; içerik `PlainText` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+| `ShellScript` | Shell script | .sh, .bash, .zsh, .ksh, .csh | `application/x-sh` | program ya da betik, yüklemede reddedilir; `PlainText` üzerine kurulu |
+| `VbScript` | VBScript file | .vbs, .vbe, .wsf, .wsh | `text/vbscript` | program ya da betik, yüklemede reddedilir; içerik `PlainText` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+
+#### Metin
+
+| Özellik | Ad | Uzantılar | MIME türü | Notlar |
+|---|---|---|---|---|
+| `Calendar` | iCalendar file | .ics, .ifb | `text/calendar` | içerik `PlainText` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+| `Css` | CSS stylesheet | .css | `text/css` | içerik `PlainText` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+| `Csv` | CSV file | .csv | `text/csv` | içerik `PlainText` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+| `Json` | JSON document | .json, .map, .geojson, .webmanifest | `application/json` | `PlainText` üzerine kurulu |
+| `Markdown` | Markdown document | .md, .markdown | `text/markdown` | içerik `PlainText` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+| `PlainText` | Plain text | .txt, .text, .log | `text/plain` |  |
+| `Tsv` | TSV file | .tsv | `text/tab-separated-values` | içerik `PlainText` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+| `VCard` | vCard file | .vcf, .vcard | `text/vcard` | içerik `PlainText` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+| `Xml` | XML document | .xml, .xsd, .xsl, .xslt, .rss, .atom | `application/xml` | `PlainText` üzerine kurulu |
+| `Yaml` | YAML document | .yaml, .yml | `application/yaml` | içerik `PlainText` olarak tespit edilir; hangisi olduğunu uzantı söyler |
+
+#### Video
+
+| Özellik | Ad | Uzantılar | MIME türü | Notlar |
+|---|---|---|---|---|
+| `Avi` | AVI video | .avi | `video/x-msvideo` |  |
+| `Flv` | Flash video | .flv | `video/x-flv` |  |
+| `M4v` | MPEG-4 video (iTunes) | .m4v | `video/x-m4v` |  |
+| `Matroska` | Matroska video | .mkv, .mka, .mk3d | `video/x-matroska` |  |
+| `Mp4` | MPEG-4 video | .mp4, .m4p | `video/mp4` |  |
+| `Mpeg` | MPEG video | .mpg, .mpeg, .m2p, .vob | `video/mpeg` |  |
+| `QuickTime` | QuickTime video | .mov, .qt | `video/quicktime` |  |
+| `ThreeGp` | 3GPP video | .3gp, .3g2 | `video/3gpp` |  |
+| `WebM` | WebM video | .webm | `video/webm` |  |
+
 ## İçerik uzantıya uyuyor mu?
 
 ```csharp
