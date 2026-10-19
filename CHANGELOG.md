@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.6.0] - 2026-10-19
+
 ### Added
 - Each GitHub release carries an SPDX software bill of materials per package and a signed build provenance attestation for every `.nupkg`. Verify a package with `gh attestation verify <file>.nupkg --repo Lyconiq/HeroKit`.
 - HeroKit.FileTypes: legacy Word and Excel files (DOC, XLS) with a VBA project are rejected as `ActiveContent` unless `UploadPolicy.AllowMacros` is true. Only the file's directory is read, from the whole span or a seekable stream.
@@ -131,7 +133,8 @@ Superseded by 3.0.0. Highlights:
 
 1.0.0-alpha to 1.0.0-alpha.6: the first array, boolean, string, type and conversion helpers (contributors: @emreakdemir, @jepozdemir).
 
-[Unreleased]: https://github.com/Lyconiq/HeroKit/compare/3.5.0...HEAD
+[Unreleased]: https://github.com/Lyconiq/HeroKit/compare/3.6.0...HEAD
+[3.6.0]: https://github.com/Lyconiq/HeroKit/compare/3.5.0...3.6.0
 [3.5.0]: https://github.com/Lyconiq/HeroKit/compare/3.4.0...3.5.0
 [3.4.0]: https://github.com/Lyconiq/HeroKit/compare/3.3.0...3.4.0
 [3.3.0]: https://github.com/Lyconiq/HeroKit/compare/3.2.0...3.3.0

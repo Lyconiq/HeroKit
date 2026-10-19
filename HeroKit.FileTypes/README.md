@@ -5,7 +5,7 @@ Dependency-free file type detection for .NET 8 and .NET 10, Native AOT compatibl
 - **Content detection** by magic bytes for about 70 formats, including the ones other libraries get wrong: DOCX/XLSX/PPTX and OpenDocument inside ZIP, HEIC, AVIF and MP4 brands, WebP, JPEG XL, WebM vs. Matroska, Java class vs. Mach-O.
 - **Extension and MIME mapping** in both directions.
 - **Content vs. extension** check.
-- **Safe upload check** following OWASP: programs and scripts (by content and extension), hidden double extensions (`a.php.jpg`), invalid file names, SVG with script, allow-lists.
+- **Safe upload check** following OWASP: programs and scripts (by content and extension), hidden double extensions (`a.php.jpg`), invalid file names, SVG with script, macros (also in legacy DOC and XLS), size limits, allow-lists, and safe download names.
 - **Extensible**: register your own file types and upload rules.
 
 ```bash

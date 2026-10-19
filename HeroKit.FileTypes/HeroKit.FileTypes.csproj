@@ -26,7 +26,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageIcon>herokit.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageReleaseNotes>Macro-enabled Office detection (Docm, Xlsm, Pptm, HasMacros) with UploadPolicy.AllowMacros; ZIP central directory reading from seekable streams, so large DOCX/XLSX/PPTX files are recognized. The docm/xlsm/pptm extensions now map to the macro-enabled types.</PackageReleaseNotes>
+        <PackageReleaseNotes>Legacy DOC and XLS uploads with a VBA project are rejected unless UploadPolicy.AllowMacros is true; UploadPolicy.MaxLength (UploadRejection.TooLarge); FileTypes.ToSafeFileName for stored and download names. Releases now carry an SBOM and a build provenance attestation.</PackageReleaseNotes>
         <Copyright>Copyright © 2023-2026 Emre Akdemir</Copyright>
         <NeutralLanguage>en</NeutralLanguage>
     </PropertyGroup>

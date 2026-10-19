@@ -80,6 +80,8 @@ HeroKit.FileTypes.UploadPolicy.BlockedExtensions.get -> System.Collections.Gener
 HeroKit.FileTypes.UploadPolicy.BlockedExtensions.init -> void
 HeroKit.FileTypes.UploadPolicy.MaxFileNameLength.get -> int
 HeroKit.FileTypes.UploadPolicy.MaxFileNameLength.init -> void
+HeroKit.FileTypes.UploadPolicy.MaxLength.get -> long?
+HeroKit.FileTypes.UploadPolicy.MaxLength.init -> void
 HeroKit.FileTypes.UploadPolicy.MaxSvgScanLength.get -> int
 HeroKit.FileTypes.UploadPolicy.MaxSvgScanLength.init -> void
 HeroKit.FileTypes.UploadPolicy.Rules.get -> System.Collections.Generic.IReadOnlyList<HeroKit.FileTypes.IUploadRule!>!
@@ -96,6 +98,7 @@ HeroKit.FileTypes.UploadRejection.ExtensionMismatch = 8 -> HeroKit.FileTypes.Upl
 HeroKit.FileTypes.UploadRejection.InvalidFileName = 1 -> HeroKit.FileTypes.UploadRejection
 HeroKit.FileTypes.UploadRejection.None = 0 -> HeroKit.FileTypes.UploadRejection
 HeroKit.FileTypes.UploadRejection.NotAllowed = 9 -> HeroKit.FileTypes.UploadRejection
+HeroKit.FileTypes.UploadRejection.TooLarge = 12 -> HeroKit.FileTypes.UploadRejection
 HeroKit.FileTypes.UploadRejection.UnknownContent = 7 -> HeroKit.FileTypes.UploadRejection
 HeroKit.FileTypes.UploadRejection.UnknownExtension = 4 -> HeroKit.FileTypes.UploadRejection
 HeroKit.FileTypes.UploadValidator
@@ -114,7 +117,9 @@ const HeroKit.FileTypes.FileTypeRegistry.HeaderSize = 16384 -> int
 const HeroKit.FileTypes.FileTypes.DefaultMimeType = "application/octet-stream" -> string!
 const HeroKit.FileTypes.FileTypes.HeaderSize = 16384 -> int
 override HeroKit.FileTypes.FileType.ToString() -> string!
+~override HeroKit.FileTypes.UploadCheckResult.Equals(object obj) -> bool
 override HeroKit.FileTypes.UploadCheckResult.GetHashCode() -> int
+~override HeroKit.FileTypes.UploadCheckResult.ToString() -> string
 static HeroKit.FileTypes.FileTypes.Aac.get -> HeroKit.FileTypes.FileType!
 static HeroKit.FileTypes.FileTypes.All.get -> System.Collections.Generic.IReadOnlyList<HeroKit.FileTypes.FileType!>!
 static HeroKit.FileTypes.FileTypes.Apk.get -> HeroKit.FileTypes.FileType!
@@ -201,6 +206,7 @@ static HeroKit.FileTypes.FileTypes.Svg.get -> HeroKit.FileTypes.FileType!
 static HeroKit.FileTypes.FileTypes.Tar.get -> HeroKit.FileTypes.FileType!
 static HeroKit.FileTypes.FileTypes.ThreeGp.get -> HeroKit.FileTypes.FileType!
 static HeroKit.FileTypes.FileTypes.Tiff.get -> HeroKit.FileTypes.FileType!
+static HeroKit.FileTypes.FileTypes.ToSafeFileName(string? fileName, string! fallback = "file") -> string!
 static HeroKit.FileTypes.FileTypes.TrueType.get -> HeroKit.FileTypes.FileType!
 static HeroKit.FileTypes.FileTypes.Tsv.get -> HeroKit.FileTypes.FileType!
 static HeroKit.FileTypes.FileTypes.VCard.get -> HeroKit.FileTypes.FileType!
@@ -227,5 +233,3 @@ static HeroKit.FileTypes.UploadCheckResult.operator ==(HeroKit.FileTypes.UploadC
 static HeroKit.FileTypes.UploadPolicy.Default.get -> HeroKit.FileTypes.UploadPolicy!
 static HeroKit.FileTypes.UploadPolicy.DefaultBlockedExtensions.get -> System.Collections.Generic.IReadOnlySet<string!>!
 static HeroKit.FileTypes.ZipEntryDetector.ForMimeTypeEntry(string! mimeType) -> HeroKit.FileTypes.ZipEntryDetector!
-~override HeroKit.FileTypes.UploadCheckResult.Equals(object obj) -> bool
-~override HeroKit.FileTypes.UploadCheckResult.ToString() -> string
