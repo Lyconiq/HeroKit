@@ -30,4 +30,4 @@ public sealed class CustomerValidator : AbstractValidator<Customer>
 
 Null and empty values pass; add `NotEmpty()` to require a value. Messages use `{PropertyName}` and can be replaced with `WithMessage`.
 
-Documentation: https://herokit.emreakdemir.dev/articles/validation.html
+Documentation: https://herokit.lyconiq.com/articles/validation.html

@@ -35,7 +35,7 @@ Do not remove a public API in a 1.x release. Mark it with `[Obsolete]` and name 
 
 ## Documentation
 
-The site at herokit.emreakdemir.dev is built with DocFX from `docs/` and the XML comments. Preview it locally:
+The site at herokit.lyconiq.com is built with DocFX from `docs/` and the XML comments. Preview it locally:
 
 ```
 dotnet tool install -g docfx

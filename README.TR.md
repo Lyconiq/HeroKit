@@ -7,7 +7,7 @@
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Lyconiq/HeroKit/badge)](https://scorecard.dev/viewer/?uri=github.com/Lyconiq/HeroKit)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-English: [README.md](README.md) · **Dokümantasyon: [herokit.emreakdemir.dev](https://herokit.emreakdemir.dev)**
+English: [README.md](README.md) · **Dokümantasyon: [herokit.lyconiq.com](https://herokit.lyconiq.com)**
 
 .NET için günlük işlerde kullanılan uzantı metotları; Türkçe veriler için birinci sınıf destekle: TCKN, VKN, IBAN, telefon, plaka, bölge, resmî tatiller ve yazıyla tutar. Ülke kuralları tek bir modeli (`Country`, `Language`, `Currency`) izler; yeni ülkeler yeni metot gerekmeden eklenebilir.
 
@@ -103,7 +103,7 @@ using HeroKit.Strings;
 | Kart | `IsValidCardNumber` (Luhn), `GetCardBrand` (Troy dahil) |
 | Enum | `GetDescription`, `ToEnum`, `ToUnderlying<T>` |
 
-Bütün metotlar [rehberlerde ve API referansında](https://herokit.emreakdemir.dev). 1.x ya da 2.x'ten mi geçiyorsunuz? [Yükseltme rehberine](https://herokit.emreakdemir.dev/tr/articles/upgrading.html) bakın.
+Bütün metotlar [rehberlerde ve API referansında](https://herokit.lyconiq.com). 1.x ya da 2.x'ten mi geçiyorsunuz? [Yükseltme rehberine](https://herokit.lyconiq.com/tr/articles/upgrading.html) bakın.
 
 ## Sorular ve katkı
 
