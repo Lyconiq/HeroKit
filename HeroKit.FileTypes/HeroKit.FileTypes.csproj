@@ -9,7 +9,7 @@
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <EnablePackageValidation>true</EnablePackageValidation>
         <!-- Fails the pack when the public API breaks compatibility with the last release. Update after each release. -->
-        <PackageValidationBaselineVersion>3.6.0</PackageValidationBaselineVersion>
+        <PackageValidationBaselineVersion>3.7.0</PackageValidationBaselineVersion>
         <IsAotCompatible>true</IsAotCompatible>
     </PropertyGroup>
 
