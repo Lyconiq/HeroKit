@@ -35,11 +35,14 @@ public enum UploadRejection
     /// <summary>The type is not in <see cref="UploadPolicy.AllowedTypes"/>.</summary>
     NotAllowed,
 
-    /// <summary>The SVG contains script, event handlers, embedded HTML, entity declarations or external references, or is too large to scan; or the document carries macros and <see cref="UploadPolicy.AllowMacros"/> is false.</summary>
+    /// <summary>The SVG contains script, event handlers, embedded HTML, entity declarations or external references, or is too large to scan; or the document carries macros (a macro-enabled type, or a legacy DOC or XLS file with a VBA project) and <see cref="UploadPolicy.AllowMacros"/> is false.</summary>
     ActiveContent,
 
     /// <summary>A rule from <see cref="UploadPolicy.Rules"/> rejected the upload; see <see cref="UploadCheckResult.Message"/>.</summary>
     CustomRule,
+
+    /// <summary>The file is longer than <see cref="UploadPolicy.MaxLength"/>.</summary>
+    TooLarge,
 }
 
 /// <summary>
@@ -97,8 +100,24 @@ public sealed class UploadPolicy
     /// <summary>Gets whether content that no detector recognizes is accepted when its extension is allowed. Defaults to false.</summary>
     public bool AllowUnknownContent { get; init; }
 
-    /// <summary>Gets whether documents with macros (<see cref="FileType.HasMacros"/>, for example DOCM and XLSM) are accepted. Defaults to false.</summary>
+    /// <summary>
+    /// Gets whether documents with macros are accepted: macro-enabled types (<see cref="FileType.HasMacros"/>, for example DOCM and XLSM)
+    /// and legacy DOC and XLS files with a VBA project. Defaults to false.
+    /// </summary>
+    /// <remarks>
+    /// A legacy file is searched for a VBA project only when its directory is available: pass the whole file as a span, or a seekable stream.
+    /// Excel 4.0 (XLM) macro sheets and PowerPoint 97-2003 macros are not found.
+    /// </remarks>
     public bool AllowMacros { get; init; }
+
+    /// <summary>
+    /// Gets the largest allowed file in bytes, or null for no limit. Defaults to null.
+    /// </summary>
+    /// <remarks>
+    /// The length of a span is its length; the length of a stream is read only when the stream can seek. Also limit the request body
+    /// in the web server (for example <c>[RequestSizeLimit]</c> in ASP.NET Core), so a large upload is refused before it is read.
+    /// </remarks>
+    public long? MaxLength { get; init; }
 
     /// <summary>Gets the longest allowed file name. Defaults to 255.</summary>
     public int MaxFileNameLength { get; init; } = 255;

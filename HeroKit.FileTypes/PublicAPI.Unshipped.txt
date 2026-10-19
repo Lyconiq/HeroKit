@@ -1,1 +1,5 @@
 #nullable enable
+HeroKit.FileTypes.UploadPolicy.MaxLength.get -> long?
+HeroKit.FileTypes.UploadPolicy.MaxLength.init -> void
+HeroKit.FileTypes.UploadRejection.TooLarge = 12 -> HeroKit.FileTypes.UploadRejection
+static HeroKit.FileTypes.FileTypes.ToSafeFileName(string? fileName, string! fallback = "file") -> string!

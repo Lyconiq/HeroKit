@@ -25,7 +25,7 @@ internal sealed class FileNameStep : IUploadStep
 
         foreach (char c in name)
         {
-            if (c < 0x20 || c == 0x7F || c is '/' or '\\' or ':' or '*' or '?' or '"' or '<' or '>' or '|')
+            if (FileNames.IsUnsafeChar(c))
                 return false;
         }
 
@@ -59,6 +59,15 @@ internal sealed class EmptyContentStep : IUploadStep
 {
     public UploadCheckResult? Check(ref UploadInspection inspection) =>
         inspection.Content.IsEmpty ? inspection.Reject(UploadRejection.EmptyContent, "The file is empty.") : null;
+}
+
+// Rejects a file longer than the policy allows. A stream that cannot seek has no known length and is not checked here.
+internal sealed class FileLengthStep : IUploadStep
+{
+    public UploadCheckResult? Check(ref UploadInspection inspection) =>
+        inspection.Policy.MaxLength is { } max && inspection.FileLength > max
+            ? inspection.Reject(UploadRejection.TooLarge, $"The file is larger than {max} bytes.")
+            : null;
 }
 
 // Rejects program or script content whatever the extension says. Every match counts, not only the first.
@@ -121,6 +130,7 @@ internal sealed class AllowListStep : IUploadStep
 }
 
 // Rejects macro-enabled documents, by content or by extension, unless the policy allows macros.
+// Legacy DOC and XLS files have one type with or without macros, so their directory is searched for a VBA project.
 internal sealed class MacroContentStep : IUploadStep
 {
     public UploadCheckResult? Check(ref UploadInspection inspection)
@@ -128,8 +138,18 @@ internal sealed class MacroContentStep : IUploadStep
         if (inspection.Policy.AllowMacros)
             return null;
 
-        bool hasMacros = inspection.DetectedType?.HasMacros == true || inspection.ExtensionType?.HasMacros == true;
+        bool hasMacros = inspection.DetectedType?.HasMacros == true || inspection.ExtensionType?.HasMacros == true || HasVbaProject(inspection);
         return hasMacros ? inspection.Reject(UploadRejection.ActiveContent, "The document contains macros.") : null;
+    }
+
+    private static bool HasVbaProject(UploadInspection inspection)
+    {
+        if (inspection.DetectedType?.IsA(FileTypes.CompoundFile) != true)
+            return false;
+
+        return inspection.Stream is { } stream
+            ? CompoundFileMacros.HasMacros(stream, inspection.StreamStart)
+            : CompoundFileMacros.HasMacros(inspection.Content);
     }
 }
 

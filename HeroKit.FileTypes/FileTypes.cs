@@ -122,6 +122,33 @@ public static partial class FileTypes
     public static UploadCheckResult CheckUpload(Stream stream, string fileName, UploadPolicy policy) =>
         new UploadValidator(policy, Default).Validate(stream, fileName);
 
+    /// <summary>
+    /// Turns an uploaded file name into one that is safe to save or to send in a Content-Disposition header.
+    /// </summary>
+    /// <remarks>
+    /// Keeps only the name after the last path separator. Replaces control characters and the characters Windows does not allow
+    /// (<c>\ / : * ? " &lt; &gt; |</c>) with an underscore, collapses runs of white space into one space, and trims spaces and dots at both ends.
+    /// Puts an underscore before Windows device names such as "CON" or "nul.txt", and cuts the name to 255 characters, keeping a short extension.
+    /// Letters of every language are kept. This does not check the type: use <see cref="CheckUpload(Stream, string)"/> for that,
+    /// and prefer a generated name for the stored file.
+    /// </remarks>
+    /// <param name="fileName">The file name as uploaded, or null.</param>
+    /// <param name="fallback">The name returned when nothing is left. Defaults to "file".</param>
+    /// <returns>The safe file name.</returns>
+    /// <example>
+    /// <code>
+    /// FileTypes.ToSafeFileName("../../etc/passwd");      // "passwd"
+    /// FileTypes.ToSafeFileName("C:\\temp\\rapor?.pdf");  // "rapor_.pdf"
+    /// FileTypes.ToSafeFileName("con.txt");               // "_con.txt"
+    /// FileTypes.ToSafeFileName("  Fatura  Ekim .pdf ");  // "Fatura Ekim .pdf"
+    /// </code>
+    /// </example>
+    public static string ToSafeFileName(string? fileName, string fallback = "file")
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(fallback);
+        return FileNames.ToSafe(fileName, fallback);
+    }
+
     private static MagicNumber M(string pattern, int offset = 0) => new(pattern, offset);
 
     private static MagicNumber T(string text, int offset = 0) => MagicNumber.FromText(text, offset);

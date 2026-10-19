@@ -78,16 +78,34 @@ if (!result.IsSafe)
 | `DoubleExtension` | `invoice.php.jpg`, `photo.exe.png` |
 | `UnknownExtension` | uzantı yok ya da HeroKit bilmiyor |
 | `EmptyContent` | boş dosya |
+| `TooLarge` | `MaxLength` bayttan uzun dosya (varsayılan: sınır yok) |
 | `DangerousContent` | uzantısı ne derse desin program ya da betik; örneğin `photo.png` adlı bir Windows programı |
 | `UnknownContent` | hiçbir dedektörün tanımadığı içerik (`AllowUnknownContent` ile izin verilir) |
 | `ExtensionMismatch` | `photo.png` adlı bir PDF |
 | `NotAllowed` | `AllowedTypes` dışındaki tür |
-| `ActiveContent` | betik, olay işleyicisi, `javascript:` bağlantısı, `foreignObject`, entity tanımı ya da dış kaynak içeren SVG; `AllowMacros` true değilse makrolu Office belgeleri |
+| `ActiveContent` | betik, olay işleyicisi, `javascript:` bağlantısı, `foreignObject`, entity tanımı ya da dış kaynak içeren SVG; `AllowMacros` true değilse makrolu Office belgeleri (DOCM, XLSM ya da VBA projesi olan eski DOC, XLS) |
 | `CustomRule` | sizin `Rules` kurallarınızdan biri |
 
-Stream overload'u SVG'nin tamamını `MaxSvgScanLength` (1 MB) sınırına kadar okur; böylece sondaki bir betik de bulunur. `.docx` kılığındaki makrolu bir belge, makro kaydı büyük bir dosyanın sonunda olsa bile `ExtensionMismatch` ile reddedilir. Eski Office dosyaları (DOC, XLS) da makro taşıyabilir; HeroKit bunların içine bakmaz.
+Stream overload'u SVG'nin tamamını `MaxSvgScanLength` (1 MB) sınırına kadar okur; böylece sondaki bir betik de bulunur. `.docx` kılığındaki makrolu bir belge, makro kaydı büyük bir dosyanın sonunda olsa bile `ExtensionMismatch` ile reddedilir. Eski Word ve Excel dosyalarının (DOC, XLS) ayrı bir makrolu türü yoktur; HeroKit bu dosyaların dizinini okur ve VBA projesi olanı reddeder. Dosyanın tamamını span olarak ya da konumlanabilir (seekable) bir stream olarak verin; yalnız dizin okunur. Excel 4.0 makro sayfaları ve PowerPoint 97-2003 makroları bulunmaz.
 
 `UploadValidator` ve `Tckn` kullanan eksiksiz bir ASP.NET Core minimal API örneği [samples/HeroKit.Samples.WebApi](https://github.com/Lyconiq/HeroKit/tree/master/samples/HeroKit.Samples.WebApi) klasöründedir.
+
+### Boyut sınırı ve güvenli adlar
+
+```csharp
+var policy = new UploadPolicy { MaxLength = 10 * 1024 * 1024 }; // 10 MB
+
+// Dosyayı üretilmiş bir adla saklayın; temizlenmiş özgün adı gösterim ve indirme için tutun.
+string displayName = FileTypes.ToSafeFileName(file.FileName);
+string storedName = Guid.NewGuid().ToString("N") + Path.GetExtension(displayName);
+
+// Sonra, dosya indirilirken:
+return Results.File(stream, FileTypes.GetMimeType(displayName), fileDownloadName: displayName);
+```
+
+`MaxLength`, span'in ya da konumlanabilir bir stream'in uzunluğunu denetler. Web sunucusunun istek boyutu sınırını da ayarlayın (örneğin `[RequestSizeLimit]` ya da Kestrel'in `MaxRequestBodySize` ayarı); böylece büyük bir yükleme okunmadan reddedilir.
+
+`ToSafeFileName` yolu atar, Windows dosya adlarında izin verilmeyen karakterleri `_` ile değiştirir, baştaki ve sondaki nokta ile boşlukları siler, `CON` gibi Windows aygıt adlarını korumaya alır ve adı 255 karaktere kısaltır. Türkçe dahil her dilin harfleri kalır. `fileDownloadName` verildiğinde ASP.NET Core `Content-Disposition: attachment` başlığını kendisi yazar ve ASCII dışı adları kodlar (`filename*=UTF-8''...`); bu başlığı elle kurmayın.
 
 Bu kontrol ilk savunma hattıdır. Yükleme boyutunu da sınırlayın, dosyaları web kökünün dışında üretilmiş adlarla saklayın, mümkünse `Content-Disposition: attachment` ile sunun; gerektiğinde resimleri yeniden kodlayın ya da dosyaları tarayın.
 

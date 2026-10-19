@@ -78,16 +78,34 @@ if (!result.IsSafe)
 | `DoubleExtension` | `invoice.php.jpg`, `photo.exe.png` |
 | `UnknownExtension` | no extension, or one HeroKit does not know |
 | `EmptyContent` | an empty file |
+| `TooLarge` | a file longer than `MaxLength` bytes (no limit by default) |
 | `DangerousContent` | a program or script whatever the extension says, for example a Windows executable named `photo.png` |
 | `UnknownContent` | content no detector recognizes (allow it with `AllowUnknownContent`) |
 | `ExtensionMismatch` | a PDF named `photo.png` |
 | `NotAllowed` | a type outside `AllowedTypes` |
-| `ActiveContent` | SVG with script, event handlers, `javascript:` links, `foreignObject`, entity declarations or external references; Office documents with macros unless `AllowMacros` is true |
+| `ActiveContent` | SVG with script, event handlers, `javascript:` links, `foreignObject`, entity declarations or external references; Office documents with macros (DOCM, XLSM, or a legacy DOC or XLS with a VBA project) unless `AllowMacros` is true |
 | `CustomRule` | one of your `Rules` |
 
-The stream overload reads the whole SVG up to `MaxSvgScanLength` (1 MB) so a script at the end is found. A macro-enabled document disguised as `.docx` is rejected as `ExtensionMismatch`, also when the macro entry is at the end of a large file. Legacy Office files (DOC, XLS) can carry macros too; HeroKit does not look inside them.
+The stream overload reads the whole SVG up to `MaxSvgScanLength` (1 MB) so a script at the end is found. A macro-enabled document disguised as `.docx` is rejected as `ExtensionMismatch`, also when the macro entry is at the end of a large file. Legacy Word and Excel files (DOC, XLS) have no separate macro type, so HeroKit reads their directory and rejects a file with a VBA project. Pass the whole file as a span, or a seekable stream; only the directory is read. Excel 4.0 macro sheets and PowerPoint 97-2003 macros are not found.
 
 A complete ASP.NET Core minimal API that uses `UploadValidator` and `Tckn` is in [samples/HeroKit.Samples.WebApi](https://github.com/Lyconiq/HeroKit/tree/master/samples/HeroKit.Samples.WebApi).
+
+### Size limit and safe names
+
+```csharp
+var policy = new UploadPolicy { MaxLength = 10 * 1024 * 1024 }; // 10 MB
+
+// Store under a generated name; keep the cleaned original name for display and downloads.
+string displayName = FileTypes.ToSafeFileName(file.FileName);
+string storedName = Guid.NewGuid().ToString("N") + Path.GetExtension(displayName);
+
+// Later, when the file is downloaded:
+return Results.File(stream, FileTypes.GetMimeType(displayName), fileDownloadName: displayName);
+```
+
+`MaxLength` checks the length of a span, or of a stream that can seek. Also set the request size limit of the web server (for example `[RequestSizeLimit]` or Kestrel's `MaxRequestBodySize`), so a large upload is refused before it is read.
+
+`ToSafeFileName` drops any path, replaces characters that are not allowed in Windows file names with `_`, trims dots and spaces, guards Windows device names such as `CON`, and shortens the name to 255 characters. Letters of every language stay. With `fileDownloadName`, ASP.NET Core writes the `Content-Disposition: attachment` header and encodes non-ASCII names (`filename*=UTF-8''...`), so do not build that header by hand.
 
 The check is a first line of defense. Also limit the upload size, store files under generated names outside the web root, serve them with `Content-Disposition: attachment` where possible, and re-encode images or scan files when it matters.
 
