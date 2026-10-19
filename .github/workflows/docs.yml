@@ -43,6 +43,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # Without this, Vercel's "Other" preset serves only the public/ folder that docfx creates.
+          echo '{ "framework": null, "buildCommand": "", "installCommand": "", "outputDirectory": "." }' > vercel.json
           git init -q -b site
           git add -A
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
