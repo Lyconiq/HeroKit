@@ -1,5 +1,7 @@
 {
   "$schema": "https://context7.com/schema/context7.json",
+  "url": "https://context7.com/lyconiq/herokit",
+  "public_key": "pk_PdTGdFhLp52wFzxBj66ad",
   "projectTitle": "HeroKit",
   "description": "Extension methods for .NET with first-class Turkish data: TCKN, VKN and IBAN validation, phone numbers, plates, provinces and districts, public holidays and business days, amounts in words. Also file type detection and safe upload checks (HeroKit.FileTypes), ASP.NET Core and FluentValidation integrations.",
   "folders": [
@@ -9,8 +11,17 @@
     "HeroKit.FluentValidation",
     "samples"
   ],
-  "excludeFolders": ["bin", "obj"],
-  "excludeFiles": ["README.TR.md", "CONTRIBUTING.md", "SECURITY.md", "CHANGELOG.md", "LICENSE"],
+  "excludeFolders": [
+    "bin",
+    "obj"
+  ],
+  "excludeFiles": [
+    "README.TR.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
   "rules": [
     "Packages: HeroKit (core), HeroKit.FileTypes (file type detection, uploads, no dependencies), HeroKit.FileTypes.AspNetCore (IFormFile) and HeroKit.FluentValidation. Install only what you use.",
     "Country rules take a Country object, for example value.IsValidPhone(Countries.Turkey). Since 3.0 there are no Tr-suffixed methods. Türkiye-only checks (IsValidTckn, IsValidVkn, Tckn) are in HeroKit.Globalization.Turkey.",
