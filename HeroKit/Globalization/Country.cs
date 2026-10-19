@@ -57,6 +57,90 @@ public sealed class Country(string code, string name, Language language)
     public IReadOnlyList<District> Districts { get; init; } = [];
 
     /// <summary>
+    /// Gets the time zone of the country, or null when the country has more than one (for example the United States).
+    /// </summary>
+    public TimeZoneInfo? TimeZone { get; init; }
+
+    /// <summary>
+    /// Gets the current date and time in the country's <see cref="TimeZone"/>, also when the server runs in UTC.
+    /// </summary>
+    /// <param name="timeProvider">The clock, for tests; null uses <see cref="TimeProvider.System"/>.</param>
+    /// <returns>The current local date and time with its UTC offset.</returns>
+    /// <exception cref="NotSupportedException">The country has no single time zone.</exception>
+    /// <example>
+    /// <code>
+    /// Countries.Turkey.Now(); // 2026-10-19 09:30:00 +03:00 while the server clock shows 06:30 UTC
+    /// </code>
+    /// </example>
+    public DateTimeOffset Now(TimeProvider? timeProvider = null)
+    {
+        TimeZoneInfo zone = Require(TimeZone, "time zone");
+        return TimeZoneInfo.ConvertTime((timeProvider ?? TimeProvider.System).GetUtcNow(), zone);
+    }
+
+    /// <summary>
+    /// Gets today's date in the country's <see cref="TimeZone"/>. Between midnight in Türkiye and 03:00 UTC, a server in UTC still shows yesterday.
+    /// </summary>
+    /// <param name="timeProvider">The clock, for tests; null uses <see cref="TimeProvider.System"/>.</param>
+    /// <returns>Today's date in the country.</returns>
+    /// <exception cref="NotSupportedException">The country has no single time zone.</exception>
+    /// <example>
+    /// <code>
+    /// Countries.Turkey.Today().IsBusinessDay(Countries.Turkey);
+    /// </code>
+    /// </example>
+    public DateOnly Today(TimeProvider? timeProvider = null) => DateOnly.FromDateTime(Now(timeProvider).DateTime);
+
+    /// <summary>
+    /// Returns a copy of the country with another holiday calendar. The country itself does not change.
+    /// </summary>
+    /// <param name="holidays">The holiday calendar of the copy.</param>
+    /// <returns>A copy with every other rule of this country.</returns>
+    public Country WithHolidays(IHolidayCalendar holidays)
+    {
+        ArgumentNullException.ThrowIfNull(holidays);
+        return CopyWith(holidays);
+    }
+
+    /// <summary>
+    /// Returns a copy of the country whose holiday calendar also contains the given days, for example administrative leave
+    /// ("idari izin") or company holidays. A given day replaces a holiday of the country on the same date. The country itself does not change.
+    /// </summary>
+    /// <param name="holidays">The days to add; set <see cref="PublicHoliday.IsHalfDay"/> for an afternoon off.</param>
+    /// <returns>A copy with every other rule of this country.</returns>
+    /// <exception cref="NotSupportedException">The country has no holiday calendar.</exception>
+    /// <exception cref="ArgumentException">A date is given more than once, or a name is empty.</exception>
+    /// <exception cref="ArgumentOutOfRangeException">A date is outside the supported years of the calendar.</exception>
+    /// <example>
+    /// <code>
+    /// Country turkey = Countries.Turkey.WithAdditionalHolidays([new(new DateOnly(2026, 5, 18), "İdari izin", false)]);
+    /// new DateOnly(2026, 5, 18).IsBusinessDay(turkey); // false
+    /// </code>
+    /// </example>
+    public Country WithAdditionalHolidays(IEnumerable<PublicHoliday> holidays)
+    {
+        ArgumentNullException.ThrowIfNull(holidays);
+        return CopyWith(new AdditionalHolidayCalendar(Require(Holidays, "holiday calendar"), holidays));
+    }
+
+    // Copies every rule; keep in sync with the properties above (a test compares them by reflection).
+    private Country CopyWith(IHolidayCalendar holidays) => new(Code, Name, Language)
+    {
+        Currency = Currency,
+        PhoneNumbers = PhoneNumbers,
+        VehiclePlates = VehiclePlates,
+        PostalCodes = PostalCodes,
+        NationalIds = NationalIds,
+        TaxIds = TaxIds,
+        Holidays = holidays,
+        IbanRules = IbanRules,
+        Banks = Banks,
+        Regions = Regions,
+        Districts = Districts,
+        TimeZone = TimeZone,
+    };
+
+    /// <summary>
     /// Returns the districts of a region.
     /// </summary>
     /// <param name="regionCode">The region code, for example 34.</param>

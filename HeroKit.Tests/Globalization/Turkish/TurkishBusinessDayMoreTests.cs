@@ -1,3 +1,6 @@
+// BusinessDaysUntil is obsolete since 3.7.0 and stays tested until it is removed in 4.0.
+#pragma warning disable CS0618
+
 using HeroKit.Globalization;
 using HeroKit.Globalization.Turkey;
 

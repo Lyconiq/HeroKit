@@ -112,12 +112,13 @@ public static class BusinessDayExtensions
         DateOnly.FromDateTime(value).AddBusinessDays(days, country).ToDateTime(TimeOnly.FromDateTime(value), value.Kind);
 
     /// <summary>
-    /// Counts the business days after <paramref name="start"/> up to and including <paramref name="end"/>.
+    /// Counts the business days after <paramref name="start"/> up to and including <paramref name="end"/>. A half-day holiday counts as a full day.
     /// </summary>
     /// <param name="start">The start date (not counted).</param>
     /// <param name="end">The end date (counted if it is a business day).</param>
     /// <param name="country">The country.</param>
     /// <returns>The number of business days; negative when <paramref name="end"/> is earlier.</returns>
+    [Obsolete("Use CountBusinessDays, which counts a half-day holiday as 0.5. BusinessDaysUntil will be removed in 4.0.")]
     public static int BusinessDaysUntil(this DateOnly start, DateOnly end, Country country)
     {
         if (end < start)
@@ -133,6 +134,70 @@ public static class BusinessDayExtensions
 
         return count;
     }
+
+    /// <summary>
+    /// Counts the business days after <paramref name="start"/> up to and including <paramref name="end"/>.
+    /// A half-day holiday on a weekday, for example the eve (arife) of a Turkish religious holiday, counts as 0.5.
+    /// </summary>
+    /// <param name="start">The start date (not counted).</param>
+    /// <param name="end">The end date (counted if it is a business day).</param>
+    /// <param name="country">The country.</param>
+    /// <returns>The number of business days; negative when <paramref name="end"/> is earlier.</returns>
+    /// <example>
+    /// <code>
+    /// // Tue 27, Wed 28 (eve of Republic Day, half day), Thu 29 (holiday), Fri 30 October 2026
+    /// new DateOnly(2026, 10, 26).CountBusinessDays(new DateOnly(2026, 10, 30), Countries.Turkey); // 2.5
+    /// </code>
+    /// </example>
+    public static decimal CountBusinessDays(this DateOnly start, DateOnly end, Country country)
+    {
+        if (end < start)
+            return -end.CountBusinessDays(start, country);
+
+        IHolidayCalendar calendar = Calendar(country);
+        decimal count = 0;
+
+        for (DateOnly day = start.AddDays(1); day <= end; day = day.AddDays(1))
+        {
+            if (calendar.IsWeekend(day.DayOfWeek))
+                continue;
+
+            count += day.GetPublicHoliday(country) switch
+            {
+                null => 1m,
+                { IsHalfDay: true } => 0.5m,
+                _ => 0m,
+            };
+        }
+
+        return count;
+    }
+
+    /// <summary>
+    /// Counts the business days between the dates of two <see cref="DateTime"/> values. See <see cref="CountBusinessDays(DateOnly, DateOnly, Country)"/>; the time parts are ignored.
+    /// </summary>
+    /// <param name="start">The start (its date is not counted).</param>
+    /// <param name="end">The end (its date is counted if it is a business day).</param>
+    /// <param name="country">The country.</param>
+    /// <returns>The number of business days; negative when <paramref name="end"/> is earlier.</returns>
+    public static decimal CountBusinessDays(this DateTime start, DateTime end, Country country) =>
+        DateOnly.FromDateTime(start).CountBusinessDays(DateOnly.FromDateTime(end), country);
+
+    /// <summary>
+    /// Returns the public holiday on the date of a <see cref="DateTime"/>, including half days. The time part is ignored.
+    /// </summary>
+    /// <param name="value">The date and time.</param>
+    /// <param name="country">The country.</param>
+    /// <returns>The holiday, or null.</returns>
+    public static PublicHoliday? GetPublicHoliday(this DateTime value, Country country) => DateOnly.FromDateTime(value).GetPublicHoliday(country);
+
+    /// <summary>
+    /// Checks whether the date of a <see cref="DateTime"/> is a half-day holiday. The time part is ignored.
+    /// </summary>
+    /// <param name="value">The date and time.</param>
+    /// <param name="country">The country.</param>
+    /// <returns>True for half-day holidays; otherwise false.</returns>
+    public static bool IsHalfDayHoliday(this DateTime value, Country country) => DateOnly.FromDateTime(value).IsHalfDayHoliday(country);
 
     private static IHolidayCalendar Calendar(Country country)
     {

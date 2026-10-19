@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- `CountBusinessDays(start, end, country)` for `DateOnly` and `DateTime`: counts a half-day holiday on a weekday (arife, 28 October) as 0.5 and returns a `decimal`.
+- `Country.WithAdditionalHolidays(...)` returns a copy of a country whose calendar also has your days, for example administrative leave (idari izin) or company holidays; a day replaces a holiday on the same date. `Country.WithHolidays(calendar)` swaps the whole calendar. The country itself does not change.
+- `Country.TimeZone`, `Country.Now(timeProvider)` and `Country.Today(timeProvider)`: the current date in the country, also on a server that runs in UTC. Türkiye uses Europe/Istanbul; the United States has no single time zone and throws `NotSupportedException`.
+- `DateTime` overloads of `GetPublicHoliday` and `IsHalfDayHoliday`.
+
+### Deprecated
+- `BusinessDaysUntil` counts a half-day holiday as a full business day. Use `CountBusinessDays`. `BusinessDaysUntil` will be removed in 4.0.
+
 ### Fixed
 - Turkish IBANs: the reserved digit (10th character) must be 0, as the format requires. Before, the 5th character (the first digit of the bank code) was checked instead. A Turkish IBAN with a non-zero reserved digit is now invalid; one with a bank code that starts with another digit than 0 is now valid.
 

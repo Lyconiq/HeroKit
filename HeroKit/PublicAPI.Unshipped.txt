@@ -1,1 +1,11 @@
 #nullable enable
+HeroKit.Globalization.Country.Now(System.TimeProvider? timeProvider = null) -> System.DateTimeOffset
+HeroKit.Globalization.Country.TimeZone.get -> System.TimeZoneInfo?
+HeroKit.Globalization.Country.TimeZone.init -> void
+HeroKit.Globalization.Country.Today(System.TimeProvider? timeProvider = null) -> System.DateOnly
+HeroKit.Globalization.Country.WithAdditionalHolidays(System.Collections.Generic.IEnumerable<HeroKit.Globalization.PublicHoliday>! holidays) -> HeroKit.Globalization.Country!
+HeroKit.Globalization.Country.WithHolidays(HeroKit.Globalization.IHolidayCalendar! holidays) -> HeroKit.Globalization.Country!
+static HeroKit.Globalization.BusinessDayExtensions.CountBusinessDays(this System.DateOnly start, System.DateOnly end, HeroKit.Globalization.Country! country) -> decimal
+static HeroKit.Globalization.BusinessDayExtensions.CountBusinessDays(this System.DateTime start, System.DateTime end, HeroKit.Globalization.Country! country) -> decimal
+static HeroKit.Globalization.BusinessDayExtensions.GetPublicHoliday(this System.DateTime value, HeroKit.Globalization.Country! country) -> HeroKit.Globalization.PublicHoliday?
+static HeroKit.Globalization.BusinessDayExtensions.IsHalfDayHoliday(this System.DateTime value, HeroKit.Globalization.Country! country) -> bool
