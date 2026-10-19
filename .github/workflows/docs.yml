@@ -11,11 +11,9 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
+  group: docs-site
   cancel-in-progress: false
 
 jobs:
@@ -36,7 +34,7 @@ jobs:
           dotnet tool install -g docfx
           docfx docs/docfx.json
 
-      # Vercel serves herokit.lyconiq.com from the site branch, which holds only the built site.
+      # Vercel serves https://herokit.lyconiq.com from the site branch, which holds only the built site.
       # The branch is rewritten on every run; its history is not kept.
       - name: Publish to the site branch
         working-directory: docs/_site
@@ -50,17 +48,3 @@ jobs:
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
             commit -q -m "Site for ${GITHUB_SHA}"
           git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" site
-
-      - uses: actions/upload-pages-artifact@v5
-        with:
-          path: docs/_site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v5
