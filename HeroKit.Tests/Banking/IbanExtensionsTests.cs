@@ -34,15 +34,19 @@ public class IbanExtensionsTests
     public void IsValidIban_Length35_ReturnsFalse() =>
         Assert.False(new string('1', 35).Insert(0, "DE00").Substring(0, 35).IsValidIban());
 
-    [Fact]
-    public void IsValidIban_TurkishReservedCharacterNotZero_ReturnsFalse()
+    [Theory]
+    [InlineData("0006110519786457841326", false)] // reserved digit (10th character) is 1
+    [InlineData("0006190519786457841326", false)] // reserved digit is 9
+    [InlineData("0006A00519786457841326", false)] // letter in the bank code
+    [InlineData("1006100519786457841326", true)]  // bank code that starts with 1, reserved digit 0
+    [InlineData("0006100519786457841326", true)]
+    public void IsValidIban_TurkishBankCodeAndReservedDigit(string bban, bool expected)
     {
-        // Recompute a checksum-correct IBAN whose 5th character is '1'.
-        const string bban = "1006100519786457841326";
+        // Recompute the check digits so that only the Turkish rule decides.
         var check = 98 - Mod97("TR00" + bban);
         var iban = $"TR{check:00}{bban}";
         Assert.Equal(26, iban.Length);
-        Assert.False(iban.IsValidIban());
+        Assert.Equal(expected, iban.IsValidIban());
     }
 
     [Theory]
