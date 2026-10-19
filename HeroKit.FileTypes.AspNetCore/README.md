@@ -39,7 +39,12 @@ public sealed class ProfileForm
 ## Anywhere
 
 ```csharp
-UploadCheckResult result = file.CheckUpload(policy);   // or validator.Validate(file) with a singleton UploadValidator
+using HeroKit.FileTypes;
+using HeroKit.FileTypes.AspNetCore;
+
+// file is the uploaded IFormFile.
+var pdfOnly = new UploadPolicy { AllowedTypes = [FileTypes.Pdf], MaxLength = 10 * 1024 * 1024 };
+UploadCheckResult result = file.CheckUpload(pdfOnly);  // or validator.Validate(file) with a singleton UploadValidator
 string displayName = file.GetSafeFileName();            // safe to store and to send as a download name
 ```
 

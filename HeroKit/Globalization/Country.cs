@@ -79,7 +79,7 @@ public sealed class Country(string code, string name, Language language)
     }
 
     /// <summary>
-    /// Gets today's date in the country's <see cref="TimeZone"/>. Between midnight in Türkiye and 03:00 UTC, a server in UTC still shows yesterday.
+    /// Gets today's date in the country's <see cref="TimeZone"/>. From 00:00 to 03:00 Türkiye time (21:00 to 00:00 UTC on the previous day), <see cref="DateTime.Today"/> on a server in UTC still shows the previous day.
     /// </summary>
     /// <param name="timeProvider">The clock, for tests; null uses <see cref="TimeProvider.System"/>.</param>
     /// <returns>Today's date in the country.</returns>
