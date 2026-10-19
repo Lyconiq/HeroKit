@@ -105,7 +105,7 @@ using HeroKit.Globalization.Turkey;
 "A12B34567".IsValidIdCardSerial();                  // true: çipli kimlik kartı seri no
 ```
 
-Bunlar sağlama toplamı kontrolleridir; `IsValidMersis` MERSİS numarasının içindeki VKN'yi kontrol eder. Bir numaranın biçiminin doğru olduğunu gösterir; numaranın verilmiş olduğunu göstermez. Girdi yalnızca rakam içermelidir.
+Bunlar sağlama toplamı kontrolleridir; `IsValidMersis` MERSİS numarasının içindeki VKN'yi kontrol eder. Bir numaranın biçiminin doğru olduğunu gösterir; numaranın verilmiş olduğunu göstermez. Girdi yalnızca rakam içermelidir. Algoritmaları adım adım anlatan rehberler: [TCKN](tckn-validation.md), [VKN](vkn-validation.md).
 
 
 #### Doğrulanmış TCKN değeri
@@ -138,7 +138,7 @@ iban.FormatIban();    // "TR33 0006 1005 1978 6457 8413 26"
 Countries.Turkey.Banks!.All;                        // 5 haneli EFT kodlarıyla 30 banka
 ```
 
-IBAN doğrulama her ülke için ISO 13616 mod-97 kontrolüyle çalışır. Kayıtlı bir ülkenin `IbanRules` kuralı varsa uzunluğu ve sabit konumları da kontrol edilir: Türkiye IBAN'ları 26 karakter olmalıdır.
+IBAN doğrulama her ülke için ISO 13616 mod-97 kontrolüyle çalışır. Kayıtlı bir ülkenin `IbanRules` kuralı varsa uzunluğu ve sabit konumları da kontrol edilir: Türkiye IBAN'ları 26 karakter olmalıdır. Algoritma için [IBAN doğrulama rehberine](iban-validation.md) bakın.
 
 `GetBank` geçerli bir IBAN'ın banka kodunu okur (Türkiye'de 5–9. karakterler) ve ülkenin banka listesinde (`Country.Banks`) arar. Bilinmeyen kod için null döner. Liste Türkiye Bankalar Birliği EFT kodlarını izler; eksik banka için issue açın.
 
