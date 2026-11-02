@@ -6,12 +6,12 @@ if (isTurkish) {
   document.querySelector('meta[name="docfx:navrel"]')?.setAttribute('content', `${rel}tr/toc.html`);
 }
 
-// Vercel Web Analytics: cookie-free page view counts, only on the production site served by Vercel.
+// Umami on analytics.lyconiq.com (our own server): cookie-free page view counts, only on the production site.
 if (location.hostname === 'herokit.lyconiq.com') {
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   const analytics = document.createElement('script');
   analytics.defer = true;
-  analytics.src = '/_vercel/insights/script.js';
+  analytics.src = 'https://analytics.lyconiq.com/s.js';
+  analytics.dataset.websiteId = 'a02036f1-2d98-48a2-a468-3bbbcc88026d';
   document.head.appendChild(analytics);
 }
 

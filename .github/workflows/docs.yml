@@ -34,15 +34,13 @@ jobs:
           dotnet tool install -g docfx
           docfx docs/docfx.json
 
-      # Vercel serves https://herokit.lyconiq.com from the site branch, which holds only the built site.
+      # Coolify serves https://herokit.lyconiq.com from the site branch, which holds only the built site.
       # The branch is rewritten on every run; its history is not kept.
       - name: Publish to the site branch
         working-directory: docs/_site
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # Without this, Vercel's "Other" preset serves only the public/ folder that docfx creates.
-          echo '{ "framework": null, "buildCommand": "", "installCommand": "", "outputDirectory": "." }' > vercel.json
           git init -q -b site
           git add -A
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
