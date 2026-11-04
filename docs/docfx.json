@@ -44,6 +44,7 @@
       {
         "files": [
           "images/**",
+          "apple-touch-icon.png",
           "robots.txt"
         ]
       }
@@ -68,7 +69,7 @@
         "branch": "master"
       },
       "_appLogoPath": "images/logo.png",
-      "_appFaviconPath": "images/favicon.png",
+      "_appFaviconPath": "images/icon-32.png",
       "_enableNewTab": true,
       "_disableContribution": false,
       "_lang": "en"
