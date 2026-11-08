@@ -54,6 +54,11 @@
       "baseUrl": "https://herokit.lyconiq.com/",
       "changefreq": "weekly"
     },
+    "fileMetadata": {
+      "_appFooter": {
+        "tr/**": "<span>HeroKit · MIT License · Built with care for .NET developers · <a href=\"https://github.com/Lyconiq/HeroKit\">GitHub</a> · <a href=\"https://www.nuget.org/packages/HeroKit\">NuGet</a> · <a href=\"/privacy.html\">Privacy</a> · <a href=\"/tr/privacy.html\">Gizlilik</a> · <a class=\"lq-badge\" href=\"https://lyconiq.com\" rel=\"noopener\"><span>Bir</span><img class=\"lq-on-dark\" src=\"https://lyconiq.com/brand/lyconiq-logo-light.png\" alt=\"Lyconiq\" height=\"22\"><img class=\"lq-on-light\" src=\"https://lyconiq.com/brand/lyconiq-logo.svg\" alt=\"Lyconiq\" height=\"22\"><span>ürünü</span></a></span>"
+      }
+    },
     "template": [
       "default",
       "modern",
@@ -62,7 +67,7 @@
     "globalMetadata": {
       "_appName": "HeroKit",
       "_appTitle": "HeroKit",
-      "_appFooter": "<span>HeroKit · MIT License · Built with care for .NET developers · <a href=\"https://github.com/Lyconiq/HeroKit\">GitHub</a> · <a href=\"https://www.nuget.org/packages/HeroKit\">NuGet</a> · <a href=\"/privacy.html\">Privacy</a> · <a href=\"/tr/privacy.html\">Gizlilik</a></span>",
+      "_appFooter": "<span>HeroKit · MIT License · Built with care for .NET developers · <a href=\"https://github.com/Lyconiq/HeroKit\">GitHub</a> · <a href=\"https://www.nuget.org/packages/HeroKit\">NuGet</a> · <a href=\"/privacy.html\">Privacy</a> · <a href=\"/tr/privacy.html\">Gizlilik</a> · <a class=\"lq-badge\" href=\"https://lyconiq.com\" rel=\"noopener\"><span>A product of</span><img class=\"lq-on-dark\" src=\"https://lyconiq.com/brand/lyconiq-logo-light.png\" alt=\"Lyconiq\" height=\"22\"><img class=\"lq-on-light\" src=\"https://lyconiq.com/brand/lyconiq-logo.svg\" alt=\"Lyconiq\" height=\"22\"></a></span>",
       "_enableSearch": true,
       "_gitContribute": {
         "repo": "https://github.com/Lyconiq/HeroKit",
