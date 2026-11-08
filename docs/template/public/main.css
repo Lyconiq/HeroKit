@@ -277,3 +277,23 @@ article,
     text-align: center;
   }
 }
+
+/* Lyconiq signature in the footer: logo on the same line as the text, light or dark version by theme. */
+.lq-badge {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.35rem;
+  vertical-align: middle;
+}
+.lq-badge img {
+  display: block;
+  height: 22px;
+  width: auto;
+}
+.lq-badge img.lq-on-dark,
+[data-bs-theme='dark'] .lq-badge img.lq-on-light {
+  display: none;
+}
+[data-bs-theme='dark'] .lq-badge img.lq-on-dark {
+  display: block;
+}
